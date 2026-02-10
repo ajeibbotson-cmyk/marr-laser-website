@@ -1,0 +1,2519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laser Hair Removal — Marr Laser & Skin Clinic</title>
+  <meta name="description" content="Advanced laser hair removal treatments in Newry. Permanent hair reduction using clinical-grade technology.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Marr Laser — Shared Header / Sticky Navigation -->
+<style>
+  /* ---- Header Tokens ---- */
+  .marr-header {
+    --marr-primary: #1a3a2a;
+    --marr-primary-light: #2a5a3a;
+    --marr-accent: #c9a84c;
+    --marr-accent-hover: #b8933f;
+    --marr-light: #ffffff;
+    --marr-font-heading: 'Georgia', serif;
+    --marr-font-body: 'Arial', sans-serif;
+  }
+
+  /* ---- Sticky Header ---- */
+  .marr-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--marr-primary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .marr-header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  /* ---- Logo ---- */
+  .marr-header__logo {
+    font-family: var(--marr-font-heading);
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--marr-light);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .marr-header__logo span {
+    color: var(--marr-accent);
+  }
+
+  /* ---- Desktop Nav ---- */
+  .marr-header__nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .marr-header__link {
+    font-family: var(--marr-font-body);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 8px 0;
+  }
+
+  .marr-header__link:hover,
+  .marr-header__link--active {
+    color: var(--marr-light);
+  }
+
+  .marr-header__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--marr-accent);
+    transition: width 0.3s ease;
+  }
+
+  .marr-header__link:hover::after,
+  .marr-header__link--active::after {
+    width: 100%;
+  }
+
+  /* ---- Dropdown ---- */
+  .marr-header__dropdown {
+    position: relative;
+  }
+
+  .marr-header__dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+
+  .marr-header__dropdown-arrow {
+    font-size: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .marr-header__dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    background: var(--marr-primary);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    min-width: 220px;
+    padding: 12px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: all 0.3s ease;
+  }
+
+  .marr-header__dropdown:hover .marr-header__dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .marr-header__dropdown:hover .marr-header__dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  .marr-header__dropdown-link {
+    display: block;
+    padding: 10px 24px;
+    font-family: var(--marr-font-body);
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .marr-header__dropdown-link:hover {
+    color: var(--marr-light);
+    background: rgba(255, 255, 255, 0.04);
+    padding-left: 28px;
+  }
+
+  /* ---- Right Actions ---- */
+  .marr-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .marr-header__whatsapp {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+
+  .marr-header__whatsapp:hover {
+    color: #25d366;
+  }
+
+  .marr-header__cta {
+    display: inline-block;
+    padding: 10px 24px;
+    font-family: var(--marr-font-body);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--marr-primary);
+    background: var(--marr-accent);
+    border: none;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .marr-header__cta:hover {
+    background: var(--marr-accent-hover);
+  }
+
+  /* ---- Mobile Toggle (CSS-only) ---- */
+  .marr-header__toggle {
+    display: none;
+  }
+
+  .marr-header__toggle-label {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+
+  .marr-header__toggle-bar {
+    width: 100%;
+    height: 2px;
+    background: var(--marr-light);
+    transition: all 0.3s ease;
+  }
+
+  /* ---- Mobile Styles ---- */
+  @media (max-width: 991px) {
+    .marr-header__toggle-label {
+      display: flex;
+    }
+
+    .marr-header__nav {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--marr-primary);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 32px 24px;
+      gap: 0;
+      transform: translateX(100%);
+      transition: transform 0.4s ease;
+      overflow-y: auto;
+    }
+
+    .marr-header__toggle:checked ~ .marr-header__nav {
+      transform: translateX(0);
+    }
+
+    .marr-header__toggle:checked ~ .marr-header__toggle-label .marr-header__toggle-bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .marr-header__toggle:checked ~ .marr-header__toggle-label .marr-header__toggle-bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .marr-header__toggle:checked ~ .marr-header__toggle-label .marr-header__toggle-bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .marr-header__link {
+      font-size: 15px;
+      padding: 16px 0;
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .marr-header__dropdown-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      border: none;
+      padding: 0 0 0 16px;
+      min-width: auto;
+      display: none;
+    }
+
+    .marr-header__dropdown:hover .marr-header__dropdown-menu,
+    .marr-header__dropdown:focus-within .marr-header__dropdown-menu {
+      display: block;
+    }
+
+    .marr-header__actions {
+      display: none;
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-header__inner {
+      padding: 0 16px;
+      height: 64px;
+    }
+
+    .marr-header__logo {
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    .marr-header__nav {
+      top: 64px;
+    }
+  }
+</style>
+
+<header class="marr-header">
+  <div class="marr-header__inner">
+    <a href="index.html" class="marr-header__logo">Marr <span>Laser</span></a>
+
+    <input type="checkbox" id="marr-nav-toggle" class="marr-header__toggle" aria-label="Toggle navigation">
+    <label for="marr-nav-toggle" class="marr-header__toggle-label" aria-label="Menu">
+      <span class="marr-header__toggle-bar"></span>
+      <span class="marr-header__toggle-bar"></span>
+      <span class="marr-header__toggle-bar"></span>
+    </label>
+
+    <nav class="marr-header__nav" aria-label="Main navigation">
+      <a href="index.html" class="marr-header__link">Home</a>
+
+      <div class="marr-header__dropdown">
+        <a href="treatments.html" class="marr-header__link marr-header__dropdown-toggle">
+          Treatments <span class="marr-header__dropdown-arrow">&#9660;</span>
+        </a>
+        <div class="marr-header__dropdown-menu">
+          <a href="laser-hair-removal.html" class="marr-header__dropdown-link">Laser Hair Removal</a>
+          <a href="skin-treatments.html" class="marr-header__dropdown-link">Skin Treatments</a>
+        </div>
+      </div>
+
+      <a href="about.html" class="marr-header__link">About</a>
+      <a href="team.html" class="marr-header__link">Team</a>
+      <a href="pricing.html" class="marr-header__link">Pricing</a>
+      <a href="contact.html" class="marr-header__link">Contact</a>
+    </nav>
+
+    <div class="marr-header__actions">
+      <a href="#" class="marr-header__whatsapp" aria-label="WhatsApp">&#9742;</a>
+      <a href="contact.html" class="marr-header__cta">Book Now</a>
+    </div>
+  </div>
+</header>
+
+<!-- 01-hero.html — Laser Hair Removal Hero Section -->
+<section class="marr-hero">
+  <style>
+    /* ── Design Tokens ── */
+    .marr-hero {
+      --marr-primary: #1a3a2a;
+      --marr-primary-light: #2a5a3a;
+      --marr-accent: #c9a84c;
+      --marr-accent-hover: #b8933f;
+      --marr-sage: #d5ddd7;
+      --marr-light: #ffffff;
+      --marr-offwhite: #f7f5f0;
+      --marr-text: #2d2d2d;
+      --marr-text-light: rgba(255, 255, 255, 0.75);
+      --marr-text-muted: #6b6b6b;
+      --marr-font-heading: 'Georgia', serif;
+      --marr-font-body: 'Arial', sans-serif;
+    }
+
+    /* ── Block ── */
+    .marr-hero {
+      background-color: var(--marr-primary);
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px;
+      box-sizing: border-box;
+    }
+
+    /* ── Elements ── */
+    .marr-hero__inner {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .marr-hero__breadcrumb {
+      font-family: var(--marr-font-body);
+      font-size: 0.8125rem;
+      color: var(--marr-text-light);
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+    }
+
+    .marr-hero__breadcrumb-link {
+      color: var(--marr-text-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .marr-hero__breadcrumb-link:hover {
+      color: var(--marr-accent);
+    }
+
+    .marr-hero__breadcrumb-separator {
+      display: inline-block;
+      margin: 0 8px;
+      opacity: 0.5;
+    }
+
+    .marr-hero__breadcrumb-current {
+      color: var(--marr-light);
+      opacity: 0.9;
+    }
+
+    .marr-hero__heading {
+      font-family: var(--marr-font-heading);
+      font-size: 3.5rem;
+      font-weight: 400;
+      color: var(--marr-light);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      line-height: 1.15;
+      margin: 0 0 24px;
+    }
+
+    .marr-hero__subtitle {
+      font-family: var(--marr-font-body);
+      font-size: 1.125rem;
+      color: var(--marr-text-light);
+      line-height: 1.7;
+      margin: 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── Responsive: 1200px ── */
+    @media (max-width: 1200px) {
+      .marr-hero {
+        padding: 100px 24px;
+      }
+
+      .marr-hero__heading {
+        font-size: 3rem;
+      }
+    }
+
+    /* ── Responsive: 991px ── */
+    @media (max-width: 991px) {
+      .marr-hero {
+        padding: 80px 24px;
+        min-height: 45vh;
+      }
+
+      .marr-hero__heading {
+        font-size: 2.5rem;
+        letter-spacing: 0.14em;
+      }
+
+      .marr-hero__subtitle {
+        font-size: 1.0625rem;
+      }
+    }
+
+    /* ── Responsive: 767px ── */
+    @media (max-width: 767px) {
+      .marr-hero {
+        padding: 64px 20px;
+        min-height: 40vh;
+      }
+
+      .marr-hero__heading {
+        font-size: 2rem;
+        letter-spacing: 0.1em;
+      }
+
+      .marr-hero__subtitle {
+        font-size: 1rem;
+      }
+
+      .marr-hero__breadcrumb {
+        font-size: 0.75rem;
+        margin-bottom: 24px;
+      }
+    }
+
+    /* ── Responsive: 478px ── */
+    @media (max-width: 478px) {
+      .marr-hero {
+        padding: 48px 16px;
+        min-height: 35vh;
+      }
+
+      .marr-hero__heading {
+        font-size: 1.625rem;
+        letter-spacing: 0.08em;
+      }
+
+      .marr-hero__subtitle {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+      }
+    }
+  </style>
+
+  <div class="marr-hero__inner">
+    <nav class="marr-hero__breadcrumb" aria-label="Breadcrumb">
+      <a href="/" class="marr-hero__breadcrumb-link">Home</a>
+      <span class="marr-hero__breadcrumb-separator" aria-hidden="true">/</span>
+      <a href="/treatments.html" class="marr-hero__breadcrumb-link">Treatments</a>
+      <span class="marr-hero__breadcrumb-separator" aria-hidden="true">/</span>
+      <span class="marr-hero__breadcrumb-current" aria-current="page">Laser Hair Removal</span>
+    </nav>
+
+    <h1 class="marr-hero__heading">Laser Hair Removal</h1>
+
+    <p class="marr-hero__subtitle">
+      Permanent hair reduction using the latest clinical-grade laser technology
+    </p>
+  </div>
+</section>
+
+<!-- 02-about.html — About the Treatment Section -->
+<section class="marr-about">
+  <style>
+    /* ── Design Tokens ── */
+    .marr-about {
+      --marr-primary: #1a3a2a;
+      --marr-primary-light: #2a5a3a;
+      --marr-accent: #c9a84c;
+      --marr-accent-hover: #b8933f;
+      --marr-sage: #d5ddd7;
+      --marr-light: #ffffff;
+      --marr-offwhite: #f7f5f0;
+      --marr-text: #2d2d2d;
+      --marr-text-light: rgba(255, 255, 255, 0.75);
+      --marr-text-muted: #6b6b6b;
+      --marr-font-heading: 'Georgia', serif;
+      --marr-font-body: 'Arial', sans-serif;
+    }
+
+    /* ── Block ── */
+    .marr-about {
+      background-color: var(--marr-light);
+      padding: 100px 24px;
+      box-sizing: border-box;
+    }
+
+    /* ── Elements ── */
+    .marr-about__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .marr-about__content {
+      max-width: 560px;
+    }
+
+    .marr-about__label {
+      font-family: var(--marr-font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--marr-accent);
+      margin: 0 0 16px;
+    }
+
+    .marr-about__heading {
+      font-family: var(--marr-font-heading);
+      font-size: 2.5rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--marr-primary);
+      line-height: 1.2;
+      margin: 0 0 32px;
+    }
+
+    .marr-about__text {
+      font-family: var(--marr-font-body);
+      font-size: 1rem;
+      color: var(--marr-text);
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+
+    .marr-about__benefits {
+      list-style: none;
+      padding: 0;
+      margin: 32px 0 0;
+    }
+
+    .marr-about__benefit {
+      font-family: var(--marr-font-body);
+      font-size: 0.9375rem;
+      color: var(--marr-text);
+      line-height: 1.6;
+      padding: 8px 0 8px 28px;
+      position: relative;
+    }
+
+    .marr-about__benefit::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 16px;
+      width: 12px;
+      height: 1px;
+      background-color: var(--marr-accent);
+    }
+
+    .marr-about__image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .marr-about__image-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background-color: var(--marr-sage);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--marr-font-body);
+      font-size: 0.875rem;
+      color: var(--marr-text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── Responsive: 1200px ── */
+    @media (max-width: 1200px) {
+      .marr-about {
+        padding: 80px 24px;
+      }
+
+      .marr-about__container {
+        gap: 48px;
+      }
+
+      .marr-about__heading {
+        font-size: 2.25rem;
+      }
+    }
+
+    /* ── Responsive: 991px ── */
+    @media (max-width: 991px) {
+      .marr-about {
+        padding: 72px 24px;
+      }
+
+      .marr-about__container {
+        gap: 40px;
+      }
+
+      .marr-about__heading {
+        font-size: 2rem;
+      }
+
+      .marr-about__text {
+        font-size: 0.9375rem;
+      }
+    }
+
+    /* ── Responsive: 767px ── */
+    @media (max-width: 767px) {
+      .marr-about {
+        padding: 60px 20px;
+      }
+
+      .marr-about__container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .marr-about__content {
+        max-width: 100%;
+        order: 1;
+      }
+
+      .marr-about__image-wrapper {
+        order: 2;
+      }
+
+      .marr-about__heading {
+        font-size: 1.75rem;
+      }
+
+      .marr-about__image-placeholder {
+        aspect-ratio: 16 / 10;
+      }
+    }
+
+    /* ── Responsive: 478px ── */
+    @media (max-width: 478px) {
+      .marr-about {
+        padding: 48px 16px;
+      }
+
+      .marr-about__heading {
+        font-size: 1.5rem;
+        letter-spacing: 0.06em;
+        margin-bottom: 24px;
+      }
+
+      .marr-about__text {
+        font-size: 0.875rem;
+        line-height: 1.7;
+      }
+
+      .marr-about__benefit {
+        font-size: 0.875rem;
+      }
+    }
+  </style>
+
+  <div class="marr-about__container">
+    <div class="marr-about__content">
+      <p class="marr-about__label">About the Treatment</p>
+
+      <h2 class="marr-about__heading">What Is Laser Hair Removal?</h2>
+
+      <p class="marr-about__text">
+        Laser hair removal works by directing concentrated light energy into the
+        hair follicle. The pigment (melanin) within the hair absorbs this light,
+        which converts to heat and damages the follicle, inhibiting future growth.
+        Because hair grows in cycles, multiple sessions are required to target
+        follicles during their active growth phase, resulting in progressive and
+        lasting reduction over a course of treatments.
+      </p>
+
+      <p class="marr-about__text">
+        Our clinical-grade equipment is suitable for a wide range of skin types
+        and hair colours. With advanced cooling technology and precision optics,
+        treatments are both comfortable and highly effective, delivering results
+        that simply are not achievable with at-home devices.
+      </p>
+
+      <ul class="marr-about__benefits">
+        <li class="marr-about__benefit">Permanent hair reduction</li>
+        <li class="marr-about__benefit">Suitable for most skin types</li>
+        <li class="marr-about__benefit">Fast treatment sessions</li>
+        <li class="marr-about__benefit">Minimal discomfort</li>
+      </ul>
+    </div>
+
+    <div class="marr-about__image-wrapper">
+      <div class="marr-about__image-placeholder" role="img" aria-label="Laser technology used at Marr Laser and Skin Clinic">
+        Laser Technology
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03-technology.html — Our Technology Section -->
+<section class="marr-tech">
+  <style>
+    /* ── Design Tokens ── */
+    .marr-tech {
+      --marr-primary: #1a3a2a;
+      --marr-primary-light: #2a5a3a;
+      --marr-accent: #c9a84c;
+      --marr-accent-hover: #b8933f;
+      --marr-sage: #d5ddd7;
+      --marr-light: #ffffff;
+      --marr-offwhite: #f7f5f0;
+      --marr-text: #2d2d2d;
+      --marr-text-light: rgba(255, 255, 255, 0.75);
+      --marr-text-muted: #6b6b6b;
+      --marr-font-heading: 'Georgia', serif;
+      --marr-font-body: 'Arial', sans-serif;
+    }
+
+    /* ── Block ── */
+    .marr-tech {
+      background-color: var(--marr-offwhite);
+      padding: 100px 24px;
+      box-sizing: border-box;
+    }
+
+    /* ── Elements ── */
+    .marr-tech__container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .marr-tech__header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .marr-tech__label {
+      font-family: var(--marr-font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--marr-accent);
+      margin: 0 0 16px;
+    }
+
+    .marr-tech__heading {
+      font-family: var(--marr-font-heading);
+      font-size: 2.5rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--marr-primary);
+      line-height: 1.2;
+      margin: 0;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .marr-tech__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .marr-tech__card {
+      background-color: var(--marr-light);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 48px 36px;
+      text-align: center;
+    }
+
+    .marr-tech__card-icon {
+      width: 72px;
+      height: 72px;
+      background-color: var(--marr-sage);
+      border-radius: 50%;
+      margin: 0 auto 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--marr-font-body);
+      font-size: 0.625rem;
+      color: var(--marr-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .marr-tech__card-title {
+      font-family: var(--marr-font-heading);
+      font-size: 1.125rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--marr-primary);
+      margin: 0 0 16px;
+    }
+
+    .marr-tech__card-text {
+      font-family: var(--marr-font-body);
+      font-size: 0.9375rem;
+      color: var(--marr-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── Responsive: 1200px ── */
+    @media (max-width: 1200px) {
+      .marr-tech {
+        padding: 80px 24px;
+      }
+
+      .marr-tech__heading {
+        font-size: 2.25rem;
+      }
+
+      .marr-tech__card {
+        padding: 40px 28px;
+      }
+    }
+
+    /* ── Responsive: 991px ── */
+    @media (max-width: 991px) {
+      .marr-tech {
+        padding: 72px 24px;
+      }
+
+      .marr-tech__heading {
+        font-size: 2rem;
+      }
+
+      .marr-tech__grid {
+        gap: 24px;
+      }
+
+      .marr-tech__card {
+        padding: 36px 24px;
+      }
+    }
+
+    /* ── Responsive: 767px ── */
+    @media (max-width: 767px) {
+      .marr-tech {
+        padding: 60px 20px;
+      }
+
+      .marr-tech__header {
+        margin-bottom: 48px;
+      }
+
+      .marr-tech__heading {
+        font-size: 1.75rem;
+      }
+
+      .marr-tech__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+
+      .marr-tech__card {
+        padding: 36px 28px;
+      }
+    }
+
+    /* ── Responsive: 478px ── */
+    @media (max-width: 478px) {
+      .marr-tech {
+        padding: 48px 16px;
+      }
+
+      .marr-tech__heading {
+        font-size: 1.5rem;
+        letter-spacing: 0.06em;
+      }
+
+      .marr-tech__card {
+        padding: 32px 20px;
+      }
+
+      .marr-tech__card-title {
+        font-size: 1rem;
+      }
+
+      .marr-tech__card-text {
+        font-size: 0.875rem;
+      }
+    }
+  </style>
+
+  <div class="marr-tech__container">
+    <header class="marr-tech__header">
+      <p class="marr-tech__label">Our Technology</p>
+      <h2 class="marr-tech__heading">Clinical-Grade Equipment for Superior Results</h2>
+    </header>
+
+    <div class="marr-tech__grid">
+      <article class="marr-tech__card">
+        <div class="marr-tech__card-icon" aria-hidden="true">Icon</div>
+        <h3 class="marr-tech__card-title">Diode Laser</h3>
+        <p class="marr-tech__card-text">
+          The gold standard for permanent hair reduction, effective on all skin
+          types with consistent, clinically proven results.
+        </p>
+      </article>
+
+      <article class="marr-tech__card">
+        <div class="marr-tech__card-icon" aria-hidden="true">Icon</div>
+        <h3 class="marr-tech__card-title">Cooling System</h3>
+        <p class="marr-tech__card-text">
+          Integrated cooling technology for maximum comfort during treatment,
+          protecting the skin while the laser targets the follicle.
+        </p>
+      </article>
+
+      <article class="marr-tech__card">
+        <div class="marr-tech__card-icon" aria-hidden="true">Icon</div>
+        <h3 class="marr-tech__card-title">Precision Optics</h3>
+        <p class="marr-tech__card-text">
+          Advanced targeting ensures effective treatment with minimal skin
+          impact, delivering energy precisely where it is needed.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 04-areas-pricing.html — Treatment Areas & Pricing Section -->
+<section class="marr-pricing">
+  <style>
+    /* ── Design Tokens ── */
+    .marr-pricing {
+      --marr-primary: #1a3a2a;
+      --marr-primary-light: #2a5a3a;
+      --marr-accent: #c9a84c;
+      --marr-accent-hover: #b8933f;
+      --marr-sage: #d5ddd7;
+      --marr-light: #ffffff;
+      --marr-offwhite: #f7f5f0;
+      --marr-text: #2d2d2d;
+      --marr-text-light: rgba(255, 255, 255, 0.75);
+      --marr-text-muted: #6b6b6b;
+      --marr-font-heading: 'Georgia', serif;
+      --marr-font-body: 'Arial', sans-serif;
+    }
+
+    /* ── Block ── */
+    .marr-pricing {
+      background-color: var(--marr-light);
+      padding: 100px 24px;
+      box-sizing: border-box;
+    }
+
+    /* ── Elements ── */
+    .marr-pricing__container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .marr-pricing__header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .marr-pricing__label {
+      font-family: var(--marr-font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--marr-accent);
+      margin: 0 0 16px;
+    }
+
+    .marr-pricing__heading {
+      font-family: var(--marr-font-heading);
+      font-size: 2.5rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--marr-primary);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .marr-pricing__table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .marr-pricing__table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 480px;
+    }
+
+    .marr-pricing__table thead th {
+      font-family: var(--marr-font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--marr-light);
+      background-color: var(--marr-primary);
+      padding: 18px 24px;
+      text-align: left;
+    }
+
+    .marr-pricing__table thead th:nth-child(2),
+    .marr-pricing__table thead th:nth-child(3) {
+      text-align: right;
+    }
+
+    .marr-pricing__table tbody td {
+      font-family: var(--marr-font-body);
+      font-size: 0.9375rem;
+      color: var(--marr-text);
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .marr-pricing__table tbody td:nth-child(2),
+    .marr-pricing__table tbody td:nth-child(3) {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .marr-pricing__table tbody tr:nth-child(even) {
+      background-color: rgba(213, 221, 215, 0.2);
+    }
+
+    .marr-pricing__table tbody tr:nth-child(odd) {
+      background-color: var(--marr-light);
+    }
+
+    .marr-pricing__note {
+      font-family: var(--marr-font-body);
+      font-size: 0.875rem;
+      color: var(--marr-text-muted);
+      text-align: center;
+      margin: 32px 0 0;
+      line-height: 1.6;
+    }
+
+    .marr-pricing__cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .marr-pricing__cta-link {
+      font-family: var(--marr-font-body);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--marr-primary);
+      text-decoration: none;
+      border-bottom: 2px solid var(--marr-accent);
+      padding-bottom: 4px;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .marr-pricing__cta-link:hover {
+      color: var(--marr-accent-hover);
+      border-color: var(--marr-accent-hover);
+    }
+
+    /* ── Responsive: 1200px ── */
+    @media (max-width: 1200px) {
+      .marr-pricing {
+        padding: 80px 24px;
+      }
+
+      .marr-pricing__heading {
+        font-size: 2.25rem;
+      }
+    }
+
+    /* ── Responsive: 991px ── */
+    @media (max-width: 991px) {
+      .marr-pricing {
+        padding: 72px 24px;
+      }
+
+      .marr-pricing__heading {
+        font-size: 2rem;
+      }
+
+      .marr-pricing__header {
+        margin-bottom: 48px;
+      }
+    }
+
+    /* ── Responsive: 767px ── */
+    @media (max-width: 767px) {
+      .marr-pricing {
+        padding: 60px 20px;
+      }
+
+      .marr-pricing__heading {
+        font-size: 1.75rem;
+      }
+
+      .marr-pricing__table thead th {
+        padding: 14px 16px;
+        font-size: 0.6875rem;
+      }
+
+      .marr-pricing__table tbody td {
+        padding: 14px 16px;
+        font-size: 0.875rem;
+      }
+    }
+
+    /* ── Responsive: 478px ── */
+    @media (max-width: 478px) {
+      .marr-pricing {
+        padding: 48px 16px;
+      }
+
+      .marr-pricing__heading {
+        font-size: 1.5rem;
+        letter-spacing: 0.06em;
+      }
+
+      .marr-pricing__table thead th {
+        padding: 12px 12px;
+      }
+
+      .marr-pricing__table tbody td {
+        padding: 12px 12px;
+        font-size: 0.8125rem;
+      }
+
+      .marr-pricing__note {
+        font-size: 0.8125rem;
+      }
+    }
+  </style>
+
+  <div class="marr-pricing__container">
+    <header class="marr-pricing__header">
+      <p class="marr-pricing__label">Treatment Areas &amp; Pricing</p>
+      <h2 class="marr-pricing__heading">Choose Your Treatment Area</h2>
+    </header>
+
+    <div class="marr-pricing__table-wrapper">
+      <table class="marr-pricing__table">
+        <thead>
+          <tr>
+            <th scope="col">Area</th>
+            <th scope="col">Single Session</th>
+            <th scope="col">Course of 6</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Upper Lip</td>
+            <td>&pound;45</td>
+            <td>&pound;220</td>
+          </tr>
+          <tr>
+            <td>Underarms</td>
+            <td>&pound;55</td>
+            <td>&pound;275</td>
+          </tr>
+          <tr>
+            <td>Bikini Line</td>
+            <td>&pound;65</td>
+            <td>&pound;325</td>
+          </tr>
+          <tr>
+            <td>Half Legs</td>
+            <td>&pound;95</td>
+            <td>&pound;475</td>
+          </tr>
+          <tr>
+            <td>Full Legs</td>
+            <td>&pound;150</td>
+            <td>&pound;750</td>
+          </tr>
+          <tr>
+            <td>Full Body</td>
+            <td>&pound;350</td>
+            <td>&pound;1,750</td>
+          </tr>
+          <tr>
+            <td>Brazilian</td>
+            <td>&pound;85</td>
+            <td>&pound;425</td>
+          </tr>
+          <tr>
+            <td>Full Face</td>
+            <td>&pound;75</td>
+            <td>&pound;375</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="marr-pricing__note">
+      All prices include consultation. Course pricing offers significant savings.
+    </p>
+
+    <div class="marr-pricing__cta">
+      <a href="/contact.html" class="marr-pricing__cta-link">
+        Book Your Treatment &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 05-candidate.html — Candidate Suitability Section -->
+<section class="marr-candidate">
+  <style>
+    /* ── Design Tokens ── */
+    .marr-candidate {
+      --marr-primary: #1a3a2a;
+      --marr-primary-light: #2a5a3a;
+      --marr-accent: #c9a84c;
+      --marr-accent-hover: #b8933f;
+      --marr-sage: #d5ddd7;
+      --marr-light: #ffffff;
+      --marr-offwhite: #f7f5f0;
+      --marr-text: #2d2d2d;
+      --marr-text-light: rgba(255, 255, 255, 0.75);
+      --marr-text-muted: #6b6b6b;
+      --marr-font-heading: 'Georgia', serif;
+      --marr-font-body: 'Arial', sans-serif;
+    }
+
+    /* ── Block ── */
+    .marr-candidate {
+      background-color: var(--marr-sage);
+      padding: 100px 24px;
+      box-sizing: border-box;
+    }
+
+    /* ── Elements ── */
+    .marr-candidate__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .marr-candidate__image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .marr-candidate__image-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background-color: var(--marr-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--marr-font-body);
+      font-size: 0.875rem;
+      color: var(--marr-text-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .marr-candidate__content {
+      max-width: 560px;
+    }
+
+    .marr-candidate__label {
+      font-family: var(--marr-font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--marr-accent);
+      margin: 0 0 16px;
+    }
+
+    .marr-candidate__heading {
+      font-family: var(--marr-font-heading);
+      font-size: 2.5rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--marr-primary);
+      line-height: 1.2;
+      margin: 0 0 24px;
+    }
+
+    .marr-candidate__text {
+      font-family: var(--marr-font-body);
+      font-size: 1rem;
+      color: var(--marr-text);
+      line-height: 1.8;
+      margin: 0 0 32px;
+    }
+
+    .marr-candidate__lists {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .marr-candidate__list-group {
+      /* list group wrapper */
+    }
+
+    .marr-candidate__list-title {
+      font-family: var(--marr-font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--marr-primary);
+      margin: 0 0 16px;
+    }
+
+    .marr-candidate__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .marr-candidate__list-item {
+      font-family: var(--marr-font-body);
+      font-size: 0.9375rem;
+      color: var(--marr-text);
+      line-height: 1.6;
+      padding: 6px 0 6px 20px;
+      position: relative;
+    }
+
+    .marr-candidate__list-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 8px;
+      height: 1px;
+      background-color: var(--marr-accent);
+    }
+
+    /* ── Responsive: 1200px ── */
+    @media (max-width: 1200px) {
+      .marr-candidate {
+        padding: 80px 24px;
+      }
+
+      .marr-candidate__container {
+        gap: 48px;
+      }
+
+      .marr-candidate__heading {
+        font-size: 2.25rem;
+      }
+    }
+
+    /* ── Responsive: 991px ── */
+    @media (max-width: 991px) {
+      .marr-candidate {
+        padding: 72px 24px;
+      }
+
+      .marr-candidate__container {
+        gap: 40px;
+      }
+
+      .marr-candidate__heading {
+        font-size: 2rem;
+      }
+
+      .marr-candidate__text {
+        font-size: 0.9375rem;
+      }
+    }
+
+    /* ── Responsive: 767px ── */
+    @media (max-width: 767px) {
+      .marr-candidate {
+        padding: 60px 20px;
+      }
+
+      .marr-candidate__container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .marr-candidate__image-wrapper {
+        order: 2;
+      }
+
+      .marr-candidate__content {
+        max-width: 100%;
+        order: 1;
+      }
+
+      .marr-candidate__heading {
+        font-size: 1.75rem;
+      }
+
+      .marr-candidate__image-placeholder {
+        aspect-ratio: 16 / 10;
+      }
+
+      .marr-candidate__lists {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* ── Responsive: 478px ── */
+    @media (max-width: 478px) {
+      .marr-candidate {
+        padding: 48px 16px;
+      }
+
+      .marr-candidate__heading {
+        font-size: 1.5rem;
+        letter-spacing: 0.06em;
+      }
+
+      .marr-candidate__text {
+        font-size: 0.875rem;
+        line-height: 1.7;
+      }
+
+      .marr-candidate__list-item {
+        font-size: 0.875rem;
+      }
+    }
+  </style>
+
+  <div class="marr-candidate__container">
+    <div class="marr-candidate__image-wrapper">
+      <div class="marr-candidate__image-placeholder" role="img" aria-label="Consultation at Marr Laser and Skin Clinic">
+        Consultation
+      </div>
+    </div>
+
+    <div class="marr-candidate__content">
+      <p class="marr-candidate__label">Is It Right for You?</p>
+
+      <h2 class="marr-candidate__heading">Who Is a Good Candidate?</h2>
+
+      <p class="marr-candidate__text">
+        Laser hair removal is effective for a broad range of people, though
+        results depend on individual factors such as hair colour, skin type,
+        and hormonal profile. A free consultation allows us to assess your
+        suitability and design a personalised treatment plan.
+      </p>
+
+      <div class="marr-candidate__lists">
+        <div class="marr-candidate__list-group">
+          <p class="marr-candidate__list-title">Ideal for:</p>
+          <ul class="marr-candidate__list">
+            <li class="marr-candidate__list-item">Dark hair on lighter skin</li>
+            <li class="marr-candidate__list-item">Those seeking permanent reduction</li>
+            <li class="marr-candidate__list-item">People tired of shaving or waxing</li>
+            <li class="marr-candidate__list-item">Anyone wanting smoother skin</li>
+          </ul>
+        </div>
+
+        <div class="marr-candidate__list-group">
+          <p class="marr-candidate__list-title">Good to know:</p>
+          <ul class="marr-candidate__list">
+            <li class="marr-candidate__list-item">Multiple sessions needed</li>
+            <li class="marr-candidate__list-item">Avoid sun exposure before treatment</li>
+            <li class="marr-candidate__list-item">Results vary by individual</li>
+            <li class="marr-candidate__list-item">Free consultation to assess suitability</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06-results.html — Treatment Timeline / What to Expect Section -->
+<section class="marr-results">
+  <style>
+    /* ── Design Tokens ── */
+    .marr-results {
+      --marr-primary: #1a3a2a;
+      --marr-primary-light: #2a5a3a;
+      --marr-accent: #c9a84c;
+      --marr-accent-hover: #b8933f;
+      --marr-sage: #d5ddd7;
+      --marr-light: #ffffff;
+      --marr-offwhite: #f7f5f0;
+      --marr-text: #2d2d2d;
+      --marr-text-light: rgba(255, 255, 255, 0.75);
+      --marr-text-muted: #6b6b6b;
+      --marr-font-heading: 'Georgia', serif;
+      --marr-font-body: 'Arial', sans-serif;
+    }
+
+    /* ── Block ── */
+    .marr-results {
+      background-color: var(--marr-offwhite);
+      padding: 100px 24px;
+      box-sizing: border-box;
+    }
+
+    /* ── Elements ── */
+    .marr-results__container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .marr-results__header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+
+    .marr-results__label {
+      font-family: var(--marr-font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--marr-accent);
+      margin: 0 0 16px;
+    }
+
+    .marr-results__heading {
+      font-family: var(--marr-font-heading);
+      font-size: 2.5rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--marr-primary);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    /* ── Timeline ── */
+    .marr-results__timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    /* Connecting line behind the circles */
+    .marr-results__timeline::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5% + 14px);
+      right: calc(12.5% + 14px);
+      height: 2px;
+      background-color: var(--marr-sage);
+    }
+
+    .marr-results__stage {
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+    }
+
+    .marr-results__stage-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: var(--marr-accent);
+      color: var(--marr-light);
+      font-family: var(--marr-font-heading);
+      font-size: 1.125rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .marr-results__stage-title {
+      font-family: var(--marr-font-heading);
+      font-size: 1rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--marr-primary);
+      margin: 0 0 12px;
+    }
+
+    .marr-results__stage-text {
+      font-family: var(--marr-font-body);
+      font-size: 0.875rem;
+      color: var(--marr-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .marr-results__note {
+      font-family: var(--marr-font-body);
+      font-size: 0.875rem;
+      color: var(--marr-text-muted);
+      text-align: center;
+      margin: 56px 0 0;
+      line-height: 1.6;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── Responsive: 1200px ── */
+    @media (max-width: 1200px) {
+      .marr-results {
+        padding: 80px 24px;
+      }
+
+      .marr-results__heading {
+        font-size: 2.25rem;
+      }
+    }
+
+    /* ── Responsive: 991px ── */
+    @media (max-width: 991px) {
+      .marr-results {
+        padding: 72px 24px;
+      }
+
+      .marr-results__heading {
+        font-size: 2rem;
+      }
+
+      .marr-results__header {
+        margin-bottom: 56px;
+      }
+
+      .marr-results__stage {
+        padding: 0 12px;
+      }
+
+      .marr-results__stage-circle {
+        width: 48px;
+        height: 48px;
+        font-size: 1rem;
+      }
+
+      .marr-results__timeline::before {
+        top: 24px;
+      }
+    }
+
+    /* ── Responsive: 767px ── */
+    @media (max-width: 767px) {
+      .marr-results {
+        padding: 60px 20px;
+      }
+
+      .marr-results__heading {
+        font-size: 1.75rem;
+      }
+
+      .marr-results__timeline {
+        grid-template-columns: 1fr;
+        gap: 0;
+        max-width: 400px;
+        margin: 0 auto;
+        padding-left: 40px;
+        position: relative;
+      }
+
+      /* Vertical connecting line on mobile */
+      .marr-results__timeline::before {
+        top: 28px;
+        bottom: 28px;
+        left: 27px;
+        right: auto;
+        width: 2px;
+        height: auto;
+      }
+
+      .marr-results__stage {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        gap: 0 20px;
+        text-align: left;
+        padding: 0 0 40px 0;
+      }
+
+      .marr-results__stage:last-child {
+        padding-bottom: 0;
+      }
+
+      .marr-results__stage-circle {
+        width: 56px;
+        height: 56px;
+        margin: 0;
+        grid-row: 1 / 3;
+        align-self: start;
+        margin-left: -40px;
+      }
+
+      .marr-results__stage-title {
+        align-self: end;
+        margin-bottom: 8px;
+      }
+
+      .marr-results__stage-text {
+        align-self: start;
+      }
+
+      .marr-results__note {
+        margin-top: 40px;
+      }
+    }
+
+    /* ── Responsive: 478px ── */
+    @media (max-width: 478px) {
+      .marr-results {
+        padding: 48px 16px;
+      }
+
+      .marr-results__heading {
+        font-size: 1.5rem;
+        letter-spacing: 0.06em;
+      }
+
+      .marr-results__stage-circle {
+        width: 48px;
+        height: 48px;
+        font-size: 0.9375rem;
+        margin-left: -36px;
+      }
+
+      .marr-results__timeline {
+        padding-left: 36px;
+      }
+
+      .marr-results__timeline::before {
+        left: 23px;
+      }
+
+      .marr-results__stage-title {
+        font-size: 0.9375rem;
+      }
+
+      .marr-results__stage-text {
+        font-size: 0.8125rem;
+      }
+
+      .marr-results__note {
+        font-size: 0.8125rem;
+      }
+    }
+  </style>
+
+  <div class="marr-results__container">
+    <header class="marr-results__header">
+      <p class="marr-results__label">What to Expect</p>
+      <h2 class="marr-results__heading">Your Treatment Timeline</h2>
+    </header>
+
+    <div class="marr-results__timeline" role="list" aria-label="Treatment timeline">
+      <div class="marr-results__stage" role="listitem">
+        <div class="marr-results__stage-circle" aria-hidden="true">1</div>
+        <h3 class="marr-results__stage-title">Session 1-2</h3>
+        <p class="marr-results__stage-text">
+          Initial treatment targeting active hair follicles. You may notice
+          shedding within 1-2 weeks.
+        </p>
+      </div>
+
+      <div class="marr-results__stage" role="listitem">
+        <div class="marr-results__stage-circle" aria-hidden="true">2</div>
+        <h3 class="marr-results__stage-title">Session 3-4</h3>
+        <p class="marr-results__stage-text">
+          Significant reduction becomes visible. Treatment intervals may be
+          adjusted based on progress.
+        </p>
+      </div>
+
+      <div class="marr-results__stage" role="listitem">
+        <div class="marr-results__stage-circle" aria-hidden="true">3</div>
+        <h3 class="marr-results__stage-title">Session 5-6</h3>
+        <p class="marr-results__stage-text">
+          Majority of hair growth eliminated. Fine-tuning remaining areas
+          for optimal results.
+        </p>
+      </div>
+
+      <div class="marr-results__stage" role="listitem">
+        <div class="marr-results__stage-circle" aria-hidden="true">4</div>
+        <h3 class="marr-results__stage-title">Maintenance</h3>
+        <p class="marr-results__stage-text">
+          Occasional top-up sessions to maintain smooth, hair-free results
+          long term.
+        </p>
+      </div>
+    </div>
+
+    <p class="marr-results__note">
+      Results vary by individual. Your practitioner will advise on the optimal
+      treatment schedule during your consultation.
+    </p>
+  </div>
+</section>
+
+<!-- 07-faq.html — Frequently Asked Questions Section -->
+<section class="marr-faq">
+  <style>
+    /* ── Design Tokens ── */
+    .marr-faq {
+      --marr-primary: #1a3a2a;
+      --marr-primary-light: #2a5a3a;
+      --marr-accent: #c9a84c;
+      --marr-accent-hover: #b8933f;
+      --marr-sage: #d5ddd7;
+      --marr-light: #ffffff;
+      --marr-offwhite: #f7f5f0;
+      --marr-text: #2d2d2d;
+      --marr-text-light: rgba(255, 255, 255, 0.75);
+      --marr-text-muted: #6b6b6b;
+      --marr-font-heading: 'Georgia', serif;
+      --marr-font-body: 'Arial', sans-serif;
+    }
+
+    /* ── Block ── */
+    .marr-faq {
+      background-color: var(--marr-light);
+      padding: 100px 24px;
+      box-sizing: border-box;
+    }
+
+    /* ── Elements ── */
+    .marr-faq__container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .marr-faq__header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .marr-faq__label {
+      font-family: var(--marr-font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--marr-accent);
+      margin: 0 0 16px;
+    }
+
+    .marr-faq__heading {
+      font-family: var(--marr-font-heading);
+      font-size: 2.5rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--marr-primary);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    /* ── Accordion ── */
+    .marr-faq__list {
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .marr-faq__item {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .marr-faq__item summary {
+      font-family: var(--marr-font-body);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--marr-primary);
+      padding: 24px 48px 24px 0;
+      cursor: pointer;
+      position: relative;
+      list-style: none;
+      line-height: 1.4;
+      transition: color 0.3s ease;
+    }
+
+    /* Remove default marker in all browsers */
+    .marr-faq__item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .marr-faq__item summary::marker {
+      display: none;
+      content: '';
+    }
+
+    /* Plus / minus indicator */
+    .marr-faq__item summary::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--marr-font-body);
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--marr-accent);
+      line-height: 1;
+      width: 24px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .marr-faq__item[open] summary::after {
+      content: '\2212'; /* minus sign */
+    }
+
+    .marr-faq__item summary:hover {
+      color: var(--marr-accent-hover);
+    }
+
+    .marr-faq__item summary:focus-visible {
+      outline: 2px solid var(--marr-accent);
+      outline-offset: 4px;
+    }
+
+    .marr-faq__answer {
+      font-family: var(--marr-font-body);
+      font-size: 0.9375rem;
+      color: var(--marr-text-muted);
+      line-height: 1.8;
+      margin: 0;
+      padding: 0 48px 24px 0;
+    }
+
+    /* ── CTA ── */
+    .marr-faq__cta {
+      text-align: center;
+      margin-top: 64px;
+    }
+
+    .marr-faq__cta-text {
+      font-family: var(--marr-font-body);
+      font-size: 1rem;
+      color: var(--marr-text);
+      margin: 0 0 24px;
+    }
+
+    .marr-faq__cta-link {
+      display: inline-block;
+      font-family: var(--marr-font-body);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--marr-light);
+      background-color: var(--marr-primary);
+      text-decoration: none;
+      padding: 16px 40px;
+      transition: background-color 0.3s ease;
+    }
+
+    .marr-faq__cta-link:hover {
+      background-color: var(--marr-primary-light);
+    }
+
+    .marr-faq__cta-link:focus-visible {
+      outline: 2px solid var(--marr-accent);
+      outline-offset: 4px;
+    }
+
+    /* ── Responsive: 1200px ── */
+    @media (max-width: 1200px) {
+      .marr-faq {
+        padding: 80px 24px;
+      }
+
+      .marr-faq__heading {
+        font-size: 2.25rem;
+      }
+    }
+
+    /* ── Responsive: 991px ── */
+    @media (max-width: 991px) {
+      .marr-faq {
+        padding: 72px 24px;
+      }
+
+      .marr-faq__heading {
+        font-size: 2rem;
+      }
+
+      .marr-faq__header {
+        margin-bottom: 48px;
+      }
+    }
+
+    /* ── Responsive: 767px ── */
+    @media (max-width: 767px) {
+      .marr-faq {
+        padding: 60px 20px;
+      }
+
+      .marr-faq__heading {
+        font-size: 1.75rem;
+      }
+
+      .marr-faq__item summary {
+        font-size: 0.875rem;
+        padding: 20px 40px 20px 0;
+      }
+
+      .marr-faq__answer {
+        font-size: 0.875rem;
+        padding: 0 40px 20px 0;
+      }
+
+      .marr-faq__cta {
+        margin-top: 48px;
+      }
+    }
+
+    /* ── Responsive: 478px ── */
+    @media (max-width: 478px) {
+      .marr-faq {
+        padding: 48px 16px;
+      }
+
+      .marr-faq__heading {
+        font-size: 1.5rem;
+        letter-spacing: 0.06em;
+      }
+
+      .marr-faq__item summary {
+        font-size: 0.8125rem;
+        padding: 18px 36px 18px 0;
+        letter-spacing: 0.04em;
+      }
+
+      .marr-faq__answer {
+        font-size: 0.8125rem;
+        padding: 0 36px 18px 0;
+        line-height: 1.7;
+      }
+
+      .marr-faq__cta-text {
+        font-size: 0.9375rem;
+      }
+
+      .marr-faq__cta-link {
+        padding: 14px 32px;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+
+  <div class="marr-faq__container">
+    <header class="marr-faq__header">
+      <p class="marr-faq__label">Frequently Asked Questions</p>
+      <h2 class="marr-faq__heading">Everything You Need to Know</h2>
+    </header>
+
+    <div class="marr-faq__list">
+      <details class="marr-faq__item">
+        <summary>How many sessions will I need?</summary>
+        <p class="marr-faq__answer">
+          Most clients achieve optimal results in 6-8 sessions, spaced 4-6 weeks
+          apart. The exact number depends on the treatment area, hair type, and
+          individual response. Your practitioner will recommend a personalised
+          plan during your consultation.
+        </p>
+      </details>
+
+      <details class="marr-faq__item">
+        <summary>Does laser hair removal hurt?</summary>
+        <p class="marr-faq__answer">
+          Most clients describe a mild snapping sensation, similar to a rubber
+          band. Our advanced cooling system significantly reduces discomfort.
+          Sensitive areas may feel slightly more intense, but the sensation is
+          brief and very manageable.
+        </p>
+      </details>
+
+      <details class="marr-faq__item">
+        <summary>How should I prepare for my session?</summary>
+        <p class="marr-faq__answer">
+          Shave the treatment area 24 hours before your appointment. Avoid sun
+          exposure, tanning beds, and self-tan for 2 weeks prior. Do not wax or
+          pluck for 4 weeks before treatment, as the hair follicle must be intact
+          for the laser to be effective.
+        </p>
+      </details>
+
+      <details class="marr-faq__item">
+        <summary>Are there any side effects?</summary>
+        <p class="marr-faq__answer">
+          Temporary redness and mild swelling are normal and typically resolve
+          within a few hours. We provide full aftercare instructions to ensure
+          the best recovery and minimise any discomfort following your session.
+        </p>
+      </details>
+
+      <details class="marr-faq__item">
+        <summary>Is laser hair removal permanent?</summary>
+        <p class="marr-faq__answer">
+          Laser hair removal provides permanent hair reduction. Most clients
+          experience 80-90% reduction after completing their course. Occasional
+          maintenance sessions may be needed to address any regrowth from
+          dormant follicles.
+        </p>
+      </details>
+
+      <details class="marr-faq__item">
+        <summary>What skin types can be treated?</summary>
+        <p class="marr-faq__answer">
+          Our advanced diode laser technology is effective across a wide range of
+          skin types. During your free consultation, we will assess your skin and
+          hair type to confirm suitability and recommend the most effective
+          treatment parameters for you.
+        </p>
+      </details>
+    </div>
+
+    <div class="marr-faq__cta">
+      <p class="marr-faq__cta-text">Still have questions?</p>
+      <a href="/contact.html" class="marr-faq__cta-link">
+        Book a Free Consultation
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Marr Laser — Shared Footer -->
+<style>
+  /* ---- Footer Tokens ---- */
+  .marr-footer-cta,
+  .marr-footer {
+    --marr-primary: #1a3a2a;
+    --marr-primary-light: #2a5a3a;
+    --marr-accent: #c9a84c;
+    --marr-accent-hover: #b8933f;
+    --marr-sage: #d5ddd7;
+    --marr-light: #ffffff;
+    --marr-offwhite: #f7f5f0;
+    --marr-text-light: rgba(255, 255, 255, 0.75);
+    --marr-font-heading: 'Georgia', serif;
+    --marr-font-body: 'Arial', sans-serif;
+  }
+
+  /* ---- Pre-Footer CTA Band ---- */
+  .marr-footer-cta {
+    background: var(--marr-sage);
+    padding: 80px 24px;
+    text-align: center;
+  }
+
+  .marr-footer-cta__inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .marr-footer-cta__heading {
+    font-family: var(--marr-font-heading);
+    font-size: 36px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--marr-primary);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .marr-footer-cta__text {
+    font-family: var(--marr-font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4a4a4a;
+    margin-bottom: 32px;
+  }
+
+  .marr-footer-cta__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .marr-footer-cta__btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-family: var(--marr-font-body);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .marr-footer-cta__btn--primary {
+    background: var(--marr-primary);
+    color: var(--marr-light);
+  }
+
+  .marr-footer-cta__btn--primary:hover {
+    background: var(--marr-primary-light);
+  }
+
+  .marr-footer-cta__btn--outline {
+    background: transparent;
+    color: var(--marr-primary);
+    border: 1px solid var(--marr-primary);
+  }
+
+  .marr-footer-cta__btn--outline:hover {
+    background: var(--marr-primary);
+    color: var(--marr-light);
+  }
+
+  /* ---- Main Footer ---- */
+  .marr-footer {
+    background: var(--marr-primary);
+    padding: 64px 24px 0;
+  }
+
+  .marr-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .marr-footer__brand-name {
+    font-family: var(--marr-font-heading);
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--marr-light);
+    margin-bottom: 16px;
+  }
+
+  .marr-footer__brand-name span {
+    color: var(--marr-accent);
+  }
+
+  .marr-footer__address {
+    font-family: var(--marr-font-body);
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--marr-text-light);
+    font-style: normal;
+  }
+
+  .marr-footer__col-title {
+    font-family: var(--marr-font-body);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--marr-light);
+    margin-bottom: 20px;
+  }
+
+  .marr-footer__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .marr-footer__links li {
+    margin-bottom: 12px;
+  }
+
+  .marr-footer__links a {
+    font-family: var(--marr-font-body);
+    font-size: 14px;
+    color: var(--marr-text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .marr-footer__links a:hover {
+    color: var(--marr-light);
+  }
+
+  .marr-footer__hours {
+    font-family: var(--marr-font-body);
+    font-size: 14px;
+    line-height: 2;
+    color: var(--marr-text-light);
+  }
+
+  .marr-footer__social {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .marr-footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--marr-text-light);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .marr-footer__social-link:hover {
+    border-color: var(--marr-accent);
+    color: var(--marr-accent);
+  }
+
+  /* ---- Copyright Bar ---- */
+  .marr-footer__copyright {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .marr-footer__copyright-text {
+    font-family: var(--marr-font-body);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .marr-footer__copyright-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .marr-footer__copyright-links a {
+    font-family: var(--marr-font-body);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .marr-footer__copyright-links a:hover {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 991px) {
+    .marr-footer__inner {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .marr-footer-cta {
+      padding: 60px 24px;
+    }
+
+    .marr-footer-cta__heading {
+      font-size: 28px;
+    }
+
+    .marr-footer__inner {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    .marr-footer__copyright {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-footer-cta__heading {
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+
+    .marr-footer-cta__buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .marr-footer-cta__btn {
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+    }
+  }
+</style>
+
+<!-- Pre-Footer CTA -->
+<section class="marr-footer-cta">
+  <div class="marr-footer-cta__inner">
+    <h2 class="marr-footer-cta__heading">Ready to Begin?</h2>
+    <p class="marr-footer-cta__text">Book a free consultation with our team to discuss your treatment plan and discover how we can help you feel your best.</p>
+    <div class="marr-footer-cta__buttons">
+      <a href="contact.html" class="marr-footer-cta__btn marr-footer-cta__btn--primary">Book Consultation</a>
+      <a href="treatments.html" class="marr-footer-cta__btn marr-footer-cta__btn--outline">View Treatments</a>
+    </div>
+  </div>
+</section>
+
+<!-- Main Footer -->
+<footer class="marr-footer">
+  <div class="marr-footer__inner">
+    <!-- Brand Column -->
+    <div class="marr-footer__col">
+      <div class="marr-footer__brand-name">Marr <span>Laser</span></div>
+      <address class="marr-footer__address">
+        Marr Laser &amp; Skin Clinic<br>
+        Newry, Co. Down<br>
+        Northern Ireland<br><br>
+        028 XXX XXXX<br>
+        hello@marrlaser.com
+      </address>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="marr-footer__col">
+      <h3 class="marr-footer__col-title">Quick Links</h3>
+      <ul class="marr-footer__links">
+        <li><a href="treatments.html">Treatments</a></li>
+        <li><a href="laser-hair-removal.html">Laser Hair Removal</a></li>
+        <li><a href="skin-treatments.html">Skin Treatments</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Opening Hours -->
+    <div class="marr-footer__col">
+      <h3 class="marr-footer__col-title">Opening Hours</h3>
+      <div class="marr-footer__hours">
+        Mon &ndash; Fri: 9am &ndash; 7pm<br>
+        Saturday: 9am &ndash; 5pm<br>
+        Sunday: Closed
+      </div>
+    </div>
+
+    <!-- Social & Connect -->
+    <div class="marr-footer__col">
+      <h3 class="marr-footer__col-title">Connect</h3>
+      <div class="marr-footer__social">
+        <a href="#" class="marr-footer__social-link" aria-label="Facebook">Fb</a>
+        <a href="#" class="marr-footer__social-link" aria-label="Instagram">Ig</a>
+        <a href="#" class="marr-footer__social-link" aria-label="TikTok">Tk</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="marr-footer__copyright">
+    <p class="marr-footer__copyright-text">&copy; 2025 Marr Laser &amp; Skin Clinic. All rights reserved.</p>
+    <div class="marr-footer__copyright-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

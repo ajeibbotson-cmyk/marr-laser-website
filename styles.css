@@ -1,0 +1,64 @@
+/* ============================================
+   Marr Laser & Skin Clinic — Shared Styles
+   Local preview only (not used in Webflow embeds)
+   ============================================ */
+
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2d2d2d;
+  background: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Design Tokens */
+:root {
+  --marr-primary: #1a3a2a;
+  --marr-primary-light: #2a5a3a;
+  --marr-accent: #c9a84c;
+  --marr-accent-hover: #b8933f;
+  --marr-sage: #d5ddd7;
+  --marr-light: #ffffff;
+  --marr-offwhite: #f7f5f0;
+  --marr-text: #2d2d2d;
+  --marr-text-light: rgba(255, 255, 255, 0.75);
+  --marr-text-muted: #6b6b6b;
+  --marr-border: rgba(0, 0, 0, 0.08);
+  --marr-font-heading: 'Georgia', serif;
+  --marr-font-body: 'Arial', sans-serif;
+  --marr-spacing-xs: 16px;
+  --marr-spacing-sm: 24px;
+  --marr-spacing-md: 48px;
+  --marr-spacing-lg: 80px;
+  --marr-spacing-xl: 120px;
+  --marr-max-width: 1200px;
+  --marr-radius: 2px;
+}
