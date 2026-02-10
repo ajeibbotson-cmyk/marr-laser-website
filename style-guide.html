@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style Guide — MARR Laser & Skin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ═══════════════════════════════════════
+     MARR DESIGN TOKENS
+     Source: MARR_Brand Guidelines.pdf
+     ═══════════════════════════════════════ */
+
+  :root {
+    /* Primary Branding Colours */
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+
+    /* Derived / Functional */
+    --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
+    --marr-border: rgba(60,60,59,0.1);
+    --marr-border-strong: rgba(60,60,59,0.2);
+
+    /*
+     * Typography
+     * Headings: Cangste (custom typeface — must be loaded separately)
+     *   Web fallback: Cormorant Garamond (similar high-contrast serif)
+     * Body: Noto Sans Light
+     */
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', 'Georgia', serif;
+    --marr-font-body: 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
+
+    /* Heading tracking: 100 (per brand guidelines) */
+    --marr-tracking-heading: 0.1em;
+    /* Body tracking: 50 (per brand guidelines) */
+    --marr-tracking-body: 0.05em;
+
+    /* Spacing */
+    --sp-4: 4px;
+    --sp-8: 8px;
+    --sp-12: 12px;
+    --sp-16: 16px;
+    --sp-20: 20px;
+    --sp-24: 24px;
+    --sp-32: 32px;
+    --sp-48: 48px;
+    --sp-64: 64px;
+    --sp-80: 80px;
+
+    /* Radius */
+    --r-none: 0px;
+    --r-sm: 2px;
+    --r-md: 4px;
+    --r-lg: 8px;
+    --r-pill: 999px;
+  }
+
+  /* ═══════════════════════════════════════
+     RESET & BASE
+     ═══════════════════════════════════════ */
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--marr-font-body);
+    font-weight: 300;
+    letter-spacing: var(--marr-tracking-body);
+    background: var(--marr-offwhite);
+    color: var(--marr-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding: var(--sp-32);
+  }
+
+  /* ═══════════════════════════════════════
+     LAYOUT
+     ═══════════════════════════════════════ */
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .section {
+    margin-bottom: var(--sp-64);
+  }
+
+  .section-title {
+    font-family: var(--marr-font-heading);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--marr-text-muted);
+    margin-bottom: var(--sp-24);
+    padding-bottom: var(--sp-12);
+    border-bottom: 1px solid var(--marr-border);
+  }
+
+  .grid {
+    display: grid;
+    gap: var(--sp-20);
+  }
+
+  .grid-2 { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .grid-4 { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+
+  .card {
+    background: #ffffff;
+    border: 1px solid var(--marr-border);
+    padding: var(--sp-24);
+  }
+
+  /* ═══════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════ */
+
+  .header {
+    margin-bottom: var(--sp-64);
+    padding-bottom: var(--sp-32);
+    border-bottom: 1px solid var(--marr-border-strong);
+  }
+
+  .header__brand {
+    font-family: var(--marr-font-heading);
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: var(--sp-4);
+    color: var(--marr-charcoal);
+  }
+
+  .header__sub {
+    font-family: var(--marr-font-heading);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--marr-taupe);
+    margin-bottom: var(--sp-24);
+  }
+
+  .header p {
+    font-size: 15px;
+    color: var(--marr-text-muted);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  /* ═══════════════════════════════════════
+     COLOUR PALETTE
+     ═══════════════════════════════════════ */
+
+  .swatch {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--marr-border);
+  }
+
+  .swatch__colour {
+    height: 120px;
+  }
+
+  .swatch__info {
+    padding: var(--sp-16);
+  }
+
+  .swatch__name {
+    font-family: var(--marr-font-heading);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: var(--sp-4);
+  }
+
+  .swatch__hex {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--marr-charcoal);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: var(--sp-4);
+  }
+
+  .swatch__meta {
+    font-size: 11px;
+    color: var(--marr-text-muted);
+    line-height: 1.5;
+  }
+
+  .swatch__usage {
+    font-size: 12px;
+    color: var(--marr-text-muted);
+    margin-top: var(--sp-8);
+    padding-top: var(--sp-8);
+    border-top: 1px solid var(--marr-border);
+  }
+
+  /* ═══════════════════════════════════════
+     COLOUR COMBOS
+     ═══════════════════════════════════════ */
+
+  .combo {
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
+    padding: var(--sp-24);
+    justify-content: flex-end;
+    border: 1px solid var(--marr-border);
+  }
+
+  .combo__label {
+    font-family: var(--marr-font-heading);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: var(--sp-4);
+  }
+
+  .combo__desc {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+
+  /* ═══════════════════════════════════════
+     TYPOGRAPHY
+     ═══════════════════════════════════════ */
+
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-32);
+    padding: var(--sp-20) 0;
+    border-bottom: 1px solid var(--marr-border);
+  }
+
+  .type-row:last-child { border-bottom: none; }
+
+  .type-meta {
+    flex-shrink: 0;
+    width: 200px;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--marr-text-muted);
+    line-height: 1.5;
+  }
+
+  .type-meta strong {
+    display: block;
+    font-weight: 500;
+    color: var(--marr-text);
+    margin-bottom: 2px;
+  }
+
+  .type-sample {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .type-note {
+    font-size: 11px;
+    color: var(--marr-text-muted);
+    margin-top: var(--sp-4);
+    font-style: italic;
+  }
+
+  /* ═══════════════════════════════════════
+     LOGO USAGE
+     ═══════════════════════════════════════ */
+
+  .logo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    padding: var(--sp-32);
+    border: 1px solid var(--marr-border);
+    text-align: center;
+  }
+
+  .logo-card__name {
+    font-family: var(--marr-font-heading);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--marr-text-muted);
+    margin-top: var(--sp-16);
+  }
+
+  /* Strap logo: MARR large with LASER & SKIN below */
+  .logo-strap {
+    text-align: center;
+  }
+
+  .logo-strap__main {
+    font-family: var(--marr-font-heading);
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    line-height: 1;
+  }
+
+  .logo-strap__sub {
+    font-family: var(--marr-font-heading);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    margin-top: var(--sp-8);
+  }
+
+  /* Alternative logo: MARR / LASER & SKIN horizontal */
+  .logo-alt {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-12);
+  }
+
+  .logo-alt__main {
+    font-family: var(--marr-font-heading);
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    line-height: 1;
+  }
+
+  .logo-alt__slash {
+    font-family: var(--marr-font-heading);
+    font-size: 42px;
+    font-weight: 200;
+    opacity: 0.5;
+    transform: rotate(-15deg);
+    line-height: 1;
+  }
+
+  .logo-alt__text {
+    font-family: var(--marr-font-heading);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    line-height: 1.6;
+  }
+
+  /* Submark: circle with M */
+  .logo-submark {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .logo-submark__letter {
+    font-family: var(--marr-font-heading);
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  .logo-submark__top {
+    font-family: var(--marr-font-heading);
+    font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    position: absolute;
+    top: 18px;
+  }
+
+  .logo-submark__bottom {
+    font-family: var(--marr-font-heading);
+    font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 18px;
+  }
+
+  /* ═══════════════════════════════════════
+     LOGO RULES
+     ═══════════════════════════════════════ */
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--sp-16);
+  }
+
+  .rule {
+    padding: var(--sp-16);
+    border: 1px solid var(--marr-border);
+    background: #ffffff;
+  }
+
+  .rule__icon {
+    font-size: 20px;
+    margin-bottom: var(--sp-8);
+    color: #c0392b;
+  }
+
+  .rule__text {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--marr-text-muted);
+  }
+
+  /* ═══════════════════════════════════════
+     BUTTONS
+     ═══════════════════════════════════════ */
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-family: var(--marr-font-heading);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+
+  .btn--primary {
+    background: var(--marr-charcoal);
+    color: var(--marr-offwhite);
+  }
+
+  .btn--primary:hover {
+    background: #2a2a29;
+  }
+
+  .btn--secondary {
+    background: var(--marr-taupe);
+    color: #ffffff;
+  }
+
+  .btn--secondary:hover {
+    background: #b5aa9f;
+  }
+
+  .btn--outline {
+    background: transparent;
+    color: var(--marr-charcoal);
+    border: 1px solid var(--marr-charcoal);
+  }
+
+  .btn--outline:hover {
+    background: var(--marr-charcoal);
+    color: var(--marr-offwhite);
+  }
+
+  .btn--ghost {
+    background: transparent;
+    color: var(--marr-text-muted);
+  }
+
+  .btn--ghost:hover {
+    color: var(--marr-charcoal);
+  }
+
+  .btn--light {
+    background: var(--marr-offwhite);
+    color: var(--marr-charcoal);
+  }
+
+  .btn--light:hover {
+    background: var(--marr-blush);
+  }
+
+  /* ═══════════════════════════════════════
+     DIVIDERS
+     ═══════════════════════════════════════ */
+
+  .divider-row {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-16);
+    padding: var(--sp-12) 0;
+  }
+
+  .divider-label {
+    font-size: 11px;
+    color: var(--marr-text-muted);
+    flex-shrink: 0;
+    width: 80px;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 0;
+  }
+
+  /* ═══════════════════════════════════════
+     SPACING SCALE
+     ═══════════════════════════════════════ */
+
+  .spacing-row {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-16);
+    margin-bottom: var(--sp-8);
+  }
+
+  .spacing-label {
+    width: 50px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--marr-text-muted);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .spacing-bar {
+    height: 20px;
+    background: var(--marr-taupe);
+    opacity: 0.6;
+    transition: opacity 0.15s;
+  }
+
+  .spacing-bar:hover { opacity: 1; }
+
+  /* ═══════════════════════════════════════
+     HELPERS
+     ═══════════════════════════════════════ */
+
+  .subsection {
+    margin-bottom: var(--sp-32);
+  }
+
+  .subsection-title {
+    font-family: var(--marr-font-heading);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: var(--sp-16);
+    color: var(--marr-charcoal);
+  }
+
+  .component-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--sp-12);
+  }
+
+  .note-box {
+    background: var(--marr-blush);
+    padding: var(--sp-16) var(--sp-20);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--marr-text-muted);
+    margin-top: var(--sp-16);
+  }
+
+  .note-box strong {
+    color: var(--marr-text);
+    font-weight: 500;
+  }
+
+  /* ═══════════════════════════════════════
+     RESPONSIVE
+     ═══════════════════════════════════════ */
+
+  @media (max-width: 640px) {
+    body { padding: var(--sp-16); }
+    .header__brand { font-size: 32px; }
+    .type-row { flex-direction: column; gap: var(--sp-8); }
+    .type-meta { width: auto; }
+    .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .logo-alt { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ═══════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════ -->
+
+  <header class="header">
+    <div class="header__brand">MARR</div>
+    <div class="header__sub">Laser &amp; Skin Clinic</div>
+    <p>Brand style guide extracted from the official MARR brand guidelines. This document defines colours, typography, logo usage, and component patterns for consistent brand application across all platforms.</p>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       1. PRIMARY BRANDING COLOURS
+       ═══════════════════════════════════════ -->
+
+  <section class="section">
+    <h2 class="section-title">Primary Branding Colours</h2>
+    <div class="grid grid-4">
+
+      <div class="swatch">
+        <div class="swatch__colour" style="background:#3C3C3B"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Charcoal</div>
+          <div class="swatch__hex">#3C3C3B</div>
+          <div class="swatch__meta">
+            RGB: 60, 60, 59<br>
+            CMYK: 0%, 0%, 0%, 90%
+          </div>
+          <div class="swatch__usage">Primary text, dark logo, dark backgrounds</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch__colour" style="background:#C6BCB3"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Warm Taupe</div>
+          <div class="swatch__hex">#C6BCB3</div>
+          <div class="swatch__meta">
+            RGB: 198, 188, 179<br>
+            CMYK: 27%, 25%, 29%, 0%
+          </div>
+          <div class="swatch__usage">Logo colour option, backgrounds, opaque overlays on photography</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch__colour" style="background:#ECE5E0"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Blush</div>
+          <div class="swatch__hex">#ECE5E0</div>
+          <div class="swatch__meta">
+            RGB: 236, 229, 224<br>
+            CMYK: 9%, 10%, 12%, 0%
+          </div>
+          <div class="swatch__usage">Light logo option, soft backgrounds, section fills</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch__colour" style="background:#F9F9F8; border-bottom: 1px solid rgba(60,60,59,0.08)"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Off-White</div>
+          <div class="swatch__hex">#F9F9F8</div>
+          <div class="swatch__meta">
+            RGB: 249, 249, 248<br>
+            CMYK: 3%, 2%, 3%, 0%
+          </div>
+          <div class="swatch__usage">Page backgrounds, light logo backgrounds</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       2. COLOUR COMBINATIONS
+       ═══════════════════════════════════════ -->
+
+  <section class="section">
+    <h2 class="section-title">Colour Combinations</h2>
+    <div class="grid grid-3">
+
+      <div class="combo" style="background:var(--marr-offwhite); color:var(--marr-charcoal);">
+        <div class="combo__label">Dark on Off-White</div>
+        <div class="combo__desc">Primary — logo and text default</div>
+      </div>
+
+      <div class="combo" style="background:var(--marr-taupe); color:#ffffff;">
+        <div class="combo__label">White on Taupe</div>
+        <div class="combo__desc">Logo on taupe backgrounds</div>
+      </div>
+
+      <div class="combo" style="background:var(--marr-charcoal); color:var(--marr-offwhite);">
+        <div class="combo__label">Off-White on Charcoal</div>
+        <div class="combo__desc">Reversed — dark sections</div>
+      </div>
+
+      <div class="combo" style="background:var(--marr-blush); color:var(--marr-charcoal);">
+        <div class="combo__label">Dark on Blush</div>
+        <div class="combo__desc">Soft section backgrounds</div>
+      </div>
+
+      <div class="combo" style="background:var(--marr-taupe); color:var(--marr-charcoal);">
+        <div class="combo__label">Dark on Taupe</div>
+        <div class="combo__desc">Photo overlay with dark logo</div>
+      </div>
+
+      <div class="combo" style="background:var(--marr-charcoal); color:var(--marr-taupe);">
+        <div class="combo__label">Taupe on Charcoal</div>
+        <div class="combo__desc">Accent text on dark</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       3. TYPOGRAPHY
+       ═══════════════════════════════════════ -->
+
+  <section class="section">
+    <h2 class="section-title">Typography</h2>
+    <div class="card">
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Display</strong>
+          Cangste · 48px<br>
+          Uppercase · Tracking 100
+        </div>
+        <div class="type-sample">
+          <div style="font-family:var(--marr-font-heading); font-size:48px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; line-height:1.1">MARR</div>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Heading 1</strong>
+          Cangste · 32px<br>
+          Uppercase · Tracking 100
+        </div>
+        <div class="type-sample">
+          <div style="font-family:var(--marr-font-heading); font-size:32px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; line-height:1.2">Laser &amp; Skin</div>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Heading 2</strong>
+          Cangste · 24px<br>
+          Uppercase · Tracking 100
+        </div>
+        <div class="type-sample">
+          <div style="font-family:var(--marr-font-heading); font-size:24px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; line-height:1.2">Our Treatments</div>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Heading 3</strong>
+          Cangste · 18px<br>
+          Uppercase · Tracking 100
+        </div>
+        <div class="type-sample">
+          <div style="font-family:var(--marr-font-heading); font-size:18px; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; line-height:1.3">Consultation Process</div>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Subheading</strong>
+          Cangste · 13px<br>
+          Uppercase · Tracking 100
+        </div>
+        <div class="type-sample">
+          <div style="font-family:var(--marr-font-heading); font-size:13px; font-weight:400; letter-spacing:0.1em; text-transform:uppercase; line-height:1.4">Section Label</div>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Body</strong>
+          Noto Sans Light · 15px<br>
+          Sentence case · Tracking 50
+        </div>
+        <div class="type-sample">
+          <div style="font-family:var(--marr-font-body); font-size:15px; font-weight:300; letter-spacing:0.05em; line-height:1.7">
+            At MARR Laser &amp; Skin Clinic, we combine advanced laser technology with expert skin treatments to deliver results you can see and feel. Every treatment is tailored to your individual needs.
+          </div>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Small / Caption</strong>
+          Noto Sans Light · 12px<br>
+          Sentence case · Tracking 50
+        </div>
+        <div class="type-sample">
+          <div style="font-family:var(--marr-font-body); font-size:12px; font-weight:300; letter-spacing:0.05em; line-height:1.5; color:var(--marr-text-muted)">
+            Results may vary. A consultation is required before treatment.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note-box">
+      <strong>Cangste</strong> is a custom typeface and must be loaded as a webfont or self-hosted. The fallback shown here is Cormorant Garamond (Google Fonts), which approximates the high-contrast serif character. <strong>Noto Sans Light</strong> (weight 300) is available from Google Fonts.
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       4. LOGO VARIANTS
+       ═══════════════════════════════════════ -->
+
+  <section class="section">
+    <h2 class="section-title">Logo Variants</h2>
+    <div class="grid grid-3">
+
+      <!-- Strap Logo -->
+      <div class="logo-card" style="background:var(--marr-offwhite);">
+        <div class="logo-strap" style="color:var(--marr-charcoal);">
+          <div class="logo-strap__main">MARR</div>
+          <div class="logo-strap__sub">LASER &amp; SKIN</div>
+        </div>
+        <div class="logo-card__name">Strap Logo — Light BG</div>
+      </div>
+
+      <!-- Alternative Logo -->
+      <div class="logo-card" style="background:var(--marr-offwhite);">
+        <div class="logo-alt" style="color:var(--marr-charcoal);">
+          <div class="logo-alt__main">MARR</div>
+          <div class="logo-alt__slash">/</div>
+          <div class="logo-alt__text">LASER<br>&amp; SKIN</div>
+        </div>
+        <div class="logo-card__name">Alternative Logo</div>
+      </div>
+
+      <!-- Submark -->
+      <div class="logo-card" style="background:var(--marr-offwhite);">
+        <div class="logo-submark" style="color:var(--marr-charcoal);">
+          <div class="logo-submark__top">LASER &amp; SKIN</div>
+          <div class="logo-submark__letter">M</div>
+          <div class="logo-submark__bottom">CLINIC</div>
+        </div>
+        <div class="logo-card__name">Submark Logo</div>
+      </div>
+
+      <!-- Reversed variants -->
+      <div class="logo-card" style="background:var(--marr-taupe);">
+        <div class="logo-strap" style="color:#ffffff;">
+          <div class="logo-strap__main">MARR</div>
+          <div class="logo-strap__sub">LASER &amp; SKIN</div>
+        </div>
+        <div class="logo-card__name" style="color:rgba(255,255,255,0.7);">Strap Logo — Taupe BG</div>
+      </div>
+
+      <div class="logo-card" style="background:var(--marr-charcoal);">
+        <div class="logo-alt" style="color:var(--marr-offwhite);">
+          <div class="logo-alt__main">MARR</div>
+          <div class="logo-alt__slash">/</div>
+          <div class="logo-alt__text">LASER<br>&amp; SKIN</div>
+        </div>
+        <div class="logo-card__name" style="color:rgba(255,255,255,0.5);">Alternative — Dark BG</div>
+      </div>
+
+      <div class="logo-card" style="background:var(--marr-charcoal);">
+        <div class="logo-submark" style="color:var(--marr-offwhite);">
+          <div class="logo-submark__top">LASER &amp; SKIN</div>
+          <div class="logo-submark__letter">M</div>
+          <div class="logo-submark__bottom">CLINIC</div>
+        </div>
+        <div class="logo-card__name" style="color:rgba(255,255,255,0.5);">Submark — Dark BG</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       5. LOGO RULES
+       ═══════════════════════════════════════ -->
+
+  <section class="section">
+    <h2 class="section-title">Logo Application Rules</h2>
+    <div class="rules-grid">
+
+      <div class="rule">
+        <div class="rule__icon">&times;</div>
+        <div class="rule__text">Do not alter the transparency of logos</div>
+      </div>
+
+      <div class="rule">
+        <div class="rule__icon">&times;</div>
+        <div class="rule__text">Do not alter colours outside branding palette</div>
+      </div>
+
+      <div class="rule">
+        <div class="rule__icon">&times;</div>
+        <div class="rule__text">Do not alter size, spacing, or positioning of type</div>
+      </div>
+
+      <div class="rule">
+        <div class="rule__icon">&times;</div>
+        <div class="rule__text">Do not alter outlines and fills</div>
+      </div>
+
+      <div class="rule">
+        <div class="rule__icon">&times;</div>
+        <div class="rule__text">Do not distort the scale of the logo</div>
+      </div>
+
+      <div class="rule">
+        <div class="rule__icon">&times;</div>
+        <div class="rule__text">Do not apply drop shadow or effects</div>
+      </div>
+
+      <div class="rule">
+        <div class="rule__icon">&times;</div>
+        <div class="rule__text">Do not re-create using an alternative typeface</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       6. SPACING SCALE
+       ═══════════════════════════════════════ -->
+
+  <section class="section">
+    <h2 class="section-title">Spacing Scale</h2>
+    <div class="card">
+
+      <div class="spacing-row">
+        <div class="spacing-label">4px</div>
+        <div class="spacing-bar" style="width:4px"></div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">8px</div>
+        <div class="spacing-bar" style="width:8px"></div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">12px</div>
+        <div class="spacing-bar" style="width:12px"></div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">16px</div>
+        <div class="spacing-bar" style="width:16px"></div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">20px</div>
+        <div class="spacing-bar" style="width:20px"></div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">24px</div>
+        <div class="spacing-bar" style="width:24px"></div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">32px</div>
+        <div class="spacing-bar" style="width:32px"></div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">48px</div>
+        <div class="spacing-bar" style="width:48px"></div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">64px</div>
+        <div class="spacing-bar" style="width:64px"></div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">80px</div>
+        <div class="spacing-bar" style="width:80px"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       7. COMPONENTS
+       ═══════════════════════════════════════ -->
+
+  <section class="section">
+    <h2 class="section-title">Components</h2>
+
+    <!-- Buttons -->
+    <div class="subsection">
+      <div class="subsection-title">Buttons</div>
+      <div class="component-row">
+        <button class="btn btn--primary">Book Consultation</button>
+        <button class="btn btn--secondary">Learn More</button>
+        <button class="btn btn--outline">View Treatments</button>
+        <button class="btn btn--ghost">Contact Us</button>
+      </div>
+      <div class="component-row" style="margin-top:var(--sp-16)">
+        <button class="btn btn--light">Light Button</button>
+      </div>
+    </div>
+
+    <!-- Dividers -->
+    <div class="subsection">
+      <div class="subsection-title">Dividers</div>
+      <div class="card">
+        <div class="divider-row">
+          <div class="divider-label">Subtle</div>
+          <div class="divider-line" style="border-top:1px solid var(--marr-border)"></div>
+        </div>
+        <div class="divider-row">
+          <div class="divider-label">Standard</div>
+          <div class="divider-line" style="border-top:1px solid var(--marr-border-strong)"></div>
+        </div>
+        <div class="divider-row">
+          <div class="divider-label">Taupe</div>
+          <div class="divider-line" style="border-top:1px solid var(--marr-taupe)"></div>
+        </div>
+        <div class="divider-row">
+          <div class="divider-label">Charcoal</div>
+          <div class="divider-line" style="border-top:1px solid var(--marr-charcoal)"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="subsection">
+      <div class="subsection-title">Cards</div>
+      <div class="grid grid-3">
+        <div style="background:var(--marr-offwhite); border:1px solid var(--marr-border); padding:var(--sp-24);">
+          <div style="font-family:var(--marr-font-heading); font-size:14px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:var(--sp-8);">Off-White Card</div>
+          <div style="font-size:13px; color:var(--marr-text-muted); line-height:1.6;">Default card surface for content sections on the page background.</div>
+        </div>
+        <div style="background:var(--marr-blush); padding:var(--sp-24);">
+          <div style="font-family:var(--marr-font-heading); font-size:14px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:var(--sp-8);">Blush Card</div>
+          <div style="font-size:13px; color:var(--marr-text-muted); line-height:1.6;">Warm accent card for feature highlights or callouts.</div>
+        </div>
+        <div style="background:var(--marr-charcoal); color:var(--marr-offwhite); padding:var(--sp-24);">
+          <div style="font-family:var(--marr-font-heading); font-size:14px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:var(--sp-8);">Dark Card</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.6); line-height:1.6;">CTAs, testimonials, or sections requiring visual contrast.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Content Pattern -->
+    <div class="subsection">
+      <div class="subsection-title">Social Content Pattern</div>
+      <div class="grid grid-2">
+        <div style="position:relative; background:var(--marr-taupe); height:220px; display:flex; flex-direction:column; justify-content:center; align-items:center; overflow:hidden;">
+          <div style="position:absolute; inset:0; background:var(--marr-taupe); opacity:0.85;"></div>
+          <div style="position:relative; z-index:1; text-align:center; color:#ffffff;">
+            <div style="font-family:var(--marr-font-heading); font-size:28px; font-weight:300; letter-spacing:0.08em; text-transform:uppercase; line-height:1.3;">Last Minute</div>
+            <div style="font-family:var(--marr-font-body); font-size:12px; font-weight:300; letter-spacing:0.05em; margin-top:var(--sp-8); opacity:0.8;">Appointments Available</div>
+          </div>
+        </div>
+        <div style="padding:var(--sp-24); display:flex; flex-direction:column; justify-content:center;">
+          <div style="font-family:var(--marr-font-heading); font-size:13px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:var(--sp-12);">Social Content Guidelines</div>
+          <ul style="font-size:13px; line-height:1.8; color:var(--marr-text-muted); list-style:disc; padding-left:var(--sp-20);">
+            <li>Brand colours as opaque fills over clinic photography</li>
+            <li>Cangste for main headline typeface</li>
+            <li>Noto Sans Light for supplementary text</li>
+            <li>Maximise content quality through engaging visuals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       8. CSS TOKENS REFERENCE
+       ═══════════════════════════════════════ -->
+
+  <section class="section">
+    <h2 class="section-title">CSS Custom Properties Reference</h2>
+    <div class="card" style="font-family:monospace; font-size:13px; line-height:2; letter-spacing:0; color:var(--marr-text-muted);">
+      <span style="color:var(--marr-charcoal);">--marr-charcoal</span>: #3C3C3B;<br>
+      <span style="color:var(--marr-charcoal);">--marr-taupe</span>: #C6BCB3;<br>
+      <span style="color:var(--marr-charcoal);">--marr-blush</span>: #ECE5E0;<br>
+      <span style="color:var(--marr-charcoal);">--marr-offwhite</span>: #F9F9F8;<br>
+      <br>
+      <span style="color:var(--marr-charcoal);">--marr-font-heading</span>: 'Cangste', 'Cormorant Garamond', serif;<br>
+      <span style="color:var(--marr-charcoal);">--marr-font-body</span>: 'Noto Sans', sans-serif;<br>
+      <br>
+      <span style="color:var(--marr-charcoal);">--marr-tracking-heading</span>: 0.1em; <span style="opacity:0.5">/* brand tracking: 100 */</span><br>
+      <span style="color:var(--marr-charcoal);">--marr-tracking-body</span>: 0.05em; <span style="opacity:0.5">/* brand tracking: 50 */</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
