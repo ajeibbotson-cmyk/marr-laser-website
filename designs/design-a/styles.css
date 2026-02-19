@@ -621,7 +621,7 @@ p {
   align-items: center;
   padding-top: var(--sp-80);
   padding-bottom: var(--sp-80);
-  background-image: url('https://placehold.co/1920x1080/3C3C3B/F9F9F8?text=Hero+Background');
+  background-image: url('../../website/images/clinic-treatment-room.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
