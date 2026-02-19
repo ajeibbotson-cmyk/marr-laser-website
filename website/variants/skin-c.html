@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARR Laser &amp; Skin Clinic | Layout C — Skin Treatments</title>
+  <meta name="description" content="Advanced skin treatments at MARR Laser & Skin Clinic, Newry. IPL photorejuvenation, CO2 laser resurfacing, thread vein removal, pigmentation correction and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ═══════════════════════════════════════════════
+       VARIANT OVERRIDES — Skin C: Full-Width Accordion
+       ═══════════════════════════════════════════════ */
+
+    /* --- Treatment Accordion --- */
+    .accordion {
+      max-width: 100%;
+    }
+
+    .accordion__item {
+      border-bottom: 1px solid var(--marr-border);
+    }
+
+    .accordion__item:nth-child(odd) {
+      background-color: var(--marr-offwhite);
+    }
+
+    .accordion__item:nth-child(even) {
+      background-color: var(--marr-blush);
+    }
+
+    .accordion__item summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-16);
+      padding: var(--sp-24) var(--sp-32);
+      max-width: 1200px;
+      margin: 0 auto;
+      cursor: pointer;
+      list-style: none;
+      transition: background-color var(--transition-base);
+    }
+
+    .accordion__item summary::-webkit-details-marker { display: none; }
+    .accordion__item summary::marker { display: none; content: ''; }
+
+    .accordion__item summary:hover {
+      background-color: rgba(198, 188, 179, 0.08);
+    }
+
+    .accordion__item summary:focus-visible {
+      outline: 2px solid var(--marr-taupe);
+      outline-offset: -2px;
+    }
+
+    .accordion__title-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+    }
+
+    .accordion__name {
+      font-family: var(--marr-font-heading);
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 300;
+      letter-spacing: var(--marr-tracking-heading);
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      line-height: 1.2;
+    }
+
+    .accordion__tagline {
+      font-size: 0.875rem;
+      color: var(--marr-text-muted);
+      font-weight: 300;
+    }
+
+    .accordion__indicator {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(198, 188, 179, 0.12);
+      border-radius: 50%;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--marr-taupe);
+      transition: transform var(--transition-base),
+                  background-color var(--transition-base);
+    }
+
+    .accordion__item[open] .accordion__indicator {
+      transform: rotate(45deg);
+      background-color: var(--marr-taupe);
+      color: #ffffff;
+    }
+
+    .accordion__body {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--sp-32) var(--sp-48);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-48);
+      align-items: start;
+    }
+
+    .accordion__image {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+
+    .accordion__image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      border-radius: var(--r-lg);
+    }
+
+    .accordion__content {
+      padding-top: var(--sp-8);
+    }
+
+    .accordion__content p {
+      color: var(--marr-text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--sp-24);
+    }
+
+    /* --- Vertical Timeline --- */
+    .vtimeline {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+      padding-left: var(--sp-48);
+    }
+
+    .vtimeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--marr-taupe);
+    }
+
+    .vtimeline__step {
+      position: relative;
+      padding-bottom: var(--sp-48);
+    }
+
+    .vtimeline__step:last-child {
+      padding-bottom: 0;
+    }
+
+    .vtimeline__number {
+      position: absolute;
+      left: calc(-1 * var(--sp-48) + 0px);
+      top: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--marr-blush);
+      border: 2px solid var(--marr-taupe);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--marr-font-heading);
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: var(--marr-taupe);
+    }
+
+    .vtimeline__title {
+      font-family: var(--marr-font-heading);
+      font-size: 1.125rem;
+      font-weight: 300;
+      letter-spacing: var(--marr-tracking-heading);
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      margin-bottom: var(--sp-8);
+    }
+
+    .vtimeline__text {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--marr-text-muted);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 991px) {
+      .accordion__body {
+        grid-template-columns: 1fr;
+        gap: var(--sp-32);
+        padding: 0 var(--sp-24) var(--sp-32);
+      }
+
+      .accordion__image img {
+        height: 320px;
+      }
+
+      .accordion__item summary {
+        padding: var(--sp-20) var(--sp-24);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .accordion__image img {
+        height: 240px;
+      }
+
+      .accordion__item summary {
+        padding: var(--sp-16) var(--sp-20);
+      }
+
+      .accordion__body {
+        padding: 0 var(--sp-20) var(--sp-24);
+      }
+
+      .accordion__name {
+        font-size: 1.125rem;
+      }
+
+      .accordion__indicator {
+        width: 32px;
+        height: 32px;
+        font-size: 1.25rem;
+      }
+
+      .vtimeline {
+        padding-left: var(--sp-32);
+      }
+
+      .vtimeline::before {
+        left: 11px;
+      }
+
+      .vtimeline__number {
+        left: calc(-1 * var(--sp-32) + 0px);
+        width: 24px;
+        height: 24px;
+        font-size: 0.75rem;
+      }
+    }
+
+    @media (max-width: 477px) {
+      .accordion__item summary {
+        padding: var(--sp-12) var(--sp-16);
+      }
+
+      .accordion__body {
+        padding: 0 var(--sp-16) var(--sp-20);
+        gap: var(--sp-20);
+      }
+
+      .accordion__image img {
+        height: 200px;
+      }
+
+      .accordion__tagline {
+        font-size: 0.8125rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Layout Indicator Badge -->
+<div style="position:fixed;top:12px;right:12px;z-index:9999;background:#ECE5E0;color:#3C3C3B;padding:6px 16px;border-radius:8px;font-family:'Cormorant Garamond',serif;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;"><a href="index.html" style="color:#3C3C3B;text-decoration:none;">&larr; Variants</a> &middot; Layout C</div>
+
+<!-- Navigation -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav__inner">
+    <div class="nav__links nav__links--desktop">
+      <a href="../laser-hair-removal.html" class="nav__link">Laser</a>
+      <a href="../why-alexandrite.html" class="nav__link">Alexandrite</a>
+      <a href="../skin-treatments.html" class="nav__link">Skin</a>
+    </div>
+    <a href="../index.html" class="nav__logo" aria-label="MARR Laser &amp; Skin — Home">
+      <span class="nav__logo-main">MARR</span>
+      <span class="nav__logo-sub">Laser &amp; Skin</span>
+    </a>
+    <div class="nav__links nav__links--desktop">
+      <a href="../anti-ageing.html" class="nav__link">Anti-Ageing</a>
+      <a href="../aesthetics.html" class="nav__link">Aesthetics</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav__toggle">
+    <label for="nav-toggle" class="nav__toggle-label" aria-label="Menu">
+      <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+    </label>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════════
+       1. PAGE HERO
+       ═══════════════════════════════════════════════ -->
+
+  <section class="page-hero" aria-label="Page introduction">
+    <div class="container">
+      <span class="eyebrow">Skin Health</span>
+      <h1 class="h1">Skin Treatments</h1>
+      <p class="text-lg">Clinically proven treatments to address pigmentation, scarring, redness, and uneven texture. Restore your skin's natural clarity and confidence.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       2. TREATMENT ACCORDION — Full-Width
+       ═══════════════════════════════════════════════ -->
+
+  <section aria-label="Skin treatment details">
+    <div class="accordion">
+
+      <!-- IPL Photorejuvenation -->
+      <details class="accordion__item" open>
+        <summary>
+          <div class="accordion__title-group">
+            <span class="accordion__name">IPL Photorejuvenation</span>
+            <span class="accordion__tagline">Light-based therapy for pigmentation, redness and sun damage</span>
+          </div>
+          <span class="accordion__indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="accordion__body">
+          <div class="accordion__image">
+            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" alt="IPL photorejuvenation treatment for pigmentation and redness" width="800" height="400">
+          </div>
+          <div class="accordion__content">
+            <p>Intense Pulsed Light targets pigmentation, redness, and sun damage deep within the skin. The controlled light energy breaks down discolouration and stimulates collagen renewal, restoring an even, luminous complexion over a course of treatments.</p>
+            <a href="../contact.html" class="btn btn--primary">Book Consultation</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- CO2 Laser Resurfacing -->
+      <details class="accordion__item">
+        <summary>
+          <div class="accordion__title-group">
+            <span class="accordion__name">CO2 Laser Resurfacing</span>
+            <span class="accordion__tagline">Fractional laser for scars, wrinkles and rough texture</span>
+          </div>
+          <span class="accordion__indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="accordion__body">
+          <div class="accordion__image">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="CO2 laser resurfacing for scars and wrinkles" width="800" height="400" loading="lazy">
+          </div>
+          <div class="accordion__content">
+            <p>Fractional CO2 laser creates microscopic channels in the skin, triggering a powerful healing response. Ideal for reducing acne scars, deep wrinkles, and rough texture, this treatment delivers transformative results with minimal downtime.</p>
+            <a href="../contact.html" class="btn btn--primary">Book Consultation</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- Thread Vein Removal -->
+      <details class="accordion__item">
+        <summary>
+          <div class="accordion__title-group">
+            <span class="accordion__name">Thread Vein Removal</span>
+            <span class="accordion__tagline">Targeted treatment for spider veins and broken capillaries</span>
+          </div>
+          <span class="accordion__indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="accordion__body">
+          <div class="accordion__image">
+            <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80" alt="Thread vein removal treatment for spider veins and broken capillaries" width="800" height="400" loading="lazy">
+          </div>
+          <div class="accordion__content">
+            <p>Targeted laser and light energy safely collapses visible spider veins and broken capillaries on the face and legs. The treated vessels are gradually reabsorbed by the body, leaving clearer, more even-toned skin.</p>
+            <a href="../contact.html" class="btn btn--primary">Book Consultation</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- Pigmentation Correction -->
+      <details class="accordion__item">
+        <summary>
+          <div class="accordion__title-group">
+            <span class="accordion__name">Pigmentation Correction</span>
+            <span class="accordion__tagline">Advanced therapy for age spots, melasma and hyperpigmentation</span>
+          </div>
+          <span class="accordion__indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="accordion__body">
+          <div class="accordion__image">
+            <img src="https://images.unsplash.com/photo-1570554886111-e80fcca6a029?auto=format&fit=crop&w=800&q=80" alt="Pigmentation correction treatment" width="800" height="400" loading="lazy">
+          </div>
+          <div class="accordion__content">
+            <p>Advanced laser and light therapies break down melanin clusters responsible for age spots, melasma, and post-inflammatory hyperpigmentation. A personalised treatment plan addresses the root cause for lasting clarity.</p>
+            <a href="../contact.html" class="btn btn--primary">Book Consultation</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- Skin Tag Removal -->
+      <details class="accordion__item">
+        <summary>
+          <div class="accordion__title-group">
+            <span class="accordion__name">Skin Tag Removal</span>
+            <span class="accordion__tagline">Quick, precise removal with no downtime</span>
+          </div>
+          <span class="accordion__indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="accordion__body">
+          <div class="accordion__image">
+            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80" alt="Skin tag removal treatment" width="800" height="400" loading="lazy">
+          </div>
+          <div class="accordion__content">
+            <p>Quick, precise removal of skin tags using advanced electrocautery or cryotherapy techniques. The procedure is virtually painless with no downtime, leaving smooth skin where the tag once was.</p>
+            <a href="../contact.html" class="btn btn--primary">Book Consultation</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- Mole Checks & Removal -->
+      <details class="accordion__item">
+        <summary>
+          <div class="accordion__title-group">
+            <span class="accordion__name">Mole Checks &amp; Removal</span>
+            <span class="accordion__tagline">Professional dermatoscopy assessment and safe removal</span>
+          </div>
+          <span class="accordion__indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="accordion__body">
+          <div class="accordion__image">
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="Mole check and removal service" width="800" height="400" loading="lazy">
+          </div>
+          <div class="accordion__content">
+            <p>Professional mole assessment using dermatoscopy, followed by safe removal when clinically indicated or desired for cosmetic reasons. We refer to specialist dermatologists where further investigation is required.</p>
+            <a href="../contact.html" class="btn btn--primary">Book Consultation</a>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       3. HOW IT WORKS — Vertical Timeline
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--offwhite" aria-label="Treatment process">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Your Journey</span>
+        <h2 class="h2">How It Works</h2>
+        <p class="text-lg">A clear, structured approach to healthier skin, from your first consultation to visible results.</p>
+      </div>
+
+      <div class="vtimeline" role="list" aria-label="Treatment process steps">
+        <div class="vtimeline__step" role="listitem">
+          <div class="vtimeline__number" aria-hidden="true">1</div>
+          <h3 class="vtimeline__title">Consultation</h3>
+          <p class="vtimeline__text">We assess your skin type, concerns, and goals. Using clinical analysis, we identify the most effective treatment approach for your unique needs.</p>
+        </div>
+        <div class="vtimeline__step" role="listitem">
+          <div class="vtimeline__number" aria-hidden="true">2</div>
+          <h3 class="vtimeline__title">Treatment Plan</h3>
+          <p class="vtimeline__text">Your practitioner creates a bespoke plan combining the right treatments, frequency, and aftercare protocol to achieve the best possible outcome.</p>
+        </div>
+        <div class="vtimeline__step" role="listitem">
+          <div class="vtimeline__number" aria-hidden="true">3</div>
+          <h3 class="vtimeline__title">Visible Results</h3>
+          <p class="vtimeline__text">With each session, your skin improves progressively. We monitor results at every appointment and adjust your plan to ensure continued improvement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       4. FAQ — Accordion
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--blush" aria-label="Frequently asked questions">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Common Questions</span>
+        <h2 class="h2">Skin Treatment FAQs</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">Which skin treatment is right for me?</summary>
+          <p class="faq-answer">Every skin is unique, which is why we begin with a thorough consultation. We assess your skin type, concerns, and goals to recommend the most effective treatment plan tailored specifically to you.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How many sessions will I need?</summary>
+          <p class="faq-answer">This depends on the treatment type and your skin concerns. IPL typically requires 3-6 sessions, CO2 resurfacing may need 1-3 sessions, and thread vein treatments usually take 2-4 sessions. Your practitioner will advise during your consultation.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Is there any downtime?</summary>
+          <p class="faq-answer">Downtime varies by treatment. IPL and thread vein removal have minimal downtime with possible mild redness for 24-48 hours. CO2 resurfacing involves 5-7 days of healing. Skin tag removal requires no downtime at all. We provide detailed aftercare for each treatment.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Can I combine treatments?</summary>
+          <p class="faq-answer">Yes, many clients benefit from a combination approach. For example, IPL for pigmentation alongside CO2 for texture. Your practitioner will design a treatment plan that safely combines the most effective options for your concerns.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Are the treatments safe for all skin types?</summary>
+          <p class="faq-answer">Most of our treatments are suitable for a wide range of skin types, though specific settings and approaches are adjusted for your individual needs. During your consultation, we assess your Fitzpatrick skin type and any contraindications to ensure safe, effective treatment.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What results can I expect?</summary>
+          <p class="faq-answer">Results depend on the treatment and your starting point. Many clients notice improvement after a single session, with optimal results developing over a course of treatments. We take clinical photographs at each visit so you can clearly track your progress.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       5. CTA
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--charcoal u-text-center" aria-label="Book consultation">
+    <div class="container">
+      <span class="eyebrow" style="color: rgba(249,249,248,0.5);">Get Started</span>
+      <h2 class="h2 u-mb-md">Restore Your Skin's Natural Radiance</h2>
+      <p class="text-lg u-mb-lg" style="color: rgba(249,249,248,0.7);">Book a free consultation to discuss your skin concerns and discover the treatment plan that is right for you.</p>
+      <div class="btn-group" style="justify-content: center;">
+        <a href="../contact.html" class="btn btn--light">Book Consultation</a>
+        <a href="tel:+44000000000" class="btn btn--outline" style="color: var(--marr-offwhite); border-color: var(--marr-offwhite);">Call Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><span class="footer__brand-main">MARR</span><span class="footer__brand-sub">Laser &amp; Skin</span></div>
+        <p class="footer__muted text-sm">Advanced laser technology and expert skin treatments, tailored to you.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading">Treatments</h4>
+        <ul class="footer__links">
+          <li><a href="../laser-hair-removal.html" class="footer__link">Laser Hair Removal</a></li>
+          <li><a href="../skin-treatments.html" class="footer__link">Skin Treatments</a></li>
+          <li><a href="../anti-ageing.html" class="footer__link">Anti-Ageing</a></li>
+          <li><a href="../aesthetics.html" class="footer__link">Aesthetics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Clinic</h4>
+        <ul class="footer__links">
+          <li><a href="../about.html" class="footer__link">About Us</a></li>
+          <li><a href="../gallery.html" class="footer__link">Gallery</a></li>
+          <li><a href="../blog.html" class="footer__link">Blog</a></li>
+          <li><a href="../contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Contact</h4>
+        <ul class="footer__links">
+          <li class="footer__contact-text">Newry, Co. Down</li>
+          <li><a href="tel:+44000000000" class="footer__link">028 000 0000</a></li>
+          <li><a href="mailto:hello@marrlaser.com" class="footer__link">hello@marrlaser.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__fine">&copy; 2026 MARR Laser &amp; Skin Clinic.</p>
+      <div class="footer__social"><a href="#" class="footer__social-link">Instagram</a><a href="#" class="footer__social-link">Facebook</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

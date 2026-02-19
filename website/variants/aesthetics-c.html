@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARR Laser &amp; Skin Clinic | Layout C — Aesthetics</title>
+  <meta name="description" content="Professional aesthetic treatments at MARR Laser & Skin Clinic, Newry. Anti-wrinkle injections, dermal fillers, Profhilo, lip enhancement, skin boosters and PRP therapy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ═══════════════════════════════════════════════
+       VARIANT OVERRIDES — Aesthetics C: Mega-Grid + Practitioner
+       ═══════════════════════════════════════════════ */
+
+    /* --- Treatment Mega-Grid --- */
+    .mega-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-16);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--sp-24);
+    }
+
+    .mega-grid__cell {
+      position: relative;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      cursor: pointer;
+    }
+
+    .mega-grid__cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .mega-grid__cell:hover img,
+    .mega-grid__cell:focus-within img {
+      transform: scale(1.05);
+    }
+
+    .mega-grid__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(60, 60, 59, 0.85) 0%,
+        rgba(60, 60, 59, 0.4) 50%,
+        rgba(60, 60, 59, 0.1) 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--sp-24);
+      transition: background 0.4s ease;
+    }
+
+    .mega-grid__cell:hover .mega-grid__overlay,
+    .mega-grid__cell:focus-within .mega-grid__overlay {
+      background: linear-gradient(
+        0deg,
+        rgba(60, 60, 59, 0.92) 0%,
+        rgba(60, 60, 59, 0.6) 60%,
+        rgba(60, 60, 59, 0.3) 100%
+      );
+    }
+
+    .mega-grid__name {
+      font-family: var(--marr-font-heading);
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+      font-weight: 300;
+      letter-spacing: var(--marr-tracking-heading);
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: var(--sp-8);
+      line-height: 1.2;
+    }
+
+    .mega-grid__desc {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: var(--sp-16);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      max-width: 400px;
+    }
+
+    .mega-grid__cell:hover .mega-grid__desc,
+    .mega-grid__cell:focus-within .mega-grid__desc {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mega-grid__cta {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
+    }
+
+    .mega-grid__cell:hover .mega-grid__cta,
+    .mega-grid__cell:focus-within .mega-grid__cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mega-grid__cta .btn {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(4px);
+    }
+
+    .mega-grid__cta .btn:hover {
+      background-color: var(--marr-taupe);
+      border-color: var(--marr-taupe);
+      color: #ffffff;
+    }
+
+    /* --- Practitioner Section --- */
+    .practitioner {
+      padding-top: var(--sp-80);
+      padding-bottom: var(--sp-80);
+      background-color: var(--marr-blush);
+    }
+
+    .practitioner__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--sp-24);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-64);
+      align-items: center;
+    }
+
+    .practitioner__image {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+
+    .practitioner__image img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      display: block;
+      border-radius: var(--r-lg);
+    }
+
+    .practitioner__content .eyebrow {
+      margin-bottom: var(--sp-8);
+    }
+
+    .practitioner__name {
+      font-family: var(--marr-font-heading);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 300;
+      letter-spacing: var(--marr-tracking-heading);
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      margin-bottom: var(--sp-8);
+    }
+
+    .practitioner__quals {
+      font-family: var(--marr-font-heading);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--marr-taupe);
+      margin-bottom: var(--sp-24);
+      display: block;
+    }
+
+    .practitioner__bio {
+      color: var(--marr-text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--sp-32);
+    }
+
+    .practitioner__quote {
+      position: relative;
+      padding-left: var(--sp-24);
+      border-left: 3px solid var(--marr-taupe);
+    }
+
+    .practitioner__quote-text {
+      font-family: var(--marr-font-heading);
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+      font-style: italic;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+      color: var(--marr-charcoal);
+    }
+
+    .practitioner__quote-mark {
+      font-family: var(--marr-font-heading);
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--marr-taupe);
+      opacity: 0.3;
+      position: absolute;
+      top: -20px;
+      left: -8px;
+    }
+
+    /* --- How It Works (simple list) --- */
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-32);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .how-step {
+      text-align: center;
+    }
+
+    .how-step__number {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto var(--sp-16);
+      background: var(--marr-blush);
+      border: 2px solid var(--marr-taupe);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--marr-font-heading);
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--marr-taupe);
+    }
+
+    .how-step__title {
+      font-family: var(--marr-font-heading);
+      font-size: 1.125rem;
+      font-weight: 300;
+      letter-spacing: var(--marr-tracking-heading);
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      margin-bottom: var(--sp-8);
+    }
+
+    .how-step__text {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--marr-text-muted);
+      max-width: 260px;
+      margin: 0 auto;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 991px) {
+      .mega-grid {
+        gap: var(--sp-12);
+      }
+
+      .practitioner {
+        padding-top: var(--sp-64);
+        padding-bottom: var(--sp-64);
+      }
+
+      .practitioner__inner {
+        grid-template-columns: 1fr;
+        gap: var(--sp-32);
+      }
+
+      .practitioner__image img {
+        height: 400px;
+      }
+
+      .how-steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--sp-24);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .mega-grid {
+        grid-template-columns: 1fr;
+        padding: 0 var(--sp-20);
+        gap: var(--sp-12);
+      }
+
+      .mega-grid__cell {
+        aspect-ratio: 16 / 10;
+      }
+
+      /* Show description on mobile without hover */
+      .mega-grid__desc,
+      .mega-grid__cta {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .mega-grid__overlay {
+        background: linear-gradient(
+          0deg,
+          rgba(60, 60, 59, 0.88) 0%,
+          rgba(60, 60, 59, 0.5) 55%,
+          rgba(60, 60, 59, 0.15) 100%
+        );
+      }
+
+      .practitioner {
+        padding-top: var(--sp-48);
+        padding-bottom: var(--sp-48);
+      }
+
+      .practitioner__inner {
+        padding: 0 var(--sp-20);
+      }
+
+      .practitioner__image img {
+        height: 320px;
+      }
+
+      .how-steps {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 477px) {
+      .mega-grid {
+        padding: 0 var(--sp-16);
+        gap: var(--sp-8);
+      }
+
+      .mega-grid__cell {
+        aspect-ratio: 3 / 2;
+      }
+
+      .mega-grid__overlay {
+        padding: var(--sp-16);
+      }
+
+      .mega-grid__name {
+        font-size: 1rem;
+        margin-bottom: var(--sp-4);
+      }
+
+      .mega-grid__desc {
+        font-size: 0.8125rem;
+        margin-bottom: var(--sp-8);
+      }
+
+      .practitioner {
+        padding-top: var(--sp-32);
+        padding-bottom: var(--sp-32);
+      }
+
+      .practitioner__inner {
+        padding: 0 var(--sp-16);
+      }
+
+      .practitioner__image img {
+        height: 260px;
+      }
+
+      .practitioner__quote-text {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Layout Indicator Badge -->
+<div style="position:fixed;top:12px;right:12px;z-index:9999;background:#ECE5E0;color:#3C3C3B;padding:6px 16px;border-radius:8px;font-family:'Cormorant Garamond',serif;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;"><a href="index.html" style="color:#3C3C3B;text-decoration:none;">&larr; Variants</a> &middot; Layout C</div>
+
+<!-- Navigation -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav__inner">
+    <div class="nav__links nav__links--desktop">
+      <a href="../laser-hair-removal.html" class="nav__link">Laser</a>
+      <a href="../why-alexandrite.html" class="nav__link">Alexandrite</a>
+      <a href="../skin-treatments.html" class="nav__link">Skin</a>
+    </div>
+    <a href="../index.html" class="nav__logo" aria-label="MARR Laser &amp; Skin — Home">
+      <span class="nav__logo-main">MARR</span>
+      <span class="nav__logo-sub">Laser &amp; Skin</span>
+    </a>
+    <div class="nav__links nav__links--desktop">
+      <a href="../anti-ageing.html" class="nav__link">Anti-Ageing</a>
+      <a href="../aesthetics.html" class="nav__link">Aesthetics</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav__toggle">
+    <label for="nav-toggle" class="nav__toggle-label" aria-label="Menu">
+      <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+    </label>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════════
+       1. PAGE HERO
+       ═══════════════════════════════════════════════ -->
+
+  <section class="page-hero" aria-label="Page introduction">
+    <div class="container">
+      <span class="eyebrow">Aesthetic Excellence</span>
+      <h1 class="h1">Aesthetics</h1>
+      <p class="text-lg">Professional injectable and enhancement treatments, delivered by qualified practitioners for natural-looking, confidence-boosting results.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       2. TREATMENT MEGA-GRID — 2x3 Hover Reveal
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--offwhite" aria-label="Our aesthetic treatments">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">What We Offer</span>
+        <h2 class="h2">Our Aesthetic Treatments</h2>
+        <p class="text-lg">From subtle enhancements to transformative rejuvenation, each treatment is tailored to your individual goals.</p>
+      </div>
+    </div>
+
+    <div class="mega-grid">
+
+      <!-- Cell 1: Anti-Wrinkle Injections -->
+      <div class="mega-grid__cell" tabindex="0" aria-label="Anti-Wrinkle Injections">
+        <img src="https://images.unsplash.com/photo-1570554886111-e80fcca6a029?auto=format&fit=crop&w=800&q=80" alt="Anti-wrinkle injection treatment at MARR Clinic" width="800" height="600">
+        <div class="mega-grid__overlay">
+          <h3 class="mega-grid__name">Anti-Wrinkle Injections</h3>
+          <p class="mega-grid__desc">Targeted Botox treatments for forehead lines, frown lines and crow's feet. Quick, precise and designed to soften expression lines while maintaining natural movement.</p>
+          <div class="mega-grid__cta">
+            <a href="../contact.html" class="btn">Book Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cell 2: Dermal Fillers -->
+      <div class="mega-grid__cell" tabindex="0" aria-label="Dermal Fillers">
+        <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=800&q=80" alt="Dermal filler treatment for lips and cheeks" width="800" height="600" loading="lazy">
+        <div class="mega-grid__overlay">
+          <h3 class="mega-grid__name">Dermal Fillers</h3>
+          <p class="mega-grid__desc">Hyaluronic acid fillers to restore volume and definition to lips, cheeks, jawline and nasolabial folds. Expertly placed for subtle, balanced enhancement.</p>
+          <div class="mega-grid__cta">
+            <a href="../contact.html" class="btn">Book Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cell 3: Profhilo -->
+      <div class="mega-grid__cell" tabindex="0" aria-label="Profhilo">
+        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" alt="Profhilo bio-remodelling skin treatment" width="800" height="600" loading="lazy">
+        <div class="mega-grid__overlay">
+          <h3 class="mega-grid__name">Profhilo</h3>
+          <p class="mega-grid__desc">Bio-remodelling injectable that boosts skin quality from within. Improves hydration, elasticity and overall skin tone with minimal downtime.</p>
+          <div class="mega-grid__cta">
+            <a href="../contact.html" class="btn">Book Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cell 4: Lip Enhancement -->
+      <div class="mega-grid__cell" tabindex="0" aria-label="Lip Enhancement">
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80" alt="Lip enhancement filler treatment" width="800" height="600" loading="lazy">
+        <div class="mega-grid__overlay">
+          <h3 class="mega-grid__name">Lip Enhancement</h3>
+          <p class="mega-grid__desc">Bespoke lip treatments to add volume, define the border or correct asymmetry. Our practitioners focus on natural proportions that complement your features.</p>
+          <div class="mega-grid__cta">
+            <a href="../contact.html" class="btn">Book Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cell 5: Skin Boosters -->
+      <div class="mega-grid__cell" tabindex="0" aria-label="Skin Boosters">
+        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80" alt="Skin booster hydration treatment" width="800" height="600" loading="lazy">
+        <div class="mega-grid__overlay">
+          <h3 class="mega-grid__name">Skin Boosters</h3>
+          <p class="mega-grid__desc">Micro-injections of hyaluronic acid to deeply hydrate the skin, improve texture and create a healthy, luminous glow from the inside out.</p>
+          <div class="mega-grid__cta">
+            <a href="../contact.html" class="btn">Book Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cell 6: PRP Therapy -->
+      <div class="mega-grid__cell" tabindex="0" aria-label="PRP Therapy">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="PRP platelet-rich plasma therapy" width="800" height="600" loading="lazy">
+        <div class="mega-grid__overlay">
+          <h3 class="mega-grid__name">PRP Therapy</h3>
+          <p class="mega-grid__desc">Platelet-rich plasma therapy uses your body's own growth factors to stimulate collagen production, improve skin quality and accelerate healing.</p>
+          <div class="mega-grid__cta">
+            <a href="../contact.html" class="btn">Book Consultation</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       3. PRACTITIONER SECTION — Photo + Pull Quote
+       ═══════════════════════════════════════════════ -->
+
+  <section class="practitioner" aria-label="Our practitioners">
+    <div class="practitioner__inner">
+      <div class="practitioner__image">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" alt="MARR Clinic qualified aesthetic practitioner" width="800" height="560" loading="lazy">
+      </div>
+      <div class="practitioner__content">
+        <span class="eyebrow">Your Safety, Our Priority</span>
+        <h2 class="practitioner__name">Qualified Practitioners</h2>
+        <span class="practitioner__quals">Prescribing Nurse &amp; Medical Doctor</span>
+        <p class="practitioner__bio">All aesthetic treatments at MARR are carried out by experienced, qualified practitioners including our prescribing nurse and medical doctor. With over 10 years of combined experience in aesthetic medicine, our team has the clinical expertise to deliver safe, effective results. Every patient receives a thorough consultation before any treatment. We assess your facial anatomy, discuss your goals openly and recommend only what will genuinely benefit you.</p>
+        <div class="practitioner__quote">
+          <span class="practitioner__quote-mark" aria-hidden="true">&ldquo;</span>
+          <p class="practitioner__quote-text">Our clinic is fully insured and registered, and we use only premium, CE-marked products from trusted pharmaceutical suppliers. Your wellbeing is always the first consideration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       4. HOW IT WORKS
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--offwhite" aria-label="How it works">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Your Journey</span>
+        <h2 class="h2">How It Works</h2>
+        <p class="text-lg">A simple, reassuring process from first enquiry to aftercare.</p>
+      </div>
+
+      <div class="how-steps" role="list" aria-label="Aesthetics treatment process">
+        <div class="how-step" role="listitem">
+          <div class="how-step__number" aria-hidden="true">1</div>
+          <h3 class="how-step__title">Consultation</h3>
+          <p class="how-step__text">We assess your facial anatomy, discuss your goals openly and recommend only what will genuinely benefit you.</p>
+        </div>
+        <div class="how-step" role="listitem">
+          <div class="how-step__number" aria-hidden="true">2</div>
+          <h3 class="how-step__title">Treatment</h3>
+          <p class="how-step__text">Your practitioner delivers precise treatment using premium products, with your comfort and safety as the priority.</p>
+        </div>
+        <div class="how-step" role="listitem">
+          <div class="how-step__number" aria-hidden="true">3</div>
+          <h3 class="how-step__title">Aftercare</h3>
+          <p class="how-step__text">Detailed aftercare guidance and a complimentary review appointment to ensure you are delighted with your results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       5. FAQ — Accordion
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--blush" aria-label="Frequently asked questions">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Common Questions</span>
+        <h2 class="h2">Aesthetics FAQ</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">Is Botox safe?</summary>
+          <div class="faq-answer">
+            <p>Yes. Botulinum toxin has been used safely in medical and aesthetic settings for over 30 years. At MARR, all anti-wrinkle injections are administered by qualified prescribing practitioners who understand facial anatomy in detail. Side effects are typically mild and temporary, such as minor bruising or redness at the injection site.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How long do dermal fillers last?</summary>
+          <div class="faq-answer">
+            <p>Results typically last between 6 and 18 months depending on the area treated, the type of filler used and individual metabolism. Lip fillers generally last 6 to 9 months, while cheek and jawline fillers can last up to 18 months. We will discuss expected longevity during your consultation.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What is the recovery time?</summary>
+          <div class="faq-answer">
+            <p>Most injectable treatments require minimal downtime. You may experience slight swelling, redness or bruising for 24 to 48 hours. Anti-wrinkle injections typically show no visible signs within hours. We provide detailed aftercare instructions to help you achieve the best possible results.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What is Profhilo and how does it differ from fillers?</summary>
+          <div class="faq-answer">
+            <p>Profhilo is a bio-remodelling treatment, not a filler. Rather than adding volume to specific areas, it disperses across the skin to stimulate collagen and elastin production. The result is an overall improvement in skin quality, hydration and firmness. It is ideal for those who want better skin rather than structural changes.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How do I know which treatment is right for me?</summary>
+          <div class="faq-answer">
+            <p>The best way to find out is through a consultation with our practitioners. We will assess your skin, discuss your goals and recommend a tailored treatment plan. There is no pressure to proceed, and we are always honest about what will and will not work for your individual needs.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Can I combine treatments?</summary>
+          <div class="faq-answer">
+            <p>Absolutely. Many clients benefit from combining treatments for a more comprehensive result. For example, anti-wrinkle injections and dermal fillers work well together, as do Profhilo and skin boosters. Your practitioner will advise on the best combination and timing for your treatment plan.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       6. CTA
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--charcoal u-text-center" aria-label="Book consultation">
+    <div class="container">
+      <span class="eyebrow" style="color: var(--marr-taupe);">Take the Next Step</span>
+      <h2 class="h2 u-mb-md" style="color: var(--marr-offwhite);">Book Your Aesthetic Consultation</h2>
+      <p class="text-lg u-mb-lg" style="color: rgba(249, 249, 248, 0.7);">Every great result begins with a conversation. Book a complimentary consultation and let our team create a treatment plan tailored to your goals.</p>
+      <div class="btn-group" style="justify-content: center;">
+        <a href="../contact.html" class="btn btn--light">Book Consultation</a>
+        <a href="tel:+44000000000" class="btn btn--ghost" style="color: var(--marr-taupe);">Call Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><span class="footer__brand-main">MARR</span><span class="footer__brand-sub">Laser &amp; Skin</span></div>
+        <p class="footer__muted text-sm">Advanced laser technology and expert skin treatments, tailored to you.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading">Treatments</h4>
+        <ul class="footer__links">
+          <li><a href="../laser-hair-removal.html" class="footer__link">Laser Hair Removal</a></li>
+          <li><a href="../skin-treatments.html" class="footer__link">Skin Treatments</a></li>
+          <li><a href="../anti-ageing.html" class="footer__link">Anti-Ageing</a></li>
+          <li><a href="../aesthetics.html" class="footer__link">Aesthetics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Clinic</h4>
+        <ul class="footer__links">
+          <li><a href="../about.html" class="footer__link">About Us</a></li>
+          <li><a href="../gallery.html" class="footer__link">Gallery</a></li>
+          <li><a href="../blog.html" class="footer__link">Blog</a></li>
+          <li><a href="../contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Contact</h4>
+        <ul class="footer__links">
+          <li class="footer__contact-text">Newry, Co. Down</li>
+          <li><a href="tel:+44000000000" class="footer__link">028 000 0000</a></li>
+          <li><a href="mailto:hello@marrlaser.com" class="footer__link">hello@marrlaser.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__fine">&copy; 2026 MARR Laser &amp; Skin Clinic.</p>
+      <div class="footer__social"><a href="#" class="footer__social-link">Instagram</a><a href="#" class="footer__social-link">Facebook</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

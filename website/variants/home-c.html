@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MARR Laser &amp; Skin Clinic | Layout B — Home</title>
+  <title>MARR Laser &amp; Skin Clinic | Layout C &mdash; Home</title>
   <meta name="description" content="MARR Laser &amp; Skin Clinic in Newry, Co. Down offers Alexandrite laser hair removal, skin treatments and anti-ageing services. Book your consultation today.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <style>
-    /* === LAYOUT B: HERO OVERRIDE === */
-    .hero-b {
+    /* === LAYOUT C: POSTER HERO === */
+    .hero-c {
       position: relative;
-      min-height: 80vh;
+      min-height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -24,176 +24,184 @@
       overflow: hidden;
     }
 
-    .hero-b::before {
+    .hero-c::before {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(
         180deg,
-        rgba(60, 60, 59, 0.35) 0%,
-        rgba(60, 60, 59, 0.6) 100%
+        rgba(60, 60, 59, 0.45) 0%,
+        rgba(60, 60, 59, 0.7) 100%
       );
       z-index: 1;
     }
 
-    .hero-b__content {
+    .hero-c__content {
       position: relative;
       z-index: 2;
-      max-width: 720px;
+      max-width: 760px;
       padding: var(--sp-48) var(--sp-24);
     }
 
-    .hero-b .eyebrow {
+    .hero-c .eyebrow {
       color: var(--marr-blush);
     }
 
-    .hero-b .h1 {
+    .hero-c .h1 {
       color: #ffffff;
       margin-bottom: var(--sp-20);
     }
 
-    .hero-b__subtitle {
+    .hero-c__subtitle {
       font-size: 1.125rem;
       line-height: 1.7;
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.88);
       margin-bottom: var(--sp-32);
     }
 
-    .hero-b .btn-group {
+    .hero-c .btn-group {
       justify-content: center;
     }
 
-    /* === LAYOUT B: OVERLAY SERVICE CARDS === */
-    .card-overlay {
-      position: relative;
+    /* === LAYOUT C: MARQUEE STRIP === */
+    .marquee-strip {
+      background-color: var(--marr-charcoal);
+      padding: var(--sp-16) 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee-strip__track {
+      display: inline-flex;
+      animation: marquee-scroll 30s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-strip__track {
+        animation: none;
+      }
+    }
+
+    .marquee-strip__text {
+      font-family: var(--marr-font-heading);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(249, 249, 248, 0.7);
+      padding: 0 var(--sp-8);
+    }
+
+    .marquee-strip__dot {
+      color: var(--marr-taupe);
+      padding: 0 var(--sp-12);
+      font-size: 0.5rem;
+      vertical-align: middle;
+    }
+
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* === LAYOUT C: STAGGERED SERVICE CARDS === */
+    .stagger-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-32);
+    }
+
+    .stagger-grid .card-c:nth-child(even) {
+      margin-top: 40px;
+    }
+
+    .card-c {
+      background: #ffffff;
       border-radius: var(--r-lg);
       overflow: hidden;
-      background: #ffffff;
       box-shadow: var(--shadow-card);
       transition: box-shadow var(--transition-base),
                   transform var(--transition-base);
       display: flex;
       flex-direction: column;
-      height: 100%;
+      height: fit-content;
     }
 
-    .card-overlay:hover {
+    .card-c:hover {
       box-shadow: var(--shadow-card-hover);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
-    .card-overlay__image-wrap {
-      position: relative;
+    .card-c__image {
       overflow: hidden;
     }
 
-    .card-overlay__image-wrap img {
+    .card-c__image img {
       width: 100%;
       height: 260px;
       object-fit: cover;
       display: block;
     }
 
-    .card-overlay__image-wrap::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        transparent 30%,
-        rgba(60, 60, 59, 0.75) 100%
-      );
-      pointer-events: none;
+    .card-c__stripe {
+      height: 4px;
+      background-color: var(--marr-taupe);
     }
 
-    .card-overlay__title {
-      position: absolute;
-      bottom: var(--sp-16);
-      left: var(--sp-20);
-      right: var(--sp-20);
-      z-index: 2;
-      font-family: var(--marr-font-heading);
-      font-size: clamp(1.125rem, 2vw, 1.5rem);
-      font-weight: 300;
-      letter-spacing: var(--marr-tracking-heading);
-      text-transform: uppercase;
-      color: #ffffff;
-      line-height: 1.2;
-    }
-
-    .card-overlay__body {
+    .card-c__body {
       padding: var(--sp-24);
       flex: 1;
       display: flex;
       flex-direction: column;
     }
 
-    .card-overlay__body .text-sm {
+    .card-c__body .h3 {
+      margin-bottom: var(--sp-12);
+    }
+
+    .card-c__body .text-sm {
       flex: 1;
     }
 
-    /* === LAYOUT B: TESTIMONIAL GRID === */
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--sp-32);
-    }
-
-    .testimonial-grid .testimonial-card {
-      text-align: left;
-      padding: var(--sp-32);
-    }
-
-    .testimonial-grid .testimonial-card__quote-mark {
-      position: static;
-      display: block;
-      margin-bottom: var(--sp-8);
-      font-size: 3.5rem;
-    }
-
-    .testimonial-grid .testimonial-card__text {
-      font-size: 1rem;
-    }
-
-    .testimonial-grid .testimonial-card__author {
-      text-align: left;
-    }
-
+    /* === RESPONSIVE === */
     @media (max-width: 991px) {
-      .hero-b {
-        min-height: 60vh;
+      .hero-c {
+        min-height: 70vh;
       }
-      .testimonial-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .stagger-grid .card-c:nth-child(even) {
+        margin-top: 0;
       }
     }
 
     @media (max-width: 767px) {
-      .hero-b {
-        min-height: 50vh;
+      .hero-c {
+        min-height: 60vh;
       }
-      .testimonial-grid {
+      .stagger-grid {
         grid-template-columns: 1fr;
       }
-      .card-overlay__image-wrap img {
+      .card-c__image img {
         height: 200px;
       }
     }
 
     @media (max-width: 477px) {
-      .hero-b {
-        min-height: 70vh;
+      .hero-c {
+        min-height: 75vh;
       }
-      .hero-b__content {
+      .hero-c__content {
         padding: var(--sp-32) var(--sp-16);
+      }
+      .marquee-strip__text {
+        font-size: 0.6875rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Layout Indicator -->
-  <div style="position:fixed;top:12px;right:12px;z-index:9999;background:#C6BCB3;color:#fff;padding:6px 16px;border-radius:8px;font-family:'Cormorant Garamond',serif;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;"><a href="index.html" style="color:#fff;text-decoration:none;">&larr; Variants</a> &middot; Layout B</div>
+  <!-- Layout Indicator Badge -->
+  <div style="position:fixed;top:12px;right:12px;z-index:9999;background:#ECE5E0;color:#3C3C3B;padding:6px 16px;border-radius:8px;font-family:'Cormorant Garamond',serif;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;"><a href="index.html" style="color:#3C3C3B;text-decoration:none;">&larr; Variants</a> &middot; Layout C</div>
 
   <!-- ═══ NAVIGATION ═══ -->
   <nav class="nav" aria-label="Main navigation">
@@ -225,12 +233,12 @@
 
   <main>
 
-    <!-- ═══ 1. HERO — Full-width image with overlay text ═══ -->
-    <section class="hero-b" aria-labelledby="hero-heading">
-      <div class="hero-b__content">
+    <!-- ═══ 1. HERO — Full-viewport poster with dark overlay ═══ -->
+    <section class="hero-c" aria-labelledby="hero-heading">
+      <div class="hero-c__content">
         <span class="eyebrow">Advanced Skin Care</span>
         <h1 id="hero-heading" class="h1">Beautiful Skin Starts Here</h1>
-        <p class="hero-b__subtitle">Specialist laser and skin treatments at MARR Laser &amp; Skin Clinic, Newry. Expert care, advanced Alexandrite technology and results you can see.</p>
+        <p class="hero-c__subtitle">Specialist laser and skin treatments at MARR Laser &amp; Skin Clinic, Newry. Expert care, advanced Alexandrite technology and results you can see.</p>
         <div class="btn-group">
           <a href="../contact.html" class="btn btn--primary">Book Consultation</a>
           <a href="../skin-treatments.html" class="btn btn--light">View Treatments</a>
@@ -239,7 +247,28 @@
     </section>
 
 
-    <!-- ═══ 2. SERVICES — Overlay gradient cards ═══ -->
+    <!-- ═══ 2. MARQUEE STRIP ═══ -->
+    <div class="marquee-strip" role="marquee" aria-label="Treatment list">
+      <div class="marquee-strip__track" aria-hidden="true">
+        <span class="marquee-strip__text">Laser Hair Removal</span><span class="marquee-strip__dot">&bull;</span>
+        <span class="marquee-strip__text">Alexandrite Technology</span><span class="marquee-strip__dot">&bull;</span>
+        <span class="marquee-strip__text">Skin Rejuvenation</span><span class="marquee-strip__dot">&bull;</span>
+        <span class="marquee-strip__text">Anti-Ageing</span><span class="marquee-strip__dot">&bull;</span>
+        <span class="marquee-strip__text">Aesthetics</span><span class="marquee-strip__dot">&bull;</span>
+        <span class="marquee-strip__text">Facial Treatments</span><span class="marquee-strip__dot">&bull;</span>
+        <span class="marquee-strip__text">CO2 Resurfacing</span><span class="marquee-strip__dot">&bull;</span>
+        <span class="marquee-strip__text">Laser Hair Removal</span><span class="marquee-strip__dot">&bull;</span>
+        <span class="marquee-strip__text">Alexandrite Technology</span><span class="marquee-strip__dot">&bull;</span>
+        <span class="marquee-strip__text">Skin Rejuvenation</span><span class="marquee-strip__dot">&bull;</span>
+        <span class="marquee-strip__text">Anti-Ageing</span><span class="marquee-strip__dot">&bull;</span>
+        <span class="marquee-strip__text">Aesthetics</span><span class="marquee-strip__dot">&bull;</span>
+        <span class="marquee-strip__text">Facial Treatments</span><span class="marquee-strip__dot">&bull;</span>
+        <span class="marquee-strip__text">CO2 Resurfacing</span><span class="marquee-strip__dot">&bull;</span>
+      </div>
+    </div>
+
+
+    <!-- ═══ 3. SERVICES — Staggered 2-column cards ═══ -->
     <section class="section section--offwhite" aria-labelledby="services-heading">
       <div class="container">
         <div class="section-header">
@@ -247,41 +276,57 @@
           <h2 id="services-heading" class="h2">Our Treatments</h2>
           <p class="text-lg">From permanent hair reduction to advanced skin rejuvenation, every treatment is tailored to your skin and your goals.</p>
         </div>
-        <div class="grid grid--3">
+        <div class="stagger-grid">
 
           <!-- Card: Laser Hair Removal -->
-          <article class="card-overlay">
-            <div class="card-overlay__image-wrap">
-              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=400&q=80" alt="Laser hair removal treatment at MARR Clinic" width="400" height="260" loading="lazy">
-              <h3 class="card-overlay__title">Laser Hair Removal</h3>
+          <article class="card-c">
+            <div class="card-c__image">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80" alt="Laser hair removal treatment at MARR Clinic" width="600" height="260" loading="lazy">
             </div>
-            <div class="card-overlay__body">
+            <div class="card-c__stripe"></div>
+            <div class="card-c__body">
+              <h3 class="h3">Laser Hair Removal</h3>
               <p class="text-sm">Our flagship treatment using the gold-standard Alexandrite laser for permanent hair reduction on all skin types.</p>
               <a href="../laser-hair-removal.html" class="btn btn--ghost u-mt-md">Learn More &rarr;</a>
             </div>
           </article>
 
           <!-- Card: Skin Treatments -->
-          <article class="card-overlay">
-            <div class="card-overlay__image-wrap">
-              <img src="https://images.unsplash.com/photo-1570554886111-e80fcca6a029?auto=format&fit=crop&w=400&q=80" alt="Professional skin treatment at MARR Clinic" width="400" height="260" loading="lazy">
-              <h3 class="card-overlay__title">Skin Treatments</h3>
+          <article class="card-c">
+            <div class="card-c__image">
+              <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=600&q=80" alt="Professional skin treatment at MARR Clinic" width="600" height="260" loading="lazy">
             </div>
-            <div class="card-overlay__body">
+            <div class="card-c__stripe"></div>
+            <div class="card-c__body">
+              <h3 class="h3">Skin Treatments</h3>
               <p class="text-sm">Clinical-grade facials, chemical peels and microneedling to refresh, repair and rejuvenate your skin.</p>
               <a href="../skin-treatments.html" class="btn btn--ghost u-mt-md">Learn More &rarr;</a>
             </div>
           </article>
 
           <!-- Card: Anti-Ageing -->
-          <article class="card-overlay">
-            <div class="card-overlay__image-wrap">
-              <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=400&q=80" alt="Anti-ageing consultation at MARR Clinic" width="400" height="260" loading="lazy">
-              <h3 class="card-overlay__title">Anti-Ageing</h3>
+          <article class="card-c">
+            <div class="card-c__image">
+              <img src="https://images.unsplash.com/photo-1570554886111-e80fcca6a029?auto=format&fit=crop&w=600&q=80" alt="Anti-ageing consultation at MARR Clinic" width="600" height="260" loading="lazy">
             </div>
-            <div class="card-overlay__body">
+            <div class="card-c__stripe"></div>
+            <div class="card-c__body">
+              <h3 class="h3">Anti-Ageing</h3>
               <p class="text-sm">Targeted treatments to restore volume, smooth fine lines and help you look as young as you feel.</p>
               <a href="../anti-ageing.html" class="btn btn--ghost u-mt-md">Learn More &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card: Aesthetics -->
+          <article class="card-c">
+            <div class="card-c__image">
+              <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80" alt="Aesthetic treatments at MARR Clinic" width="600" height="260" loading="lazy">
+            </div>
+            <div class="card-c__stripe"></div>
+            <div class="card-c__body">
+              <h3 class="h3">Aesthetics</h3>
+              <p class="text-sm">Expert aesthetic treatments including dermal fillers, skin boosters and advanced rejuvenation procedures.</p>
+              <a href="../aesthetics.html" class="btn btn--ghost u-mt-md">Learn More &rarr;</a>
             </div>
           </article>
 
@@ -290,7 +335,7 @@
     </section>
 
 
-    <!-- ═══ 3. FEATURE SECTION — A Clinic That Cares ═══ -->
+    <!-- ═══ 4. FEATURE SECTION — A Clinic That Cares ═══ -->
     <section class="section section--blush" aria-labelledby="feature-heading">
       <div class="container">
         <div class="grid grid--sidebar">
@@ -309,12 +354,12 @@
     </section>
 
 
-    <!-- ═══ 4. ALEXANDRITE USP ═══ -->
+    <!-- ═══ 5. ALEXANDRITE USP ═══ -->
     <section class="section section--offwhite" aria-labelledby="alexandrite-heading">
       <div class="container">
         <div class="grid grid--sidebar">
           <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=560&q=80" alt="Alexandrite laser equipment used at MARR Clinic for hair removal" width="560" height="440" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=560&q=80" alt="Alexandrite laser equipment used at MARR Clinic for hair removal" width="560" height="440" loading="lazy">
           </div>
           <div>
             <span class="eyebrow">Our Technology</span>
@@ -337,48 +382,23 @@
     </section>
 
 
-    <!-- ═══ 5. TESTIMONIALS — 3-column grid ═══ -->
-    <section class="section section--offwhite" aria-labelledby="testimonial-heading">
+    <!-- ═══ 6. TESTIMONIAL ═══ -->
+    <section class="section section--taupe" aria-labelledby="testimonial-heading">
       <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Client Feedback</span>
-          <h2 id="testimonial-heading" class="h2">What Our Clients Say</h2>
-        </div>
-        <div class="testimonial-grid">
-
-          <div class="testimonial-card">
-            <span class="testimonial-card__quote-mark" aria-hidden="true">&ldquo;</span>
-            <p class="testimonial-card__text">I was so nervous before my first session but Emma made me feel completely at ease. The results have been incredible &mdash; I wish I had done it years ago.</p>
-            <div class="testimonial-card__author">
-              <p class="testimonial-card__name">Sarah M.</p>
-              <p class="testimonial-card__detail">Laser Hair Removal Client</p>
-            </div>
+        <h2 id="testimonial-heading" class="h2 u-text-center u-mb-lg" style="color: #ffffff;">What Our Clients Say</h2>
+        <div class="testimonial-card" style="max-width: 720px; margin: 0 auto;">
+          <span class="testimonial-card__quote-mark" aria-hidden="true">&ldquo;</span>
+          <p class="testimonial-card__text">I was so nervous before my first session but Emma made me feel completely at ease. The results have been incredible &mdash; I wish I had done it years ago. The clinic is beautiful and the whole experience feels really premium without being intimidating.</p>
+          <div class="testimonial-card__author">
+            <p class="testimonial-card__name">Sarah M.</p>
+            <p class="testimonial-card__detail">Laser Hair Removal Client</p>
           </div>
-
-          <div class="testimonial-card">
-            <span class="testimonial-card__quote-mark" aria-hidden="true">&ldquo;</span>
-            <p class="testimonial-card__text">The clinic is beautiful and the whole experience feels really premium without being intimidating. My skin has never looked better after the chemical peel course.</p>
-            <div class="testimonial-card__author">
-              <p class="testimonial-card__name">Rachel K.</p>
-              <p class="testimonial-card__detail">Skin Rejuvenation Client</p>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <span class="testimonial-card__quote-mark" aria-hidden="true">&ldquo;</span>
-            <p class="testimonial-card__text">Emma really knows her stuff. She explained everything clearly and I felt confident from the start. After six sessions my legs are completely smooth. Genuinely life-changing.</p>
-            <div class="testimonial-card__author">
-              <p class="testimonial-card__name">Laura T.</p>
-              <p class="testimonial-card__detail">Full Legs Laser Client</p>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
 
 
-    <!-- ═══ 6. CTA ═══ -->
+    <!-- ═══ 7. CTA ═══ -->
     <section class="section section--blush" aria-labelledby="cta-heading">
       <div class="container u-text-center">
         <h2 id="cta-heading" class="h2 u-mb-sm">Book Your Consultation</h2>

@@ -26,8 +26,9 @@ marr-laser/
 │   ├── contact.html
 │   ├── style-guide.html      ← internal reference
 │   ├── styles.css
-│   └── variants/             ← Layout B alternatives for client review
-│       ├── index.html         ← comparison hub
+│   └── variants/             ← Layout A/B/C alternatives for client review
+│       ├── index.html         ← client review hub (preference selectors + Formsubmit)
+│       ├── thank-you.html     ← form submission confirmation
 │       ├── home-b.html
 │       ├── laser-b.html
 │       ├── alexandrite-b.html
@@ -37,7 +38,17 @@ marr-laser/
 │       ├── about-b.html
 │       ├── gallery-b.html
 │       ├── blog-b.html
-│       └── contact-b.html
+│       ├── contact-b.html
+│       ├── home-c.html
+│       ├── laser-c.html
+│       ├── alexandrite-c.html
+│       ├── skin-c.html
+│       ├── anti-ageing-c.html
+│       ├── aesthetics-c.html
+│       ├── about-c.html
+│       ├── gallery-c.html
+│       ├── blog-c.html
+│       └── contact-c.html
 ├── landing/                  ← laser hair removal landing page (Webflow embed)
 │   ├── index.html
 │   ├── styles.css
@@ -88,7 +99,7 @@ Cangste is a custom font — Cormorant Garamond is the web fallback until webfon
 ## Subdirectory Details
 
 ### `website/`
-Full multi-page site styled with Design C (Warm Boutique). 10 pages covering all clinic services, plus a `variants/` directory containing Layout B alternatives for each page. The comparison hub at `variants/index.html` lets the client compare Layout A (base) vs Layout B side by side. CSS in `styles.css` uses Design C tokens throughout. Deprecated pages (`treatments.html`, `team.html`, `pricing.html`) and old `sections/` partials have been removed.
+Full multi-page site styled with Design C (Warm Boutique). 10 pages covering all clinic services, plus a `variants/` directory containing Layout B and Layout C alternatives for each page (30 total variants). The client review hub at `variants/index.html` presents all 3 layouts per page with radio-button preference selectors, notes fields, and a Formsubmit.co submission form (sends to andrew@foxhue.com, CC ashley@foxhue.com). Submissions redirect to `thank-you.html`. JavaScript handles localStorage auto-save, live summary panel, and copy-to-clipboard fallback. CSS in `styles.css` uses Design C tokens throughout. All images use Unsplash hotlinks with `loading="lazy"` on below-fold images.
 
 ### `landing/`
 Single-page landing for laser hair removal — built as self-contained HTML/CSS blocks for Webflow custom code embeds. Each section in `sections/` has its own `<style>` block and can be pasted into Webflow independently. BEM naming with `marr-` prefix. Responsive breakpoints: 1200px, 991px, 767px, 478px.
@@ -112,8 +123,8 @@ Brand guidelines PDF, client briefs, SEO audit, development plan, and competitor
 
 ## Architecture Notes
 - Each design is self-contained: `index.html` + `styles.css`
-- No JavaScript across the project — CSS-only interactivity
+- No JavaScript except the client review hub (`variants/index.html`) which uses inline JS for form handling and localStorage
 - Website breakpoints: 992px, 767px, 477px
 - Landing breakpoints: 1200px, 991px, 767px, 478px
-- Placeholder images via `https://placehold.co/`
+- Images via Unsplash hotlinks (`https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w={WIDTH}&q=80`)
 - Google Fonts loaded via `<link>` in each HTML file

@@ -3,345 +3,566 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marr Laser & Skin Clinic — Laser Hair Removal</title>
-  <meta name="description" content="Professional laser hair removal at Marr Laser & Skin Clinic. Book your free consultation today.">
+  <title>MARR Laser &amp; Skin Clinic — Laser Hair Removal</title>
+  <meta name="description" content="Professional laser hair removal at MARR Laser &amp; Skin Clinic. Alexandrite, Diode and Nd:YAG technology. Book your free consultation today.">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- 01 — Sticky Header -->
+<!-- Marr Laser — 01 Sticky Header -->
 <style>
+  /* === SECTION 01 — HEADER === Design C: Warm Boutique */
   .marr-header {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --marr-transition: 0.25s ease;
+    --marr-radius: 8px;
+    --marr-border: rgba(60, 60, 59, 0.1);
 
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: var(--marr-primary);
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(198, 188, 179, 0.2);
+    background: var(--marr-offwhite);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--marr-border);
   }
 
   .marr-header__inner {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
-  .marr-header__logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .marr-header__logo img {
-    height: 40px;
-    width: auto;
-  }
-
-  .marr-header__logo-text {
-    font-family: var(--marr-font-body);
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--marr-accent);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .marr-header__nav {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .marr-header__contact {
+  /* Left nav links */
+  .marr-header__nav--left {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: var(--marr-light);
-    font-family: var(--marr-font-body);
-    font-size: 14px;
   }
 
-  .marr-header__contact-icon {
-    width: 20px;
-    height: 20px;
+  /* Right nav links */
+  .marr-header__nav--right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Nav link — Design C pill hover */
+  .marr-header__link {
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--marr-text);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 100px;
+    transition: background-color var(--marr-transition),
+                color var(--marr-transition);
+  }
+
+  .marr-header__link:hover,
+  .marr-header__link:focus-visible {
+    background-color: var(--marr-taupe);
+    color: #ffffff;
+  }
+
+  /* CTA button in nav — Design C 8px radius */
+  .marr-header__cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .marr-header__contact-icon svg {
-    width: 18px;
-    height: 18px;
-    fill: var(--marr-accent);
-  }
-
-  .marr-header__cta {
-    display: inline-block;
-    padding: 10px 24px;
-    background: var(--marr-accent);
-    color: var(--marr-primary);
-    font-family: var(--marr-font-body);
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 32px;
+    padding: 8px 20px;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     text-decoration: none;
-    transition: background 0.3s ease;
+    background-color: var(--marr-taupe);
+    color: #ffffff;
+    border: 1px solid var(--marr-taupe);
+    border-radius: var(--marr-radius);
+    cursor: pointer;
+    transition: background-color var(--marr-transition),
+                border-color var(--marr-transition);
   }
 
   .marr-header__cta:hover {
-    background: #B4A89D;
+    background-color: var(--marr-taupe-hover);
+    border-color: var(--marr-taupe-hover);
   }
 
-  .marr-header__whatsapp {
-    display: inline-flex;
+  .marr-header__cta:focus-visible {
+    outline: 2px solid var(--marr-taupe);
+    outline-offset: 2px;
+  }
+
+  /* Centered stacked wordmark */
+  .marr-header__logo {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-decoration: none;
+    line-height: 1;
+    padding: 0 32px;
+  }
+
+  .marr-header__logo-main {
+    font-family: var(--marr-font-heading);
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--marr-charcoal);
+    text-align: center;
+  }
+
+  .marr-header__logo-sub {
+    font-family: var(--marr-font-heading);
+    font-size: 0.5625rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--marr-taupe);
+    text-align: center;
+  }
+
+  /* Mobile hamburger toggle — hidden on desktop */
+  .marr-header__toggle {
+    display: none;
+    flex-direction: column;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: #25d366;
-    border-radius: 50%;
-    transition: background 0.3s ease;
+    gap: 5px;
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
   }
 
-  .marr-header__whatsapp:hover {
-    background: #1da851;
+  .marr-header__toggle-bar {
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--marr-charcoal);
+    transition: transform var(--marr-transition),
+                opacity var(--marr-transition);
   }
 
-  .marr-header__whatsapp svg {
-    width: 22px;
-    height: 22px;
-    fill: #ffffff;
+  /* Focus visible for accessibility */
+  .marr-header__link:focus-visible,
+  .marr-header__toggle:focus-visible {
+    outline: 2px solid var(--marr-taupe);
+    outline-offset: 2px;
   }
 
+  /* ---- Tablet: 991px ---- */
+  @media (max-width: 991px) {
+    .marr-header__logo {
+      padding: 0 24px;
+    }
+  }
+
+  /* ---- Mobile: 767px ---- */
   @media (max-width: 767px) {
-    .marr-header__contact--address {
+    .marr-header__nav--left,
+    .marr-header__nav--right {
       display: none;
     }
 
-    .marr-header__nav {
-      gap: 14px;
+    .marr-header__inner {
+      justify-content: space-between;
     }
 
-    .marr-header__cta {
-      padding: 8px 16px;
-      font-size: 13px;
+    .marr-header__logo {
+      padding: 0;
+      align-items: flex-start;
+    }
+
+    .marr-header__toggle {
+      display: flex;
     }
   }
 
+  /* ---- Small mobile: 478px ---- */
   @media (max-width: 478px) {
-    .marr-header__logo-text {
-      font-size: 14px;
-      letter-spacing: 1px;
+    .marr-header {
+      padding: 12px 0;
     }
 
-    .marr-header__cta {
-      display: none;
+    .marr-header__inner {
+      padding: 0 16px;
+    }
+
+    .marr-header__logo-main {
+      font-size: 1.25rem;
+    }
+
+    .marr-header__logo-sub {
+      font-size: 0.5rem;
     }
   }
 </style>
 
 <header class="marr-header">
   <div class="marr-header__inner">
-    <a href="#" class="marr-header__logo">
-      <img src="https://placehold.co/120x40/1a1a2e/c9a84c?text=MARR" alt="Marr Laser & Skin Clinic">
-      <span class="marr-header__logo-text">Marr Laser</span>
-    </a>
-    <nav class="marr-header__nav">
-      <a href="tel:+441234567890" class="marr-header__contact">
-        <span class="marr-header__contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
-        </span>
-        +44 123 456 7890
-      </a>
-      <span class="marr-header__contact marr-header__contact--address">
-        <span class="marr-header__contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 7a2.5 2.5 0 010 4.5z"/></svg>
-        </span>
-        123 High Street, London
-      </span>
-      <a href="#booking" class="marr-header__cta">Book Free Consultation</a>
-      <a href="https://wa.me/441234567890" class="marr-header__whatsapp" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.585l-.386-.238-2.646.887.887-2.646-.238-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-      </a>
+    <nav class="marr-header__nav--left" aria-label="Primary navigation left">
+      <a href="tel:+441234567890" class="marr-header__link">Call Us</a>
+      <a href="#treatments" class="marr-header__link">Treatments</a>
     </nav>
+
+    <a href="#" class="marr-header__logo" aria-label="MARR Laser &amp; Skin — Home">
+      <span class="marr-header__logo-main">MARR</span>
+      <span class="marr-header__logo-sub">Laser &amp; Skin</span>
+    </a>
+
+    <nav class="marr-header__nav--right" aria-label="Primary navigation right">
+      <a href="#results" class="marr-header__link">Results</a>
+      <a href="#booking" class="marr-header__link">Book Now</a>
+    </nav>
+
+    <button class="marr-header__toggle" aria-label="Open menu" aria-expanded="false">
+      <span class="marr-header__toggle-bar"></span>
+      <span class="marr-header__toggle-bar"></span>
+      <span class="marr-header__toggle-bar"></span>
+    </button>
   </div>
 </header>
 
-<!-- 02 — Hero -->
+<!-- Marr Laser — 02 Hero -->
 <style>
+  /* === SECTION 02 — HERO === Design C: Warm Boutique */
   .marr-hero {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --marr-transition: 0.25s ease;
+    --marr-radius: 8px;
+    --marr-shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --marr-shadow-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
 
-    position: relative;
-    background: var(--marr-primary);
-    color: var(--marr-light);
-    padding: 100px 0 80px;
-    overflow: hidden;
-  }
-
-  .marr-hero__bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .marr-hero__bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.2;
+    background: var(--marr-offwhite);
+    padding: 80px 0;
   }
 
   .marr-hero__inner {
-    position: relative;
-    z-index: 1;
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 32px;
     align-items: center;
   }
 
-  .marr-hero__content { max-width: 560px; }
+  /* Blush panel — Design C signature split colour block */
+  .marr-hero__content {
+    background-color: var(--marr-blush);
+    border-radius: var(--marr-radius);
+    padding: 48px;
+  }
 
+  /* Eyebrow badge */
   .marr-hero__badge {
     display: inline-block;
-    padding: 6px 16px;
-    background: rgba(198, 188, 179, 0.15);
-    border: 1px solid var(--marr-accent);
-    border-radius: 32px;
-    font-family: var(--marr-font-body);
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--marr-accent);
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 24px;
+    color: var(--marr-taupe);
+    margin-bottom: 16px;
   }
 
   .marr-hero__title {
     font-family: var(--marr-font-heading);
-    font-size: clamp(36px, 5vw, 58px);
-    line-height: 1.1;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: var(--marr-charcoal);
     margin-bottom: 20px;
   }
 
-  .marr-hero__title em { font-style: italic; color: var(--marr-accent); }
+  .marr-hero__title em {
+    font-style: italic;
+    color: var(--marr-taupe);
+  }
 
   .marr-hero__subtitle {
-    font-size: 18px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 36px;
+    font-family: var(--marr-font-body);
+    font-size: 1.125rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.7;
+    color: var(--marr-text-muted);
+    margin-bottom: 32px;
     max-width: 480px;
   }
 
-  .marr-hero__ctas { display: flex; gap: 16px; flex-wrap: wrap; }
-
-  .marr-hero__cta {
-    display: inline-block;
-    padding: 16px 36px;
-    border-radius: 32px;
-    font-family: var(--marr-font-body);
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  .marr-hero__ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
   }
 
-  .marr-hero__cta--book { background: var(--marr-accent); color: var(--marr-primary); }
-  .marr-hero__cta--book:hover { background: #B4A89D; }
-  .marr-hero__cta--whatsapp { background: #25d366; color: #ffffff; }
-  .marr-hero__cta--whatsapp:hover { background: #1da851; }
+  /* Button base — Design C: 8px radius, heading font */
+  .marr-hero__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: var(--marr-radius);
+    cursor: pointer;
+    transition: background-color var(--marr-transition),
+                color var(--marr-transition),
+                border-color var(--marr-transition);
+  }
 
-  .marr-hero__trust { margin-top: 36px; display: flex; gap: 24px; align-items: center; }
+  /* Secondary — taupe bg, white text */
+  .marr-hero__cta--book {
+    background-color: var(--marr-taupe);
+    color: #ffffff;
+    border-color: var(--marr-taupe);
+  }
+
+  .marr-hero__cta--book:hover {
+    background-color: var(--marr-taupe-hover);
+    border-color: var(--marr-taupe-hover);
+  }
+
+  /* Outline — charcoal border */
+  .marr-hero__cta--whatsapp {
+    background-color: transparent;
+    color: var(--marr-charcoal);
+    border-color: var(--marr-charcoal);
+  }
+
+  .marr-hero__cta--whatsapp:hover {
+    background-color: var(--marr-charcoal);
+    color: var(--marr-offwhite);
+  }
+
+  .marr-hero__cta:focus-visible {
+    outline: 2px solid var(--marr-taupe);
+    outline-offset: 2px;
+  }
+
+  /* Trust badges — inline text */
+  .marr-hero__trust {
+    margin-top: 32px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
   .marr-hero__trust-item {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--marr-font-body);
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--marr-text-muted);
     display: flex;
     align-items: center;
     gap: 6px;
   }
 
-  .marr-hero__trust-item strong { color: var(--marr-accent); }
-
-  .marr-hero__image { border-radius: 16px; overflow: hidden; }
-  .marr-hero__image img { width: 100%; height: auto; display: block; }
-
-  @media (max-width: 991px) {
-    .marr-hero__inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-    .marr-hero__content { max-width: 100%; }
-    .marr-hero__subtitle { max-width: 100%; }
-    .marr-hero__ctas { justify-content: center; }
-    .marr-hero__trust { justify-content: center; }
-    .marr-hero__image { max-width: 500px; margin: 0 auto; }
+  .marr-hero__trust-item strong {
+    color: var(--marr-taupe);
+    font-weight: 400;
   }
 
+  /* Hero image — rounded corners */
+  .marr-hero__image {
+    border-radius: var(--marr-radius);
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .marr-hero__image img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--marr-radius);
+  }
+
+  /* ---- Tablet: 991px ---- */
+  @media (max-width: 991px) {
+    .marr-hero {
+      padding: 64px 0;
+    }
+
+    .marr-hero__inner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .marr-hero__content {
+      padding: 32px;
+    }
+
+    .marr-hero__subtitle {
+      max-width: 100%;
+    }
+
+    .marr-hero__image {
+      height: auto;
+    }
+
+    .marr-hero__image img {
+      min-height: 300px;
+      height: auto;
+    }
+  }
+
+  /* ---- Mobile: 767px ---- */
+  @media (max-width: 767px) {
+    .marr-hero {
+      padding: 48px 0;
+    }
+
+    .marr-hero__inner {
+      padding: 0 20px;
+    }
+
+    .marr-hero__content {
+      padding: 32px 24px;
+    }
+
+    .marr-hero__title {
+      font-size: clamp(1.75rem, 6vw, 2.5rem);
+    }
+
+    .marr-hero__subtitle {
+      font-size: 1rem;
+    }
+  }
+
+  /* ---- Small mobile: 478px ---- */
   @media (max-width: 478px) {
-    .marr-hero { padding: 60px 0 50px; }
-    .marr-hero__ctas { flex-direction: column; }
-    .marr-hero__cta { width: 100%; }
-    .marr-hero__trust { flex-direction: column; gap: 12px; }
+    .marr-hero {
+      padding: 32px 0;
+    }
+
+    .marr-hero__inner {
+      padding: 0 16px;
+    }
+
+    .marr-hero__content {
+      padding: 24px 20px;
+    }
+
+    .marr-hero__title {
+      font-size: 1.625rem;
+    }
+
+    .marr-hero__ctas {
+      flex-direction: column;
+    }
+
+    .marr-hero__cta {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .marr-hero__trust {
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .marr-hero__image img {
+      min-height: 240px;
+    }
   }
 </style>
 
 <section class="marr-hero">
-  <div class="marr-hero__bg">
-    <img src="https://placehold.co/1920x900/1a1a2e/2a2a4e?text=+" alt="">
-  </div>
   <div class="marr-hero__inner">
     <div class="marr-hero__content">
       <span class="marr-hero__badge">Limited Time Offer</span>
-      <h1 class="marr-hero__title">Say Goodbye to Unwanted Hair — <em>Permanently</em></h1>
-      <p class="marr-hero__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+      <h1 class="marr-hero__title">
+        Say Goodbye to Unwanted Hair — <em>Permanently</em>
+      </h1>
+      <p class="marr-hero__subtitle">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+        commodo cursus magna, vel scelerisque nisl consectetur et.
+      </p>
       <div class="marr-hero__ctas">
         <a href="#booking" class="marr-hero__cta marr-hero__cta--book">Book Free Consultation</a>
         <a href="https://wa.me/441234567890" class="marr-hero__cta marr-hero__cta--whatsapp">Book on WhatsApp</a>
       </div>
       <div class="marr-hero__trust">
         <span class="marr-hero__trust-item"><strong>2,000+</strong> Clients Treated</span>
-        <span class="marr-hero__trust-item"><strong>4.9★</strong> Google Rating</span>
+        <span class="marr-hero__trust-item"><strong>4.9&#9733;</strong> Google Rating</span>
         <span class="marr-hero__trust-item"><strong>10+</strong> Years Experience</span>
       </div>
     </div>
+
     <div class="marr-hero__image">
-      <img src="https://placehold.co/580x650/2a2a4e/c9a84c?text=Hero+Image" alt="Laser hair removal treatment">
+      <img src="https://placehold.co/580x650/C6BCB3/FFFFFF?text=Hero+Image" alt="Laser hair removal treatment">
     </div>
   </div>
 </section>
 
-<!-- 03 — Offer Banner -->
+<!-- Marr Laser — 03 Offer Banner -->
 <style>
+  /* === SECTION 03 — OFFER BANNER === Design C: Warm Boutique */
   .marr-offer {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
+    --marr-charcoal: #3C3C3B;
+    --marr-charcoal-hover: #2a2a29;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
-    background: var(--marr-accent);
+    --marr-transition: 0.25s ease;
+    --marr-radius: 8px;
+    --marr-shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --marr-shadow-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
+
+    background: var(--marr-taupe);
     padding: 40px 0;
   }
 
   .marr-offer__inner {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -350,85 +571,313 @@
     text-align: center;
   }
 
-  .marr-offer__pricing { display: flex; align-items: baseline; gap: 16px; }
-  .marr-offer__price-old { font-size: 24px; color: var(--marr-primary); text-decoration: line-through; opacity: 0.6; }
-  .marr-offer__price-new { font-family: var(--marr-font-heading); font-size: clamp(36px, 4vw, 52px); font-weight: 700; color: var(--marr-primary); line-height: 1; }
-  .marr-offer__price-label { font-size: 14px; color: var(--marr-primary); opacity: 0.7; }
-  .marr-offer__divider { width: 2px; height: 50px; background: rgba(26, 26, 46, 0.2); }
-  .marr-offer__urgency { max-width: 340px; }
-  .marr-offer__urgency-title { font-family: var(--marr-font-heading); font-size: 20px; color: var(--marr-primary); margin-bottom: 6px; }
-  .marr-offer__urgency-text { font-size: 15px; color: var(--marr-primary); opacity: 0.8; }
-
-  .marr-offer__cta {
-    display: inline-block;
-    padding: 14px 32px;
-    background: var(--marr-primary);
-    color: var(--marr-accent);
-    font-family: var(--marr-font-body);
-    font-size: 15px;
-    font-weight: 600;
-    border-radius: 32px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  .marr-offer__pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
   }
 
-  .marr-offer__cta:hover { background: #252525; }
+  .marr-offer__price-old {
+    font-family: var(--marr-font-heading);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--marr-charcoal);
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
 
+  .marr-offer__price-new {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--marr-charcoal);
+    line-height: 1;
+  }
+
+  .marr-offer__price-label {
+    font-family: var(--marr-font-body);
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--marr-charcoal);
+    opacity: 0.7;
+  }
+
+  .marr-offer__divider {
+    width: 2px;
+    height: 50px;
+    background: rgba(60, 60, 59, 0.2);
+  }
+
+  .marr-offer__urgency {
+    max-width: 340px;
+  }
+
+  .marr-offer__urgency-title {
+    font-family: var(--marr-font-heading);
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--marr-charcoal);
+    margin-bottom: 6px;
+  }
+
+  .marr-offer__urgency-text {
+    font-family: var(--marr-font-body);
+    font-size: 0.9375rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--marr-charcoal);
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+
+  .marr-offer__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    background: var(--marr-charcoal);
+    color: var(--marr-offwhite);
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: var(--marr-radius);
+    text-decoration: none;
+    border: 1px solid var(--marr-charcoal);
+    transition: background-color var(--marr-transition),
+                border-color var(--marr-transition);
+    cursor: pointer;
+  }
+
+  .marr-offer__cta:hover {
+    background: var(--marr-charcoal-hover);
+    border-color: var(--marr-charcoal-hover);
+  }
+
+  .marr-offer__cta:focus-visible {
+    outline: 2px solid var(--marr-charcoal);
+    outline-offset: 2px;
+  }
+
+  /* ---- Mobile: 767px ---- */
   @media (max-width: 767px) {
-    .marr-offer__inner { flex-direction: column; gap: 20px; }
-    .marr-offer__divider { width: 60px; height: 2px; }
+    .marr-offer {
+      padding: 32px 0;
+    }
+
+    .marr-offer__inner {
+      flex-direction: column;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .marr-offer__divider {
+      width: 60px;
+      height: 2px;
+    }
+  }
+
+  /* ---- Small mobile: 478px ---- */
+  @media (max-width: 478px) {
+    .marr-offer {
+      padding: 24px 0;
+    }
+
+    .marr-offer__inner {
+      padding: 0 16px;
+    }
   }
 </style>
 
 <section class="marr-offer">
   <div class="marr-offer__inner">
     <div class="marr-offer__pricing">
-      <span class="marr-offer__price-old">£350</span>
+      <span class="marr-offer__price-old">&#163;350</span>
       <div>
-        <span class="marr-offer__price-new">£199</span>
+        <span class="marr-offer__price-new">&#163;199</span>
         <span class="marr-offer__price-label">per session</span>
       </div>
     </div>
+
     <span class="marr-offer__divider"></span>
+
     <div class="marr-offer__urgency">
       <p class="marr-offer__urgency-title">Limited Availability — February Only</p>
-      <p class="marr-offer__urgency-text">Lorem ipsum dolor sit amet. Only 15 slots remaining this month.</p>
+      <p class="marr-offer__urgency-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Only 15 slots remaining this month.
+      </p>
     </div>
+
     <a href="#booking" class="marr-offer__cta">Claim This Offer</a>
   </div>
 </section>
 
-<!-- 04 — Problem -->
+<!-- Marr Laser — 04 Problem -->
 <style>
+  /* === SECTION 04 — PROBLEM === Design C: Warm Boutique */
   .marr-problem {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
     --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
-    background: var(--marr-light);
+    --marr-transition: 0.25s ease;
+    --marr-radius: 8px;
+    --marr-shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --marr-shadow-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
+
+    background: var(--marr-blush);
     padding: 80px 0;
   }
 
-  .marr-problem__inner { max-width: 1180px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-  .marr-problem__content { max-width: 520px; }
-  .marr-problem__eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--marr-accent); margin-bottom: 12px; }
-  .marr-problem__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); color: var(--marr-primary); line-height: 1.2; margin-bottom: 24px; }
-  .marr-problem__intro { font-size: 16px; color: var(--marr-text); line-height: 1.7; margin-bottom: 32px; }
-  .marr-problem__list { display: flex; flex-direction: column; gap: 14px; }
-  .marr-problem__item { display: flex; align-items: flex-start; gap: 14px; font-size: 16px; color: var(--marr-text); line-height: 1.5; }
-  .marr-problem__icon { flex-shrink: 0; width: 28px; height: 28px; background: rgba(198, 188, 179, 0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px; color: var(--marr-accent); font-size: 14px; }
-  .marr-problem__image { border-radius: 16px; overflow: hidden; }
-  .marr-problem__image img { width: 100%; height: auto; display: block; }
-
-  @media (max-width: 991px) {
-    .marr-problem__inner { grid-template-columns: 1fr; gap: 40px; }
-    .marr-problem__content { max-width: 100%; }
-    .marr-problem__image { max-width: 500px; margin: 0 auto; order: -1; }
+  .marr-problem__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
   }
 
-  @media (max-width: 478px) { .marr-problem { padding: 50px 0; } }
+  .marr-problem__content {
+    max-width: 520px;
+  }
+
+  .marr-problem__eyebrow {
+    display: block;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--marr-taupe);
+    margin-bottom: 12px;
+  }
+
+  .marr-problem__title {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(1.5rem, 3.5vw, 2.375rem);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--marr-charcoal);
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .marr-problem__intro {
+    font-family: var(--marr-font-body);
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--marr-text-muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .marr-problem__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .marr-problem__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-family: var(--marr-font-body);
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--marr-text);
+    line-height: 1.5;
+  }
+
+  .marr-problem__icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--marr-taupe);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+
+  .marr-problem__image {
+    border-radius: var(--marr-radius);
+    overflow: hidden;
+  }
+
+  .marr-problem__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--marr-radius);
+  }
+
+  @media (max-width: 991px) {
+    .marr-problem {
+      padding: 64px 0;
+    }
+
+    .marr-problem__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .marr-problem__content {
+      max-width: 100%;
+    }
+
+    .marr-problem__image {
+      max-width: 500px;
+      margin: 0 auto;
+      order: -1;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .marr-problem {
+      padding: 48px 0;
+    }
+
+    .marr-problem__inner {
+      padding: 0 20px;
+    }
+
+    .marr-problem__title {
+      font-size: clamp(1.375rem, 5vw, 1.875rem);
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-problem {
+      padding: 32px 0;
+    }
+
+    .marr-problem__inner {
+      padding: 0 16px;
+    }
+
+    .marr-problem__title {
+      font-size: 1.25rem;
+    }
+  }
 </style>
 
 <section class="marr-problem">
@@ -436,79 +885,267 @@
     <div class="marr-problem__content">
       <p class="marr-problem__eyebrow">The Problem</p>
       <h2 class="marr-problem__title">Tired of the Endless Cycle of Hair Removal?</h2>
-      <p class="marr-problem__intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+      <p class="marr-problem__intro">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia
+        odio vitae vestibulum vestibulum.
+      </p>
       <div class="marr-problem__list">
-        <div class="marr-problem__item"><span class="marr-problem__icon">✗</span><span>Constant shaving that leaves stubble within hours</span></div>
-        <div class="marr-problem__item"><span class="marr-problem__icon">✗</span><span>Painful waxing appointments every few weeks</span></div>
-        <div class="marr-problem__item"><span class="marr-problem__icon">✗</span><span>Ingrown hairs and irritation that won't go away</span></div>
-        <div class="marr-problem__item"><span class="marr-problem__icon">✗</span><span>Razor burns and bumps on sensitive areas</span></div>
-        <div class="marr-problem__item"><span class="marr-problem__icon">✗</span><span>Spending hundreds each year on temporary solutions</span></div>
-        <div class="marr-problem__item"><span class="marr-problem__icon">✗</span><span>Skin darkening from repeated friction and irritation</span></div>
+        <div class="marr-problem__item">
+          <span class="marr-problem__icon">&#10007;</span>
+          <span>Constant shaving that leaves stubble within hours</span>
+        </div>
+        <div class="marr-problem__item">
+          <span class="marr-problem__icon">&#10007;</span>
+          <span>Painful waxing appointments every few weeks</span>
+        </div>
+        <div class="marr-problem__item">
+          <span class="marr-problem__icon">&#10007;</span>
+          <span>Ingrown hairs and irritation that won't go away</span>
+        </div>
+        <div class="marr-problem__item">
+          <span class="marr-problem__icon">&#10007;</span>
+          <span>Razor burns and bumps on sensitive areas</span>
+        </div>
+        <div class="marr-problem__item">
+          <span class="marr-problem__icon">&#10007;</span>
+          <span>Spending hundreds each year on temporary solutions</span>
+        </div>
+        <div class="marr-problem__item">
+          <span class="marr-problem__icon">&#10007;</span>
+          <span>Skin darkening from repeated friction and irritation</span>
+        </div>
       </div>
     </div>
+
     <div class="marr-problem__image">
       <img src="https://placehold.co/560x620/f8f8f8/cccccc?text=Problem+Image" alt="Common hair removal frustrations">
     </div>
   </div>
 </section>
 
-<!-- 05 — Treatment Breakdown -->
+<!-- Marr Laser — 05 Treatment Breakdown -->
 <style>
   .marr-treatment {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-bg: #F9F9F8;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
     --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
-    background: var(--marr-bg);
+    --shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --shadow-card-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
+    --transition-base: 0.25s ease;
+
+    background: var(--marr-offwhite);
     padding: 80px 0;
+    font-family: var(--marr-font-body);
+    font-weight: 300;
+    color: var(--marr-text);
   }
 
-  .marr-treatment__inner { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
-  .marr-treatment__header { text-align: center; max-width: 680px; margin: 0 auto 56px; }
-  .marr-treatment__eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--marr-accent); margin-bottom: 12px; }
-  .marr-treatment__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); color: var(--marr-primary); line-height: 1.2; margin-bottom: 16px; }
-  .marr-treatment__subtitle { font-size: 17px; color: var(--marr-text); line-height: 1.6; }
-  .marr-treatment__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .marr-treatment__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .marr-treatment__header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 48px;
+  }
+
+  .marr-treatment__eyebrow {
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--marr-taupe);
+    margin-bottom: 12px;
+  }
+
+  .marr-treatment__title {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(1.5rem, 3.5vw, 2.375rem);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--marr-charcoal);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .marr-treatment__subtitle {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--marr-text-muted);
+    line-height: 1.7;
+  }
+
+  .marr-treatment__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
 
   .marr-treatment__card {
-    background: var(--marr-light);
-    border-radius: 16px;
+    background: #ffffff;
+    border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    display: flex;
+    flex-direction: column;
   }
 
-  .marr-treatment__card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08); }
-  .marr-treatment__card-image { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
-  .marr-treatment__card-image img { width: 100%; height: 100%; object-fit: cover; }
+  .marr-treatment__card::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: var(--marr-taupe);
+    border-radius: 8px 8px 0 0;
+  }
+
+  .marr-treatment__card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .marr-treatment__card-image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  .marr-treatment__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
   .marr-treatment__card-badge {
-    position: absolute; top: 16px; left: 16px;
-    padding: 4px 12px; background: var(--marr-accent); color: var(--marr-primary);
-    font-size: 12px; font-weight: 700; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 4px 12px;
+    background: var(--marr-taupe);
+    color: var(--marr-charcoal);
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
-  .marr-treatment__card-body { padding: 28px; }
-  .marr-treatment__card-title { font-family: var(--marr-font-heading); font-size: 22px; color: var(--marr-primary); margin-bottom: 12px; line-height: 1.3; }
-  .marr-treatment__card-text { font-size: 15px; color: var(--marr-text); line-height: 1.6; margin-bottom: 20px; }
-  .marr-treatment__card-features { display: flex; flex-direction: column; gap: 8px; }
+  .marr-treatment__card-body {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .marr-treatment__card-title {
+    font-family: var(--marr-font-heading);
+    font-size: 1.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--marr-charcoal);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .marr-treatment__card-text {
+    font-size: 0.9375rem;
+    font-weight: 300;
+    color: var(--marr-text-muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .marr-treatment__card-features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+  }
 
   .marr-treatment__card-feature {
-    display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--marr-text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--marr-text);
+    line-height: 1.5;
   }
 
   .marr-treatment__card-feature::before {
-    content: '✓'; flex-shrink: 0; width: 22px; height: 22px;
-    background: rgba(198, 188, 179, 0.12); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 12px; color: var(--marr-accent); font-weight: 700;
+    content: '\2713';
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    background: rgba(198, 188, 179, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--marr-taupe);
+    font-weight: 700;
   }
 
-  @media (max-width: 991px) { .marr-treatment__grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 767px) { .marr-treatment__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
-  @media (max-width: 478px) { .marr-treatment { padding: 50px 0; } }
+  @media (max-width: 1200px) {
+    .marr-treatment__grid {
+      gap: 24px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .marr-treatment {
+      padding: 64px 0;
+    }
+
+    .marr-treatment__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .marr-treatment {
+      padding: 48px 0;
+    }
+
+    .marr-treatment__inner {
+      padding: 0 20px;
+    }
+
+    .marr-treatment__grid {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-treatment {
+      padding: 32px 0;
+    }
+
+    .marr-treatment__inner {
+      padding: 0 16px;
+    }
+
+    .marr-treatment__header {
+      margin-bottom: 32px;
+    }
+  }
 </style>
 
 <section class="marr-treatment">
@@ -516,9 +1153,14 @@
     <div class="marr-treatment__header">
       <p class="marr-treatment__eyebrow">Our Technology</p>
       <h2 class="marr-treatment__title">Advanced Laser Hair Removal Technology</h2>
-      <p class="marr-treatment__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod.</p>
+      <p class="marr-treatment__subtitle">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem
+        malesuada magna mollis euismod.
+      </p>
     </div>
+
     <div class="marr-treatment__grid">
+      <!-- Card 1 -->
       <div class="marr-treatment__card">
         <div class="marr-treatment__card-image">
           <img src="https://placehold.co/400x300/e8e0d0/c9a84c?text=Diode+Laser" alt="Diode Laser Technology">
@@ -526,7 +1168,10 @@
         </div>
         <div class="marr-treatment__card-body">
           <h3 class="marr-treatment__card-title">Diode Laser (808nm)</h3>
-          <p class="marr-treatment__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor.</p>
+          <p class="marr-treatment__card-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit
+            tempus porttitor.
+          </p>
           <div class="marr-treatment__card-features">
             <span class="marr-treatment__card-feature">Suitable for all skin types</span>
             <span class="marr-treatment__card-feature">Virtually painless treatment</span>
@@ -534,13 +1179,18 @@
           </div>
         </div>
       </div>
+
+      <!-- Card 2 -->
       <div class="marr-treatment__card">
         <div class="marr-treatment__card-image">
           <img src="https://placehold.co/400x300/e0e0e8/c9a84c?text=Alexandrite" alt="Alexandrite Laser">
         </div>
         <div class="marr-treatment__card-body">
           <h3 class="marr-treatment__card-title">Alexandrite Laser (755nm)</h3>
-          <p class="marr-treatment__card-text">Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna.</p>
+          <p class="marr-treatment__card-text">
+            Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo
+            cursus magna.
+          </p>
           <div class="marr-treatment__card-features">
             <span class="marr-treatment__card-feature">Ideal for fair to medium skin</span>
             <span class="marr-treatment__card-feature">Fastest treatment speed</span>
@@ -548,13 +1198,18 @@
           </div>
         </div>
       </div>
+
+      <!-- Card 3 -->
       <div class="marr-treatment__card">
         <div class="marr-treatment__card-image">
           <img src="https://placehold.co/400x300/d8e0d8/c9a84c?text=Nd:YAG" alt="Nd:YAG Laser">
         </div>
         <div class="marr-treatment__card-body">
           <h3 class="marr-treatment__card-title">Nd:YAG Laser (1064nm)</h3>
-          <p class="marr-treatment__card-text">Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor.</p>
+          <p class="marr-treatment__card-text">
+            Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non
+            metus auctor.
+          </p>
           <div class="marr-treatment__card-features">
             <span class="marr-treatment__card-feature">Best for darker skin tones</span>
             <span class="marr-treatment__card-feature">Deep follicle penetration</span>
@@ -566,59 +1221,70 @@
   </div>
 </section>
 
-<!-- 06 — Why Choose -->
+<!-- Marr Laser — 06 Why Choose -->
 <style>
   .marr-why {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
-    background: var(--marr-primary);
-    color: var(--marr-light);
+    --shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --shadow-card-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
+    --transition-base: 0.25s ease;
+
+    background: var(--marr-blush);
+    color: var(--marr-charcoal);
     padding: 80px 0;
+    font-family: var(--marr-font-body);
+    font-weight: 300;
   }
 
-  .marr-why__inner { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
-  .marr-why__header { text-align: center; max-width: 680px; margin: 0 auto 56px; }
-  .marr-why__eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--marr-accent); margin-bottom: 12px; }
-  .marr-why__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); line-height: 1.2; margin-bottom: 16px; }
-  .marr-why__subtitle { font-size: 17px; color: rgba(255, 255, 255, 0.7); line-height: 1.6; }
-  .marr-why__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 48px; }
+  .marr-why__inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .marr-why__header { text-align: center; max-width: 680px; margin: 0 auto 48px; }
+  .marr-why__eyebrow { font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: var(--marr-taupe); margin-bottom: 12px; }
+  .marr-why__title { font-family: var(--marr-font-heading); font-size: clamp(1.5rem, 3.5vw, 2.375rem); font-weight: 300; text-transform: uppercase; letter-spacing: 0.1em; color: var(--marr-charcoal); line-height: 1.2; margin-bottom: 16px; }
+  .marr-why__subtitle { font-size: 1.125rem; font-weight: 300; color: var(--marr-text-muted); line-height: 1.7; }
+  .marr-why__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 48px; }
 
   .marr-why__item {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(198, 188, 179, 0.15);
-    border-radius: 16px;
-    padding: 36px 28px;
-    transition: border-color 0.3s ease;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 32px 24px;
+    border: 1px solid transparent;
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
   }
 
-  .marr-why__item:hover { border-color: var(--marr-accent); }
-  .marr-why__item-icon { width: 52px; height: 52px; background: rgba(198, 188, 179, 0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
-  .marr-why__item-title { font-family: var(--marr-font-heading); font-size: 20px; margin-bottom: 10px; line-height: 1.3; }
-  .marr-why__item-text { font-size: 15px; color: rgba(255, 255, 255, 0.65); line-height: 1.6; }
-
-  .marr-why__ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .marr-why__item:hover { transform: translateY(-2px); box-shadow: var(--shadow-card-hover); border-color: var(--marr-taupe); }
+  .marr-why__item-icon { width: 52px; height: 52px; background: var(--marr-blush); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; color: var(--marr-charcoal); }
+  .marr-why__item-title { font-family: var(--marr-font-heading); font-size: 1.25rem; font-weight: 300; text-transform: uppercase; letter-spacing: 0.1em; color: var(--marr-charcoal); margin-bottom: 10px; line-height: 1.3; }
+  .marr-why__item-text { font-size: 0.9375rem; font-weight: 300; color: var(--marr-text-muted); line-height: 1.7; }
+  .marr-why__ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
   .marr-why__cta {
-    display: inline-block; padding: 16px 36px; border-radius: 32px;
-    font-family: var(--marr-font-body); font-size: 16px; font-weight: 600;
-    text-decoration: none; transition: all 0.3s ease; text-align: center;
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 12px 28px; border-radius: 8px;
+    font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    border: 1px solid transparent;
+    transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+    text-align: center; cursor: pointer;
   }
 
-  .marr-why__cta--primary { background: var(--marr-accent); color: var(--marr-primary); }
-  .marr-why__cta--primary:hover { background: #B4A89D; }
-  .marr-why__cta--whatsapp { background: #25d366; color: #ffffff; }
-  .marr-why__cta--whatsapp:hover { background: #1da851; }
+  .marr-why__cta--primary { background: var(--marr-taupe); color: #ffffff; border-color: var(--marr-taupe); }
+  .marr-why__cta--primary:hover { background: var(--marr-taupe-hover); border-color: var(--marr-taupe-hover); }
+  .marr-why__cta--whatsapp { background: transparent; color: var(--marr-charcoal); border-color: var(--marr-charcoal); }
+  .marr-why__cta--whatsapp:hover { background: var(--marr-charcoal); color: var(--marr-offwhite); }
 
-  @media (max-width: 991px) { .marr-why__grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 767px) { .marr-why__grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; } }
-  @media (max-width: 478px) {
-    .marr-why { padding: 50px 0; }
-    .marr-why__ctas { flex-direction: column; align-items: center; }
-    .marr-why__cta { width: 100%; max-width: 320px; }
-  }
+  @media (max-width: 1200px) { .marr-why__grid { gap: 24px; } }
+  @media (max-width: 991px) { .marr-why { padding: 64px 0; } .marr-why__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 767px) { .marr-why { padding: 48px 0; } .marr-why__inner { padding: 0 20px; } .marr-why__grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; margin-bottom: 40px; } }
+  @media (max-width: 478px) { .marr-why { padding: 32px 0; } .marr-why__inner { padding: 0 16px; } .marr-why__header { margin-bottom: 32px; } .marr-why__ctas { flex-direction: column; align-items: center; } .marr-why__cta { width: 100%; max-width: 320px; } }
 </style>
 
 <section class="marr-why">
@@ -629,12 +1295,12 @@
       <p class="marr-why__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor.</p>
     </div>
     <div class="marr-why__grid">
-      <div class="marr-why__item"><div class="marr-why__item-icon">🎯</div><h3 class="marr-why__item-title">Medical-Grade Equipment</h3><p class="marr-why__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem.</p></div>
-      <div class="marr-why__item"><div class="marr-why__item-icon">👩‍⚕️</div><h3 class="marr-why__item-title">Qualified Practitioners</h3><p class="marr-why__item-text">Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo.</p></div>
-      <div class="marr-why__item"><div class="marr-why__item-icon">⚡</div><h3 class="marr-why__item-title">Quick Sessions</h3><p class="marr-why__item-text">Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla.</p></div>
-      <div class="marr-why__item"><div class="marr-why__item-icon">🛡️</div><h3 class="marr-why__item-title">All Skin Types Welcome</h3><p class="marr-why__item-text">Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit.</p></div>
-      <div class="marr-why__item"><div class="marr-why__item-icon">💰</div><h3 class="marr-why__item-title">Transparent Pricing</h3><p class="marr-why__item-text">Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur.</p></div>
-      <div class="marr-why__item"><div class="marr-why__item-icon">✨</div><h3 class="marr-why__item-title">Permanent Results</h3><p class="marr-why__item-text">Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis.</p></div>
+      <div class="marr-why__item"><div class="marr-why__item-icon">&#127919;</div><h3 class="marr-why__item-title">Medical-Grade Equipment</h3><p class="marr-why__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem.</p></div>
+      <div class="marr-why__item"><div class="marr-why__item-icon">&#128105;&#8205;&#9877;&#65039;</div><h3 class="marr-why__item-title">Qualified Practitioners</h3><p class="marr-why__item-text">Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo.</p></div>
+      <div class="marr-why__item"><div class="marr-why__item-icon">&#9889;</div><h3 class="marr-why__item-title">Quick Sessions</h3><p class="marr-why__item-text">Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla.</p></div>
+      <div class="marr-why__item"><div class="marr-why__item-icon">&#128737;&#65039;</div><h3 class="marr-why__item-title">All Skin Types Welcome</h3><p class="marr-why__item-text">Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit.</p></div>
+      <div class="marr-why__item"><div class="marr-why__item-icon">&#128176;</div><h3 class="marr-why__item-title">Transparent Pricing</h3><p class="marr-why__item-text">Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur.</p></div>
+      <div class="marr-why__item"><div class="marr-why__item-icon">&#10024;</div><h3 class="marr-why__item-title">Permanent Results</h3><p class="marr-why__item-text">Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis.</p></div>
     </div>
     <div class="marr-why__ctas">
       <a href="#booking" class="marr-why__cta marr-why__cta--primary">Book Free Consultation</a>
@@ -643,48 +1309,53 @@
   </div>
 </section>
 
-<!-- 07 — Ideal Candidate -->
+<!-- Marr Laser — 07 Ideal Candidate -->
 <style>
   .marr-candidate {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
     --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
-    background: var(--marr-light);
+    --transition-base: 0.25s ease;
+
+    background: var(--marr-offwhite);
     padding: 80px 0;
+    font-family: var(--marr-font-body);
+    font-weight: 300;
+    color: var(--marr-text);
   }
 
-  .marr-candidate__inner { max-width: 1180px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-  .marr-candidate__image { border-radius: 16px; overflow: hidden; }
+  .marr-candidate__inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .marr-candidate__image { border-radius: 8px; overflow: hidden; }
   .marr-candidate__image img { width: 100%; height: auto; display: block; }
   .marr-candidate__content { max-width: 520px; }
-  .marr-candidate__eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--marr-accent); margin-bottom: 12px; }
-  .marr-candidate__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); color: var(--marr-primary); line-height: 1.2; margin-bottom: 20px; }
-  .marr-candidate__text { font-size: 16px; color: var(--marr-text); line-height: 1.7; margin-bottom: 28px; }
+  .marr-candidate__eyebrow { font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: var(--marr-taupe); margin-bottom: 12px; }
+  .marr-candidate__title { font-family: var(--marr-font-heading); font-size: clamp(1.5rem, 3.5vw, 2.375rem); font-weight: 300; text-transform: uppercase; letter-spacing: 0.1em; color: var(--marr-charcoal); line-height: 1.2; margin-bottom: 20px; }
+  .marr-candidate__text { font-size: 1rem; font-weight: 300; color: var(--marr-text-muted); line-height: 1.7; margin-bottom: 28px; }
   .marr-candidate__list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
-  .marr-candidate__item { display: flex; align-items: flex-start; gap: 14px; font-size: 16px; color: var(--marr-text); line-height: 1.5; }
-  .marr-candidate__check { flex-shrink: 0; width: 28px; height: 28px; background: rgba(198, 188, 179, 0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--marr-accent); font-size: 14px; font-weight: 700; margin-top: 1px; }
+  .marr-candidate__item { display: flex; align-items: flex-start; gap: 14px; font-size: 1rem; font-weight: 300; color: var(--marr-text); line-height: 1.5; }
+  .marr-candidate__check { flex-shrink: 0; width: 28px; height: 28px; background: var(--marr-taupe); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; font-weight: 700; margin-top: 1px; }
 
   .marr-candidate__cta {
-    display: inline-block; padding: 16px 36px; background: var(--marr-accent); color: var(--marr-primary);
-    font-family: var(--marr-font-body); font-size: 16px; font-weight: 600; border-radius: 32px;
-    text-decoration: none; transition: background 0.3s ease;
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 12px 28px; background: var(--marr-taupe); color: #ffffff;
+    font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400;
+    letter-spacing: 0.1em; text-transform: uppercase; border-radius: 8px;
+    border: 1px solid var(--marr-taupe); text-decoration: none;
+    transition: background-color var(--transition-base), border-color var(--transition-base);
+    cursor: pointer;
   }
 
-  .marr-candidate__cta:hover { background: #B4A89D; }
+  .marr-candidate__cta:hover { background: var(--marr-taupe-hover); border-color: var(--marr-taupe-hover); }
 
-  @media (max-width: 991px) {
-    .marr-candidate__inner { grid-template-columns: 1fr; gap: 40px; }
-    .marr-candidate__image { max-width: 500px; margin: 0 auto; }
-    .marr-candidate__content { max-width: 100%; }
-  }
-
-  @media (max-width: 478px) {
-    .marr-candidate { padding: 50px 0; }
-    .marr-candidate__cta { width: 100%; text-align: center; }
-  }
+  @media (max-width: 991px) { .marr-candidate { padding: 64px 0; } .marr-candidate__inner { grid-template-columns: 1fr; gap: 40px; } .marr-candidate__image { max-width: 500px; margin: 0 auto; } .marr-candidate__content { max-width: 100%; } }
+  @media (max-width: 767px) { .marr-candidate { padding: 48px 0; } .marr-candidate__inner { padding: 0 20px; } }
+  @media (max-width: 478px) { .marr-candidate { padding: 32px 0; } .marr-candidate__inner { padding: 0 16px; } .marr-candidate__cta { width: 100%; text-align: center; } }
 </style>
 
 <section class="marr-candidate">
@@ -697,71 +1368,61 @@
       <h2 class="marr-candidate__title">The Ideal Candidate for Laser Hair Removal</h2>
       <p class="marr-candidate__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
       <div class="marr-candidate__list">
-        <div class="marr-candidate__item"><span class="marr-candidate__check">✓</span><span>You're tired of shaving, waxing, or plucking regularly</span></div>
-        <div class="marr-candidate__item"><span class="marr-candidate__check">✓</span><span>You want a long-term solution for unwanted hair</span></div>
-        <div class="marr-candidate__item"><span class="marr-candidate__check">✓</span><span>You have dark hair on any skin tone (light to dark)</span></div>
-        <div class="marr-candidate__item"><span class="marr-candidate__check">✓</span><span>You suffer from ingrown hairs or razor bumps</span></div>
-        <div class="marr-candidate__item"><span class="marr-candidate__check">✓</span><span>You want smoother skin with no downtime</span></div>
+        <div class="marr-candidate__item"><span class="marr-candidate__check">&#10003;</span><span>You're tired of shaving, waxing, or plucking regularly</span></div>
+        <div class="marr-candidate__item"><span class="marr-candidate__check">&#10003;</span><span>You want a long-term solution for unwanted hair</span></div>
+        <div class="marr-candidate__item"><span class="marr-candidate__check">&#10003;</span><span>You have dark hair on any skin tone (light to dark)</span></div>
+        <div class="marr-candidate__item"><span class="marr-candidate__check">&#10003;</span><span>You suffer from ingrown hairs or razor bumps</span></div>
+        <div class="marr-candidate__item"><span class="marr-candidate__check">&#10003;</span><span>You want smoother skin with no downtime</span></div>
       </div>
       <a href="#booking" class="marr-candidate__cta">Check Your Eligibility</a>
     </div>
   </div>
 </section>
 
-<!-- 08 — Results -->
+<!-- Marr Laser — 08 Results -->
 <style>
   .marr-results {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-bg: #F9F9F8;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
     --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
-    background: var(--marr-bg);
+    --shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --transition-base: 0.25s ease;
+
+    background: var(--marr-blush);
     padding: 80px 0;
+    font-family: var(--marr-font-body);
+    font-weight: 300;
+    color: var(--marr-text);
   }
 
-  .marr-results__inner { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
-  .marr-results__header { text-align: center; max-width: 680px; margin: 0 auto 56px; }
-  .marr-results__eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--marr-accent); margin-bottom: 12px; }
-  .marr-results__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); color: var(--marr-primary); line-height: 1.2; margin-bottom: 16px; }
-  .marr-results__subtitle { font-size: 17px; color: var(--marr-text); line-height: 1.6; }
+  .marr-results__inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .marr-results__header { text-align: center; max-width: 680px; margin: 0 auto 48px; }
+  .marr-results__eyebrow { font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: var(--marr-taupe); margin-bottom: 12px; }
+  .marr-results__title { font-family: var(--marr-font-heading); font-size: clamp(1.5rem, 3.5vw, 2.375rem); font-weight: 300; text-transform: uppercase; letter-spacing: 0.1em; color: var(--marr-charcoal); line-height: 1.2; margin-bottom: 16px; }
+  .marr-results__subtitle { font-size: 1.125rem; font-weight: 300; color: var(--marr-text-muted); line-height: 1.7; }
   .marr-results__timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 
   .marr-results__step { text-align: center; position: relative; }
-  .marr-results__step::after { content: ''; position: absolute; top: 36px; right: -12px; width: 24px; height: 2px; background: var(--marr-accent); }
+  .marr-results__step::after { content: ''; position: absolute; top: 36px; right: -12px; width: 24px; height: 2px; background: var(--marr-taupe); }
   .marr-results__step:last-child::after { display: none; }
+  .marr-results__step-number { width: 72px; height: 72px; margin: 0 auto 20px; background: var(--marr-blush); border: 2px solid var(--marr-taupe); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--marr-font-heading); font-size: 1.75rem; font-weight: 300; letter-spacing: 0.1em; color: var(--marr-taupe); }
+  .marr-results__step-title { font-family: var(--marr-font-heading); font-size: 1.125rem; font-weight: 300; text-transform: uppercase; letter-spacing: 0.1em; color: var(--marr-charcoal); margin-bottom: 8px; line-height: 1.3; }
+  .marr-results__step-text { font-size: 0.875rem; font-weight: 300; color: var(--marr-text-muted); line-height: 1.7; max-width: 240px; margin: 0 auto; }
 
-  .marr-results__step-number {
-    width: 72px; height: 72px; margin: 0 auto 20px;
-    background: var(--marr-light); border: 2px solid var(--marr-accent); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--marr-font-heading); font-size: 28px; color: var(--marr-accent); font-weight: 700;
-  }
+  .marr-results__outcomes { margin-top: 56px; background: #ffffff; border-radius: 8px; padding: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; box-shadow: var(--shadow-card); }
+  .marr-results__outcome-value { font-family: var(--marr-font-heading); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marr-taupe); line-height: 1; margin-bottom: 8px; }
+  .marr-results__outcome-label { font-size: 0.9375rem; font-weight: 300; color: var(--marr-text-muted); line-height: 1.5; }
 
-  .marr-results__step-title { font-family: var(--marr-font-heading); font-size: 18px; color: var(--marr-primary); margin-bottom: 8px; }
-  .marr-results__step-text { font-size: 14px; color: var(--marr-text); line-height: 1.6; max-width: 240px; margin: 0 auto; }
-
-  .marr-results__outcomes {
-    margin-top: 56px; background: var(--marr-light); border-radius: 16px; padding: 40px;
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center;
-  }
-
-  .marr-results__outcome-value { font-family: var(--marr-font-heading); font-size: 40px; color: var(--marr-accent); line-height: 1; margin-bottom: 8px; }
-  .marr-results__outcome-label { font-size: 15px; color: var(--marr-text); }
-
-  @media (max-width: 991px) {
-    .marr-results__timeline { grid-template-columns: repeat(2, 1fr); gap: 40px; }
-    .marr-results__step::after { display: none; }
-  }
-
-  @media (max-width: 767px) {
-    .marr-results__timeline { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
-    .marr-results__outcomes { grid-template-columns: 1fr; padding: 30px; gap: 24px; }
-  }
-
-  @media (max-width: 478px) { .marr-results { padding: 50px 0; } }
+  @media (max-width: 1200px) { .marr-results__timeline { gap: 20px; } }
+  @media (max-width: 991px) { .marr-results { padding: 64px 0; } .marr-results__timeline { grid-template-columns: repeat(2, 1fr); gap: 40px; } .marr-results__step::after { display: none; } }
+  @media (max-width: 767px) { .marr-results { padding: 48px 0; } .marr-results__inner { padding: 0 20px; } .marr-results__timeline { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; } .marr-results__outcomes { grid-template-columns: 1fr; padding: 30px; gap: 24px; } }
+  @media (max-width: 478px) { .marr-results { padding: 32px 0; } .marr-results__inner { padding: 0 16px; } .marr-results__header { margin-bottom: 32px; } .marr-results__outcomes { padding: 24px 20px; } }
 </style>
 
 <section class="marr-results">
@@ -772,77 +1433,74 @@
       <p class="marr-results__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod.</p>
     </div>
     <div class="marr-results__timeline">
-      <div class="marr-results__step"><div class="marr-results__step-number">1</div><h3 class="marr-results__step-title">Consultation</h3><p class="marr-results__step-text">Free skin assessment and personalised treatment plan.</p></div>
-      <div class="marr-results__step"><div class="marr-results__step-number">2</div><h3 class="marr-results__step-title">First Session</h3><p class="marr-results__step-text">Quick treatment (15–60 mins). Minimal discomfort.</p></div>
-      <div class="marr-results__step"><div class="marr-results__step-number">3</div><h3 class="marr-results__step-title">Course of 6–8</h3><p class="marr-results__step-text">Sessions spaced 4–6 weeks apart. Progressive reduction.</p></div>
-      <div class="marr-results__step"><div class="marr-results__step-number">4</div><h3 class="marr-results__step-title">Smooth Skin</h3><p class="marr-results__step-text">Up to 90% permanent hair reduction. Yearly maintenance.</p></div>
+      <div class="marr-results__step"><div class="marr-results__step-number">1</div><h3 class="marr-results__step-title">Consultation</h3><p class="marr-results__step-text">Free skin assessment and personalised treatment plan. Lorem ipsum dolor.</p></div>
+      <div class="marr-results__step"><div class="marr-results__step-number">2</div><h3 class="marr-results__step-title">First Session</h3><p class="marr-results__step-text">Quick treatment (15&#8211;60 mins depending on area). Minimal discomfort.</p></div>
+      <div class="marr-results__step"><div class="marr-results__step-number">3</div><h3 class="marr-results__step-title">Course of 6&#8211;8</h3><p class="marr-results__step-text">Sessions spaced 4&#8211;6 weeks apart. Progressive reduction each visit.</p></div>
+      <div class="marr-results__step"><div class="marr-results__step-number">4</div><h3 class="marr-results__step-title">Smooth Skin</h3><p class="marr-results__step-text">Up to 90% permanent hair reduction. Maintenance once or twice a year.</p></div>
     </div>
     <div class="marr-results__outcomes">
       <div><div class="marr-results__outcome-value">90%</div><div class="marr-results__outcome-label">Permanent hair reduction</div></div>
-      <div><div class="marr-results__outcome-value">6–8</div><div class="marr-results__outcome-label">Sessions for full results</div></div>
+      <div><div class="marr-results__outcome-value">6&#8211;8</div><div class="marr-results__outcome-label">Sessions for full results</div></div>
       <div><div class="marr-results__outcome-value">15 min</div><div class="marr-results__outcome-label">Average underarm session</div></div>
     </div>
   </div>
 </section>
 
-<!-- 09 — Pricing Grid -->
+<!-- Marr Laser — 09 Pricing Grid -->
 <style>
   .marr-pricing {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-text: #3C3C3B;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
-    background: var(--marr-light);
+    --shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --shadow-card-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
+    --transition-base: 0.25s ease;
+
+    background: var(--marr-offwhite);
     padding: 80px 0;
   }
 
   .marr-pricing__inner { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
   .marr-pricing__header { text-align: center; max-width: 680px; margin: 0 auto 48px; }
-  .marr-pricing__eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--marr-accent); margin-bottom: 12px; }
-  .marr-pricing__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); color: var(--marr-primary); line-height: 1.2; margin-bottom: 16px; }
-  .marr-pricing__subtitle { font-size: 17px; color: var(--marr-text); line-height: 1.6; }
+  .marr-pricing__eyebrow { font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: var(--marr-taupe); margin-bottom: 12px; }
+  .marr-pricing__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.1em; color: var(--marr-charcoal); line-height: 1.2; margin-bottom: 16px; }
+  .marr-pricing__subtitle { font-family: var(--marr-font-body); font-size: 17px; font-weight: 300; color: var(--marr-text-muted); line-height: 1.6; }
 
-  .marr-pricing__table { width: 100%; border-collapse: collapse; background: var(--marr-light); border-radius: 16px; overflow: hidden; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06); }
-  .marr-pricing__table thead { background: var(--marr-primary); color: var(--marr-light); }
-  .marr-pricing__table th { padding: 18px 24px; font-size: 14px; font-weight: 600; text-align: left; text-transform: uppercase; letter-spacing: 1px; }
+  .marr-pricing__table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-card); }
+  .marr-pricing__table thead { background: var(--marr-charcoal); color: var(--marr-offwhite); }
+  .marr-pricing__table th { padding: 18px 24px; font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; text-align: left; text-transform: uppercase; letter-spacing: 0.15em; }
   .marr-pricing__table th:last-child { text-align: right; }
-  .marr-pricing__table td { padding: 18px 24px; font-size: 16px; color: var(--marr-text); border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
+  .marr-pricing__table td { padding: 18px 24px; font-family: var(--marr-font-body); font-size: 16px; font-weight: 300; color: var(--marr-charcoal); border-bottom: 1px solid rgba(60, 60, 59, 0.06); }
   .marr-pricing__table td:last-child { text-align: right; white-space: nowrap; }
-  .marr-pricing__table tbody tr:hover { background: rgba(198, 188, 179, 0.04); }
+  .marr-pricing__table tbody tr { transition: background var(--transition-base); }
+  .marr-pricing__table tbody tr:hover { background: rgba(198, 188, 179, 0.06); }
   .marr-pricing__table .marr-pricing__highlight { background: rgba(198, 188, 179, 0.08); }
-  .marr-pricing__price-old { text-decoration: line-through; color: #999; font-size: 14px; margin-right: 8px; }
-  .marr-pricing__price-new { font-weight: 700; color: var(--marr-accent); font-size: 18px; }
-
-  .marr-pricing__badge {
-    display: inline-block; padding: 2px 10px; background: var(--marr-accent); color: var(--marr-primary);
-    font-size: 11px; font-weight: 700; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px;
-    margin-left: 8px; vertical-align: middle;
-  }
-
+  .marr-pricing__table .marr-pricing__highlight:hover { background: rgba(198, 188, 179, 0.14); }
+  .marr-pricing__price-old { text-decoration: line-through; color: var(--marr-text-muted); font-size: 14px; margin-right: 8px; }
+  .marr-pricing__price-new { font-family: var(--marr-font-heading); font-weight: 300; color: var(--marr-taupe); font-size: 18px; letter-spacing: 0.05em; }
+  .marr-pricing__badge { display: inline-block; padding: 2px 10px; background: var(--marr-taupe); color: var(--marr-charcoal); font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.1em; margin-left: 8px; vertical-align: middle; }
   .marr-pricing__footer { text-align: center; margin-top: 40px; }
-  .marr-pricing__note { font-size: 14px; color: #888; margin-bottom: 24px; }
+  .marr-pricing__note { font-family: var(--marr-font-body); font-size: 14px; font-weight: 300; color: var(--marr-text-muted); margin-bottom: 24px; }
+  .marr-pricing__cta { display: inline-block; padding: 14px 36px; background: var(--marr-taupe); color: #ffffff; font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 8px; text-decoration: none; transition: background var(--transition-base); }
+  .marr-pricing__cta:hover { background: var(--marr-taupe-hover); }
 
-  .marr-pricing__cta {
-    display: inline-block; padding: 16px 40px; background: var(--marr-accent); color: var(--marr-primary);
-    font-family: var(--marr-font-body); font-size: 16px; font-weight: 600; border-radius: 32px;
-    text-decoration: none; transition: background 0.3s ease;
-  }
-
-  .marr-pricing__cta:hover { background: #B4A89D; }
-
+  @media (max-width: 1200px) { .marr-pricing__table th, .marr-pricing__table td { padding: 16px 20px; } }
+  @media (max-width: 991px) { .marr-pricing { padding: 64px 0; } }
   @media (max-width: 767px) {
-    .marr-pricing__table, .marr-pricing__table thead, .marr-pricing__table tbody,
-    .marr-pricing__table th, .marr-pricing__table td, .marr-pricing__table tr { display: block; }
+    .marr-pricing { padding: 48px 0; }
+    .marr-pricing__table, .marr-pricing__table thead, .marr-pricing__table tbody, .marr-pricing__table th, .marr-pricing__table td, .marr-pricing__table tr { display: block; }
     .marr-pricing__table thead { display: none; }
-    .marr-pricing__table tr { margin-bottom: 12px; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06); }
-    .marr-pricing__table td { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid rgba(0, 0, 0, 0.04); }
-    .marr-pricing__table td:last-child { text-align: left; background: rgba(198, 188, 179, 0.06); font-weight: 600; }
-    .marr-pricing__table td::before { content: attr(data-label); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--marr-primary); }
+    .marr-pricing__table tr { margin-bottom: 12px; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-card); background: #ffffff; }
+    .marr-pricing__table td { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid rgba(60, 60, 59, 0.04); }
+    .marr-pricing__table td:last-child { text-align: left; background: rgba(198, 188, 179, 0.06); font-weight: 300; }
+    .marr-pricing__table td::before { content: attr(data-label); font-family: var(--marr-font-heading); font-weight: 400; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--marr-charcoal); }
   }
-
-  @media (max-width: 478px) { .marr-pricing { padding: 50px 0; } .marr-pricing__cta { width: 100%; max-width: 320px; } }
+  @media (max-width: 478px) { .marr-pricing { padding: 32px 0; } .marr-pricing__cta { width: 100%; max-width: 320px; text-align: center; } }
 </style>
 
 <section class="marr-pricing" id="pricing">
@@ -850,17 +1508,17 @@
     <div class="marr-pricing__header">
       <p class="marr-pricing__eyebrow">Treatment Pricing</p>
       <h2 class="marr-pricing__title">Transparent, Competitive Pricing</h2>
-      <p class="marr-pricing__subtitle">No hidden fees. Free consultation included with every booking.</p>
+      <p class="marr-pricing__subtitle">Lorem ipsum dolor sit amet. No hidden fees. Free consultation included with every booking.</p>
     </div>
     <table class="marr-pricing__table">
       <thead><tr><th>Treatment Area</th><th>Single Session</th><th>Course of 6</th></tr></thead>
       <tbody>
-        <tr><td data-label="Area">Upper Lip</td><td data-label="Single"><span class="marr-pricing__price-old">£65</span><span class="marr-pricing__price-new">£49</span></td><td data-label="Course"><span class="marr-pricing__price-old">£390</span><span class="marr-pricing__price-new">£249</span></td></tr>
-        <tr><td data-label="Area">Underarms</td><td data-label="Single"><span class="marr-pricing__price-old">£85</span><span class="marr-pricing__price-new">£59</span></td><td data-label="Course"><span class="marr-pricing__price-old">£510</span><span class="marr-pricing__price-new">£299</span></td></tr>
-        <tr class="marr-pricing__highlight"><td data-label="Area">Bikini Line <span class="marr-pricing__badge">Popular</span></td><td data-label="Single"><span class="marr-pricing__price-old">£120</span><span class="marr-pricing__price-new">£89</span></td><td data-label="Course"><span class="marr-pricing__price-old">£720</span><span class="marr-pricing__price-new">£449</span></td></tr>
-        <tr><td data-label="Area">Half Legs</td><td data-label="Single"><span class="marr-pricing__price-old">£180</span><span class="marr-pricing__price-new">£129</span></td><td data-label="Course"><span class="marr-pricing__price-old">£1,080</span><span class="marr-pricing__price-new">£649</span></td></tr>
-        <tr class="marr-pricing__highlight"><td data-label="Area">Full Legs <span class="marr-pricing__badge">Best Value</span></td><td data-label="Single"><span class="marr-pricing__price-old">£280</span><span class="marr-pricing__price-new">£199</span></td><td data-label="Course"><span class="marr-pricing__price-old">£1,680</span><span class="marr-pricing__price-new">£999</span></td></tr>
-        <tr><td data-label="Area">Full Body</td><td data-label="Single"><span class="marr-pricing__price-old">£550</span><span class="marr-pricing__price-new">£399</span></td><td data-label="Course"><span class="marr-pricing__price-old">£3,300</span><span class="marr-pricing__price-new">£1,999</span></td></tr>
+        <tr><td data-label="Area">Upper Lip</td><td data-label="Single"><span class="marr-pricing__price-old">&#163;65</span><span class="marr-pricing__price-new">&#163;49</span></td><td data-label="Course"><span class="marr-pricing__price-old">&#163;390</span><span class="marr-pricing__price-new">&#163;249</span></td></tr>
+        <tr><td data-label="Area">Underarms</td><td data-label="Single"><span class="marr-pricing__price-old">&#163;85</span><span class="marr-pricing__price-new">&#163;59</span></td><td data-label="Course"><span class="marr-pricing__price-old">&#163;510</span><span class="marr-pricing__price-new">&#163;299</span></td></tr>
+        <tr class="marr-pricing__highlight"><td data-label="Area">Bikini Line <span class="marr-pricing__badge">Popular</span></td><td data-label="Single"><span class="marr-pricing__price-old">&#163;120</span><span class="marr-pricing__price-new">&#163;89</span></td><td data-label="Course"><span class="marr-pricing__price-old">&#163;720</span><span class="marr-pricing__price-new">&#163;449</span></td></tr>
+        <tr><td data-label="Area">Half Legs</td><td data-label="Single"><span class="marr-pricing__price-old">&#163;180</span><span class="marr-pricing__price-new">&#163;129</span></td><td data-label="Course"><span class="marr-pricing__price-old">&#163;1,080</span><span class="marr-pricing__price-new">&#163;649</span></td></tr>
+        <tr class="marr-pricing__highlight"><td data-label="Area">Full Legs <span class="marr-pricing__badge">Best Value</span></td><td data-label="Single"><span class="marr-pricing__price-old">&#163;280</span><span class="marr-pricing__price-new">&#163;199</span></td><td data-label="Course"><span class="marr-pricing__price-old">&#163;1,680</span><span class="marr-pricing__price-new">&#163;999</span></td></tr>
+        <tr><td data-label="Area">Full Body</td><td data-label="Single"><span class="marr-pricing__price-old">&#163;550</span><span class="marr-pricing__price-new">&#163;399</span></td><td data-label="Course"><span class="marr-pricing__price-old">&#163;3,300</span><span class="marr-pricing__price-new">&#163;1,999</span></td></tr>
       </tbody>
     </table>
     <div class="marr-pricing__footer">
@@ -870,48 +1528,49 @@
   </div>
 </section>
 
-<!-- 10 — Practitioner Profiles -->
+<!-- Marr Laser — 10 Practitioner Profiles -->
 <style>
   .marr-practitioners {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
-    background: var(--marr-primary);
-    color: var(--marr-light);
+    --shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --shadow-card-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
+    --transition-base: 0.25s ease;
+
+    background: var(--marr-blush);
+    color: var(--marr-charcoal);
     padding: 80px 0;
   }
 
   .marr-practitioners__inner { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
   .marr-practitioners__header { text-align: center; max-width: 680px; margin: 0 auto 56px; }
-  .marr-practitioners__eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--marr-accent); margin-bottom: 12px; }
-  .marr-practitioners__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); line-height: 1.2; margin-bottom: 16px; }
-  .marr-practitioners__subtitle { font-size: 17px; color: rgba(255, 255, 255, 0.7); line-height: 1.6; }
+  .marr-practitioners__eyebrow { font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: var(--marr-taupe); margin-bottom: 12px; }
+  .marr-practitioners__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.1em; color: var(--marr-charcoal); line-height: 1.2; margin-bottom: 16px; }
+  .marr-practitioners__subtitle { font-family: var(--marr-font-body); font-size: 17px; font-weight: 300; color: var(--marr-text-muted); line-height: 1.6; }
   .marr-practitioners__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
 
-  .marr-practitioners__card {
-    display: flex; gap: 28px;
-    background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(198, 188, 179, 0.15);
-    border-radius: 16px; padding: 32px; transition: border-color 0.3s ease;
-  }
-
-  .marr-practitioners__card:hover { border-color: var(--marr-accent); }
-  .marr-practitioners__photo { flex-shrink: 0; width: 140px; height: 170px; border-radius: 12px; overflow: hidden; }
+  .marr-practitioners__card { display: flex; gap: 28px; background: #ffffff; border-radius: 8px; padding: 32px; box-shadow: var(--shadow-card); position: relative; overflow: hidden; transition: box-shadow var(--transition-base), transform var(--transition-base); }
+  .marr-practitioners__card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--marr-taupe); border-radius: 8px 8px 0 0; }
+  .marr-practitioners__card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+  .marr-practitioners__photo { flex-shrink: 0; width: 140px; height: 170px; border-radius: 8px; overflow: hidden; }
   .marr-practitioners__photo img { width: 100%; height: 100%; object-fit: cover; }
   .marr-practitioners__info { flex: 1; }
-  .marr-practitioners__name { font-family: var(--marr-font-heading); font-size: 22px; margin-bottom: 4px; }
-  .marr-practitioners__role { font-size: 14px; color: var(--marr-accent); font-weight: 600; margin-bottom: 14px; }
-  .marr-practitioners__bio { font-size: 15px; color: rgba(255, 255, 255, 0.65); line-height: 1.6; margin-bottom: 14px; }
+  .marr-practitioners__name { font-family: var(--marr-font-heading); font-size: 22px; font-weight: 300; text-transform: uppercase; letter-spacing: 0.1em; color: var(--marr-charcoal); margin-bottom: 4px; }
+  .marr-practitioners__role { font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.1em; color: var(--marr-taupe); margin-bottom: 14px; }
+  .marr-practitioners__bio { font-family: var(--marr-font-body); font-size: 15px; font-weight: 300; color: var(--marr-text-muted); line-height: 1.6; margin-bottom: 14px; }
   .marr-practitioners__credentials { display: flex; flex-wrap: wrap; gap: 8px; }
-  .marr-practitioners__credential { padding: 4px 12px; background: rgba(198, 188, 179, 0.1); border: 1px solid rgba(198, 188, 179, 0.2); border-radius: 20px; font-size: 12px; color: var(--marr-accent); font-weight: 600; }
+  .marr-practitioners__credential { padding: 4px 12px; background: var(--marr-blush); border-radius: 8px; font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; color: var(--marr-taupe); letter-spacing: 0.1em; text-transform: uppercase; }
 
-  @media (max-width: 991px) { .marr-practitioners__grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; } }
-  @media (max-width: 767px) {
-    .marr-practitioners__card { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
-    .marr-practitioners__credentials { justify-content: center; }
-  }
-  @media (max-width: 478px) { .marr-practitioners { padding: 50px 0; } .marr-practitioners__card { padding: 24px; } }
+  @media (max-width: 1200px) { .marr-practitioners__card { padding: 28px; } }
+  @media (max-width: 991px) { .marr-practitioners { padding: 64px 0; } .marr-practitioners__grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; } }
+  @media (max-width: 767px) { .marr-practitioners { padding: 48px 0; } .marr-practitioners__card { flex-direction: column; align-items: center; text-align: center; gap: 20px; } .marr-practitioners__credentials { justify-content: center; } }
+  @media (max-width: 478px) { .marr-practitioners { padding: 32px 0; } .marr-practitioners__card { padding: 24px; } }
 </style>
 
 <section class="marr-practitioners">
@@ -919,7 +1578,7 @@
     <div class="marr-practitioners__header">
       <p class="marr-practitioners__eyebrow">Meet Your Practitioners</p>
       <h2 class="marr-practitioners__title">Expert Care You Can Trust</h2>
-      <p class="marr-practitioners__subtitle">Our team brings decades of combined experience.</p>
+      <p class="marr-practitioners__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our team brings decades of combined experience.</p>
     </div>
     <div class="marr-practitioners__grid">
       <div class="marr-practitioners__card">
@@ -927,7 +1586,7 @@
         <div class="marr-practitioners__info">
           <h3 class="marr-practitioners__name">Dr. Jane Smith</h3>
           <p class="marr-practitioners__role">Lead Laser Practitioner</p>
-          <p class="marr-practitioners__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 12+ years of experience.</p>
+          <p class="marr-practitioners__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. 12+ years of experience.</p>
           <div class="marr-practitioners__credentials"><span class="marr-practitioners__credential">BSc Nursing</span><span class="marr-practitioners__credential">Level 4 Laser</span><span class="marr-practitioners__credential">NMC Registered</span></div>
         </div>
       </div>
@@ -936,7 +1595,7 @@
         <div class="marr-practitioners__info">
           <h3 class="marr-practitioners__name">Dr. Sarah Johnson</h3>
           <p class="marr-practitioners__role">Aesthetic Practitioner</p>
-          <p class="marr-practitioners__bio">Nullam quis risus eget urna mollis ornare vel eu leo. 8+ years of experience.</p>
+          <p class="marr-practitioners__bio">Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna. 8+ years of experience.</p>
           <div class="marr-practitioners__credentials"><span class="marr-practitioners__credential">MBBS</span><span class="marr-practitioners__credential">Level 4 Laser</span><span class="marr-practitioners__credential">GMC Registered</span></div>
         </div>
       </div>
@@ -944,53 +1603,43 @@
   </div>
 </section>
 
-<!-- 11 — FAQs -->
+<!-- Marr Laser — 11 FAQs (CSS-only accordion) -->
 <style>
   .marr-faq {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-text: #3C3C3B;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
-    background: var(--marr-light);
+    --transition-base: 0.25s ease;
+
+    background: var(--marr-offwhite);
     padding: 80px 0;
   }
 
   .marr-faq__inner { max-width: 800px; margin: 0 auto; padding: 0 20px; }
   .marr-faq__header { text-align: center; margin-bottom: 48px; }
-  .marr-faq__eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--marr-accent); margin-bottom: 12px; }
-  .marr-faq__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); color: var(--marr-primary); line-height: 1.2; }
+  .marr-faq__eyebrow { font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: var(--marr-taupe); margin-bottom: 12px; }
+  .marr-faq__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.1em; color: var(--marr-charcoal); line-height: 1.2; }
   .marr-faq__list { display: flex; flex-direction: column; gap: 12px; }
 
-  .marr-faq__item { border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px; overflow: hidden; transition: border-color 0.3s ease; }
-  .marr-faq__item[open] { border-color: var(--marr-accent); }
+  .marr-faq__item { border: 1px solid rgba(60, 60, 59, 0.1); border-radius: 8px; overflow: hidden; transition: border-color var(--transition-base); background: #ffffff; }
+  .marr-faq__item[open] { border-color: var(--marr-taupe); }
 
-  .marr-faq__question {
-    padding: 20px 24px; font-size: 17px; font-weight: 600; color: var(--marr-primary);
-    cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px;
-    list-style: none; transition: background 0.2s ease;
-  }
-
+  .marr-faq__question { padding: 20px 24px; font-family: var(--marr-font-body); font-size: 1rem; font-weight: 500; letter-spacing: 0.02em; color: var(--marr-charcoal); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; list-style: none; transition: background var(--transition-base); }
   .marr-faq__question::-webkit-details-marker { display: none; }
   .marr-faq__question::marker { display: none; content: ''; }
-  .marr-faq__question:hover { background: rgba(198, 188, 179, 0.04); }
+  .marr-faq__question:hover { background: var(--marr-blush); }
+  .marr-faq__question::after { content: '+'; flex-shrink: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: var(--marr-blush); border-radius: 50%; font-size: 20px; color: var(--marr-taupe); font-weight: 300; transition: transform var(--transition-base), background var(--transition-base); }
+  .marr-faq__item[open] .marr-faq__question::after { content: '\2212'; transform: rotate(180deg); }
+  .marr-faq__answer { padding: 0 24px 20px; font-family: var(--marr-font-body); font-size: 15px; font-weight: 300; color: var(--marr-text-muted); line-height: 1.7; }
 
-  .marr-faq__question::after {
-    content: '+'; flex-shrink: 0; width: 32px; height: 32px;
-    display: flex; align-items: center; justify-content: center;
-    background: rgba(198, 188, 179, 0.1); border-radius: 50%;
-    font-size: 20px; color: var(--marr-accent); font-weight: 400; transition: transform 0.3s ease;
-  }
-
-  .marr-faq__item[open] .marr-faq__question::after { content: '−'; transform: rotate(180deg); }
-  .marr-faq__answer { padding: 0 24px 20px; font-size: 15px; color: var(--marr-text); line-height: 1.7; }
-
-  @media (max-width: 478px) {
-    .marr-faq { padding: 50px 0; }
-    .marr-faq__question { padding: 16px 18px; font-size: 15px; }
-    .marr-faq__answer { padding: 0 18px 16px; }
-  }
+  @media (max-width: 991px) { .marr-faq { padding: 64px 0; } }
+  @media (max-width: 767px) { .marr-faq { padding: 48px 0; } }
+  @media (max-width: 478px) { .marr-faq { padding: 32px 0; } .marr-faq__question { padding: 16px 18px; font-size: 15px; } .marr-faq__answer { padding: 0 18px 16px; } }
 </style>
 
 <section class="marr-faq">
@@ -1000,60 +1649,77 @@
       <h2 class="marr-faq__title">Frequently Asked Questions</h2>
     </div>
     <div class="marr-faq__list">
-      <details class="marr-faq__item"><summary class="marr-faq__question">Is laser hair removal painful?</summary><div class="marr-faq__answer">Most clients describe the sensation as a warm rubber band snap. Our advanced cooling technology minimises discomfort throughout the treatment.</div></details>
-      <details class="marr-faq__item"><summary class="marr-faq__question">How many sessions will I need?</summary><div class="marr-faq__answer">Most clients require 6–8 sessions spaced 4–6 weeks apart for optimal results. The number depends on hair type, skin colour, and treatment area.</div></details>
-      <details class="marr-faq__item"><summary class="marr-faq__question">What skin types can be treated?</summary><div class="marr-faq__answer">Our clinic uses multiple laser wavelengths (755nm, 808nm, 1064nm) to safely treat all skin types from Fitzpatrick I to VI.</div></details>
-      <details class="marr-faq__item"><summary class="marr-faq__question">Is there any downtime after treatment?</summary><div class="marr-faq__answer">There is no downtime — you can return to normal activities immediately. Some mild redness may occur for 1–2 hours post-treatment.</div></details>
-      <details class="marr-faq__item"><summary class="marr-faq__question">Are results permanent?</summary><div class="marr-faq__answer">After completing a full course, expect up to 90% permanent hair reduction. Occasional maintenance sessions (once or twice yearly) may be recommended.</div></details>
-      <details class="marr-faq__item"><summary class="marr-faq__question">Do I need to shave before my appointment?</summary><div class="marr-faq__answer">Yes, shave the treatment area 24 hours before. Avoid waxing or plucking for at least 4 weeks prior, as the hair root needs to be present.</div></details>
+      <details class="marr-faq__item">
+        <summary class="marr-faq__question">Is laser hair removal painful?</summary>
+        <div class="marr-faq__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Most clients describe the sensation as a warm rubber band snap. Our advanced cooling technology minimises discomfort throughout the treatment. Nullam quis risus eget urna mollis ornare vel eu leo.</div>
+      </details>
+      <details class="marr-faq__item">
+        <summary class="marr-faq__question">How many sessions will I need?</summary>
+        <div class="marr-faq__answer">Etiam porta sem malesuada magna mollis euismod. Most clients require 6&#8211;8 sessions spaced 4&#8211;6 weeks apart for optimal results. The number of sessions depends on your hair type, skin colour, and treatment area. Cras mattis consectetur purus sit amet fermentum.</div>
+      </details>
+      <details class="marr-faq__item">
+        <summary class="marr-faq__question">What skin types can be treated?</summary>
+        <div class="marr-faq__answer">Aenean lacinia bibendum nulla sed consectetur. Our clinic uses multiple laser wavelengths (755nm, 808nm, 1064nm) to safely treat all skin types from Fitzpatrick I to VI. Donec ullamcorper nulla non metus auctor fringilla.</div>
+      </details>
+      <details class="marr-faq__item">
+        <summary class="marr-faq__question">Is there any downtime after treatment?</summary>
+        <div class="marr-faq__answer">Vestibulum id ligula porta felis euismod semper. There is no downtime &#8212; you can return to your normal activities immediately. Some mild redness may occur for 1&#8211;2 hours post-treatment. Sed posuere consectetur est at lobortis.</div>
+      </details>
+      <details class="marr-faq__item">
+        <summary class="marr-faq__question">Are results permanent?</summary>
+        <div class="marr-faq__answer">Maecenas faucibus mollis interdum. After completing a full course of treatments, you can expect up to 90% permanent hair reduction. Occasional maintenance sessions (once or twice yearly) may be recommended. Integer posuere erat a ante venenatis dapibus.</div>
+      </details>
+      <details class="marr-faq__item">
+        <summary class="marr-faq__question">Do I need to shave before my appointment?</summary>
+        <div class="marr-faq__answer">Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Yes, we recommend shaving the treatment area 24 hours before your appointment. Avoid waxing or plucking for at least 4 weeks prior, as the hair root needs to be present for the laser to work effectively.</div>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- 12 — About Clinic -->
+<!-- Marr Laser — 12 About Clinic -->
 <style>
   .marr-about {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-bg: #F9F9F8;
-    --marr-text: #3C3C3B;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text-muted: #7a7574;
+    --marr-border: rgba(60, 60, 59, 0.1);
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
-    background: var(--marr-bg);
+    --marr-font-body: 'Noto Sans', sans-serif;
+    --shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --transition-base: 0.25s ease;
+
+    background: var(--marr-blush);
     padding: 80px 0;
   }
 
-  .marr-about__inner { max-width: 1180px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .marr-about__inner { max-width: 1180px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
   .marr-about__content { max-width: 520px; }
-  .marr-about__eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--marr-accent); margin-bottom: 12px; }
-  .marr-about__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); color: var(--marr-primary); line-height: 1.2; margin-bottom: 20px; }
-  .marr-about__text { font-size: 16px; color: var(--marr-text); line-height: 1.7; margin-bottom: 16px; }
+  .marr-about__eyebrow { font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: var(--marr-taupe); margin-bottom: 12px; }
+  .marr-about__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marr-charcoal); line-height: 1.2; margin-bottom: 20px; }
+  .marr-about__text { font-family: var(--marr-font-body); font-size: 1rem; font-weight: 300; color: var(--marr-text-muted); line-height: 1.7; margin-bottom: 16px; }
+  .marr-about__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--marr-border); }
+  .marr-about__stat-value { font-family: var(--marr-font-heading); font-size: 32px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marr-taupe); line-height: 1; margin-bottom: 4px; }
+  .marr-about__stat-label { font-family: var(--marr-font-body); font-size: 0.8125rem; font-weight: 300; color: var(--marr-text-muted); }
+  .marr-about__image { border-radius: 8px; overflow: hidden; }
+  .marr-about__image img { width: 100%; height: auto; display: block; border-radius: 8px; }
 
-  .marr-about__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; padding-top: 32px; border-top: 1px solid rgba(0, 0, 0, 0.08); }
-  .marr-about__stat-value { font-family: var(--marr-font-heading); font-size: 32px; color: var(--marr-accent); line-height: 1; margin-bottom: 4px; }
-  .marr-about__stat-label { font-size: 13px; color: var(--marr-text); opacity: 0.7; }
-  .marr-about__image { border-radius: 16px; overflow: hidden; }
-  .marr-about__image img { width: 100%; height: auto; display: block; }
-
-  @media (max-width: 991px) {
-    .marr-about__inner { grid-template-columns: 1fr; gap: 40px; }
-    .marr-about__content { max-width: 100%; }
-    .marr-about__image { max-width: 500px; margin: 0 auto; order: -1; }
-  }
-
-  @media (max-width: 478px) {
-    .marr-about { padding: 50px 0; }
-    .marr-about__stats { grid-template-columns: 1fr; gap: 16px; text-align: center; }
-  }
+  @media (max-width: 1200px) { .marr-about__inner { gap: 48px; } }
+  @media (max-width: 991px) { .marr-about { padding: 48px 0; } .marr-about__inner { grid-template-columns: 1fr; gap: 40px; } .marr-about__content { max-width: 100%; } .marr-about__image { max-width: 500px; margin: 0 auto; order: -1; } }
+  @media (max-width: 767px) { .marr-about { padding: 48px 0; } .marr-about__inner { padding: 0 20px; } }
+  @media (max-width: 478px) { .marr-about { padding: 32px 0; } .marr-about__inner { padding: 0 16px; } .marr-about__stats { grid-template-columns: 1fr; gap: 16px; text-align: center; } }
 </style>
 
 <section class="marr-about">
   <div class="marr-about__inner">
     <div class="marr-about__content">
       <p class="marr-about__eyebrow">About the Clinic</p>
-      <h2 class="marr-about__title">Marr Laser & Skin Clinic</h2>
-      <p class="marr-about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
-      <p class="marr-about__text">Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+      <h2 class="marr-about__title">Marr Laser &amp; Skin Clinic</h2>
+      <p class="marr-about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla vitae elit libero, a pharetra augue.</p>
+      <p class="marr-about__text">Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna.</p>
       <div class="marr-about__stats">
         <div><div class="marr-about__stat-value">10+</div><div class="marr-about__stat-label">Years Established</div></div>
         <div><div class="marr-about__stat-value">2,000+</div><div class="marr-about__stat-label">Clients Treated</div></div>
@@ -1061,52 +1727,56 @@
       </div>
     </div>
     <div class="marr-about__image">
-      <img src="https://placehold.co/560x480/e8e0d0/c9a84c?text=Clinic+Interior" alt="Marr Laser & Skin Clinic interior">
+      <img src="https://placehold.co/560x480/e8e0d0/c9a84c?text=Clinic+Interior" alt="Marr Laser &amp; Skin Clinic interior">
     </div>
   </div>
 </section>
 
-<!-- 13 — Social Proof -->
+<!-- Marr Laser — 13 Social Proof -->
 <style>
   .marr-reviews {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-bg: #F9F9F8;
-    --marr-text: #3C3C3B;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
-    background: var(--marr-light);
+    --shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --shadow-card-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
+    --transition-base: 0.25s ease;
+
+    background: var(--marr-offwhite);
     padding: 80px 0;
   }
 
-  .marr-reviews__inner { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+  .marr-reviews__inner { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
   .marr-reviews__header { text-align: center; margin-bottom: 48px; }
-  .marr-reviews__eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--marr-accent); margin-bottom: 12px; }
-  .marr-reviews__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); color: var(--marr-primary); line-height: 1.2; margin-bottom: 12px; }
+  .marr-reviews__eyebrow { font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: var(--marr-taupe); margin-bottom: 12px; }
+  .marr-reviews__title { font-family: var(--marr-font-heading); font-size: clamp(28px, 3.5vw, 40px); font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marr-charcoal); line-height: 1.2; margin-bottom: 12px; }
   .marr-reviews__google { display: inline-flex; align-items: center; gap: 10px; margin-top: 8px; }
   .marr-reviews__google-stars { color: #f4b400; font-size: 22px; letter-spacing: 2px; }
-  .marr-reviews__google-rating { font-size: 16px; font-weight: 700; color: var(--marr-primary); }
-  .marr-reviews__google-count { font-size: 14px; color: var(--marr-text); opacity: 0.7; }
+  .marr-reviews__google-rating { font-family: var(--marr-font-heading); font-size: 1rem; font-weight: 300; letter-spacing: 0.1em; color: var(--marr-charcoal); }
+  .marr-reviews__google-count { font-family: var(--marr-font-body); font-size: 0.875rem; font-weight: 300; color: var(--marr-text-muted); }
   .marr-reviews__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
-  .marr-reviews__card { background: var(--marr-bg); border-radius: 16px; padding: 32px; transition: transform 0.3s ease; }
-  .marr-reviews__card:hover { transform: translateY(-2px); }
+  .marr-reviews__card { background: #ffffff; border-radius: 8px; padding: 32px; border-top: 4px solid var(--marr-taupe); box-shadow: var(--shadow-card); transition: transform var(--transition-base), box-shadow var(--transition-base); }
+  .marr-reviews__card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card-hover); }
   .marr-reviews__card-stars { color: #f4b400; font-size: 16px; letter-spacing: 2px; margin-bottom: 16px; }
-  .marr-reviews__card-text { font-size: 15px; color: var(--marr-text); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .marr-reviews__card-text { font-family: var(--marr-font-body); font-size: 0.9375rem; font-weight: 300; color: var(--marr-text-muted); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
   .marr-reviews__card-author { display: flex; align-items: center; gap: 12px; }
   .marr-reviews__card-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
   .marr-reviews__card-avatar img { width: 100%; height: 100%; object-fit: cover; }
-  .marr-reviews__card-name { font-weight: 600; font-size: 15px; color: var(--marr-primary); }
-  .marr-reviews__card-date { font-size: 13px; color: var(--marr-text); opacity: 0.6; }
-
+  .marr-reviews__card-name { font-family: var(--marr-font-heading); font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marr-charcoal); }
+  .marr-reviews__card-date { font-family: var(--marr-font-body); font-size: 0.8125rem; font-weight: 300; color: var(--marr-text-muted); }
   .marr-reviews__cta-wrapper { text-align: center; margin-top: 40px; }
-  .marr-reviews__cta { display: inline-block; padding: 14px 32px; border: 2px solid var(--marr-accent); color: var(--marr-accent); font-size: 15px; font-weight: 600; border-radius: 32px; text-decoration: none; transition: all 0.3s ease; }
-  .marr-reviews__cta:hover { background: var(--marr-accent); color: var(--marr-primary); }
+  .marr-reviews__cta { display: inline-block; padding: 14px 32px; border: 1px solid var(--marr-taupe); color: var(--marr-charcoal); font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 8px; text-decoration: none; transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base); }
+  .marr-reviews__cta:hover { background: var(--marr-taupe); color: #ffffff; border-color: var(--marr-taupe); }
 
-  @media (max-width: 991px) { .marr-reviews__grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 767px) { .marr-reviews__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
-  @media (max-width: 478px) { .marr-reviews { padding: 50px 0; } .marr-reviews__card { padding: 24px; } }
+  @media (max-width: 991px) { .marr-reviews { padding: 48px 0; } .marr-reviews__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 767px) { .marr-reviews { padding: 48px 0; } .marr-reviews__inner { padding: 0 20px; } .marr-reviews__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+  @media (max-width: 478px) { .marr-reviews { padding: 32px 0; } .marr-reviews__inner { padding: 0 16px; } .marr-reviews__card { padding: 24px; } }
 </style>
 
 <section class="marr-reviews">
@@ -1115,74 +1785,90 @@
       <p class="marr-reviews__eyebrow">Client Reviews</p>
       <h2 class="marr-reviews__title">What Our Clients Say</h2>
       <div class="marr-reviews__google">
-        <span class="marr-reviews__google-stars">★★★★★</span>
+        <span class="marr-reviews__google-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <span class="marr-reviews__google-rating">4.9</span>
         <span class="marr-reviews__google-count">Based on 120+ Google Reviews</span>
       </div>
     </div>
     <div class="marr-reviews__grid">
-      <div class="marr-reviews__card"><div class="marr-reviews__card-stars">★★★★★</div><p class="marr-reviews__card-text">"Lorem ipsum dolor sit amet. The team was incredibly professional and the results have been amazing. Highly recommend!"</p><div class="marr-reviews__card-author"><div class="marr-reviews__card-avatar"><img src="https://placehold.co/88x88/e0d8cc/c9a84c?text=A" alt="Avatar"></div><div><div class="marr-reviews__card-name">Sarah T.</div><div class="marr-reviews__card-date">2 weeks ago</div></div></div></div>
-      <div class="marr-reviews__card"><div class="marr-reviews__card-stars">★★★★★</div><p class="marr-reviews__card-text">"Nullam quis risus eget urna mollis ornare. After 4 sessions I can already see a huge difference."</p><div class="marr-reviews__card-author"><div class="marr-reviews__card-avatar"><img src="https://placehold.co/88x88/d8e0d8/c9a84c?text=B" alt="Avatar"></div><div><div class="marr-reviews__card-name">Emma L.</div><div class="marr-reviews__card-date">1 month ago</div></div></div></div>
-      <div class="marr-reviews__card"><div class="marr-reviews__card-stars">★★★★★</div><p class="marr-reviews__card-text">"Etiam porta sem malesuada magna mollis euismod. Best investment I've made. The clinic is spotless."</p><div class="marr-reviews__card-author"><div class="marr-reviews__card-avatar"><img src="https://placehold.co/88x88/d0d0e0/c9a84c?text=C" alt="Avatar"></div><div><div class="marr-reviews__card-name">Priya K.</div><div class="marr-reviews__card-date">3 weeks ago</div></div></div></div>
+      <div class="marr-reviews__card">
+        <div class="marr-reviews__card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="marr-reviews__card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. The team was incredibly professional and the results have been amazing. Highly recommend!"</p>
+        <div class="marr-reviews__card-author"><div class="marr-reviews__card-avatar"><img src="https://placehold.co/88x88/e0d8cc/c9a84c?text=A" alt="Avatar"></div><div><div class="marr-reviews__card-name">Sarah T.</div><div class="marr-reviews__card-date">2 weeks ago</div></div></div>
+      </div>
+      <div class="marr-reviews__card">
+        <div class="marr-reviews__card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="marr-reviews__card-text">"Nullam quis risus eget urna mollis ornare. I was nervous at first but the consultation put me at ease. After 4 sessions I can already see a huge difference."</p>
+        <div class="marr-reviews__card-author"><div class="marr-reviews__card-avatar"><img src="https://placehold.co/88x88/d8e0d8/c9a84c?text=B" alt="Avatar"></div><div><div class="marr-reviews__card-name">Emma L.</div><div class="marr-reviews__card-date">1 month ago</div></div></div>
+      </div>
+      <div class="marr-reviews__card">
+        <div class="marr-reviews__card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="marr-reviews__card-text">"Etiam porta sem malesuada magna mollis euismod. Best investment I've made. The clinic is spotless and the practitioners really know their stuff."</p>
+        <div class="marr-reviews__card-author"><div class="marr-reviews__card-avatar"><img src="https://placehold.co/88x88/d0d0e0/c9a84c?text=C" alt="Avatar"></div><div><div class="marr-reviews__card-name">Priya K.</div><div class="marr-reviews__card-date">3 weeks ago</div></div></div>
+      </div>
     </div>
-    <div class="marr-reviews__cta-wrapper"><a href="#" class="marr-reviews__cta">Read All Reviews on Google</a></div>
+    <div class="marr-reviews__cta-wrapper">
+      <a href="#" class="marr-reviews__cta">Read All Reviews on Google</a>
+    </div>
   </div>
 </section>
 
-<!-- 14 — Footer CTA -->
+<!-- Marr Laser — 14 Footer CTA -->
 <style>
   .marr-footer {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
+    --marr-charcoal: #3C3C3B;
+    --marr-charcoal-hover: #2a2a29;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text-muted: #7a7574;
+    --marr-border: rgba(60, 60, 59, 0.1);
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --transition-base: 0.25s ease;
   }
 
-  .marr-footer__cta-section { background: var(--marr-primary); padding: 80px 0; text-align: center; }
-  .marr-footer__cta-inner { max-width: 720px; margin: 0 auto; padding: 0 20px; }
-  .marr-footer__cta-title { font-family: var(--marr-font-heading); font-size: clamp(30px, 4vw, 48px); color: var(--marr-light); line-height: 1.2; margin-bottom: 16px; }
-  .marr-footer__cta-title em { font-style: italic; color: var(--marr-accent); }
-  .marr-footer__cta-subtitle { font-size: 18px; color: rgba(255, 255, 255, 0.7); line-height: 1.6; margin-bottom: 36px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .marr-footer__cta-section { background: var(--marr-charcoal); padding: 80px 0; text-align: center; }
+  .marr-footer__cta-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .marr-footer__cta-title { font-family: var(--marr-font-heading); font-size: clamp(30px, 4vw, 48px); font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marr-offwhite); line-height: 1.2; margin-bottom: 16px; }
+  .marr-footer__cta-title em { font-style: italic; color: var(--marr-taupe); }
+  .marr-footer__cta-subtitle { font-family: var(--marr-font-body); font-size: 1.125rem; font-weight: 300; color: rgba(249, 249, 248, 0.7); line-height: 1.6; margin-bottom: 36px; max-width: 540px; margin-left: auto; margin-right: auto; }
   .marr-footer__cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
 
-  .marr-footer__cta-btn {
-    display: inline-block; padding: 18px 40px; border-radius: 32px;
-    font-family: var(--marr-font-body); font-size: 17px; font-weight: 600;
-    text-decoration: none; transition: all 0.3s ease; text-align: center;
-  }
+  .marr-footer__cta-btn { display: inline-block; padding: 14px 32px; border-radius: 8px; font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: 1px solid transparent; transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base); text-align: center; }
+  .marr-footer__cta-btn--primary { background: var(--marr-taupe); color: #ffffff; border-color: var(--marr-taupe); }
+  .marr-footer__cta-btn--primary:hover { background: var(--marr-taupe-hover); border-color: var(--marr-taupe-hover); }
+  .marr-footer__cta-btn--whatsapp { background: var(--marr-offwhite); color: var(--marr-charcoal); border-color: var(--marr-offwhite); }
+  .marr-footer__cta-btn--whatsapp:hover { background: var(--marr-blush); border-color: var(--marr-blush); }
+  .marr-footer__cta-note { font-family: var(--marr-font-body); font-size: 0.875rem; font-weight: 300; color: rgba(249, 249, 248, 0.5); }
 
-  .marr-footer__cta-btn--primary { background: var(--marr-accent); color: var(--marr-primary); }
-  .marr-footer__cta-btn--primary:hover { background: #B4A89D; }
-  .marr-footer__cta-btn--whatsapp { background: #25d366; color: #ffffff; }
-  .marr-footer__cta-btn--whatsapp:hover { background: #1da851; }
-  .marr-footer__cta-note { font-size: 14px; color: rgba(255, 255, 255, 0.5); }
+  .marr-footer__bar { background: var(--marr-charcoal); padding: 40px 0; }
+  .marr-footer__bar-inner { max-width: 1180px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+  .marr-footer__col-title { font-family: var(--marr-font-heading); font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--marr-taupe); margin-bottom: 20px; }
+  .marr-footer__col-text { font-family: var(--marr-font-body); font-size: 0.875rem; font-weight: 300; color: rgba(249, 249, 248, 0.7); line-height: 1.7; }
+  .marr-footer__col-text a { color: rgba(249, 249, 248, 0.7); text-decoration: none; transition: color var(--transition-base); }
+  .marr-footer__col-text a:hover { color: var(--marr-taupe); }
 
-  .marr-footer__bar { background: #2a2a2a; padding: 40px 0; }
-  .marr-footer__bar-inner { max-width: 1180px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
-  .marr-footer__col-title { font-family: var(--marr-font-heading); font-size: 16px; color: var(--marr-accent); margin-bottom: 16px; }
-  .marr-footer__col-text { font-size: 14px; color: rgba(255, 255, 255, 0.6); line-height: 1.7; }
-  .marr-footer__col-text a { color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.2s ease; }
-  .marr-footer__col-text a:hover { color: var(--marr-accent); }
-  .marr-footer__bottom { background: #1a1a1a; padding: 20px 0; }
-  .marr-footer__bottom-inner { max-width: 1180px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(255, 255, 255, 0.4); }
+  .marr-footer__bottom { background: var(--marr-charcoal); padding: 24px 0 0; }
+  .marr-footer__bottom-inner { max-width: 1180px; margin: 0 auto; padding: 24px 24px 0; display: flex; justify-content: space-between; align-items: center; font-family: var(--marr-font-body); font-size: 0.75rem; font-weight: 300; color: rgba(249, 249, 248, 0.4); border-top: 1px solid var(--marr-taupe); }
 
-  @media (max-width: 767px) {
-    .marr-footer__cta-section { padding: 60px 0; }
-    .marr-footer__cta-buttons { flex-direction: column; align-items: center; }
-    .marr-footer__cta-btn { width: 100%; max-width: 320px; }
-    .marr-footer__bar-inner { grid-template-columns: 1fr; gap: 30px; }
-    .marr-footer__bottom-inner { flex-direction: column; gap: 8px; text-align: center; }
-  }
-
-  @media (max-width: 478px) { .marr-footer__cta-section { padding: 50px 0; } }
+  @media (max-width: 991px) { .marr-footer__cta-section { padding: 48px 0; } }
+  @media (max-width: 767px) { .marr-footer__cta-section { padding: 48px 0; } .marr-footer__cta-inner { padding: 0 20px; } .marr-footer__cta-buttons { flex-direction: column; align-items: center; } .marr-footer__cta-btn { width: 100%; max-width: 320px; } .marr-footer__bar-inner { grid-template-columns: 1fr; gap: 30px; padding: 0 20px; } .marr-footer__bottom-inner { flex-direction: column; gap: 8px; text-align: center; padding: 24px 20px 0; } }
+  @media (max-width: 478px) { .marr-footer__cta-section { padding: 32px 0; } .marr-footer__cta-inner { padding: 0 16px; } .marr-footer__bar-inner { padding: 0 16px; } .marr-footer__bottom-inner { padding: 24px 16px 0; } }
 </style>
 
 <footer class="marr-footer" id="booking">
+  <!-- Final CTA -->
   <div class="marr-footer__cta-section">
     <div class="marr-footer__cta-inner">
-      <h2 class="marr-footer__cta-title">Ready for <em>Permanently</em> Smooth Skin?</h2>
-      <p class="marr-footer__cta-subtitle">Book your free, no-obligation consultation today.</p>
+      <h2 class="marr-footer__cta-title">
+        Ready for <em>Permanently</em> Smooth Skin?
+      </h2>
+      <p class="marr-footer__cta-subtitle">
+        Book your free, no-obligation consultation today. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit.
+      </p>
       <div class="marr-footer__cta-buttons">
         <a href="#" class="marr-footer__cta-btn marr-footer__cta-btn--primary">Book Free Consultation</a>
         <a href="https://wa.me/441234567890" class="marr-footer__cta-btn marr-footer__cta-btn--whatsapp">Book on WhatsApp</a>
@@ -1190,17 +1876,42 @@
       <p class="marr-footer__cta-note">No online payment required at booking.</p>
     </div>
   </div>
+
+  <!-- Footer info -->
   <div class="marr-footer__bar">
     <div class="marr-footer__bar-inner">
-      <div><h3 class="marr-footer__col-title">Contact</h3><p class="marr-footer__col-text"><a href="tel:+441234567890">+44 123 456 7890</a><br><a href="mailto:hello@marrlaser.com">hello@marrlaser.com</a><br><a href="https://wa.me/441234567890">WhatsApp Us</a></p></div>
-      <div><h3 class="marr-footer__col-title">Visit Us</h3><p class="marr-footer__col-text">123 High Street<br>London, W1A 1AA<br>United Kingdom</p></div>
-      <div><h3 class="marr-footer__col-title">Opening Hours</h3><p class="marr-footer__col-text">Mon – Fri: 9:00 – 19:00<br>Saturday: 10:00 – 17:00<br>Sunday: Closed</p></div>
+      <div>
+        <h3 class="marr-footer__col-title">Contact</h3>
+        <p class="marr-footer__col-text">
+          <a href="tel:+441234567890">+44 123 456 7890</a><br>
+          <a href="mailto:hello@marrlaser.com">hello@marrlaser.com</a><br>
+          <a href="https://wa.me/441234567890">WhatsApp Us</a>
+        </p>
+      </div>
+      <div>
+        <h3 class="marr-footer__col-title">Visit Us</h3>
+        <p class="marr-footer__col-text">
+          123 High Street<br>
+          London, W1A 1AA<br>
+          United Kingdom
+        </p>
+      </div>
+      <div>
+        <h3 class="marr-footer__col-title">Opening Hours</h3>
+        <p class="marr-footer__col-text">
+          Mon &#8211; Fri: 9:00 &#8211; 19:00<br>
+          Saturday: 10:00 &#8211; 17:00<br>
+          Sunday: Closed
+        </p>
+      </div>
     </div>
   </div>
+
+  <!-- Copyright -->
   <div class="marr-footer__bottom">
     <div class="marr-footer__bottom-inner">
-      <span>&copy; 2026 Marr Laser & Skin Clinic. All rights reserved.</span>
-      <span>Placeholder landing page — POC only</span>
+      <span>&copy; 2026 Marr Laser &amp; Skin Clinic. All rights reserved.</span>
+      <span>Placeholder landing page &#8212; POC only</span>
     </div>
   </div>
 </footer>

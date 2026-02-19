@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARR Laser &amp; Skin Clinic | Layout C &mdash; About</title>
+  <meta name="description" content="Learn about MARR Laser & Skin Clinic — founded by Emma Marr in Newry, Co. Down. Our story, values and the team behind your skin transformation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ═══════════════════════════════════════════════
+       LAYOUT C OVERRIDES — About: Magazine Long-Read + Pull Quotes + Scrollable Team
+       ═══════════════════════════════════════════════ */
+
+    /* --- Magazine Prose Column --- */
+    .magazine-prose {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .magazine-prose p {
+      font-size: 1.0625rem;
+      line-height: 1.85;
+      color: var(--marr-text);
+      margin-bottom: var(--sp-24);
+    }
+
+    .magazine-prose p:last-child {
+      margin-bottom: 0;
+    }
+
+    .magazine-image {
+      width: 100%;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      margin: var(--sp-48) 0;
+    }
+
+    .magazine-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--r-lg);
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    /* --- Pull Quote --- */
+    .pull-quote {
+      border-left: 4px solid var(--marr-taupe);
+      padding: var(--sp-24) 0 var(--sp-24) var(--sp-32);
+      margin: var(--sp-48) 0;
+    }
+
+    .pull-quote__text {
+      font-family: var(--marr-font-heading);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.02em;
+      text-transform: none;
+      line-height: 1.4;
+      color: var(--marr-charcoal);
+    }
+
+    /* --- Values as Large Text Blocks --- */
+    .value-block {
+      padding: var(--sp-48) 0;
+      border-bottom: 1px solid var(--marr-border);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .value-block:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .value-block:first-child {
+      padding-top: 0;
+    }
+
+    .value-block__title {
+      font-family: var(--marr-font-heading);
+      font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+      font-weight: 300;
+      letter-spacing: var(--marr-tracking-heading);
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      margin-bottom: var(--sp-16);
+      line-height: 1.2;
+    }
+
+    .value-block__text {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--marr-text-muted);
+    }
+
+    /* --- Horizontally Scrollable Team Avatars --- */
+    .team-scroll {
+      display: flex;
+      gap: var(--sp-48);
+      overflow-x: auto;
+      padding: var(--sp-16) var(--sp-24);
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--marr-taupe) transparent;
+    }
+
+    .team-scroll::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .team-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .team-scroll::-webkit-scrollbar-thumb {
+      background-color: var(--marr-taupe);
+      border-radius: 100px;
+    }
+
+    .team-avatar {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      scroll-snap-align: center;
+      min-width: 180px;
+    }
+
+    .team-avatar__photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: var(--sp-16);
+      box-shadow: 0 4px 20px rgba(60, 60, 59, 0.1);
+    }
+
+    .team-avatar__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .team-avatar__name {
+      font-family: var(--marr-font-heading);
+      font-size: 1.125rem;
+      font-weight: 300;
+      letter-spacing: var(--marr-tracking-heading);
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      margin-bottom: var(--sp-4);
+    }
+
+    .team-avatar__role {
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: var(--marr-taupe);
+    }
+
+    /* --- Facility Single Image + Text --- */
+    .facility-layout {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .facility-layout__image {
+      width: 100%;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      margin-bottom: var(--sp-32);
+    }
+
+    .facility-layout__image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--r-lg);
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 991px) {
+      .pull-quote {
+        padding-left: var(--sp-24);
+        margin: var(--sp-32) 0;
+      }
+      .value-block {
+        padding: var(--sp-32) 0;
+      }
+      .team-scroll {
+        gap: var(--sp-32);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .pull-quote__text {
+        font-size: 1.375rem;
+      }
+      .team-avatar__photo {
+        width: 130px;
+        height: 130px;
+      }
+      .team-avatar {
+        min-width: 150px;
+      }
+    }
+
+    @media (max-width: 477px) {
+      .pull-quote {
+        padding-left: var(--sp-20);
+        margin: var(--sp-24) 0;
+      }
+      .pull-quote__text {
+        font-size: 1.25rem;
+      }
+      .magazine-prose p {
+        font-size: 1rem;
+      }
+      .team-avatar__photo {
+        width: 110px;
+        height: 110px;
+      }
+      .team-avatar {
+        min-width: 130px;
+      }
+      .team-scroll {
+        gap: var(--sp-24);
+        padding: var(--sp-12) var(--sp-16);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Layout Indicator Badge -->
+  <div style="position:fixed;top:12px;right:12px;z-index:9999;background:#ECE5E0;color:#3C3C3B;padding:6px 16px;border-radius:8px;font-family:'Cormorant Garamond',serif;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;"><a href="index.html" style="color:#3C3C3B;text-decoration:none;">&larr; Variants</a> &middot; Layout C</div>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════ -->
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <div class="nav__links nav__links--desktop">
+        <a href="../laser-hair-removal.html" class="nav__link">Laser</a>
+        <a href="../why-alexandrite.html" class="nav__link">Alexandrite</a>
+        <a href="../skin-treatments.html" class="nav__link">Skin</a>
+      </div>
+      <a href="../index.html" class="nav__logo" aria-label="MARR &mdash; Home">
+        <span class="nav__logo-main">MARR</span>
+        <span class="nav__logo-sub">Laser &amp; Skin</span>
+      </a>
+      <div class="nav__links nav__links--desktop">
+        <a href="../anti-ageing.html" class="nav__link">Anti-Ageing</a>
+        <a href="../aesthetics.html" class="nav__link">Aesthetics</a>
+        <a href="../about.html" class="nav__link">About</a>
+        <a href="../contact.html" class="nav__link">Contact</a>
+      </div>
+      <input type="checkbox" id="nav-toggle" class="nav__toggle">
+      <label for="nav-toggle" class="nav__toggle-label" aria-label="Menu">
+        <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+      </label>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 1: PAGE HERO
+         Compact blush bg, centered
+         ═══════════════════════════════════════════════ -->
+
+    <section class="page-hero section section--blush" aria-label="Page introduction">
+      <div class="container">
+        <span class="eyebrow">Our Story</span>
+        <h1 class="h1">About MARR</h1>
+        <p class="text-lg">The people, the passion and the purpose behind Newry's leading skin and laser clinic.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 2: FOUNDER STORY — Magazine Long-Read
+         Off-white bg, single column prose with pull quote
+         ═══════════════════════════════════════════════ -->
+
+    <section class="section section--offwhite" aria-label="The founder">
+      <div class="container">
+        <div class="magazine-prose">
+          <span class="eyebrow">The Founder</span>
+          <h2 class="h2 u-mb-md">Meet Emma</h2>
+
+          <p>Emma Marr founded MARR Laser &amp; Skin Clinic with a clear vision: to bring genuinely effective, evidence-based skin and laser treatments to Newry and the surrounding area. Her background in nursing, combined with specialist training in aesthetic medicine and laser therapy, gave her the clinical foundation to build a practice rooted in safety and results.</p>
+
+          <p>What started as a small clinic driven by one practitioner's dedication to skin health has grown into a trusted destination for clients across Northern Ireland. Emma personally oversees every treatment protocol and trains each member of the team to the same exacting standards she sets for herself.</p>
+
+          <blockquote class="pull-quote" aria-label="Pull quote">
+            <p class="pull-quote__text">"Everyone deserves to feel confident in their own skin."</p>
+          </blockquote>
+
+          <div class="magazine-image">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80" alt="Emma Marr, founder of MARR Laser and Skin Clinic" width="1200" height="675" loading="lazy">
+          </div>
+
+          <p>Her philosophy is simple: listen first, advise honestly, and deliver results that speak for themselves. That belief has shaped every aspect of MARR, from the treatments offered to the way clients are cared for.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 3: VALUES — Large Text Blocks
+         Blush bg, single column with horizontal rules
+         ═══════════════════════════════════════════════ -->
+
+    <section class="section section--blush" aria-label="Our values">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">What Drives Us</span>
+          <h2 class="h2">Our Values</h2>
+          <p class="text-lg">The principles that guide every consultation, every treatment and every client relationship.</p>
+        </div>
+
+        <div class="value-block">
+          <h3 class="value-block__title">Clinical Excellence</h3>
+          <p class="value-block__text">We invest in the latest medical-grade technology and ongoing professional development. Every treatment we offer is backed by clinical evidence and delivered to the highest standard of care.</p>
+        </div>
+
+        <div class="value-block">
+          <h3 class="value-block__title">Personal Care</h3>
+          <p class="value-block__text">Every client receives a tailored treatment plan designed around their unique skin, goals and lifestyle. We take the time to listen, understand and build a relationship of trust.</p>
+        </div>
+
+        <div class="value-block">
+          <h3 class="value-block__title">Visible Results</h3>
+          <p class="value-block__text">Our focus is on long-term skin health, not quick fixes. We set realistic expectations, track progress and refine your plan so the results you see are results you can maintain.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 4: TEAM — Horizontally Scrollable Avatars
+         Off-white bg
+         ═══════════════════════════════════════════════ -->
+
+    <section class="section section--offwhite" aria-label="Meet the team">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">The People Behind MARR</span>
+          <h2 class="h2">Meet the Team</h2>
+          <p class="text-lg">A dedicated team of qualified practitioners, each committed to your skin health and confidence.</p>
+        </div>
+
+        <div class="team-scroll" role="list" aria-label="Team members">
+
+          <div class="team-avatar" role="listitem">
+            <div class="team-avatar__photo">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=320&q=80" alt="Emma Marr, Founder and Lead Practitioner" width="320" height="320" loading="lazy">
+            </div>
+            <p class="team-avatar__name">Emma Marr</p>
+            <p class="team-avatar__role">Founder &amp; Lead Practitioner</p>
+          </div>
+
+          <div class="team-avatar" role="listitem">
+            <div class="team-avatar__photo">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=320&q=80" alt="Sarah Hughes, Senior Skin Therapist" width="320" height="320" loading="lazy">
+            </div>
+            <p class="team-avatar__name">Sarah Hughes</p>
+            <p class="team-avatar__role">Senior Skin Therapist</p>
+          </div>
+
+          <div class="team-avatar" role="listitem">
+            <div class="team-avatar__photo">
+              <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=320&q=80" alt="Dr Claire Kelly, Aesthetic Doctor" width="320" height="320" loading="lazy">
+            </div>
+            <p class="team-avatar__name">Dr Claire Kelly</p>
+            <p class="team-avatar__role">Aesthetic Doctor</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 5: FACILITY
+         Blush bg, single image + text
+         ═══════════════════════════════════════════════ -->
+
+    <section class="section section--blush" aria-label="Our facility">
+      <div class="container">
+        <div class="facility-layout">
+          <span class="eyebrow">The Clinic</span>
+          <h2 class="h2 u-mb-md">A Modern, Welcoming Space</h2>
+
+          <div class="facility-layout__image">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80" alt="MARR Laser and Skin Clinic interior with comfortable consultation area" width="1200" height="675" loading="lazy">
+          </div>
+
+          <p class="u-mb-sm">Our clinic in Newry has been purpose-built with your comfort and safety in mind. Every treatment room is equipped with the latest laser and skin technology, maintained to the highest hygiene standards.</p>
+          <p class="u-mb-sm">From the moment you walk in, we want you to feel at ease. The relaxed consultation areas provide a comfortable setting for in-depth skin assessments, and our friendly team is always on hand to answer your questions.</p>
+          <p>With easy parking and an accessible location in the heart of Newry, MARR is designed to fit seamlessly into your routine.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 6: CTA
+         Charcoal bg
+         ═══════════════════════════════════════════════ -->
+
+    <section class="section section--charcoal" aria-label="Start your journey">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" style="color: var(--marr-taupe);">Ready to Begin?</span>
+          <h2 class="h2" style="color: var(--marr-offwhite);">Start Your Journey</h2>
+          <p class="text-lg" style="color: rgba(249, 249, 248, 0.7);">Book a complimentary consultation and let our team create a personalised treatment plan designed around your skin goals.</p>
+        </div>
+        <div class="btn-group" style="justify-content: center;">
+          <a href="../contact.html" class="btn btn--light">Book Consultation</a>
+          <a href="tel:+44000000000" class="btn btn--ghost" style="color: var(--marr-taupe);">Call Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════ -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span class="footer__brand-main">MARR</span><span class="footer__brand-sub">Laser &amp; Skin</span></div>
+          <p class="footer__muted text-sm">Advanced laser technology and expert skin treatments, tailored to you.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Treatments</h4>
+          <ul class="footer__links">
+            <li><a href="../laser-hair-removal.html" class="footer__link">Laser Hair Removal</a></li>
+            <li><a href="../skin-treatments.html" class="footer__link">Skin Treatments</a></li>
+            <li><a href="../anti-ageing.html" class="footer__link">Anti-Ageing</a></li>
+            <li><a href="../aesthetics.html" class="footer__link">Aesthetics</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Clinic</h4>
+          <ul class="footer__links">
+            <li><a href="../about.html" class="footer__link">About Us</a></li>
+            <li><a href="../gallery.html" class="footer__link">Gallery</a></li>
+            <li><a href="../blog.html" class="footer__link">Blog</a></li>
+            <li><a href="../contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contact</h4>
+          <ul class="footer__links">
+            <li class="footer__contact-text">Newry, Co. Down</li>
+            <li><a href="tel:+44000000000" class="footer__link">028 000 0000</a></li>
+            <li><a href="mailto:hello@marrlaser.com" class="footer__link">hello@marrlaser.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__fine">&copy; 2026 MARR Laser &amp; Skin Clinic.</p>
+        <div class="footer__social"><a href="#" class="footer__social-link">Instagram</a><a href="#" class="footer__social-link">Facebook</a></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

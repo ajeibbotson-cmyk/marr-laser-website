@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARR Laser &amp; Skin Clinic | Layout C &mdash; Gallery</title>
+  <meta name="description" content="See real client results from MARR Laser & Skin Clinic. Browse our gallery of laser hair removal, skin resurfacing, anti-ageing and aesthetic treatments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ═══════════════════════════════════════════════
+       LAYOUT C OVERRIDES — Gallery: CSS Masonry Waterfall + Category Chips + Captions
+       ═══════════════════════════════════════════════ */
+
+    /* --- Category Chips --- */
+    .category-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--sp-8);
+      margin-bottom: var(--sp-48);
+    }
+
+    .category-chip {
+      display: inline-block;
+      font-family: var(--marr-font-heading);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      padding: var(--sp-8) var(--sp-20);
+      border: 1px solid var(--marr-border-strong);
+      border-radius: 100px;
+      cursor: default;
+      transition: background-color var(--transition-base),
+                  color var(--transition-base),
+                  border-color var(--transition-base);
+    }
+
+    .category-chip:hover {
+      border-color: var(--marr-taupe);
+      color: var(--marr-taupe);
+    }
+
+    .category-chip--active {
+      background-color: var(--marr-taupe);
+      color: #ffffff;
+      border-color: var(--marr-taupe);
+    }
+
+    .category-chip--active:hover {
+      color: #ffffff;
+    }
+
+    /* --- Masonry Layout --- */
+    .masonry {
+      column-count: 3;
+      column-gap: var(--sp-24);
+    }
+
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: var(--sp-24);
+      background-color: #ffffff;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: box-shadow var(--transition-base),
+                  transform var(--transition-base);
+      position: relative;
+    }
+
+    .masonry-item:hover {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .masonry-item__image-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .masonry-item__image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--r-lg) var(--r-lg) 0 0;
+      transition: transform var(--transition-base);
+    }
+
+    .masonry-item:hover .masonry-item__image-wrap img {
+      transform: scale(1.03);
+    }
+
+    .masonry-item__badge {
+      position: absolute;
+      top: var(--sp-12);
+      right: var(--sp-12);
+      font-family: var(--marr-font-heading);
+      font-size: 0.5625rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: rgba(60, 60, 59, 0.65);
+      padding: 3px 10px;
+      border-radius: 100px;
+      z-index: 2;
+    }
+
+    .masonry-item__caption {
+      padding: var(--sp-16) var(--sp-20);
+    }
+
+    .masonry-item__title {
+      font-family: var(--marr-font-heading);
+      font-size: 0.9375rem;
+      font-weight: 300;
+      letter-spacing: var(--marr-tracking-heading);
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      margin-bottom: var(--sp-4);
+    }
+
+    .masonry-item__desc {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: var(--marr-text-muted);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 991px) {
+      .masonry {
+        column-gap: var(--sp-20);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .masonry {
+        column-count: 2;
+        column-gap: var(--sp-16);
+      }
+      .masonry-item {
+        margin-bottom: var(--sp-16);
+      }
+      .category-chips {
+        gap: var(--sp-4);
+        margin-bottom: var(--sp-32);
+      }
+      .category-chip {
+        padding: 6px var(--sp-16);
+        font-size: 0.625rem;
+      }
+    }
+
+    @media (max-width: 477px) {
+      .masonry {
+        column-count: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Layout Indicator Badge -->
+  <div style="position:fixed;top:12px;right:12px;z-index:9999;background:#ECE5E0;color:#3C3C3B;padding:6px 16px;border-radius:8px;font-family:'Cormorant Garamond',serif;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;"><a href="index.html" style="color:#3C3C3B;text-decoration:none;">&larr; Variants</a> &middot; Layout C</div>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════ -->
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <div class="nav__links nav__links--desktop">
+        <a href="../laser-hair-removal.html" class="nav__link">Laser</a>
+        <a href="../why-alexandrite.html" class="nav__link">Alexandrite</a>
+        <a href="../skin-treatments.html" class="nav__link">Skin</a>
+      </div>
+      <a href="../index.html" class="nav__logo" aria-label="MARR &mdash; Home">
+        <span class="nav__logo-main">MARR</span>
+        <span class="nav__logo-sub">Laser &amp; Skin</span>
+      </a>
+      <div class="nav__links nav__links--desktop">
+        <a href="../anti-ageing.html" class="nav__link">Anti-Ageing</a>
+        <a href="../aesthetics.html" class="nav__link">Aesthetics</a>
+        <a href="../about.html" class="nav__link">About</a>
+        <a href="../contact.html" class="nav__link">Contact</a>
+      </div>
+      <input type="checkbox" id="nav-toggle" class="nav__toggle">
+      <label for="nav-toggle" class="nav__toggle-label" aria-label="Menu">
+        <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+      </label>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 1: PAGE HERO
+         Compact blush bg, centered
+         ═══════════════════════════════════════════════ -->
+
+    <section class="page-hero section section--blush" aria-label="Page introduction">
+      <div class="container">
+        <span class="eyebrow">See the Results</span>
+        <h1 class="h1">Gallery</h1>
+        <p class="text-lg">Real results from real clients. Browse our treatment gallery to see the transformations achieved at MARR Laser &amp; Skin Clinic.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 2: CATEGORY CHIPS + MASONRY GALLERY
+         Off-white bg
+         ═══════════════════════════════════════════════ -->
+
+    <section class="section section--offwhite" aria-label="Treatment gallery">
+      <div class="container">
+
+        <!-- Category Chips -->
+        <div class="category-chips" role="list" aria-label="Gallery categories">
+          <span class="category-chip category-chip--active" role="listitem">All</span>
+          <span class="category-chip" role="listitem">Clinic</span>
+          <span class="category-chip" role="listitem">Treatments</span>
+          <span class="category-chip" role="listitem">Results</span>
+          <span class="category-chip" role="listitem">Team</span>
+        </div>
+
+        <!-- Masonry Gallery -->
+        <div class="masonry">
+
+          <!-- Item 1 — Portrait -->
+          <figure class="masonry-item">
+            <div class="masonry-item__image-wrap">
+              <span class="masonry-item__badge">Results</span>
+              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=80" alt="Client showing smooth, radiant skin after laser treatment" width="600" height="800" loading="lazy">
+            </div>
+            <figcaption class="masonry-item__caption">
+              <p class="masonry-item__title">Laser Hair Removal</p>
+              <p class="masonry-item__desc">Smooth, hair-free skin achieved with our alexandrite laser technology</p>
+            </figcaption>
+          </figure>
+
+          <!-- Item 2 — Landscape -->
+          <figure class="masonry-item">
+            <div class="masonry-item__image-wrap">
+              <span class="masonry-item__badge">Clinic</span>
+              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="MARR Clinic modern treatment room" width="600" height="400" loading="lazy">
+            </div>
+            <figcaption class="masonry-item__caption">
+              <p class="masonry-item__title">Treatment Room</p>
+              <p class="masonry-item__desc">Purpose-built space with the latest laser equipment</p>
+            </figcaption>
+          </figure>
+
+          <!-- Item 3 — Portrait -->
+          <figure class="masonry-item">
+            <div class="masonry-item__image-wrap">
+              <span class="masonry-item__badge">Results</span>
+              <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80" alt="Glowing skin after facial rejuvenation treatment" width="600" height="750" loading="lazy">
+            </div>
+            <figcaption class="masonry-item__caption">
+              <p class="masonry-item__title">Skin Rejuvenation</p>
+              <p class="masonry-item__desc">Visible glow and improved texture after a course of treatments</p>
+            </figcaption>
+          </figure>
+
+          <!-- Item 4 — Square -->
+          <figure class="masonry-item">
+            <div class="masonry-item__image-wrap">
+              <span class="masonry-item__badge">Treatments</span>
+              <img src="https://images.unsplash.com/photo-1570554886111-e80fcca6a029?auto=format&fit=crop&w=600&q=80" alt="Professional skincare treatment being administered" width="600" height="600" loading="lazy">
+            </div>
+            <figcaption class="masonry-item__caption">
+              <p class="masonry-item__title">Chemical Peel</p>
+              <p class="masonry-item__desc">Advanced chemical peel for improved skin clarity and tone</p>
+            </figcaption>
+          </figure>
+
+          <!-- Item 5 — Landscape -->
+          <figure class="masonry-item">
+            <div class="masonry-item__image-wrap">
+              <span class="masonry-item__badge">Clinic</span>
+              <img src="https://images.unsplash.com/photo-1540555700478-4be289fbec6d?auto=format&fit=crop&w=600&q=80" alt="MARR Clinic spa-inspired interior" width="600" height="400" loading="lazy">
+            </div>
+            <figcaption class="masonry-item__caption">
+              <p class="masonry-item__title">Clinic Interior</p>
+              <p class="masonry-item__desc">A calming, comfortable environment designed with your relaxation in mind</p>
+            </figcaption>
+          </figure>
+
+          <!-- Item 6 — Portrait -->
+          <figure class="masonry-item">
+            <div class="masonry-item__image-wrap">
+              <span class="masonry-item__badge">Team</span>
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="Emma Marr, Founder and Lead Practitioner" width="600" height="800" loading="lazy">
+            </div>
+            <figcaption class="masonry-item__caption">
+              <p class="masonry-item__title">Emma Marr</p>
+              <p class="masonry-item__desc">Founder and Lead Practitioner with over 10 years of experience</p>
+            </figcaption>
+          </figure>
+
+          <!-- Item 7 — Square -->
+          <figure class="masonry-item">
+            <div class="masonry-item__image-wrap">
+              <span class="masonry-item__badge">Treatments</span>
+              <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Professional skincare products used in clinic treatments" width="600" height="600" loading="lazy">
+            </div>
+            <figcaption class="masonry-item__caption">
+              <p class="masonry-item__title">Skincare Treatment</p>
+              <p class="masonry-item__desc">Medical-grade products tailored to your unique skin needs</p>
+            </figcaption>
+          </figure>
+
+          <!-- Item 8 — Landscape -->
+          <figure class="masonry-item">
+            <div class="masonry-item__image-wrap">
+              <span class="masonry-item__badge">Clinic</span>
+              <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="MARR Clinic clean, modern space" width="600" height="400" loading="lazy">
+            </div>
+            <figcaption class="masonry-item__caption">
+              <p class="masonry-item__title">Reception Area</p>
+              <p class="masonry-item__desc">Welcoming reception and waiting area in the heart of Newry</p>
+            </figcaption>
+          </figure>
+
+          <!-- Item 9 — Portrait -->
+          <figure class="masonry-item">
+            <div class="masonry-item__image-wrap">
+              <span class="masonry-item__badge">Results</span>
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Natural beauty result after aesthetic treatment" width="600" height="750" loading="lazy">
+            </div>
+            <figcaption class="masonry-item__caption">
+              <p class="masonry-item__title">Anti-Ageing Results</p>
+              <p class="masonry-item__desc">Natural, refreshed appearance after Profhilo treatment</p>
+            </figcaption>
+          </figure>
+
+          <!-- Item 10 — Landscape -->
+          <figure class="masonry-item">
+            <div class="masonry-item__image-wrap">
+              <span class="masonry-item__badge">Treatments</span>
+              <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=600&q=80" alt="Facial treatment in progress at the clinic" width="600" height="400" loading="lazy">
+            </div>
+            <figcaption class="masonry-item__caption">
+              <p class="masonry-item__title">Facial Treatment</p>
+              <p class="masonry-item__desc">Advanced facial rejuvenation tailored to your skin type</p>
+            </figcaption>
+          </figure>
+
+          <!-- Item 11 — Square -->
+          <figure class="masonry-item">
+            <div class="masonry-item__image-wrap">
+              <span class="masonry-item__badge">Results</span>
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Client with clear, healthy skin after treatment course" width="600" height="600" loading="lazy">
+            </div>
+            <figcaption class="masonry-item__caption">
+              <p class="masonry-item__title">Skin Resurfacing</p>
+              <p class="masonry-item__desc">Dramatically improved skin texture and reduced pigmentation</p>
+            </figcaption>
+          </figure>
+
+          <!-- Item 12 — Landscape -->
+          <figure class="masonry-item">
+            <div class="masonry-item__image-wrap">
+              <span class="masonry-item__badge">Clinic</span>
+              <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=600&q=80" alt="MARR Clinic salon-style treatment space" width="600" height="400" loading="lazy">
+            </div>
+            <figcaption class="masonry-item__caption">
+              <p class="masonry-item__title">Consultation Room</p>
+              <p class="masonry-item__desc">Comfortable setting for in-depth skin assessments and treatment planning</p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 3: CTA
+         Blush bg
+         ═══════════════════════════════════════════════ -->
+
+    <section class="section section--blush" aria-label="Book consultation">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Your Transformation Awaits</span>
+          <h2 class="h2">Ready to See Your Own Results?</h2>
+          <p class="text-lg">Book a complimentary consultation and take the first step towards the skin you have always wanted.</p>
+        </div>
+        <div class="btn-group" style="justify-content: center;">
+          <a href="../contact.html" class="btn btn--primary">Book Consultation</a>
+          <a href="tel:+44000000000" class="btn btn--outline">Call Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════ -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span class="footer__brand-main">MARR</span><span class="footer__brand-sub">Laser &amp; Skin</span></div>
+          <p class="footer__muted text-sm">Advanced laser technology and expert skin treatments, tailored to you.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Treatments</h4>
+          <ul class="footer__links">
+            <li><a href="../laser-hair-removal.html" class="footer__link">Laser Hair Removal</a></li>
+            <li><a href="../skin-treatments.html" class="footer__link">Skin Treatments</a></li>
+            <li><a href="../anti-ageing.html" class="footer__link">Anti-Ageing</a></li>
+            <li><a href="../aesthetics.html" class="footer__link">Aesthetics</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Clinic</h4>
+          <ul class="footer__links">
+            <li><a href="../about.html" class="footer__link">About Us</a></li>
+            <li><a href="../gallery.html" class="footer__link">Gallery</a></li>
+            <li><a href="../blog.html" class="footer__link">Blog</a></li>
+            <li><a href="../contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contact</h4>
+          <ul class="footer__links">
+            <li class="footer__contact-text">Newry, Co. Down</li>
+            <li><a href="tel:+44000000000" class="footer__link">028 000 0000</a></li>
+            <li><a href="mailto:hello@marrlaser.com" class="footer__link">hello@marrlaser.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__fine">&copy; 2026 MARR Laser &amp; Skin Clinic.</p>
+        <div class="footer__social"><a href="#" class="footer__social-link">Instagram</a><a href="#" class="footer__social-link">Facebook</a></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
