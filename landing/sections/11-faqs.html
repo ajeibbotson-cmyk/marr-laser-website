@@ -1,0 +1,201 @@
+<!-- Marr Laser — 11 FAQs (CSS-only accordion) -->
+<style>
+  .marr-faq {
+    --marr-primary: #3C3C3B;
+    --marr-accent: #C6BCB3;
+    --marr-light: #ffffff;
+    --marr-bg: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
+    --marr-font-body: 'Noto Sans', sans-serif;
+
+    background: var(--marr-light);
+    padding: 80px 0;
+  }
+
+  .marr-faq__inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .marr-faq__header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .marr-faq__eyebrow {
+    font-family: var(--marr-font-body);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--marr-accent);
+    margin-bottom: 12px;
+  }
+
+  .marr-faq__title {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(28px, 3.5vw, 40px);
+    color: var(--marr-primary);
+    line-height: 1.2;
+  }
+
+  .marr-faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* CSS-only accordion using details/summary */
+  .marr-faq__item {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+
+  .marr-faq__item[open] {
+    border-color: var(--marr-accent);
+  }
+
+  .marr-faq__question {
+    padding: 20px 24px;
+    font-family: var(--marr-font-body);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--marr-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    list-style: none;
+    transition: background 0.2s ease;
+  }
+
+  .marr-faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .marr-faq__question::marker {
+    display: none;
+    content: '';
+  }
+
+  .marr-faq__question:hover {
+    background: rgba(198, 188, 179, 0.04);
+  }
+
+  .marr-faq__question::after {
+    content: '+';
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(198, 188, 179, 0.1);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--marr-accent);
+    font-weight: 400;
+    transition: transform 0.3s ease;
+  }
+
+  .marr-faq__item[open] .marr-faq__question::after {
+    content: '−';
+    transform: rotate(180deg);
+  }
+
+  .marr-faq__answer {
+    padding: 0 24px 20px;
+    font-size: 15px;
+    color: var(--marr-text);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 478px) {
+    .marr-faq {
+      padding: 50px 0;
+    }
+
+    .marr-faq__question {
+      padding: 16px 18px;
+      font-size: 15px;
+    }
+
+    .marr-faq__answer {
+      padding: 0 18px 16px;
+    }
+  }
+</style>
+
+<section class="marr-faq">
+  <div class="marr-faq__inner">
+    <div class="marr-faq__header">
+      <p class="marr-faq__eyebrow">FAQ</p>
+      <h2 class="marr-faq__title">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="marr-faq__list">
+      <details class="marr-faq__item">
+        <summary class="marr-faq__question">Is laser hair removal painful?</summary>
+        <div class="marr-faq__answer">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Most clients describe
+          the sensation as a warm rubber band snap. Our advanced cooling technology
+          minimises discomfort throughout the treatment. Nullam quis risus eget urna
+          mollis ornare vel eu leo.
+        </div>
+      </details>
+
+      <details class="marr-faq__item">
+        <summary class="marr-faq__question">How many sessions will I need?</summary>
+        <div class="marr-faq__answer">
+          Etiam porta sem malesuada magna mollis euismod. Most clients require 6–8
+          sessions spaced 4–6 weeks apart for optimal results. The number of sessions
+          depends on your hair type, skin colour, and treatment area. Cras mattis
+          consectetur purus sit amet fermentum.
+        </div>
+      </details>
+
+      <details class="marr-faq__item">
+        <summary class="marr-faq__question">What skin types can be treated?</summary>
+        <div class="marr-faq__answer">
+          Aenean lacinia bibendum nulla sed consectetur. Our clinic uses multiple
+          laser wavelengths (755nm, 808nm, 1064nm) to safely treat all skin types
+          from Fitzpatrick I to VI. Donec ullamcorper nulla non metus auctor fringilla.
+        </div>
+      </details>
+
+      <details class="marr-faq__item">
+        <summary class="marr-faq__question">Is there any downtime after treatment?</summary>
+        <div class="marr-faq__answer">
+          Vestibulum id ligula porta felis euismod semper. There is no downtime —
+          you can return to your normal activities immediately. Some mild redness
+          may occur for 1–2 hours post-treatment. Sed posuere consectetur est at lobortis.
+        </div>
+      </details>
+
+      <details class="marr-faq__item">
+        <summary class="marr-faq__question">Are results permanent?</summary>
+        <div class="marr-faq__answer">
+          Maecenas faucibus mollis interdum. After completing a full course of
+          treatments, you can expect up to 90% permanent hair reduction. Occasional
+          maintenance sessions (once or twice yearly) may be recommended. Integer
+          posuere erat a ante venenatis dapibus.
+        </div>
+      </details>
+
+      <details class="marr-faq__item">
+        <summary class="marr-faq__question">Do I need to shave before my appointment?</summary>
+        <div class="marr-faq__answer">
+          Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+          Yes, we recommend shaving the treatment area 24 hours before your
+          appointment. Avoid waxing or plucking for at least 4 weeks prior, as the
+          hair root needs to be present for the laser to work effectively.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,161 @@
+<!-- Marr Laser — 04 Problem -->
+<style>
+  .marr-problem {
+    --marr-primary: #3C3C3B;
+    --marr-accent: #C6BCB3;
+    --marr-light: #ffffff;
+    --marr-bg: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
+    --marr-font-body: 'Noto Sans', sans-serif;
+
+    background: var(--marr-light);
+    padding: 80px 0;
+  }
+
+  .marr-problem__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .marr-problem__content {
+    max-width: 520px;
+  }
+
+  .marr-problem__eyebrow {
+    font-family: var(--marr-font-body);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--marr-accent);
+    margin-bottom: 12px;
+  }
+
+  .marr-problem__title {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(28px, 3.5vw, 40px);
+    color: var(--marr-primary);
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .marr-problem__intro {
+    font-size: 16px;
+    color: var(--marr-text);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .marr-problem__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .marr-problem__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-family: var(--marr-font-body);
+    font-size: 16px;
+    color: var(--marr-text);
+    line-height: 1.5;
+  }
+
+  .marr-problem__icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: rgba(198, 188, 179, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    color: var(--marr-accent);
+    font-size: 14px;
+  }
+
+  .marr-problem__image {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .marr-problem__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 991px) {
+    .marr-problem__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .marr-problem__content {
+      max-width: 100%;
+    }
+
+    .marr-problem__image {
+      max-width: 500px;
+      margin: 0 auto;
+      order: -1;
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-problem {
+      padding: 50px 0;
+    }
+  }
+</style>
+
+<section class="marr-problem">
+  <div class="marr-problem__inner">
+    <div class="marr-problem__content">
+      <p class="marr-problem__eyebrow">The Problem</p>
+      <h2 class="marr-problem__title">Tired of the Endless Cycle of Hair Removal?</h2>
+      <p class="marr-problem__intro">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia
+        odio vitae vestibulum vestibulum.
+      </p>
+      <div class="marr-problem__list">
+        <div class="marr-problem__item">
+          <span class="marr-problem__icon">✗</span>
+          <span>Constant shaving that leaves stubble within hours</span>
+        </div>
+        <div class="marr-problem__item">
+          <span class="marr-problem__icon">✗</span>
+          <span>Painful waxing appointments every few weeks</span>
+        </div>
+        <div class="marr-problem__item">
+          <span class="marr-problem__icon">✗</span>
+          <span>Ingrown hairs and irritation that won't go away</span>
+        </div>
+        <div class="marr-problem__item">
+          <span class="marr-problem__icon">✗</span>
+          <span>Razor burns and bumps on sensitive areas</span>
+        </div>
+        <div class="marr-problem__item">
+          <span class="marr-problem__icon">✗</span>
+          <span>Spending hundreds each year on temporary solutions</span>
+        </div>
+        <div class="marr-problem__item">
+          <span class="marr-problem__icon">✗</span>
+          <span>Skin darkening from repeated friction and irritation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marr-problem__image">
+      <img src="https://placehold.co/560x620/f8f8f8/cccccc?text=Problem+Image" alt="Common hair removal frustrations">
+    </div>
+  </div>
+</section>

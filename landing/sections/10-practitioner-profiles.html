@@ -1,0 +1,209 @@
+<!-- Marr Laser — 10 Practitioner Profiles -->
+<style>
+  .marr-practitioners {
+    --marr-primary: #3C3C3B;
+    --marr-accent: #C6BCB3;
+    --marr-light: #ffffff;
+    --marr-bg: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
+    --marr-font-body: 'Noto Sans', sans-serif;
+
+    background: var(--marr-primary);
+    color: var(--marr-light);
+    padding: 80px 0;
+  }
+
+  .marr-practitioners__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .marr-practitioners__header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 56px;
+  }
+
+  .marr-practitioners__eyebrow {
+    font-family: var(--marr-font-body);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--marr-accent);
+    margin-bottom: 12px;
+  }
+
+  .marr-practitioners__title {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .marr-practitioners__subtitle {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+
+  .marr-practitioners__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .marr-practitioners__card {
+    display: flex;
+    gap: 28px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(198, 188, 179, 0.15);
+    border-radius: 16px;
+    padding: 32px;
+    transition: border-color 0.3s ease;
+  }
+
+  .marr-practitioners__card:hover {
+    border-color: var(--marr-accent);
+  }
+
+  .marr-practitioners__photo {
+    flex-shrink: 0;
+    width: 140px;
+    height: 170px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .marr-practitioners__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .marr-practitioners__info {
+    flex: 1;
+  }
+
+  .marr-practitioners__name {
+    font-family: var(--marr-font-heading);
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .marr-practitioners__role {
+    font-size: 14px;
+    color: var(--marr-accent);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  .marr-practitioners__bio {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .marr-practitioners__credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .marr-practitioners__credential {
+    padding: 4px 12px;
+    background: rgba(198, 188, 179, 0.1);
+    border: 1px solid rgba(198, 188, 179, 0.2);
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--marr-accent);
+    font-weight: 600;
+  }
+
+  @media (max-width: 991px) {
+    .marr-practitioners__grid {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .marr-practitioners__card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .marr-practitioners__credentials {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-practitioners {
+      padding: 50px 0;
+    }
+
+    .marr-practitioners__card {
+      padding: 24px;
+    }
+  }
+</style>
+
+<section class="marr-practitioners">
+  <div class="marr-practitioners__inner">
+    <div class="marr-practitioners__header">
+      <p class="marr-practitioners__eyebrow">Meet Your Practitioners</p>
+      <h2 class="marr-practitioners__title">Expert Care You Can Trust</h2>
+      <p class="marr-practitioners__subtitle">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our team brings
+        decades of combined experience.
+      </p>
+    </div>
+
+    <div class="marr-practitioners__grid">
+      <div class="marr-practitioners__card">
+        <div class="marr-practitioners__photo">
+          <img src="https://placehold.co/280x340/2a2a4e/c9a84c?text=Dr.+A" alt="Dr. Jane Smith">
+        </div>
+        <div class="marr-practitioners__info">
+          <h3 class="marr-practitioners__name">Dr. Jane Smith</h3>
+          <p class="marr-practitioners__role">Lead Laser Practitioner</p>
+          <p class="marr-practitioners__bio">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem
+            malesuada magna mollis euismod. 12+ years of experience.
+          </p>
+          <div class="marr-practitioners__credentials">
+            <span class="marr-practitioners__credential">BSc Nursing</span>
+            <span class="marr-practitioners__credential">Level 4 Laser</span>
+            <span class="marr-practitioners__credential">NMC Registered</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="marr-practitioners__card">
+        <div class="marr-practitioners__photo">
+          <img src="https://placehold.co/280x340/2a2a4e/c9a84c?text=Dr.+B" alt="Dr. Sarah Johnson">
+        </div>
+        <div class="marr-practitioners__info">
+          <h3 class="marr-practitioners__name">Dr. Sarah Johnson</h3>
+          <p class="marr-practitioners__role">Aesthetic Practitioner</p>
+          <p class="marr-practitioners__bio">
+            Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo
+            cursus magna. 8+ years of experience.
+          </p>
+          <div class="marr-practitioners__credentials">
+            <span class="marr-practitioners__credential">MBBS</span>
+            <span class="marr-practitioners__credential">Level 4 Laser</span>
+            <span class="marr-practitioners__credential">GMC Registered</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

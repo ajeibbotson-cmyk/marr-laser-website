@@ -1,0 +1,271 @@
+<!-- Marr Laser — 09 Pricing Grid -->
+<style>
+  .marr-pricing {
+    --marr-primary: #3C3C3B;
+    --marr-accent: #C6BCB3;
+    --marr-light: #ffffff;
+    --marr-bg: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
+    --marr-font-body: 'Noto Sans', sans-serif;
+
+    background: var(--marr-light);
+    padding: 80px 0;
+  }
+
+  .marr-pricing__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .marr-pricing__header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 48px;
+  }
+
+  .marr-pricing__eyebrow {
+    font-family: var(--marr-font-body);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--marr-accent);
+    margin-bottom: 12px;
+  }
+
+  .marr-pricing__title {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(28px, 3.5vw, 40px);
+    color: var(--marr-primary);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .marr-pricing__subtitle {
+    font-size: 17px;
+    color: var(--marr-text);
+    line-height: 1.6;
+  }
+
+  .marr-pricing__table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--marr-light);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .marr-pricing__table thead {
+    background: var(--marr-primary);
+    color: var(--marr-light);
+  }
+
+  .marr-pricing__table th {
+    padding: 18px 24px;
+    font-family: var(--marr-font-body);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .marr-pricing__table th:last-child {
+    text-align: right;
+  }
+
+  .marr-pricing__table td {
+    padding: 18px 24px;
+    font-family: var(--marr-font-body);
+    font-size: 16px;
+    color: var(--marr-text);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .marr-pricing__table td:last-child {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .marr-pricing__table tbody tr:hover {
+    background: rgba(198, 188, 179, 0.04);
+  }
+
+  .marr-pricing__table .marr-pricing__highlight {
+    background: rgba(198, 188, 179, 0.08);
+  }
+
+  .marr-pricing__price-old {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  .marr-pricing__price-new {
+    font-weight: 700;
+    color: var(--marr-accent);
+    font-size: 18px;
+  }
+
+  .marr-pricing__badge {
+    display: inline-block;
+    padding: 2px 10px;
+    background: var(--marr-accent);
+    color: var(--marr-primary);
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .marr-pricing__footer {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .marr-pricing__note {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 24px;
+  }
+
+  .marr-pricing__cta {
+    display: inline-block;
+    padding: 16px 40px;
+    background: var(--marr-accent);
+    color: var(--marr-primary);
+    font-family: var(--marr-font-body);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 32px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .marr-pricing__cta:hover {
+    background: #B4A89D;
+  }
+
+  /* Mobile card layout */
+  @media (max-width: 767px) {
+    .marr-pricing__table,
+    .marr-pricing__table thead,
+    .marr-pricing__table tbody,
+    .marr-pricing__table th,
+    .marr-pricing__table td,
+    .marr-pricing__table tr {
+      display: block;
+    }
+
+    .marr-pricing__table thead {
+      display: none;
+    }
+
+    .marr-pricing__table tr {
+      margin-bottom: 12px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .marr-pricing__table td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .marr-pricing__table td:last-child {
+      text-align: left;
+      background: rgba(198, 188, 179, 0.06);
+      font-weight: 600;
+    }
+
+    .marr-pricing__table td::before {
+      content: attr(data-label);
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--marr-primary);
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-pricing {
+      padding: 50px 0;
+    }
+
+    .marr-pricing__cta {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+</style>
+
+<section class="marr-pricing" id="pricing">
+  <div class="marr-pricing__inner">
+    <div class="marr-pricing__header">
+      <p class="marr-pricing__eyebrow">Treatment Pricing</p>
+      <h2 class="marr-pricing__title">Transparent, Competitive Pricing</h2>
+      <p class="marr-pricing__subtitle">
+        Lorem ipsum dolor sit amet. No hidden fees. Free consultation included with every booking.
+      </p>
+    </div>
+
+    <table class="marr-pricing__table">
+      <thead>
+        <tr>
+          <th>Treatment Area</th>
+          <th>Single Session</th>
+          <th>Course of 6</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Area">Upper Lip</td>
+          <td data-label="Single"><span class="marr-pricing__price-old">£65</span><span class="marr-pricing__price-new">£49</span></td>
+          <td data-label="Course"><span class="marr-pricing__price-old">£390</span><span class="marr-pricing__price-new">£249</span></td>
+        </tr>
+        <tr>
+          <td data-label="Area">Underarms</td>
+          <td data-label="Single"><span class="marr-pricing__price-old">£85</span><span class="marr-pricing__price-new">£59</span></td>
+          <td data-label="Course"><span class="marr-pricing__price-old">£510</span><span class="marr-pricing__price-new">£299</span></td>
+        </tr>
+        <tr class="marr-pricing__highlight">
+          <td data-label="Area">Bikini Line <span class="marr-pricing__badge">Popular</span></td>
+          <td data-label="Single"><span class="marr-pricing__price-old">£120</span><span class="marr-pricing__price-new">£89</span></td>
+          <td data-label="Course"><span class="marr-pricing__price-old">£720</span><span class="marr-pricing__price-new">£449</span></td>
+        </tr>
+        <tr>
+          <td data-label="Area">Half Legs</td>
+          <td data-label="Single"><span class="marr-pricing__price-old">£180</span><span class="marr-pricing__price-new">£129</span></td>
+          <td data-label="Course"><span class="marr-pricing__price-old">£1,080</span><span class="marr-pricing__price-new">£649</span></td>
+        </tr>
+        <tr class="marr-pricing__highlight">
+          <td data-label="Area">Full Legs <span class="marr-pricing__badge">Best Value</span></td>
+          <td data-label="Single"><span class="marr-pricing__price-old">£280</span><span class="marr-pricing__price-new">£199</span></td>
+          <td data-label="Course"><span class="marr-pricing__price-old">£1,680</span><span class="marr-pricing__price-new">£999</span></td>
+        </tr>
+        <tr>
+          <td data-label="Area">Full Body</td>
+          <td data-label="Single"><span class="marr-pricing__price-old">£550</span><span class="marr-pricing__price-new">£399</span></td>
+          <td data-label="Course"><span class="marr-pricing__price-old">£3,300</span><span class="marr-pricing__price-new">£1,999</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="marr-pricing__footer">
+      <p class="marr-pricing__note">All prices include a free patch test. No payment required at booking.</p>
+      <a href="#booking" class="marr-pricing__cta">Book Free Consultation</a>
+    </div>
+  </div>
+</section>

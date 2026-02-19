@@ -1,0 +1,182 @@
+<!-- Marr Laser — 07 Ideal Candidate -->
+<style>
+  .marr-candidate {
+    --marr-primary: #3C3C3B;
+    --marr-accent: #C6BCB3;
+    --marr-light: #ffffff;
+    --marr-bg: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
+    --marr-font-body: 'Noto Sans', sans-serif;
+
+    background: var(--marr-light);
+    padding: 80px 0;
+  }
+
+  .marr-candidate__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .marr-candidate__image {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .marr-candidate__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .marr-candidate__content {
+    max-width: 520px;
+  }
+
+  .marr-candidate__eyebrow {
+    font-family: var(--marr-font-body);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--marr-accent);
+    margin-bottom: 12px;
+  }
+
+  .marr-candidate__title {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(28px, 3.5vw, 40px);
+    color: var(--marr-primary);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .marr-candidate__text {
+    font-size: 16px;
+    color: var(--marr-text);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .marr-candidate__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .marr-candidate__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 16px;
+    color: var(--marr-text);
+    line-height: 1.5;
+  }
+
+  .marr-candidate__check {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: rgba(198, 188, 179, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--marr-accent);
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+
+  .marr-candidate__cta {
+    display: inline-block;
+    padding: 16px 36px;
+    background: var(--marr-accent);
+    color: var(--marr-primary);
+    font-family: var(--marr-font-body);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 32px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .marr-candidate__cta:hover {
+    background: #B4A89D;
+  }
+
+  @media (max-width: 991px) {
+    .marr-candidate__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .marr-candidate__image {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .marr-candidate__content {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-candidate {
+      padding: 50px 0;
+    }
+
+    .marr-candidate__cta {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
+
+<section class="marr-candidate">
+  <div class="marr-candidate__inner">
+    <div class="marr-candidate__image">
+      <img src="https://placehold.co/560x600/f0ece4/c9a84c?text=Ideal+Candidate" alt="Ideal candidate for laser hair removal">
+    </div>
+
+    <div class="marr-candidate__content">
+      <p class="marr-candidate__eyebrow">Is This For You?</p>
+      <h2 class="marr-candidate__title">The Ideal Candidate for Laser Hair Removal</h2>
+      <p class="marr-candidate__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia
+        odio vitae vestibulum vestibulum.
+      </p>
+
+      <div class="marr-candidate__list">
+        <div class="marr-candidate__item">
+          <span class="marr-candidate__check">✓</span>
+          <span>You're tired of shaving, waxing, or plucking regularly</span>
+        </div>
+        <div class="marr-candidate__item">
+          <span class="marr-candidate__check">✓</span>
+          <span>You want a long-term solution for unwanted hair</span>
+        </div>
+        <div class="marr-candidate__item">
+          <span class="marr-candidate__check">✓</span>
+          <span>You have dark hair on any skin tone (light to dark)</span>
+        </div>
+        <div class="marr-candidate__item">
+          <span class="marr-candidate__check">✓</span>
+          <span>You suffer from ingrown hairs or razor bumps</span>
+        </div>
+        <div class="marr-candidate__item">
+          <span class="marr-candidate__check">✓</span>
+          <span>You want smoother skin with no downtime</span>
+        </div>
+      </div>
+
+      <a href="#booking" class="marr-candidate__cta">Check Your Eligibility</a>
+    </div>
+  </div>
+</section>

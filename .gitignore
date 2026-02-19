@@ -1,3 +1,5 @@
 .DS_Store
 *.jpeg
 *.png
+# Saved webpage assets (reference only)
+*_files/

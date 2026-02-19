@@ -1,0 +1,169 @@
+<!-- Marr Laser — 01 Sticky Header -->
+<style>
+  .marr-header {
+    --marr-primary: #3C3C3B;
+    --marr-accent: #C6BCB3;
+    --marr-light: #ffffff;
+    --marr-font-body: 'Noto Sans', sans-serif;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--marr-primary);
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(198, 188, 179, 0.2);
+  }
+
+  .marr-header__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .marr-header__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .marr-header__logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  .marr-header__logo-text {
+    font-family: var(--marr-font-body);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--marr-accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .marr-header__nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .marr-header__contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--marr-light);
+    font-family: var(--marr-font-body);
+    font-size: 14px;
+  }
+
+  .marr-header__contact-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .marr-header__contact-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--marr-accent);
+  }
+
+  .marr-header__cta {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--marr-accent);
+    color: var(--marr-primary);
+    font-family: var(--marr-font-body);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 32px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .marr-header__cta:hover {
+    background: #B4A89D;
+  }
+
+  .marr-header__whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #25d366;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+  }
+
+  .marr-header__whatsapp:hover {
+    background: #1da851;
+  }
+
+  .marr-header__whatsapp svg {
+    width: 22px;
+    height: 22px;
+    fill: #ffffff;
+  }
+
+  @media (max-width: 767px) {
+    .marr-header__contact--address {
+      display: none;
+    }
+
+    .marr-header__nav {
+      gap: 14px;
+    }
+
+    .marr-header__cta {
+      padding: 8px 16px;
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-header__logo-text {
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .marr-header__cta {
+      display: none;
+    }
+  }
+</style>
+
+<header class="marr-header">
+  <div class="marr-header__inner">
+    <a href="#" class="marr-header__logo">
+      <img src="https://placehold.co/120x40/1a1a2e/c9a84c?text=MARR" alt="Marr Laser & Skin Clinic">
+      <span class="marr-header__logo-text">Marr Laser</span>
+    </a>
+
+    <nav class="marr-header__nav">
+      <a href="tel:+441234567890" class="marr-header__contact">
+        <span class="marr-header__contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+        </span>
+        +44 123 456 7890
+      </a>
+
+      <span class="marr-header__contact marr-header__contact--address">
+        <span class="marr-header__contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 7a2.5 2.5 0 010 4.5z"/></svg>
+        </span>
+        123 High Street, London
+      </span>
+
+      <a href="#booking" class="marr-header__cta">Book Free Consultation</a>
+
+      <a href="https://wa.me/441234567890" class="marr-header__whatsapp" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.585l-.386-.238-2.646.887.887-2.646-.238-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>

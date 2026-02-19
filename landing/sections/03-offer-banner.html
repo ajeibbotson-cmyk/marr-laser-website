@@ -1,0 +1,132 @@
+<!-- Marr Laser — 03 Offer Banner -->
+<style>
+  .marr-offer {
+    --marr-primary: #3C3C3B;
+    --marr-accent: #C6BCB3;
+    --marr-light: #ffffff;
+    --marr-bg: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
+    --marr-font-body: 'Noto Sans', sans-serif;
+
+    background: var(--marr-accent);
+    padding: 40px 0;
+  }
+
+  .marr-offer__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .marr-offer__pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .marr-offer__price-old {
+    font-family: var(--marr-font-body);
+    font-size: 24px;
+    color: var(--marr-primary);
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+
+  .marr-offer__price-new {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 700;
+    color: var(--marr-primary);
+    line-height: 1;
+  }
+
+  .marr-offer__price-label {
+    font-family: var(--marr-font-body);
+    font-size: 14px;
+    color: var(--marr-primary);
+    opacity: 0.7;
+  }
+
+  .marr-offer__divider {
+    width: 2px;
+    height: 50px;
+    background: rgba(26, 26, 46, 0.2);
+  }
+
+  .marr-offer__urgency {
+    max-width: 340px;
+  }
+
+  .marr-offer__urgency-title {
+    font-family: var(--marr-font-heading);
+    font-size: 20px;
+    color: var(--marr-primary);
+    margin-bottom: 6px;
+  }
+
+  .marr-offer__urgency-text {
+    font-family: var(--marr-font-body);
+    font-size: 15px;
+    color: var(--marr-primary);
+    opacity: 0.8;
+  }
+
+  .marr-offer__cta {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--marr-primary);
+    color: var(--marr-accent);
+    font-family: var(--marr-font-body);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 32px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .marr-offer__cta:hover {
+    background: #252525;
+  }
+
+  @media (max-width: 767px) {
+    .marr-offer__inner {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .marr-offer__divider {
+      width: 60px;
+      height: 2px;
+    }
+  }
+</style>
+
+<section class="marr-offer">
+  <div class="marr-offer__inner">
+    <div class="marr-offer__pricing">
+      <span class="marr-offer__price-old">£350</span>
+      <div>
+        <span class="marr-offer__price-new">£199</span>
+        <span class="marr-offer__price-label">per session</span>
+      </div>
+    </div>
+
+    <span class="marr-offer__divider"></span>
+
+    <div class="marr-offer__urgency">
+      <p class="marr-offer__urgency-title">Limited Availability — February Only</p>
+      <p class="marr-offer__urgency-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Only 15 slots remaining this month.
+      </p>
+    </div>
+
+    <a href="#booking" class="marr-offer__cta">Claim This Offer</a>
+  </div>
+</section>

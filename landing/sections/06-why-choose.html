@@ -1,0 +1,225 @@
+<!-- Marr Laser — 06 Why Choose -->
+<style>
+  .marr-why {
+    --marr-primary: #3C3C3B;
+    --marr-accent: #C6BCB3;
+    --marr-light: #ffffff;
+    --marr-text: #3C3C3B;
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
+    --marr-font-body: 'Noto Sans', sans-serif;
+
+    background: var(--marr-primary);
+    color: var(--marr-light);
+    padding: 80px 0;
+  }
+
+  .marr-why__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .marr-why__header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 56px;
+  }
+
+  .marr-why__eyebrow {
+    font-family: var(--marr-font-body);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--marr-accent);
+    margin-bottom: 12px;
+  }
+
+  .marr-why__title {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .marr-why__subtitle {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+
+  .marr-why__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 48px;
+  }
+
+  .marr-why__item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(198, 188, 179, 0.15);
+    border-radius: 16px;
+    padding: 36px 28px;
+    transition: border-color 0.3s ease;
+  }
+
+  .marr-why__item:hover {
+    border-color: var(--marr-accent);
+  }
+
+  .marr-why__item-icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(198, 188, 179, 0.12);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .marr-why__item-title {
+    font-family: var(--marr-font-heading);
+    font-size: 20px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .marr-why__item-text {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.6;
+  }
+
+  .marr-why__ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .marr-why__cta {
+    display: inline-block;
+    padding: 16px 36px;
+    border-radius: 32px;
+    font-family: var(--marr-font-body);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .marr-why__cta--primary {
+    background: var(--marr-accent);
+    color: var(--marr-primary);
+  }
+
+  .marr-why__cta--primary:hover {
+    background: #B4A89D;
+  }
+
+  .marr-why__cta--whatsapp {
+    background: #25d366;
+    color: #ffffff;
+  }
+
+  .marr-why__cta--whatsapp:hover {
+    background: #1da851;
+  }
+
+  @media (max-width: 991px) {
+    .marr-why__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .marr-why__grid {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-why {
+      padding: 50px 0;
+    }
+
+    .marr-why__ctas {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .marr-why__cta {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+</style>
+
+<section class="marr-why">
+  <div class="marr-why__inner">
+    <div class="marr-why__header">
+      <p class="marr-why__eyebrow">Why Choose Us</p>
+      <h2 class="marr-why__title">Why Clients Love Marr Laser</h2>
+      <p class="marr-why__subtitle">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit
+        tempus porttitor.
+      </p>
+    </div>
+
+    <div class="marr-why__grid">
+      <div class="marr-why__item">
+        <div class="marr-why__item-icon">🎯</div>
+        <h3 class="marr-why__item-title">Medical-Grade Equipment</h3>
+        <p class="marr-why__item-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem.
+        </p>
+      </div>
+      <div class="marr-why__item">
+        <div class="marr-why__item-icon">👩‍⚕️</div>
+        <h3 class="marr-why__item-title">Qualified Practitioners</h3>
+        <p class="marr-why__item-text">
+          Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo.
+        </p>
+      </div>
+      <div class="marr-why__item">
+        <div class="marr-why__item-icon">⚡</div>
+        <h3 class="marr-why__item-title">Quick Sessions</h3>
+        <p class="marr-why__item-text">
+          Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla.
+        </p>
+      </div>
+      <div class="marr-why__item">
+        <div class="marr-why__item-icon">🛡️</div>
+        <h3 class="marr-why__item-title">All Skin Types Welcome</h3>
+        <p class="marr-why__item-text">
+          Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit.
+        </p>
+      </div>
+      <div class="marr-why__item">
+        <div class="marr-why__item-icon">💰</div>
+        <h3 class="marr-why__item-title">Transparent Pricing</h3>
+        <p class="marr-why__item-text">
+          Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur.
+        </p>
+      </div>
+      <div class="marr-why__item">
+        <div class="marr-why__item-icon">✨</div>
+        <h3 class="marr-why__item-title">Permanent Results</h3>
+        <p class="marr-why__item-text">
+          Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis.
+        </p>
+      </div>
+    </div>
+
+    <div class="marr-why__ctas">
+      <a href="#booking" class="marr-why__cta marr-why__cta--primary">Book Free Consultation</a>
+      <a href="https://wa.me/441234567890" class="marr-why__cta marr-why__cta--whatsapp">Book on WhatsApp</a>
+    </div>
+  </div>
+</section>

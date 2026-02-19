@@ -1,0 +1,247 @@
+<!-- Marr Laser — 14 Footer CTA -->
+<style>
+  .marr-footer {
+    --marr-primary: #3C3C3B;
+    --marr-accent: #C6BCB3;
+    --marr-light: #ffffff;
+    --marr-text: #3C3C3B;
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
+    --marr-font-body: 'Noto Sans', sans-serif;
+  }
+
+  .marr-footer__cta-section {
+    background: var(--marr-primary);
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .marr-footer__cta-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .marr-footer__cta-title {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(30px, 4vw, 48px);
+    color: var(--marr-light);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .marr-footer__cta-title em {
+    font-style: italic;
+    color: var(--marr-accent);
+  }
+
+  .marr-footer__cta-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 36px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .marr-footer__cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .marr-footer__cta-btn {
+    display: inline-block;
+    padding: 18px 40px;
+    border-radius: 32px;
+    font-family: var(--marr-font-body);
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .marr-footer__cta-btn--primary {
+    background: var(--marr-accent);
+    color: var(--marr-primary);
+  }
+
+  .marr-footer__cta-btn--primary:hover {
+    background: #B4A89D;
+  }
+
+  .marr-footer__cta-btn--whatsapp {
+    background: #25d366;
+    color: #ffffff;
+  }
+
+  .marr-footer__cta-btn--whatsapp:hover {
+    background: #1da851;
+  }
+
+  .marr-footer__cta-note {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Footer bar */
+  .marr-footer__bar {
+    background: #2a2a2a;
+    padding: 40px 0;
+  }
+
+  .marr-footer__bar-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  .marr-footer__col-title {
+    font-family: var(--marr-font-heading);
+    font-size: 16px;
+    color: var(--marr-accent);
+    margin-bottom: 16px;
+  }
+
+  .marr-footer__col-text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+  }
+
+  .marr-footer__col-text a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .marr-footer__col-text a:hover {
+    color: var(--marr-accent);
+  }
+
+  .marr-footer__col-link {
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.2s ease;
+  }
+
+  .marr-footer__col-link:hover {
+    color: var(--marr-accent);
+  }
+
+  .marr-footer__bottom {
+    background: #1a1a1a;
+    padding: 20px 0;
+  }
+
+  .marr-footer__bottom-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  @media (max-width: 767px) {
+    .marr-footer__cta-section {
+      padding: 60px 0;
+    }
+
+    .marr-footer__cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .marr-footer__cta-btn {
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .marr-footer__bar-inner {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .marr-footer__bottom-inner {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-footer__cta-section {
+      padding: 50px 0;
+    }
+  }
+</style>
+
+<footer class="marr-footer" id="booking">
+  <!-- Final CTA -->
+  <div class="marr-footer__cta-section">
+    <div class="marr-footer__cta-inner">
+      <h2 class="marr-footer__cta-title">
+        Ready for <em>Permanently</em> Smooth Skin?
+      </h2>
+      <p class="marr-footer__cta-subtitle">
+        Book your free, no-obligation consultation today. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit.
+      </p>
+      <div class="marr-footer__cta-buttons">
+        <a href="#" class="marr-footer__cta-btn marr-footer__cta-btn--primary">Book Free Consultation</a>
+        <a href="https://wa.me/441234567890" class="marr-footer__cta-btn marr-footer__cta-btn--whatsapp">Book on WhatsApp</a>
+      </div>
+      <p class="marr-footer__cta-note">No online payment required at booking.</p>
+    </div>
+  </div>
+
+  <!-- Footer info -->
+  <div class="marr-footer__bar">
+    <div class="marr-footer__bar-inner">
+      <div>
+        <h3 class="marr-footer__col-title">Contact</h3>
+        <p class="marr-footer__col-text">
+          <a href="tel:+441234567890">+44 123 456 7890</a><br>
+          <a href="mailto:hello@marrlaser.com">hello@marrlaser.com</a><br>
+          <a href="https://wa.me/441234567890">WhatsApp Us</a>
+        </p>
+      </div>
+      <div>
+        <h3 class="marr-footer__col-title">Visit Us</h3>
+        <p class="marr-footer__col-text">
+          123 High Street<br>
+          London, W1A 1AA<br>
+          United Kingdom
+        </p>
+      </div>
+      <div>
+        <h3 class="marr-footer__col-title">Opening Hours</h3>
+        <p class="marr-footer__col-text">
+          Mon – Fri: 9:00 – 19:00<br>
+          Saturday: 10:00 – 17:00<br>
+          Sunday: Closed
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="marr-footer__bottom">
+    <div class="marr-footer__bottom-inner">
+      <span>&copy; 2026 Marr Laser & Skin Clinic. All rights reserved.</span>
+      <span>Placeholder landing page — POC only</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,237 @@
+<!-- Marr Laser — 05 Treatment Breakdown -->
+<style>
+  .marr-treatment {
+    --marr-primary: #3C3C3B;
+    --marr-accent: #C6BCB3;
+    --marr-light: #ffffff;
+    --marr-bg: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
+    --marr-font-body: 'Noto Sans', sans-serif;
+
+    background: var(--marr-bg);
+    padding: 80px 0;
+  }
+
+  .marr-treatment__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .marr-treatment__header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 56px;
+  }
+
+  .marr-treatment__eyebrow {
+    font-family: var(--marr-font-body);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--marr-accent);
+    margin-bottom: 12px;
+  }
+
+  .marr-treatment__title {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(28px, 3.5vw, 40px);
+    color: var(--marr-primary);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .marr-treatment__subtitle {
+    font-size: 17px;
+    color: var(--marr-text);
+    line-height: 1.6;
+  }
+
+  .marr-treatment__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .marr-treatment__card {
+    background: var(--marr-light);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .marr-treatment__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .marr-treatment__card-image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  .marr-treatment__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .marr-treatment__card-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 4px 12px;
+    background: var(--marr-accent);
+    color: var(--marr-primary);
+    font-family: var(--marr-font-body);
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .marr-treatment__card-body {
+    padding: 28px;
+  }
+
+  .marr-treatment__card-title {
+    font-family: var(--marr-font-heading);
+    font-size: 22px;
+    color: var(--marr-primary);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .marr-treatment__card-text {
+    font-size: 15px;
+    color: var(--marr-text);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .marr-treatment__card-features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .marr-treatment__card-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--marr-text);
+  }
+
+  .marr-treatment__card-feature::before {
+    content: '✓';
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    background: rgba(198, 188, 179, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--marr-accent);
+    font-weight: 700;
+  }
+
+  @media (max-width: 991px) {
+    .marr-treatment__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .marr-treatment__grid {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-treatment {
+      padding: 50px 0;
+    }
+  }
+</style>
+
+<section class="marr-treatment">
+  <div class="marr-treatment__inner">
+    <div class="marr-treatment__header">
+      <p class="marr-treatment__eyebrow">Our Technology</p>
+      <h2 class="marr-treatment__title">Advanced Laser Hair Removal Technology</h2>
+      <p class="marr-treatment__subtitle">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem
+        malesuada magna mollis euismod.
+      </p>
+    </div>
+
+    <div class="marr-treatment__grid">
+      <!-- Card 1 -->
+      <div class="marr-treatment__card">
+        <div class="marr-treatment__card-image">
+          <img src="https://placehold.co/400x300/e8e0d0/c9a84c?text=Diode+Laser" alt="Diode Laser Technology">
+          <span class="marr-treatment__card-badge">Gold Standard</span>
+        </div>
+        <div class="marr-treatment__card-body">
+          <h3 class="marr-treatment__card-title">Diode Laser (808nm)</h3>
+          <p class="marr-treatment__card-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit
+            tempus porttitor.
+          </p>
+          <div class="marr-treatment__card-features">
+            <span class="marr-treatment__card-feature">Suitable for all skin types</span>
+            <span class="marr-treatment__card-feature">Virtually painless treatment</span>
+            <span class="marr-treatment__card-feature">FDA approved technology</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="marr-treatment__card">
+        <div class="marr-treatment__card-image">
+          <img src="https://placehold.co/400x300/e0e0e8/c9a84c?text=Alexandrite" alt="Alexandrite Laser">
+        </div>
+        <div class="marr-treatment__card-body">
+          <h3 class="marr-treatment__card-title">Alexandrite Laser (755nm)</h3>
+          <p class="marr-treatment__card-text">
+            Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo
+            cursus magna.
+          </p>
+          <div class="marr-treatment__card-features">
+            <span class="marr-treatment__card-feature">Ideal for fair to medium skin</span>
+            <span class="marr-treatment__card-feature">Fastest treatment speed</span>
+            <span class="marr-treatment__card-feature">Large coverage area</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="marr-treatment__card">
+        <div class="marr-treatment__card-image">
+          <img src="https://placehold.co/400x300/d8e0d8/c9a84c?text=Nd:YAG" alt="Nd:YAG Laser">
+        </div>
+        <div class="marr-treatment__card-body">
+          <h3 class="marr-treatment__card-title">Nd:YAG Laser (1064nm)</h3>
+          <p class="marr-treatment__card-text">
+            Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non
+            metus auctor.
+          </p>
+          <div class="marr-treatment__card-features">
+            <span class="marr-treatment__card-feature">Best for darker skin tones</span>
+            <span class="marr-treatment__card-feature">Deep follicle penetration</span>
+            <span class="marr-treatment__card-feature">Safe year-round treatment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

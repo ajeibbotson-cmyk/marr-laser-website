@@ -1,0 +1,155 @@
+<!-- Marr Laser — 12 About Clinic -->
+<style>
+  .marr-about {
+    --marr-primary: #3C3C3B;
+    --marr-accent: #C6BCB3;
+    --marr-light: #ffffff;
+    --marr-bg: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
+    --marr-font-body: 'Noto Sans', sans-serif;
+
+    background: var(--marr-bg);
+    padding: 80px 0;
+  }
+
+  .marr-about__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .marr-about__content {
+    max-width: 520px;
+  }
+
+  .marr-about__eyebrow {
+    font-family: var(--marr-font-body);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--marr-accent);
+    margin-bottom: 12px;
+  }
+
+  .marr-about__title {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(28px, 3.5vw, 40px);
+    color: var(--marr-primary);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .marr-about__text {
+    font-size: 16px;
+    color: var(--marr-text);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .marr-about__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .marr-about__stat-value {
+    font-family: var(--marr-font-heading);
+    font-size: 32px;
+    color: var(--marr-accent);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .marr-about__stat-label {
+    font-size: 13px;
+    color: var(--marr-text);
+    opacity: 0.7;
+  }
+
+  .marr-about__image {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .marr-about__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 991px) {
+    .marr-about__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .marr-about__content {
+      max-width: 100%;
+    }
+
+    .marr-about__image {
+      max-width: 500px;
+      margin: 0 auto;
+      order: -1;
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-about {
+      padding: 50px 0;
+    }
+
+    .marr-about__stats {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      text-align: center;
+    }
+  }
+</style>
+
+<section class="marr-about">
+  <div class="marr-about__inner">
+    <div class="marr-about__content">
+      <p class="marr-about__eyebrow">About the Clinic</p>
+      <h2 class="marr-about__title">Marr Laser & Skin Clinic</h2>
+      <p class="marr-about__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia
+        odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla
+        vitae elit libero, a pharetra augue.
+      </p>
+      <p class="marr-about__text">
+        Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Aenean
+        eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+        Praesent commodo cursus magna.
+      </p>
+
+      <div class="marr-about__stats">
+        <div>
+          <div class="marr-about__stat-value">10+</div>
+          <div class="marr-about__stat-label">Years Established</div>
+        </div>
+        <div>
+          <div class="marr-about__stat-value">2,000+</div>
+          <div class="marr-about__stat-label">Clients Treated</div>
+        </div>
+        <div>
+          <div class="marr-about__stat-value">CQC</div>
+          <div class="marr-about__stat-label">Registered</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="marr-about__image">
+      <img src="https://placehold.co/560x480/e8e0d0/c9a84c?text=Clinic+Interior" alt="Marr Laser & Skin Clinic interior">
+    </div>
+  </div>
+</section>

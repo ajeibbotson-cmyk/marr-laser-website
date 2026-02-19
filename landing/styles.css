@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Marr Laser Landing Page — Shared Styles (local preview only)
+   In Webflow, each section carries its own <style> block.
+   ========================================================================== */
+
+/* Design Tokens */
+:root {
+  --marr-primary: #3C3C3B;
+  --marr-accent: #C6BCB3;
+  --marr-light: #ffffff;
+  --marr-bg: #F9F9F8;
+  --marr-text: #3C3C3B;
+  --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
+  --marr-font-body: 'Noto Sans', sans-serif;
+  --marr-radius: 8px;
+  --marr-radius-lg: 32px;
+  --marr-container: 1180px;
+  --marr-section-pad: 80px;
+}
+
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--marr-font-body);
+  color: var(--marr-text);
+  background: var(--marr-light);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Shared Utility — Container */
+.marr-container {
+  max-width: var(--marr-container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Shared Utility — Section Padding */
+.marr-section {
+  padding: var(--marr-section-pad) 0;
+}
+
+/* Shared Utility — Buttons */
+.marr-btn {
+  display: inline-block;
+  padding: 16px 36px;
+  border-radius: var(--marr-radius-lg);
+  font-family: var(--marr-font-body);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.marr-btn--primary {
+  background: var(--marr-accent);
+  color: var(--marr-primary);
+}
+
+.marr-btn--primary:hover {
+  background: #B4A89D;
+}
+
+.marr-btn--outline {
+  background: transparent;
+  color: var(--marr-accent);
+  border: 2px solid var(--marr-accent);
+}
+
+.marr-btn--outline:hover {
+  background: var(--marr-accent);
+  color: var(--marr-primary);
+}
+
+.marr-btn--whatsapp {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.marr-btn--whatsapp:hover {
+  background: #1da851;
+}
+
+/* Shared Utility — Section Headings */
+.marr-heading {
+  font-family: var(--marr-font-heading);
+  color: var(--marr-primary);
+  line-height: 1.2;
+}
+
+.marr-heading--xl {
+  font-size: clamp(36px, 5vw, 60px);
+}
+
+.marr-heading--lg {
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.marr-heading--md {
+  font-size: clamp(22px, 3vw, 32px);
+}
+
+.marr-subheading {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--marr-text);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  :root {
+    --marr-section-pad: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --marr-section-pad: 40px;
+  }
+}
+
+@media (max-width: 478px) {
+  :root {
+    --marr-section-pad: 30px;
+  }
+
+  .marr-btn {
+    width: 100%;
+    padding: 14px 24px;
+  }
+}

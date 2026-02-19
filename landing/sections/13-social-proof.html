@@ -1,0 +1,252 @@
+<!-- Marr Laser — 13 Social Proof -->
+<style>
+  .marr-reviews {
+    --marr-primary: #3C3C3B;
+    --marr-accent: #C6BCB3;
+    --marr-light: #ffffff;
+    --marr-bg: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
+    --marr-font-body: 'Noto Sans', sans-serif;
+
+    background: var(--marr-light);
+    padding: 80px 0;
+  }
+
+  .marr-reviews__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .marr-reviews__header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .marr-reviews__eyebrow {
+    font-family: var(--marr-font-body);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--marr-accent);
+    margin-bottom: 12px;
+  }
+
+  .marr-reviews__title {
+    font-family: var(--marr-font-heading);
+    font-size: clamp(28px, 3.5vw, 40px);
+    color: var(--marr-primary);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .marr-reviews__google {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .marr-reviews__google-stars {
+    color: #f4b400;
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  .marr-reviews__google-rating {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--marr-primary);
+  }
+
+  .marr-reviews__google-count {
+    font-size: 14px;
+    color: var(--marr-text);
+    opacity: 0.7;
+  }
+
+  .marr-reviews__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .marr-reviews__card {
+    background: var(--marr-bg);
+    border-radius: 16px;
+    padding: 32px;
+    transition: transform 0.3s ease;
+  }
+
+  .marr-reviews__card:hover {
+    transform: translateY(-2px);
+  }
+
+  .marr-reviews__card-stars {
+    color: #f4b400;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .marr-reviews__card-text {
+    font-size: 15px;
+    color: var(--marr-text);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .marr-reviews__card-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .marr-reviews__card-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .marr-reviews__card-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .marr-reviews__card-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--marr-primary);
+  }
+
+  .marr-reviews__card-date {
+    font-size: 13px;
+    color: var(--marr-text);
+    opacity: 0.6;
+  }
+
+  .marr-reviews__cta-wrapper {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .marr-reviews__cta {
+    display: inline-block;
+    padding: 14px 32px;
+    border: 2px solid var(--marr-accent);
+    color: var(--marr-accent);
+    font-family: var(--marr-font-body);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 32px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .marr-reviews__cta:hover {
+    background: var(--marr-accent);
+    color: var(--marr-primary);
+  }
+
+  @media (max-width: 991px) {
+    .marr-reviews__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .marr-reviews__grid {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 478px) {
+    .marr-reviews {
+      padding: 50px 0;
+    }
+
+    .marr-reviews__card {
+      padding: 24px;
+    }
+  }
+</style>
+
+<section class="marr-reviews">
+  <div class="marr-reviews__inner">
+    <div class="marr-reviews__header">
+      <p class="marr-reviews__eyebrow">Client Reviews</p>
+      <h2 class="marr-reviews__title">What Our Clients Say</h2>
+      <div class="marr-reviews__google">
+        <span class="marr-reviews__google-stars">★★★★★</span>
+        <span class="marr-reviews__google-rating">4.9</span>
+        <span class="marr-reviews__google-count">Based on 120+ Google Reviews</span>
+      </div>
+    </div>
+
+    <div class="marr-reviews__grid">
+      <div class="marr-reviews__card">
+        <div class="marr-reviews__card-stars">★★★★★</div>
+        <p class="marr-reviews__card-text">
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. The team was
+          incredibly professional and the results have been amazing. Highly recommend!"
+        </p>
+        <div class="marr-reviews__card-author">
+          <div class="marr-reviews__card-avatar">
+            <img src="https://placehold.co/88x88/e0d8cc/c9a84c?text=A" alt="Avatar">
+          </div>
+          <div>
+            <div class="marr-reviews__card-name">Sarah T.</div>
+            <div class="marr-reviews__card-date">2 weeks ago</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="marr-reviews__card">
+        <div class="marr-reviews__card-stars">★★★★★</div>
+        <p class="marr-reviews__card-text">
+          "Nullam quis risus eget urna mollis ornare. I was nervous at first but
+          the consultation put me at ease. After 4 sessions I can already see a huge
+          difference."
+        </p>
+        <div class="marr-reviews__card-author">
+          <div class="marr-reviews__card-avatar">
+            <img src="https://placehold.co/88x88/d8e0d8/c9a84c?text=B" alt="Avatar">
+          </div>
+          <div>
+            <div class="marr-reviews__card-name">Emma L.</div>
+            <div class="marr-reviews__card-date">1 month ago</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="marr-reviews__card">
+        <div class="marr-reviews__card-stars">★★★★★</div>
+        <p class="marr-reviews__card-text">
+          "Etiam porta sem malesuada magna mollis euismod. Best investment I've made.
+          The clinic is spotless and the practitioners really know their stuff."
+        </p>
+        <div class="marr-reviews__card-author">
+          <div class="marr-reviews__card-avatar">
+            <img src="https://placehold.co/88x88/d0d0e0/c9a84c?text=C" alt="Avatar">
+          </div>
+          <div>
+            <div class="marr-reviews__card-name">Priya K.</div>
+            <div class="marr-reviews__card-date">3 weeks ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="marr-reviews__cta-wrapper">
+      <a href="#" class="marr-reviews__cta">Read All Reviews on Google</a>
+    </div>
+  </div>
+</section>
