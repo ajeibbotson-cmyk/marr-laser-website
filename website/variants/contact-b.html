@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — MARR Laser &amp; Skin Clinic</title>
+  <meta name="description" content="Get in touch with MARR Laser & Skin Clinic in Newry, Co. Down. Book a consultation, ask a question, or find our opening hours and location.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ═══════════════════════════════════════════════
+       LAYOUT B OVERRIDES — Contact: Map Hero + Form/Sidebar
+       ═══════════════════════════════════════════════ */
+
+    /* --- Full-Width Map Hero --- */
+    .map-hero {
+      width: 100%;
+      background-color: var(--marr-blush);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 21 / 7;
+      min-height: 280px;
+      max-height: 420px;
+      position: relative;
+    }
+
+    .map-hero__label {
+      font-family: var(--marr-font-heading);
+      font-size: clamp(0.6875rem, 1.5vw, 0.875rem);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--marr-text-muted);
+    }
+
+    .map-hero__pin {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .map-hero__pin-dot {
+      width: 16px;
+      height: 16px;
+      background-color: var(--marr-taupe);
+      border: 3px solid #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(60, 60, 59, 0.2);
+    }
+
+    .map-hero__pin-label {
+      margin-top: var(--sp-8);
+      font-family: var(--marr-font-heading);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      background-color: #ffffff;
+      padding: 4px 12px;
+      border-radius: var(--r-lg);
+      box-shadow: 0 2px 8px rgba(60, 60, 59, 0.1);
+      white-space: nowrap;
+    }
+
+    /* --- Contact Grid: Form + Info Sidebar --- */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: var(--sp-48);
+      align-items: start;
+    }
+
+    /* --- Info Box Stack --- */
+    .info-stack {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-20);
+    }
+
+    .info-box {
+      background-color: #ffffff;
+      border-radius: var(--r-lg);
+      padding: var(--sp-24);
+      box-shadow: var(--shadow-card);
+    }
+
+    .info-box__icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--marr-blush);
+      border-radius: var(--r-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.125rem;
+      margin-bottom: var(--sp-12);
+    }
+
+    .info-box__title {
+      font-family: var(--marr-font-heading);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      margin-bottom: var(--sp-8);
+    }
+
+    .info-box p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--marr-text-muted);
+    }
+
+    .info-box a {
+      color: var(--marr-taupe);
+      transition: color var(--transition-base);
+    }
+
+    .info-box a:hover {
+      color: var(--marr-charcoal);
+    }
+
+    /* Hours table inside info box */
+    .info-box .hours-table {
+      width: 100%;
+    }
+
+    .info-box .hours-table__day,
+    .info-box .hours-table__time {
+      padding: var(--sp-8) 0;
+      font-size: 0.8125rem;
+    }
+
+    /* --- CTA charcoal variant --- */
+    .section--charcoal .eyebrow { color: var(--marr-taupe); }
+    .section--charcoal .h2 { color: var(--marr-offwhite); }
+    .section--charcoal .text-lg { color: rgba(249, 249, 248, 0.7); }
+
+    /* --- Responsive --- */
+    @media (max-width: 991px) {
+      .contact-layout {
+        grid-template-columns: 1fr 300px;
+        gap: var(--sp-32);
+      }
+      .map-hero {
+        aspect-ratio: 21 / 8;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: var(--sp-48);
+      }
+      .map-hero {
+        aspect-ratio: 16 / 9;
+        min-height: 220px;
+      }
+    }
+
+    @media (max-width: 477px) {
+      .map-hero {
+        aspect-ratio: 4 / 3;
+        min-height: 200px;
+        max-height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Variant Indicator -->
+  <div style="position:fixed;top:12px;right:12px;z-index:9999;background:#C6BCB3;color:#fff;padding:6px 16px;border-radius:8px;font-family:'Cormorant Garamond',serif;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;"><a href="index.html" style="color:#fff;text-decoration:none;">← Variants</a> · Layout B</div>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════ -->
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <div class="nav__links nav__links--desktop">
+        <a href="../laser-hair-removal.html" class="nav__link">Laser</a>
+        <a href="../why-alexandrite.html" class="nav__link">Alexandrite</a>
+        <a href="../skin-treatments.html" class="nav__link">Skin</a>
+      </div>
+      <a href="../index.html" class="nav__logo" aria-label="MARR — Home">
+        <span class="nav__logo-main">MARR</span>
+        <span class="nav__logo-sub">Laser &amp; Skin</span>
+      </a>
+      <div class="nav__links nav__links--desktop">
+        <a href="../anti-ageing.html" class="nav__link">Anti-Ageing</a>
+        <a href="../aesthetics.html" class="nav__link">Aesthetics</a>
+        <a href="../about.html" class="nav__link">About</a>
+        <a href="../contact.html" class="nav__link">Contact</a>
+      </div>
+      <input type="checkbox" id="nav-toggle" class="nav__toggle">
+      <label for="nav-toggle" class="nav__toggle-label" aria-label="Menu">
+        <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+      </label>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 1: MAP HERO
+         Full-width blush map placeholder
+         ═══════════════════════════════════════════════ -->
+
+    <div class="map-hero" role="img" aria-label="Map showing MARR Laser and Skin Clinic location in Newry, Co. Down">
+      <div class="map-hero__pin">
+        <div class="map-hero__pin-dot"></div>
+        <span class="map-hero__pin-label">MARR &mdash; Newry</span>
+      </div>
+      <span class="map-hero__label">Map &mdash; Newry, Co. Down</span>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 2: CONTACT FORM + INFO SIDEBAR
+         Off-white bg
+         ═══════════════════════════════════════════════ -->
+
+    <section class="section section--offwhite" aria-label="Contact form and clinic information">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- Left: Contact Form -->
+          <div>
+            <span class="eyebrow">Get in Touch</span>
+            <h2 class="h2 u-mb-md">Send Us a Message</h2>
+
+            <form class="contact-form" aria-label="Contact form">
+              <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="Your full name" autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" placeholder="your@email.com" autocomplete="email" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-phone">Phone</label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="028 000 0000" autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="contact-treatment">Treatment Interest</label>
+                <select id="contact-treatment" name="treatment">
+                  <option value="" disabled selected>Select a treatment...</option>
+                  <option value="laser-hair-removal">Laser Hair Removal</option>
+                  <option value="alexandrite">Alexandrite Laser</option>
+                  <option value="skin-treatments">Skin Treatments</option>
+                  <option value="anti-ageing">Anti-Ageing</option>
+                  <option value="aesthetics">Aesthetics</option>
+                  <option value="general">General Enquiry</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" placeholder="How can we help you?" rows="5"></textarea>
+              </div>
+              <button type="submit" class="btn btn--secondary">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Right: Info Sidebar -->
+          <div class="info-stack">
+
+            <!-- Address -->
+            <div class="info-box">
+              <div class="info-box__icon" aria-hidden="true">&#9873;</div>
+              <h3 class="info-box__title">Address</h3>
+              <p>MARR Laser &amp; Skin Clinic<br>Newry, Co. Down<br>Northern Ireland</p>
+            </div>
+
+            <!-- Phone & Email -->
+            <div class="info-box">
+              <div class="info-box__icon" aria-hidden="true">&#9742;</div>
+              <h3 class="info-box__title">Phone &amp; Email</h3>
+              <p>
+                <a href="tel:+44000000000">028 000 0000</a><br>
+                <a href="mailto:hello@marrlaser.com">hello@marrlaser.com</a>
+              </p>
+            </div>
+
+            <!-- Opening Hours -->
+            <div class="info-box">
+              <div class="info-box__icon" aria-hidden="true">&#9200;</div>
+              <h3 class="info-box__title">Opening Hours</h3>
+              <table class="hours-table" aria-label="Weekly opening hours">
+                <tbody>
+                  <tr>
+                    <td class="hours-table__day">Mon &ndash; Fri</td>
+                    <td class="hours-table__time">9:00am &ndash; 7:00pm</td>
+                  </tr>
+                  <tr>
+                    <td class="hours-table__day">Saturday</td>
+                    <td class="hours-table__time">9:00am &ndash; 5:00pm</td>
+                  </tr>
+                  <tr>
+                    <td class="hours-table__day">Sunday</td>
+                    <td class="hours-table__time">Closed</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 3: CTA
+         Charcoal bg
+         ═══════════════════════════════════════════════ -->
+
+    <section class="section section--charcoal" aria-label="Online booking call to action">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Quick &amp; Easy</span>
+          <h2 class="h2">Prefer to Book Online?</h2>
+          <p class="text-lg">Use our online booking system to choose your treatment and find a time that suits you.</p>
+        </div>
+        <div class="u-text-center">
+          <a href="#" class="btn btn--light">Book via Phorest</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════ -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span class="footer__brand-main">MARR</span><span class="footer__brand-sub">Laser &amp; Skin</span></div>
+          <p class="footer__muted text-sm">Advanced laser technology and expert skin treatments, tailored to you.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Treatments</h4>
+          <ul class="footer__links">
+            <li><a href="../laser-hair-removal.html" class="footer__link">Laser Hair Removal</a></li>
+            <li><a href="../skin-treatments.html" class="footer__link">Skin Treatments</a></li>
+            <li><a href="../anti-ageing.html" class="footer__link">Anti-Ageing</a></li>
+            <li><a href="../aesthetics.html" class="footer__link">Aesthetics</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Clinic</h4>
+          <ul class="footer__links">
+            <li><a href="../about.html" class="footer__link">About Us</a></li>
+            <li><a href="../gallery.html" class="footer__link">Gallery</a></li>
+            <li><a href="../blog.html" class="footer__link">Blog</a></li>
+            <li><a href="../contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contact</h4>
+          <ul class="footer__links">
+            <li class="footer__contact-text">Newry, Co. Down</li>
+            <li><a href="tel:+44000000000" class="footer__link">028 000 0000</a></li>
+            <li><a href="mailto:hello@marrlaser.com" class="footer__link">hello@marrlaser.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__fine">&copy; 2026 MARR Laser &amp; Skin Clinic.</p>
+        <div class="footer__social"><a href="#" class="footer__social-link">Instagram</a><a href="#" class="footer__social-link">Facebook</a></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,22 +1,28 @@
 <!-- Marr Laser — 07 Ideal Candidate -->
 <style>
   .marr-candidate {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-bg: #F9F9F8;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
     --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --transition-base: 0.25s ease;
 
-    background: var(--marr-light);
+    background: var(--marr-offwhite);
     padding: 80px 0;
+    font-family: var(--marr-font-body);
+    font-weight: 300;
+    color: var(--marr-text);
   }
 
   .marr-candidate__inner {
-    max-width: 1180px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
@@ -24,7 +30,7 @@
   }
 
   .marr-candidate__image {
-    border-radius: 16px;
+    border-radius: 8px;
     overflow: hidden;
   }
 
@@ -39,26 +45,30 @@
   }
 
   .marr-candidate__eyebrow {
-    font-family: var(--marr-font-body);
-    font-size: 13px;
-    font-weight: 600;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--marr-accent);
+    letter-spacing: 0.15em;
+    color: var(--marr-taupe);
     margin-bottom: 12px;
   }
 
   .marr-candidate__title {
     font-family: var(--marr-font-heading);
-    font-size: clamp(28px, 3.5vw, 40px);
-    color: var(--marr-primary);
+    font-size: clamp(1.5rem, 3.5vw, 2.375rem);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--marr-charcoal);
     line-height: 1.2;
     margin-bottom: 20px;
   }
 
   .marr-candidate__text {
-    font-size: 16px;
-    color: var(--marr-text);
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--marr-text-muted);
     line-height: 1.7;
     margin-bottom: 28px;
   }
@@ -74,7 +84,8 @@
     display: flex;
     align-items: flex-start;
     gap: 14px;
-    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 300;
     color: var(--marr-text);
     line-height: 1.5;
   }
@@ -83,35 +94,47 @@
     flex-shrink: 0;
     width: 28px;
     height: 28px;
-    background: rgba(198, 188, 179, 0.12);
+    background: var(--marr-taupe);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--marr-accent);
-    font-size: 14px;
+    color: #ffffff;
+    font-size: 13px;
     font-weight: 700;
     margin-top: 1px;
   }
 
   .marr-candidate__cta {
-    display: inline-block;
-    padding: 16px 36px;
-    background: var(--marr-accent);
-    color: var(--marr-primary);
-    font-family: var(--marr-font-body);
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    background: var(--marr-taupe);
+    color: #ffffff;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 8px;
+    border: 1px solid var(--marr-taupe);
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: background-color var(--transition-base),
+                border-color var(--transition-base);
+    cursor: pointer;
   }
 
   .marr-candidate__cta:hover {
-    background: #B4A89D;
+    background: var(--marr-taupe-hover);
+    border-color: var(--marr-taupe-hover);
   }
 
   @media (max-width: 991px) {
+    .marr-candidate {
+      padding: 64px 0;
+    }
+
     .marr-candidate__inner {
       grid-template-columns: 1fr;
       gap: 40px;
@@ -127,9 +150,23 @@
     }
   }
 
+  @media (max-width: 767px) {
+    .marr-candidate {
+      padding: 48px 0;
+    }
+
+    .marr-candidate__inner {
+      padding: 0 20px;
+    }
+  }
+
   @media (max-width: 478px) {
     .marr-candidate {
-      padding: 50px 0;
+      padding: 32px 0;
+    }
+
+    .marr-candidate__inner {
+      padding: 0 16px;
     }
 
     .marr-candidate__cta {

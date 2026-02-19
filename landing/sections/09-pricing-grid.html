@@ -1,15 +1,19 @@
 <!-- Marr Laser — 09 Pricing Grid -->
 <style>
   .marr-pricing {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-bg: #F9F9F8;
-    --marr-text: #3C3C3B;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --shadow-card-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
+    --transition-base: 0.25s ease;
 
-    background: var(--marr-light);
+    background: var(--marr-offwhite);
     padding: 80px 0;
   }
 
@@ -26,51 +30,56 @@
   }
 
   .marr-pricing__eyebrow {
-    font-family: var(--marr-font-body);
-    font-size: 13px;
-    font-weight: 600;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--marr-accent);
+    letter-spacing: 0.15em;
+    color: var(--marr-taupe);
     margin-bottom: 12px;
   }
 
   .marr-pricing__title {
     font-family: var(--marr-font-heading);
     font-size: clamp(28px, 3.5vw, 40px);
-    color: var(--marr-primary);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--marr-charcoal);
     line-height: 1.2;
     margin-bottom: 16px;
   }
 
   .marr-pricing__subtitle {
+    font-family: var(--marr-font-body);
     font-size: 17px;
-    color: var(--marr-text);
+    font-weight: 300;
+    color: var(--marr-text-muted);
     line-height: 1.6;
   }
 
   .marr-pricing__table {
     width: 100%;
     border-collapse: collapse;
-    background: var(--marr-light);
-    border-radius: 16px;
+    background: #ffffff;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-card);
   }
 
   .marr-pricing__table thead {
-    background: var(--marr-primary);
-    color: var(--marr-light);
+    background: var(--marr-charcoal);
+    color: var(--marr-offwhite);
   }
 
   .marr-pricing__table th {
     padding: 18px 24px;
-    font-family: var(--marr-font-body);
-    font-size: 14px;
-    font-weight: 600;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
     text-align: left;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.15em;
   }
 
   .marr-pricing__table th:last-child {
@@ -81,8 +90,9 @@
     padding: 18px 24px;
     font-family: var(--marr-font-body);
     font-size: 16px;
-    color: var(--marr-text);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    font-weight: 300;
+    color: var(--marr-charcoal);
+    border-bottom: 1px solid rgba(60, 60, 59, 0.06);
   }
 
   .marr-pricing__table td:last-child {
@@ -90,37 +100,48 @@
     white-space: nowrap;
   }
 
+  .marr-pricing__table tbody tr {
+    transition: background var(--transition-base);
+  }
+
   .marr-pricing__table tbody tr:hover {
-    background: rgba(198, 188, 179, 0.04);
+    background: rgba(198, 188, 179, 0.06);
   }
 
   .marr-pricing__table .marr-pricing__highlight {
     background: rgba(198, 188, 179, 0.08);
   }
 
+  .marr-pricing__table .marr-pricing__highlight:hover {
+    background: rgba(198, 188, 179, 0.14);
+  }
+
   .marr-pricing__price-old {
     text-decoration: line-through;
-    color: #999;
+    color: var(--marr-text-muted);
     font-size: 14px;
     margin-right: 8px;
   }
 
   .marr-pricing__price-new {
-    font-weight: 700;
-    color: var(--marr-accent);
+    font-family: var(--marr-font-heading);
+    font-weight: 300;
+    color: var(--marr-taupe);
     font-size: 18px;
+    letter-spacing: 0.05em;
   }
 
   .marr-pricing__badge {
     display: inline-block;
     padding: 2px 10px;
-    background: var(--marr-accent);
-    color: var(--marr-primary);
-    font-size: 11px;
-    font-weight: 700;
-    border-radius: 12px;
+    background: var(--marr-taupe);
+    color: var(--marr-charcoal);
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    border-radius: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.1em;
     margin-left: 8px;
     vertical-align: middle;
   }
@@ -131,30 +152,51 @@
   }
 
   .marr-pricing__note {
+    font-family: var(--marr-font-body);
     font-size: 14px;
-    color: #888;
+    font-weight: 300;
+    color: var(--marr-text-muted);
     margin-bottom: 24px;
   }
 
   .marr-pricing__cta {
     display: inline-block;
-    padding: 16px 40px;
-    background: var(--marr-accent);
-    color: var(--marr-primary);
-    font-family: var(--marr-font-body);
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 32px;
+    padding: 14px 36px;
+    background: var(--marr-taupe);
+    color: #ffffff;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 8px;
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: background var(--transition-base);
   }
 
   .marr-pricing__cta:hover {
-    background: #B4A89D;
+    background: var(--marr-taupe-hover);
   }
 
   /* Mobile card layout */
+  @media (max-width: 1200px) {
+    .marr-pricing__table th,
+    .marr-pricing__table td {
+      padding: 16px 20px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .marr-pricing {
+      padding: 64px 0;
+    }
+  }
+
   @media (max-width: 767px) {
+    .marr-pricing {
+      padding: 48px 0;
+    }
+
     .marr-pricing__table,
     .marr-pricing__table thead,
     .marr-pricing__table tbody,
@@ -170,9 +212,10 @@
 
     .marr-pricing__table tr {
       margin-bottom: 12px;
-      border-radius: 12px;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+      box-shadow: var(--shadow-card);
+      background: #ffffff;
     }
 
     .marr-pricing__table td {
@@ -180,33 +223,35 @@
       justify-content: space-between;
       align-items: center;
       padding: 14px 20px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      border-bottom: 1px solid rgba(60, 60, 59, 0.04);
     }
 
     .marr-pricing__table td:last-child {
       text-align: left;
       background: rgba(198, 188, 179, 0.06);
-      font-weight: 600;
+      font-weight: 300;
     }
 
     .marr-pricing__table td::before {
       content: attr(data-label);
-      font-weight: 600;
-      font-size: 13px;
+      font-family: var(--marr-font-heading);
+      font-weight: 400;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--marr-primary);
+      letter-spacing: 0.1em;
+      color: var(--marr-charcoal);
     }
   }
 
   @media (max-width: 478px) {
     .marr-pricing {
-      padding: 50px 0;
+      padding: 32px 0;
     }
 
     .marr-pricing__cta {
       width: 100%;
       max-width: 320px;
+      text-align: center;
     }
   }
 </style>

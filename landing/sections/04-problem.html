@@ -1,22 +1,29 @@
 <!-- Marr Laser — 04 Problem -->
 <style>
+  /* === SECTION 04 — PROBLEM === Design C: Warm Boutique */
   .marr-problem {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-bg: #F9F9F8;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
     --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --marr-transition: 0.25s ease;
+    --marr-radius: 8px;
+    --marr-shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --marr-shadow-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
 
-    background: var(--marr-light);
+    background: var(--marr-blush);
     padding: 80px 0;
   }
 
   .marr-problem__inner {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
@@ -27,27 +34,35 @@
     max-width: 520px;
   }
 
+  /* Eyebrow — Design C: heading font, 0.6875rem, uppercase, taupe */
   .marr-problem__eyebrow {
-    font-family: var(--marr-font-body);
-    font-size: 13px;
-    font-weight: 600;
+    display: block;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--marr-accent);
+    letter-spacing: 0.15em;
+    color: var(--marr-taupe);
     margin-bottom: 12px;
   }
 
   .marr-problem__title {
     font-family: var(--marr-font-heading);
-    font-size: clamp(28px, 3.5vw, 40px);
-    color: var(--marr-primary);
+    font-size: clamp(1.5rem, 3.5vw, 2.375rem);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--marr-charcoal);
     line-height: 1.2;
     margin-bottom: 24px;
   }
 
   .marr-problem__intro {
-    font-size: 16px;
-    color: var(--marr-text);
+    font-family: var(--marr-font-body);
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--marr-text-muted);
     line-height: 1.7;
     margin-bottom: 32px;
   }
@@ -63,27 +78,31 @@
     align-items: flex-start;
     gap: 14px;
     font-family: var(--marr-font-body);
-    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
     color: var(--marr-text);
     line-height: 1.5;
   }
 
+  /* Icon circles — keep border-radius: 50% for round shape */
   .marr-problem__icon {
     flex-shrink: 0;
     width: 28px;
     height: 28px;
-    background: rgba(198, 188, 179, 0.12);
+    background: var(--marr-taupe);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 2px;
-    color: var(--marr-accent);
-    font-size: 14px;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 400;
   }
 
   .marr-problem__image {
-    border-radius: 16px;
+    border-radius: var(--marr-radius);
     overflow: hidden;
   }
 
@@ -91,9 +110,15 @@
     width: 100%;
     height: auto;
     display: block;
+    border-radius: var(--marr-radius);
   }
 
+  /* ---- Tablet: 991px ---- */
   @media (max-width: 991px) {
+    .marr-problem {
+      padding: 64px 0;
+    }
+
     .marr-problem__inner {
       grid-template-columns: 1fr;
       gap: 40px;
@@ -110,9 +135,33 @@
     }
   }
 
+  /* ---- Mobile: 767px ---- */
+  @media (max-width: 767px) {
+    .marr-problem {
+      padding: 48px 0;
+    }
+
+    .marr-problem__inner {
+      padding: 0 20px;
+    }
+
+    .marr-problem__title {
+      font-size: clamp(1.375rem, 5vw, 1.875rem);
+    }
+  }
+
+  /* ---- Small mobile: 478px ---- */
   @media (max-width: 478px) {
     .marr-problem {
-      padding: 50px 0;
+      padding: 32px 0;
+    }
+
+    .marr-problem__inner {
+      padding: 0 16px;
+    }
+
+    .marr-problem__title {
+      font-size: 1.25rem;
     }
   }
 </style>

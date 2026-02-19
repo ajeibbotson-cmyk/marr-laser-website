@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anti-Ageing Treatments — Layout B — MARR Laser &amp; Skin Clinic</title>
+  <meta name="description" content="Non-surgical anti-ageing treatments at MARR Laser & Skin Clinic, Newry. Focus Dual RF, CACI non-surgical facelift, LED light therapy for natural rejuvenation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ═══════════════════════════════════════════════
+       VARIANT OVERRIDES — Anti-Ageing B: Magazine Showcases
+       ═══════════════════════════════════════════════ */
+
+    /* --- Showcase Sections --- */
+    .showcase {
+      padding-top: var(--sp-80);
+      padding-bottom: var(--sp-80);
+    }
+
+    .showcase--offwhite { background-color: var(--marr-offwhite); }
+    .showcase--blush    { background-color: var(--marr-blush); }
+
+    .showcase__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--sp-24);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-64);
+      align-items: center;
+    }
+
+    /* Reverse layout for even items */
+    .showcase__inner--reverse .showcase__image {
+      order: 2;
+    }
+
+    .showcase__inner--reverse .showcase__content {
+      order: 1;
+    }
+
+    .showcase__image {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+
+    .showcase__image img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      border-radius: var(--r-lg);
+    }
+
+    .showcase__content .eyebrow {
+      margin-bottom: var(--sp-8);
+    }
+
+    .showcase__content .h2 {
+      margin-bottom: var(--sp-16);
+    }
+
+    .showcase__desc {
+      color: var(--marr-text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--sp-24);
+    }
+
+    .showcase__benefits {
+      margin-bottom: var(--sp-24);
+    }
+
+    .showcase__benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-12);
+      padding: var(--sp-8) 0;
+      font-size: 0.9375rem;
+      color: var(--marr-text);
+      border-bottom: 1px solid var(--marr-border);
+    }
+
+    .showcase__benefits li:last-child {
+      border-bottom: none;
+    }
+
+    .showcase__benefit-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--marr-blush);
+      border: 1px solid var(--marr-taupe);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6875rem;
+      color: var(--marr-taupe);
+      margin-top: 2px;
+    }
+
+    .showcase--blush .showcase__benefit-icon {
+      background: #ffffff;
+    }
+
+    .showcase__price {
+      display: inline-block;
+      font-family: var(--marr-font-heading);
+      font-size: 1.25rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: var(--marr-charcoal);
+      margin-bottom: var(--sp-24);
+    }
+
+    .showcase__price-label {
+      font-family: var(--marr-font-heading);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--marr-text-muted);
+      display: block;
+      margin-bottom: var(--sp-4);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 991px) {
+      .showcase {
+        padding-top: var(--sp-64);
+        padding-bottom: var(--sp-64);
+      }
+
+      .showcase__inner {
+        grid-template-columns: 1fr;
+        gap: var(--sp-32);
+      }
+
+      .showcase__inner--reverse .showcase__image,
+      .showcase__inner--reverse .showcase__content {
+        order: unset;
+      }
+
+      .showcase__image img {
+        height: 360px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .showcase {
+        padding-top: var(--sp-48);
+        padding-bottom: var(--sp-48);
+      }
+
+      .showcase__inner {
+        padding: 0 var(--sp-20);
+      }
+
+      .showcase__image img {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 477px) {
+      .showcase {
+        padding-top: var(--sp-32);
+        padding-bottom: var(--sp-32);
+      }
+
+      .showcase__inner {
+        padding: 0 var(--sp-16);
+      }
+
+      .showcase__image img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Layout B Indicator -->
+<div style="position:fixed;top:12px;right:12px;z-index:9999;background:#C6BCB3;color:#fff;padding:6px 16px;border-radius:8px;font-family:'Cormorant Garamond',serif;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;"><a href="index.html" style="color:#fff;text-decoration:none;">&larr; Variants</a> &middot; Layout B</div>
+
+<!-- Navigation -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav__inner">
+    <div class="nav__links nav__links--desktop">
+      <a href="../laser-hair-removal.html" class="nav__link">Laser</a>
+      <a href="../why-alexandrite.html" class="nav__link">Alexandrite</a>
+      <a href="../skin-treatments.html" class="nav__link">Skin</a>
+    </div>
+    <a href="../index.html" class="nav__logo" aria-label="MARR — Home">
+      <span class="nav__logo-main">MARR</span>
+      <span class="nav__logo-sub">Laser &amp; Skin</span>
+    </a>
+    <div class="nav__links nav__links--desktop">
+      <a href="../anti-ageing.html" class="nav__link">Anti-Ageing</a>
+      <a href="../aesthetics.html" class="nav__link">Aesthetics</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav__toggle">
+    <label for="nav-toggle" class="nav__toggle-label" aria-label="Menu">
+      <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+    </label>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════════
+       1. PAGE HERO
+       ═══════════════════════════════════════════════ -->
+
+  <section class="page-hero" aria-label="Page introduction">
+    <div class="container">
+      <span class="eyebrow">Turn Back Time</span>
+      <h1 class="h1">Anti-Ageing Treatments</h1>
+      <p class="text-lg">Non-surgical rejuvenation that restores firmness, smooths fine lines, and revives your natural glow. Results you can see without the downtime of surgery.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       2. TREATMENT SHOWCASES — Full-Width Alternating
+       ═══════════════════════════════════════════════ -->
+
+  <!-- Showcase 1: Focus Dual RF — Image Left, Text Right (off-white) -->
+  <section class="showcase showcase--offwhite" aria-label="Focus Dual RF treatment">
+    <div class="showcase__inner">
+      <div class="showcase__image">
+        <img src="https://placehold.co/600x480/C6BCB3/FFFFFF?text=Focus+Dual+RF" alt="Focus Dual RF skin tightening and collagen stimulation treatment" width="600" height="480" loading="lazy">
+      </div>
+      <div class="showcase__content">
+        <span class="eyebrow">Radiofrequency + Microneedling</span>
+        <h2 class="h2">Focus Dual RF</h2>
+        <p class="showcase__desc">Combining radiofrequency and microneedling, Focus Dual RF delivers thermal energy deep into the dermis to stimulate collagen and elastin production. The result is tighter, firmer skin with improved texture and reduced fine lines, all without surgery or significant downtime.</p>
+        <ul class="showcase__benefits">
+          <li><span class="showcase__benefit-icon" aria-hidden="true">&#10003;</span> Stimulates deep collagen remodelling</li>
+          <li><span class="showcase__benefit-icon" aria-hidden="true">&#10003;</span> Tightens and firms sagging skin</li>
+          <li><span class="showcase__benefit-icon" aria-hidden="true">&#10003;</span> Reduces fine lines and wrinkles</li>
+          <li><span class="showcase__benefit-icon" aria-hidden="true">&#10003;</span> Minimal downtime, visible results</li>
+        </ul>
+        <div class="showcase__price">
+          <span class="showcase__price-label">Starting From</span>
+          &pound;200 per session
+        </div>
+        <a href="../contact.html" class="btn btn--primary">Book Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase 2: CACI — Text Left, Image Right (blush) -->
+  <section class="showcase showcase--blush" aria-label="CACI non-surgical facelift treatment">
+    <div class="showcase__inner showcase__inner--reverse">
+      <div class="showcase__image">
+        <img src="https://placehold.co/600x480/3C3C3B/F9F9F8?text=CACI+Facelift" alt="CACI non-surgical facelift using microcurrent technology" width="600" height="480" loading="lazy">
+      </div>
+      <div class="showcase__content">
+        <span class="eyebrow">Microcurrent Technology</span>
+        <h2 class="h2">CACI Non-Surgical Facelift</h2>
+        <p class="showcase__desc">The CACI system uses precise microcurrent technology to gently stimulate facial muscles, restoring tone and definition. Often called the "non-surgical facelift," this treatment lifts, firms, and re-educates muscles that have lost their shape over time, delivering visible lifting from the very first session.</p>
+        <ul class="showcase__benefits">
+          <li><span class="showcase__benefit-icon" aria-hidden="true">&#10003;</span> Lifts and tones facial muscles</li>
+          <li><span class="showcase__benefit-icon" aria-hidden="true">&#10003;</span> Re-educates muscles for lasting results</li>
+          <li><span class="showcase__benefit-icon" aria-hidden="true">&#10003;</span> Visible lifting from session one</li>
+          <li><span class="showcase__benefit-icon" aria-hidden="true">&#10003;</span> Zero downtime, completely painless</li>
+        </ul>
+        <div class="showcase__price">
+          <span class="showcase__price-label">Starting From</span>
+          &pound;65 per session
+        </div>
+        <a href="../contact.html" class="btn btn--primary">Book Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase 3: LED — Image Left, Text Right (off-white) -->
+  <section class="showcase showcase--offwhite" aria-label="LED light therapy treatment">
+    <div class="showcase__inner">
+      <div class="showcase__image">
+        <img src="https://placehold.co/600x480/ECE5E0/3C3C3B?text=LED+Therapy" alt="LED light therapy for skin rejuvenation and healing" width="600" height="480" loading="lazy">
+      </div>
+      <div class="showcase__content">
+        <span class="eyebrow">Photobiomodulation</span>
+        <h2 class="h2">LED Light Therapy</h2>
+        <p class="showcase__desc">Medical-grade LED panels emit specific wavelengths of light that penetrate the skin to boost cellular energy and accelerate repair. Red light stimulates collagen, while near-infrared reduces inflammation. A gentle, relaxing treatment that enhances healing and amplifies the results of other anti-ageing treatments.</p>
+        <ul class="showcase__benefits">
+          <li><span class="showcase__benefit-icon" aria-hidden="true">&#10003;</span> Boosts collagen production naturally</li>
+          <li><span class="showcase__benefit-icon" aria-hidden="true">&#10003;</span> Reduces inflammation and redness</li>
+          <li><span class="showcase__benefit-icon" aria-hidden="true">&#10003;</span> Accelerates post-treatment healing</li>
+          <li><span class="showcase__benefit-icon" aria-hidden="true">&#10003;</span> Relaxing, completely non-invasive</li>
+        </ul>
+        <div class="showcase__price">
+          <span class="showcase__price-label">Starting From</span>
+          &pound;40 per session
+        </div>
+        <a href="../contact.html" class="btn btn--primary">Book Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       3. PROCESS — 4-Step Timeline
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--blush" aria-label="Treatment process">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Step by Step</span>
+        <h2 class="h2">Your Journey</h2>
+        <p class="text-lg">A structured approach to anti-ageing that prioritises your goals and delivers measurable results.</p>
+      </div>
+      <div class="timeline" role="list" aria-label="Anti-ageing treatment journey">
+        <div class="timeline__step" role="listitem">
+          <div class="timeline__number" aria-hidden="true">1</div>
+          <h3 class="timeline__title">Consultation</h3>
+          <p class="timeline__text">An in-depth skin assessment using clinical analysis to understand your concerns, skin condition, and rejuvenation goals.</p>
+        </div>
+        <div class="timeline__step" role="listitem">
+          <div class="timeline__number" aria-hidden="true">2</div>
+          <h3 class="timeline__title">Bespoke Plan</h3>
+          <p class="timeline__text">Your practitioner designs a personalised treatment programme combining the most effective technologies for your needs.</p>
+        </div>
+        <div class="timeline__step" role="listitem">
+          <div class="timeline__number" aria-hidden="true">3</div>
+          <h3 class="timeline__title">Treatment Course</h3>
+          <p class="timeline__text">A series of targeted sessions, each building on the last. Results develop progressively as collagen remodels and skin firms.</p>
+        </div>
+        <div class="timeline__step" role="listitem">
+          <div class="timeline__number" aria-hidden="true">4</div>
+          <h3 class="timeline__title">Ongoing Care</h3>
+          <p class="timeline__text">Maintenance sessions and expert homecare advice to preserve and extend your results for the long term.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       4. FAQ — Accordion
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--offwhite" aria-label="Frequently asked questions">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Common Questions</span>
+        <h2 class="h2">Anti-Ageing FAQs</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">What age should I start anti-ageing treatments?</summary>
+          <p class="faq-answer">There is no single right age. Prevention is always easier than correction, so many clients begin in their late twenties or early thirties. However, our treatments are effective at any age and can be tailored to your specific stage of skin ageing.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How soon will I see results?</summary>
+          <p class="faq-answer">Many clients notice an immediate improvement in skin tone and tightness after their first session. Collagen remodelling continues for 4-12 weeks after treatment, so results develop progressively and improve with each subsequent session.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Is there any downtime?</summary>
+          <p class="faq-answer">LED light therapy and CACI have no downtime whatsoever. Focus Dual RF may cause mild redness for a few hours. All our anti-ageing treatments are designed to fit into your normal routine with minimal disruption.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How many sessions will I need?</summary>
+          <p class="faq-answer">A typical course is 6-10 sessions depending on the treatment type and your goals. CACI is most effective with an initial course of 10 sessions, while Focus Dual RF typically requires 3-6 sessions. Your practitioner will recommend the optimal plan during your consultation.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Can I combine anti-ageing treatments?</summary>
+          <p class="faq-answer">Absolutely. In fact, combining treatments often delivers the best results. For example, Focus Dual RF for deep collagen stimulation paired with LED therapy for accelerated healing, or CACI for muscle toning combined with RF for skin tightening. Your practitioner will design the ideal combination for you.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Are these treatments suitable for sensitive skin?</summary>
+          <p class="faq-answer">Yes. All our anti-ageing treatments can be adjusted in intensity to suit sensitive skin. LED light therapy is particularly gentle and is often used to calm and heal reactive skin. During your consultation, we assess your skin sensitivity and tailor the treatment accordingly.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       5. CTA
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--charcoal u-text-center" aria-label="Book consultation">
+    <div class="container">
+      <span class="eyebrow" style="color: rgba(249,249,248,0.5);">Start Today</span>
+      <h2 class="h2 u-mb-md">Discover Your Anti-Ageing Plan</h2>
+      <p class="text-lg u-mb-lg" style="color: rgba(249,249,248,0.7);">Book a complimentary consultation to explore the treatments that will help you look and feel your best at every age.</p>
+      <div class="btn-group" style="justify-content: center;">
+        <a href="../contact.html" class="btn btn--light">Book Consultation</a>
+        <a href="tel:+44000000000" class="btn btn--outline" style="color: var(--marr-offwhite); border-color: var(--marr-offwhite);">Call Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><span class="footer__brand-main">MARR</span><span class="footer__brand-sub">Laser &amp; Skin</span></div>
+        <p class="footer__muted text-sm">Advanced laser technology and expert skin treatments, tailored to you.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading">Treatments</h4>
+        <ul class="footer__links">
+          <li><a href="../laser-hair-removal.html" class="footer__link">Laser Hair Removal</a></li>
+          <li><a href="../skin-treatments.html" class="footer__link">Skin Treatments</a></li>
+          <li><a href="../anti-ageing.html" class="footer__link">Anti-Ageing</a></li>
+          <li><a href="../aesthetics.html" class="footer__link">Aesthetics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Clinic</h4>
+        <ul class="footer__links">
+          <li><a href="../about.html" class="footer__link">About Us</a></li>
+          <li><a href="../gallery.html" class="footer__link">Gallery</a></li>
+          <li><a href="../blog.html" class="footer__link">Blog</a></li>
+          <li><a href="../contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Contact</h4>
+        <ul class="footer__links">
+          <li class="footer__contact-text">Newry, Co. Down</li>
+          <li><a href="tel:+44000000000" class="footer__link">028 000 0000</a></li>
+          <li><a href="mailto:hello@marrlaser.com" class="footer__link">hello@marrlaser.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__fine">&copy; 2026 MARR Laser &amp; Skin Clinic.</p>
+      <div class="footer__social"><a href="#" class="footer__social-link">Instagram</a><a href="#" class="footer__social-link">Facebook</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

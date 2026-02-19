@@ -1,16 +1,22 @@
 <!-- Marr Laser — 14 Footer CTA -->
 <style>
   .marr-footer {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-text: #3C3C3B;
+    --marr-charcoal: #3C3C3B;
+    --marr-charcoal-hover: #2a2a29;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text-muted: #7a7574;
+    --marr-border: rgba(60, 60, 59, 0.1);
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --transition-base: 0.25s ease;
   }
 
+  /* CTA Section */
   .marr-footer__cta-section {
-    background: var(--marr-primary);
+    background: var(--marr-charcoal);
     padding: 80px 0;
     text-align: center;
   }
@@ -18,25 +24,30 @@
   .marr-footer__cta-inner {
     max-width: 720px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
   }
 
   .marr-footer__cta-title {
     font-family: var(--marr-font-heading);
     font-size: clamp(30px, 4vw, 48px);
-    color: var(--marr-light);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--marr-offwhite);
     line-height: 1.2;
     margin-bottom: 16px;
   }
 
   .marr-footer__cta-title em {
     font-style: italic;
-    color: var(--marr-accent);
+    color: var(--marr-taupe);
   }
 
   .marr-footer__cta-subtitle {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--marr-font-body);
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: rgba(249, 249, 248, 0.7);
     line-height: 1.6;
     margin-bottom: 36px;
     max-width: 540px;
@@ -54,49 +65,60 @@
 
   .marr-footer__cta-btn {
     display: inline-block;
-    padding: 18px 40px;
-    border-radius: 32px;
-    font-family: var(--marr-font-body);
-    font-size: 17px;
-    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     text-decoration: none;
-    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    transition: background-color var(--transition-base),
+                color var(--transition-base),
+                border-color var(--transition-base);
     text-align: center;
   }
 
   .marr-footer__cta-btn--primary {
-    background: var(--marr-accent);
-    color: var(--marr-primary);
+    background: var(--marr-taupe);
+    color: #ffffff;
+    border-color: var(--marr-taupe);
   }
 
   .marr-footer__cta-btn--primary:hover {
-    background: #B4A89D;
+    background: var(--marr-taupe-hover);
+    border-color: var(--marr-taupe-hover);
   }
 
   .marr-footer__cta-btn--whatsapp {
-    background: #25d366;
-    color: #ffffff;
+    background: var(--marr-offwhite);
+    color: var(--marr-charcoal);
+    border-color: var(--marr-offwhite);
   }
 
   .marr-footer__cta-btn--whatsapp:hover {
-    background: #1da851;
+    background: var(--marr-blush);
+    border-color: var(--marr-blush);
   }
 
   .marr-footer__cta-note {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.5);
+    font-family: var(--marr-font-body);
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: rgba(249, 249, 248, 0.5);
   }
 
   /* Footer bar */
   .marr-footer__bar {
-    background: #2a2a2a;
+    background: var(--marr-charcoal);
     padding: 40px 0;
   }
 
   .marr-footer__bar-inner {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
@@ -104,59 +126,80 @@
 
   .marr-footer__col-title {
     font-family: var(--marr-font-heading);
-    font-size: 16px;
-    color: var(--marr-accent);
-    margin-bottom: 16px;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--marr-taupe);
+    margin-bottom: 20px;
   }
 
   .marr-footer__col-text {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--marr-font-body);
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: rgba(249, 249, 248, 0.7);
     line-height: 1.7;
   }
 
   .marr-footer__col-text a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(249, 249, 248, 0.7);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color var(--transition-base);
   }
 
   .marr-footer__col-text a:hover {
-    color: var(--marr-accent);
+    color: var(--marr-taupe);
   }
 
   .marr-footer__col-link {
     display: block;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--marr-font-body);
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: rgba(249, 249, 248, 0.7);
     text-decoration: none;
     padding: 4px 0;
-    transition: color 0.2s ease;
+    transition: color var(--transition-base);
   }
 
   .marr-footer__col-link:hover {
-    color: var(--marr-accent);
+    color: var(--marr-taupe);
   }
 
+  /* Footer bottom */
   .marr-footer__bottom {
-    background: #1a1a1a;
-    padding: 20px 0;
+    background: var(--marr-charcoal);
+    padding: 24px 0 0;
   }
 
   .marr-footer__bottom-inner {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 24px 24px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.4);
+    font-family: var(--marr-font-body);
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: rgba(249, 249, 248, 0.4);
+    border-top: 1px solid var(--marr-taupe);
+  }
+
+  @media (max-width: 991px) {
+    .marr-footer__cta-section {
+      padding: 48px 0;
+    }
   }
 
   @media (max-width: 767px) {
     .marr-footer__cta-section {
-      padding: 60px 0;
+      padding: 48px 0;
+    }
+
+    .marr-footer__cta-inner {
+      padding: 0 20px;
     }
 
     .marr-footer__cta-buttons {
@@ -172,18 +215,32 @@
     .marr-footer__bar-inner {
       grid-template-columns: 1fr;
       gap: 30px;
+      padding: 0 20px;
     }
 
     .marr-footer__bottom-inner {
       flex-direction: column;
       gap: 8px;
       text-align: center;
+      padding: 24px 20px 0;
     }
   }
 
   @media (max-width: 478px) {
     .marr-footer__cta-section {
-      padding: 50px 0;
+      padding: 32px 0;
+    }
+
+    .marr-footer__cta-inner {
+      padding: 0 16px;
+    }
+
+    .marr-footer__bar-inner {
+      padding: 0 16px;
+    }
+
+    .marr-footer__bottom-inner {
+      padding: 24px 16px 0;
     }
   }
 </style>

@@ -5,34 +5,56 @@ All deliverables for MARR Laser & Skin Clinic: website, landing page, design dir
 
 **GitHub Pages**: https://ajeibbotson-cmyk.github.io/marr-laser/
 **Design Hub**: https://ajeibbotson-cmyk.github.io/marr-laser/designs/
+**Layout Variants**: https://ajeibbotson-cmyk.github.io/marr-laser/website/variants/
 
 ## Repo Structure
 ```
 marr-laser/
 ├── CLAUDE.md
 ├── .gitignore
-├── website/              ← full multi-page website
-│   ├── index.html
-│   ├── about.html, contact.html, pricing.html, ...
+├── index.html                ← project hub (links to all deliverables)
+├── website/                  ← full multi-page website (Design C)
+│   ├── index.html            ← homepage
+│   ├── laser-hair-removal.html
+│   ├── why-alexandrite.html
+│   ├── skin-treatments.html
+│   ├── anti-ageing.html
+│   ├── aesthetics.html
+│   ├── about.html
+│   ├── gallery.html
+│   ├── blog.html
+│   ├── contact.html
+│   ├── style-guide.html      ← internal reference
 │   ├── styles.css
-│   └── sections/         ← page section partials (about/, home/, laser/, etc.)
-├── landing/              ← laser hair removal landing page (Webflow embed POC)
+│   └── variants/             ← Layout B alternatives for client review
+│       ├── index.html         ← comparison hub
+│       ├── home-b.html
+│       ├── laser-b.html
+│       ├── alexandrite-b.html
+│       ├── skin-b.html
+│       ├── anti-ageing-b.html
+│       ├── aesthetics-b.html
+│       ├── about-b.html
+│       ├── gallery-b.html
+│       ├── blog-b.html
+│       └── contact-b.html
+├── landing/                  ← laser hair removal landing page (Webflow embed)
 │   ├── index.html
 │   ├── styles.css
 │   ├── client-asset-brief.md
-│   └── sections/         ← 01-header.html through 14-footer-cta.html
-├── designs/              ← design directions for client review (GitHub Pages)
-│   ├── index.html        ← branded hub page
+│   └── sections/             ← 01-header.html through 14-footer-cta.html
+├── designs/                  ← design directions for client review
+│   ├── index.html            ← branded hub page
 │   ├── styles.css
 │   ├── design-a/
 │   ├── design-b/
-│   └── design-c/
-└── docs/                 ← brand guidelines, briefs, audits
+│   └── design-c/             ← chosen direction (Warm Boutique)
+└── docs/                     ← brand guidelines, briefs, audits
     ├── MARR_Brand Guidelines.pdf
     ├── Marr_Asset_Request.docx
     ├── Marr_Website_Development_Plan.docx
     ├── Marr_Local_SEO_Audit.xlsx
-    └── reference/        ← competitor/inspiration pages
+    └── reference/
 ```
 
 ## Brand Tokens (Shared)
@@ -66,7 +88,7 @@ Cangste is a custom font — Cormorant Garamond is the web fallback until webfon
 ## Subdirectory Details
 
 ### `website/`
-Full multi-page site with section-based architecture. Each page (about, contact, pricing, etc.) has corresponding partials in `sections/`. CSS in `styles.css`.
+Full multi-page site styled with Design C (Warm Boutique). 10 pages covering all clinic services, plus a `variants/` directory containing Layout B alternatives for each page. The comparison hub at `variants/index.html` lets the client compare Layout A (base) vs Layout B side by side. CSS in `styles.css` uses Design C tokens throughout. Deprecated pages (`treatments.html`, `team.html`, `pricing.html`) and old `sections/` partials have been removed.
 
 ### `landing/`
 Single-page landing for laser hair removal — built as self-contained HTML/CSS blocks for Webflow custom code embeds. Each section in `sections/` has its own `<style>` block and can be pasted into Webflow independently. BEM naming with `marr-` prefix. Responsive breakpoints: 1200px, 991px, 767px, 478px.

@@ -1,152 +1,215 @@
 <!-- Marr Laser — 06 Why Choose -->
 <style>
   .marr-why {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
     --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --shadow-card-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
+    --transition-base: 0.25s ease;
 
-    background: var(--marr-primary);
-    color: var(--marr-light);
+    background: var(--marr-blush);
+    color: var(--marr-charcoal);
     padding: 80px 0;
+    font-family: var(--marr-font-body);
+    font-weight: 300;
   }
 
   .marr-why__inner {
-    max-width: 1180px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
   }
 
   .marr-why__header {
     text-align: center;
     max-width: 680px;
-    margin: 0 auto 56px;
+    margin: 0 auto 48px;
   }
 
   .marr-why__eyebrow {
-    font-family: var(--marr-font-body);
-    font-size: 13px;
-    font-weight: 600;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--marr-accent);
+    letter-spacing: 0.15em;
+    color: var(--marr-taupe);
     margin-bottom: 12px;
   }
 
   .marr-why__title {
     font-family: var(--marr-font-heading);
-    font-size: clamp(28px, 3.5vw, 40px);
+    font-size: clamp(1.5rem, 3.5vw, 2.375rem);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--marr-charcoal);
     line-height: 1.2;
     margin-bottom: 16px;
   }
 
   .marr-why__subtitle {
-    font-size: 17px;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--marr-text-muted);
+    line-height: 1.7;
   }
 
   .marr-why__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 32px;
     margin-bottom: 48px;
   }
 
   .marr-why__item {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(198, 188, 179, 0.15);
-    border-radius: 16px;
-    padding: 36px 28px;
-    transition: border-color 0.3s ease;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 32px 24px;
+    border: 1px solid transparent;
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-base),
+                box-shadow var(--transition-base),
+                border-color var(--transition-base);
   }
 
   .marr-why__item:hover {
-    border-color: var(--marr-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--marr-taupe);
   }
 
   .marr-why__item-icon {
     width: 52px;
     height: 52px;
-    background: rgba(198, 188, 179, 0.12);
-    border-radius: 12px;
+    background: var(--marr-blush);
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 20px;
+    color: var(--marr-charcoal);
   }
 
   .marr-why__item-title {
     font-family: var(--marr-font-heading);
-    font-size: 20px;
+    font-size: 1.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--marr-charcoal);
     margin-bottom: 10px;
     line-height: 1.3;
   }
 
   .marr-why__item-text {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.6;
+    font-size: 0.9375rem;
+    font-weight: 300;
+    color: var(--marr-text-muted);
+    line-height: 1.7;
   }
 
   .marr-why__ctas {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     justify-content: center;
     flex-wrap: wrap;
   }
 
   .marr-why__cta {
-    display: inline-block;
-    padding: 16px 36px;
-    border-radius: 32px;
-    font-family: var(--marr-font-body);
-    font-size: 16px;
-    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     text-decoration: none;
-    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    transition: background-color var(--transition-base),
+                color var(--transition-base),
+                border-color var(--transition-base);
     text-align: center;
+    cursor: pointer;
   }
 
   .marr-why__cta--primary {
-    background: var(--marr-accent);
-    color: var(--marr-primary);
+    background: var(--marr-taupe);
+    color: #ffffff;
+    border-color: var(--marr-taupe);
   }
 
   .marr-why__cta--primary:hover {
-    background: #B4A89D;
+    background: var(--marr-taupe-hover);
+    border-color: var(--marr-taupe-hover);
   }
 
   .marr-why__cta--whatsapp {
-    background: #25d366;
-    color: #ffffff;
+    background: transparent;
+    color: var(--marr-charcoal);
+    border-color: var(--marr-charcoal);
   }
 
   .marr-why__cta--whatsapp:hover {
-    background: #1da851;
+    background: var(--marr-charcoal);
+    color: var(--marr-offwhite);
+  }
+
+  @media (max-width: 1200px) {
+    .marr-why__grid {
+      gap: 24px;
+    }
   }
 
   @media (max-width: 991px) {
+    .marr-why {
+      padding: 64px 0;
+    }
+
     .marr-why__grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media (max-width: 767px) {
+    .marr-why {
+      padding: 48px 0;
+    }
+
+    .marr-why__inner {
+      padding: 0 20px;
+    }
+
     .marr-why__grid {
       grid-template-columns: 1fr;
       max-width: 480px;
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: 40px;
     }
   }
 
   @media (max-width: 478px) {
     .marr-why {
-      padding: 50px 0;
+      padding: 32px 0;
+    }
+
+    .marr-why__inner {
+      padding: 0 16px;
+    }
+
+    .marr-why__header {
+      margin-bottom: 32px;
     }
 
     .marr-why__ctas {

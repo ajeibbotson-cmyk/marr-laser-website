@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — MARR Laser &amp; Skin Clinic</title>
+  <meta name="description" content="Expert advice on skin health, laser treatments, anti-ageing and beauty from the team at MARR Laser & Skin Clinic, Newry.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════ -->
+
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav__inner">
+    <div class="nav__links nav__links--desktop">
+      <a href="laser-hair-removal.html" class="nav__link">Laser</a>
+      <a href="why-alexandrite.html" class="nav__link">Alexandrite</a>
+      <a href="skin-treatments.html" class="nav__link">Skin</a>
+    </div>
+    <a href="index.html" class="nav__logo" aria-label="MARR Laser &amp; Skin — Home">
+      <span class="nav__logo-main">MARR</span>
+      <span class="nav__logo-sub">Laser &amp; Skin</span>
+    </a>
+    <div class="nav__links nav__links--desktop">
+      <a href="anti-ageing.html" class="nav__link">Anti-Ageing</a>
+      <a href="aesthetics.html" class="nav__link">Aesthetics</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav__toggle">
+    <label for="nav-toggle" class="nav__toggle-label" aria-label="Menu">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </label>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 1: PAGE HERO
+       Blush bg, centered eyebrow + h1 + subtitle
+       ═══════════════════════════════════════════════ -->
+
+  <section class="page-hero" aria-label="Blog hero">
+    <div class="container">
+      <span class="eyebrow">Knowledge Hub</span>
+      <h1 class="h1">Blog</h1>
+      <p class="text-lg">Expert advice on skin health, treatments, and beauty</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 2: FEATURED POST
+       Off-white bg, sidebar grid: image left, text right
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--offwhite" aria-label="Featured article">
+    <div class="container">
+      <div class="grid grid--sidebar">
+        <div class="blog-card__image">
+          <img
+            src="https://placehold.co/700x480/C6BCB3/FFFFFF?text=Featured+Post"
+            alt="Close-up of alexandrite laser handpiece during a treatment session"
+            width="700"
+            height="480"
+          >
+        </div>
+        <div>
+          <span class="blog-card__category">Laser Hair Removal</span>
+          <h2 class="h2 u-mb-sm">Everything You Need to Know About Alexandrite Laser</h2>
+          <p class="text-sm u-mb-md">The alexandrite laser is widely regarded as the gold standard for laser hair removal. In this guide we cover how it works, what to expect during treatment, who it suits best, and why MARR Laser &amp; Skin Clinic chose it as our primary technology.</p>
+          <a href="#" class="blog-card__link">Read More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 3: POST GRID
+       Blush bg, section header + 3-col blog cards
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--blush" aria-label="Latest articles">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Stay Informed</span>
+        <h2 class="h2">Latest Articles</h2>
+      </div>
+
+      <div class="grid grid--3">
+
+        <!-- Card 1 -->
+        <article class="blog-card">
+          <div class="blog-card__image">
+            <img
+              src="https://placehold.co/600x375/C6BCB3/FFFFFF?text=Laser+Ready"
+              alt="Woman considering laser hair removal treatment options"
+              width="600"
+              height="375"
+            >
+          </div>
+          <div class="blog-card__body">
+            <span class="blog-card__category">Laser</span>
+            <h3 class="blog-card__title">5 Signs You're Ready for Laser Hair Removal</h3>
+            <p class="blog-card__excerpt">Tired of shaving, waxing and ingrown hairs? Here are five signs that laser hair removal could be the right next step for you.</p>
+            <a href="#" class="blog-card__link">Read More &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="blog-card">
+          <div class="blog-card__image">
+            <img
+              src="https://placehold.co/600x375/ECE5E0/3C3C3B?text=Skin+Types"
+              alt="Diagram illustrating different skin types and their characteristics"
+              width="600"
+              height="375"
+            >
+          </div>
+          <div class="blog-card__body">
+            <span class="blog-card__category">Skin Health</span>
+            <h3 class="blog-card__title">Understanding Your Skin Type</h3>
+            <p class="blog-card__excerpt">Knowing your skin type is the foundation of any effective skincare routine. We explain the key differences and how to identify yours.</p>
+            <a href="#" class="blog-card__link">Read More &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="blog-card">
+          <div class="blog-card__image">
+            <img
+              src="https://placehold.co/600x375/3C3C3B/F9F9F8?text=Anti-Ageing"
+              alt="Skincare products and treatments for early anti-ageing prevention"
+              width="600"
+              height="375"
+            >
+          </div>
+          <div class="blog-card__body">
+            <span class="blog-card__category">Anti-Ageing</span>
+            <h3 class="blog-card__title">Anti-Ageing: When to Start</h3>
+            <p class="blog-card__excerpt">Prevention is easier than correction. Learn when to begin anti-ageing treatments and which options deliver the best long-term results.</p>
+            <a href="#" class="blog-card__link">Read More &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="blog-card">
+          <div class="blog-card__image">
+            <img
+              src="https://placehold.co/600x375/C6BCB3/FFFFFF?text=Fillers"
+              alt="Practitioner preparing dermal filler treatment"
+              width="600"
+              height="375"
+            >
+          </div>
+          <div class="blog-card__body">
+            <span class="blog-card__category">Aesthetics</span>
+            <h3 class="blog-card__title">The Truth About Dermal Fillers</h3>
+            <p class="blog-card__excerpt">Dermal fillers are one of the most popular aesthetic treatments, yet myths persist. We separate fact from fiction.</p>
+            <a href="#" class="blog-card__link">Read More &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="blog-card">
+          <div class="blog-card__image">
+            <img
+              src="https://placehold.co/600x375/ECE5E0/3C3C3B?text=Aftercare"
+              alt="Post-treatment skincare routine products laid out on a counter"
+              width="600"
+              height="375"
+            >
+          </div>
+          <div class="blog-card__body">
+            <span class="blog-card__category">Advice</span>
+            <h3 class="blog-card__title">Post-Treatment Care Guide</h3>
+            <p class="blog-card__excerpt">What you do after a treatment matters just as much as the treatment itself. Follow our essential aftercare guide for optimal results.</p>
+            <a href="#" class="blog-card__link">Read More &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="blog-card">
+          <div class="blog-card__image">
+            <img
+              src="https://placehold.co/600x375/3C3C3B/F9F9F8?text=Patch+Test"
+              alt="Clinician performing a patch test on a client's forearm"
+              width="600"
+              height="375"
+            >
+          </div>
+          <div class="blog-card__body">
+            <span class="blog-card__category">Safety</span>
+            <h3 class="blog-card__title">Why Patch Tests Matter</h3>
+            <p class="blog-card__excerpt">Patch tests are a small step that makes a big difference. Find out why we require them and what they tell us about your skin.</p>
+            <a href="#" class="blog-card__link">Read More &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 4: CTA
+       Charcoal bg, centered heading + button
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--charcoal" aria-label="Consultation call to action">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">We're Here to Help</span>
+        <h2 class="h2">Have a Question?</h2>
+        <p class="text-lg">Our team is always happy to answer your questions about treatments, aftercare, or anything else.</p>
+      </div>
+      <div class="u-text-center">
+        <a href="contact.html" class="btn btn--light">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════ -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><span class="footer__brand-main">MARR</span><span class="footer__brand-sub">Laser &amp; Skin</span></div>
+        <p class="footer__muted text-sm">Advanced laser technology and expert skin treatments, tailored to you.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading">Treatments</h4>
+        <ul class="footer__links">
+          <li><a href="laser-hair-removal.html" class="footer__link">Laser Hair Removal</a></li>
+          <li><a href="why-alexandrite.html" class="footer__link">Why Alexandrite</a></li>
+          <li><a href="skin-treatments.html" class="footer__link">Skin Treatments</a></li>
+          <li><a href="anti-ageing.html" class="footer__link">Anti-Ageing</a></li>
+          <li><a href="aesthetics.html" class="footer__link">Aesthetics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Clinic</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About Us</a></li>
+          <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+          <li><a href="blog.html" class="footer__link">Blog</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Contact</h4>
+        <ul class="footer__links">
+          <li class="footer__contact-text">Newry, Co. Down</li>
+          <li class="footer__contact-text">Northern Ireland</li>
+          <li><a href="tel:+44000000000" class="footer__link">028 000 0000</a></li>
+          <li><a href="mailto:hello@marrlaser.com" class="footer__link">hello@marrlaser.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__fine">&copy; 2026 MARR Laser &amp; Skin Clinic. All rights reserved.</p>
+      <div class="footer__social">
+        <a href="#" class="footer__social-link">Instagram</a>
+        <a href="#" class="footer__social-link">Facebook</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

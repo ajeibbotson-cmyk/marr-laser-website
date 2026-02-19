@@ -3,2089 +3,267 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skin Treatments — Marr Laser & Skin Clinic</title>
-  <meta name="description" content="Clinical facials, chemical peels, and skin rejuvenation treatments at Marr Laser & Skin Clinic, Newry.">
+  <title>Skin Treatments — MARR Laser &amp; Skin Clinic</title>
+  <meta name="description" content="Advanced skin treatments at MARR Laser & Skin Clinic, Newry. IPL photorejuvenation, CO2 laser resurfacing, thread vein removal, pigmentation correction and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Marr Laser — Shared Header / Sticky Navigation -->
-<style>
-  /* ---- Header Tokens ---- */
-  .marr-header {
-    --marr-primary: #1a3a2a;
-    --marr-primary-light: #2a5a3a;
-    --marr-accent: #c9a84c;
-    --marr-accent-hover: #b8933f;
-    --marr-light: #ffffff;
-    --marr-font-heading: 'Georgia', serif;
-    --marr-font-body: 'Arial', sans-serif;
-  }
-
-  /* ---- Sticky Header ---- */
-  .marr-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: var(--marr-primary);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .marr-header__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 72px;
-  }
-
-  /* ---- Logo ---- */
-  .marr-header__logo {
-    font-family: var(--marr-font-heading);
-    font-size: 20px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--marr-light);
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .marr-header__logo span {
-    color: var(--marr-accent);
-  }
-
-  /* ---- Desktop Nav ---- */
-  .marr-header__nav {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-  }
-
-  .marr-header__link {
-    font-family: var(--marr-font-body);
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.75);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    position: relative;
-    padding: 8px 0;
-  }
-
-  .marr-header__link:hover,
-  .marr-header__link--active {
-    color: var(--marr-light);
-  }
-
-  .marr-header__link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--marr-accent);
-    transition: width 0.3s ease;
-  }
-
-  .marr-header__link:hover::after,
-  .marr-header__link--active::after {
-    width: 100%;
-  }
-
-  /* ---- Dropdown ---- */
-  .marr-header__dropdown {
-    position: relative;
-  }
-
-  .marr-header__dropdown-toggle {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    cursor: pointer;
-  }
-
-  .marr-header__dropdown-arrow {
-    font-size: 8px;
-    transition: transform 0.3s ease;
-  }
-
-  .marr-header__dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: -16px;
-    background: var(--marr-primary);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    min-width: 220px;
-    padding: 12px 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(8px);
-    transition: all 0.3s ease;
-  }
-
-  .marr-header__dropdown:hover .marr-header__dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  .marr-header__dropdown:hover .marr-header__dropdown-arrow {
-    transform: rotate(180deg);
-  }
-
-  .marr-header__dropdown-link {
-    display: block;
-    padding: 10px 24px;
-    font-family: var(--marr-font-body);
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.65);
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-
-  .marr-header__dropdown-link:hover {
-    color: var(--marr-light);
-    background: rgba(255, 255, 255, 0.04);
-    padding-left: 28px;
-  }
-
-  /* ---- Right Actions ---- */
-  .marr-header__actions {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .marr-header__whatsapp {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 18px;
-    transition: color 0.3s ease;
-    text-decoration: none;
-  }
-
-  .marr-header__whatsapp:hover {
-    color: #25d366;
-  }
-
-  .marr-header__cta {
-    display: inline-block;
-    padding: 10px 24px;
-    font-family: var(--marr-font-body);
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--marr-primary);
-    background: var(--marr-accent);
-    border: none;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
-
-  .marr-header__cta:hover {
-    background: var(--marr-accent-hover);
-  }
-
-  /* ---- Mobile Toggle (CSS-only) ---- */
-  .marr-header__toggle {
-    display: none;
-  }
-
-  .marr-header__toggle-label {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-  }
-
-  .marr-header__toggle-bar {
-    width: 100%;
-    height: 2px;
-    background: var(--marr-light);
-    transition: all 0.3s ease;
-  }
-
-  /* ---- Mobile Styles ---- */
-  @media (max-width: 991px) {
-    .marr-header__toggle-label {
-      display: flex;
-    }
-
-    .marr-header__nav {
-      position: fixed;
-      top: 72px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--marr-primary);
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 32px 24px;
-      gap: 0;
-      transform: translateX(100%);
-      transition: transform 0.4s ease;
-      overflow-y: auto;
-    }
-
-    .marr-header__toggle:checked ~ .marr-header__nav {
-      transform: translateX(0);
-    }
-
-    .marr-header__toggle:checked ~ .marr-header__toggle-label .marr-header__toggle-bar:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .marr-header__toggle:checked ~ .marr-header__toggle-label .marr-header__toggle-bar:nth-child(2) {
-      opacity: 0;
-    }
-
-    .marr-header__toggle:checked ~ .marr-header__toggle-label .marr-header__toggle-bar:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .marr-header__link {
-      font-size: 15px;
-      padding: 16px 0;
-      width: 100%;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .marr-header__dropdown-menu {
-      position: static;
-      opacity: 1;
-      visibility: visible;
-      transform: none;
-      border: none;
-      padding: 0 0 0 16px;
-      min-width: auto;
-      display: none;
-    }
-
-    .marr-header__dropdown:hover .marr-header__dropdown-menu,
-    .marr-header__dropdown:focus-within .marr-header__dropdown-menu {
-      display: block;
-    }
-
-    .marr-header__actions {
-      display: none;
-    }
-  }
-
-  @media (max-width: 478px) {
-    .marr-header__inner {
-      padding: 0 16px;
-      height: 64px;
-    }
-
-    .marr-header__logo {
-      font-size: 16px;
-      letter-spacing: 2px;
-    }
-
-    .marr-header__nav {
-      top: 64px;
-    }
-  }
-</style>
-
-<header class="marr-header">
-  <div class="marr-header__inner">
-    <a href="index.html" class="marr-header__logo">Marr <span>Laser</span></a>
-
-    <input type="checkbox" id="marr-nav-toggle" class="marr-header__toggle" aria-label="Toggle navigation">
-    <label for="marr-nav-toggle" class="marr-header__toggle-label" aria-label="Menu">
-      <span class="marr-header__toggle-bar"></span>
-      <span class="marr-header__toggle-bar"></span>
-      <span class="marr-header__toggle-bar"></span>
+<!-- Navigation -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav__inner">
+    <div class="nav__links nav__links--desktop">
+      <a href="laser-hair-removal.html" class="nav__link">Laser</a>
+      <a href="why-alexandrite.html" class="nav__link">Alexandrite</a>
+      <a href="skin-treatments.html" class="nav__link">Skin</a>
+    </div>
+    <a href="index.html" class="nav__logo" aria-label="MARR Laser &amp; Skin — Home">
+      <span class="nav__logo-main">MARR</span>
+      <span class="nav__logo-sub">Laser &amp; Skin</span>
+    </a>
+    <div class="nav__links nav__links--desktop">
+      <a href="anti-ageing.html" class="nav__link">Anti-Ageing</a>
+      <a href="aesthetics.html" class="nav__link">Aesthetics</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav__toggle">
+    <label for="nav-toggle" class="nav__toggle-label" aria-label="Menu">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
     </label>
+  </div>
+</nav>
 
-    <nav class="marr-header__nav" aria-label="Main navigation">
-      <a href="index.html" class="marr-header__link">Home</a>
+<main>
 
-      <div class="marr-header__dropdown">
-        <a href="treatments.html" class="marr-header__link marr-header__dropdown-toggle">
-          Treatments <span class="marr-header__dropdown-arrow">&#9660;</span>
-        </a>
-        <div class="marr-header__dropdown-menu">
-          <a href="laser-hair-removal.html" class="marr-header__dropdown-link">Laser Hair Removal</a>
-          <a href="skin-treatments.html" class="marr-header__dropdown-link">Skin Treatments</a>
+  <!-- 1. Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Skin Health</span>
+      <h1 class="h1">Skin Treatments</h1>
+      <p class="text-lg">Clinically proven treatments to address pigmentation, scarring, redness, and uneven texture. Restore your skin's natural clarity and confidence.</p>
+    </div>
+  </section>
+
+  <!-- 2. Treatment Categories -->
+  <section class="section section--offwhite">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Our Specialities</span>
+        <h2 class="h2">Advanced Skin Treatments</h2>
+        <p class="text-lg">Each treatment is selected for its clinical effectiveness and tailored to your individual skin concerns.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card card--service">
+          <div class="card__stripe"></div>
+          <div class="card__image">
+            <img src="https://placehold.co/400x220/C6BCB3/FFFFFF?text=IPL+Treatment" alt="IPL photorejuvenation treatment for pigmentation and redness" width="400" height="220">
+          </div>
+          <div class="card__body">
+            <h3 class="h3">IPL Photorejuvenation</h3>
+            <p class="text-sm">Intense Pulsed Light targets pigmentation, redness, and sun damage deep within the skin. The controlled light energy breaks down discolouration and stimulates collagen renewal, restoring an even, luminous complexion over a course of treatments.</p>
+            <a href="contact.html" class="btn btn--secondary u-mt-md">Book Consultation</a>
+          </div>
+        </article>
+        <article class="card card--service">
+          <div class="card__stripe"></div>
+          <div class="card__image">
+            <img src="https://placehold.co/400x220/C6BCB3/FFFFFF?text=CO2+Laser" alt="CO2 laser resurfacing for scars and wrinkles" width="400" height="220">
+          </div>
+          <div class="card__body">
+            <h3 class="h3">CO2 Laser Resurfacing</h3>
+            <p class="text-sm">Fractional CO2 laser creates microscopic channels in the skin, triggering a powerful healing response. Ideal for reducing acne scars, deep wrinkles, and rough texture, this treatment delivers transformative results with minimal downtime.</p>
+            <a href="contact.html" class="btn btn--secondary u-mt-md">Book Consultation</a>
+          </div>
+        </article>
+        <article class="card card--service">
+          <div class="card__stripe"></div>
+          <div class="card__image">
+            <img src="https://placehold.co/400x220/C6BCB3/FFFFFF?text=Thread+Veins" alt="Thread vein removal treatment for spider veins and broken capillaries" width="400" height="220">
+          </div>
+          <div class="card__body">
+            <h3 class="h3">Thread Vein Removal</h3>
+            <p class="text-sm">Targeted laser and light energy safely collapses visible spider veins and broken capillaries on the face and legs. The treated vessels are gradually reabsorbed by the body, leaving clearer, more even-toned skin.</p>
+            <a href="contact.html" class="btn btn--secondary u-mt-md">Book Consultation</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. More Treatments -->
+  <section class="section section--blush">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Additional Services</span>
+        <h2 class="h2">More Skin Treatments</h2>
+        <p class="text-lg">Comprehensive care for a wide range of skin concerns, all delivered by experienced practitioners.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card card--service">
+          <div class="card__stripe"></div>
+          <div class="card__image">
+            <img src="https://placehold.co/400x220/C6BCB3/FFFFFF?text=Pigmentation" alt="Pigmentation correction treatment" width="400" height="220">
+          </div>
+          <div class="card__body">
+            <h3 class="h3">Pigmentation Correction</h3>
+            <p class="text-sm">Advanced laser and light therapies break down melanin clusters responsible for age spots, melasma, and post-inflammatory hyperpigmentation. A personalised treatment plan addresses the root cause for lasting clarity.</p>
+            <a href="contact.html" class="btn btn--secondary u-mt-md">Book Consultation</a>
+          </div>
+        </article>
+        <article class="card card--service">
+          <div class="card__stripe"></div>
+          <div class="card__image">
+            <img src="https://placehold.co/400x220/C6BCB3/FFFFFF?text=Skin+Tags" alt="Skin tag removal treatment" width="400" height="220">
+          </div>
+          <div class="card__body">
+            <h3 class="h3">Skin Tag Removal</h3>
+            <p class="text-sm">Quick, precise removal of skin tags using advanced electrocautery or cryotherapy techniques. The procedure is virtually painless with no downtime, leaving smooth skin where the tag once was.</p>
+            <a href="contact.html" class="btn btn--secondary u-mt-md">Book Consultation</a>
+          </div>
+        </article>
+        <article class="card card--service">
+          <div class="card__stripe"></div>
+          <div class="card__image">
+            <img src="https://placehold.co/400x220/C6BCB3/FFFFFF?text=Mole+Checks" alt="Mole check and removal service" width="400" height="220">
+          </div>
+          <div class="card__body">
+            <h3 class="h3">Mole Checks &amp; Removal</h3>
+            <p class="text-sm">Professional mole assessment using dermatoscopy, followed by safe removal when clinically indicated or desired for cosmetic reasons. We refer to specialist dermatologists where further investigation is required.</p>
+            <a href="contact.html" class="btn btn--secondary u-mt-md">Book Consultation</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. How It Works -->
+  <section class="section section--offwhite">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Your Journey</span>
+        <h2 class="h2">How It Works</h2>
+        <p class="text-lg">A clear, structured approach to healthier skin, from your first consultation to visible results.</p>
+      </div>
+      <div class="timeline" role="list" aria-label="Treatment process steps">
+        <div class="timeline__step" role="listitem">
+          <div class="timeline__number" aria-hidden="true">1</div>
+          <h3 class="timeline__title">Consultation</h3>
+          <p class="timeline__text">We assess your skin type, concerns, and goals. Using clinical analysis, we identify the most effective treatment approach for your unique needs.</p>
+        </div>
+        <div class="timeline__step" role="listitem">
+          <div class="timeline__number" aria-hidden="true">2</div>
+          <h3 class="timeline__title">Treatment Plan</h3>
+          <p class="timeline__text">Your practitioner creates a bespoke plan combining the right treatments, frequency, and aftercare protocol to achieve the best possible outcome.</p>
+        </div>
+        <div class="timeline__step" role="listitem">
+          <div class="timeline__number" aria-hidden="true">3</div>
+          <h3 class="timeline__title">Visible Results</h3>
+          <p class="timeline__text">With each session, your skin improves progressively. We monitor results at every appointment and adjust your plan to ensure continued improvement.</p>
         </div>
       </div>
-
-      <a href="about.html" class="marr-header__link">About</a>
-      <a href="team.html" class="marr-header__link">Team</a>
-      <a href="pricing.html" class="marr-header__link">Pricing</a>
-      <a href="contact.html" class="marr-header__link">Contact</a>
-    </nav>
-
-    <div class="marr-header__actions">
-      <a href="#" class="marr-header__whatsapp" aria-label="WhatsApp">&#9742;</a>
-      <a href="contact.html" class="marr-header__cta">Book Now</a>
     </div>
-  </div>
-</header>
-
-<!-- 01-hero.html — Skin Treatments Hero Section -->
-<section class="marr-skin-hero">
-  <style>
-    /* ── Design Tokens ── */
-    .marr-skin-hero {
-      --marr-primary: #1a3a2a;
-      --marr-primary-light: #2a5a3a;
-      --marr-accent: #c9a84c;
-      --marr-accent-hover: #b8933f;
-      --marr-sage: #d5ddd7;
-      --marr-light: #ffffff;
-      --marr-offwhite: #f7f5f0;
-      --marr-text: #2d2d2d;
-      --marr-text-light: rgba(255, 255, 255, 0.75);
-      --marr-text-muted: #6b6b6b;
-      --marr-font-heading: 'Georgia', serif;
-      --marr-font-body: 'Arial', sans-serif;
-    }
-
-    /* ── Block ── */
-    .marr-skin-hero {
-      background-color: var(--marr-primary);
-      min-height: 50vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 24px;
-      box-sizing: border-box;
-    }
-
-    /* ── Elements ── */
-    .marr-skin-hero__inner {
-      max-width: 800px;
-      width: 100%;
-    }
-
-    .marr-skin-hero__breadcrumb {
-      font-family: var(--marr-font-body);
-      font-size: 0.8125rem;
-      color: var(--marr-text-light);
-      letter-spacing: 0.08em;
-      margin-bottom: 32px;
-    }
-
-    .marr-skin-hero__breadcrumb-link {
-      color: var(--marr-text-light);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .marr-skin-hero__breadcrumb-link:hover {
-      color: var(--marr-accent);
-    }
-
-    .marr-skin-hero__breadcrumb-separator {
-      display: inline-block;
-      margin: 0 8px;
-      opacity: 0.5;
-    }
-
-    .marr-skin-hero__breadcrumb-current {
-      color: var(--marr-light);
-      opacity: 0.9;
-    }
-
-    .marr-skin-hero__heading {
-      font-family: var(--marr-font-heading);
-      font-size: 3.5rem;
-      font-weight: 400;
-      color: var(--marr-light);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      line-height: 1.15;
-      margin: 0 0 24px;
-    }
-
-    .marr-skin-hero__subtitle {
-      font-family: var(--marr-font-body);
-      font-size: 1.125rem;
-      color: var(--marr-text-light);
-      line-height: 1.7;
-      margin: 0;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ── Responsive: 1200px ── */
-    @media (max-width: 1200px) {
-      .marr-skin-hero {
-        padding: 100px 24px;
-      }
-
-      .marr-skin-hero__heading {
-        font-size: 3rem;
-      }
-    }
-
-    /* ── Responsive: 991px ── */
-    @media (max-width: 991px) {
-      .marr-skin-hero {
-        padding: 80px 24px;
-        min-height: 45vh;
-      }
-
-      .marr-skin-hero__heading {
-        font-size: 2.5rem;
-        letter-spacing: 0.14em;
-      }
-
-      .marr-skin-hero__subtitle {
-        font-size: 1.0625rem;
-      }
-    }
-
-    /* ── Responsive: 767px ── */
-    @media (max-width: 767px) {
-      .marr-skin-hero {
-        padding: 64px 20px;
-        min-height: 40vh;
-      }
-
-      .marr-skin-hero__heading {
-        font-size: 2rem;
-        letter-spacing: 0.1em;
-      }
-
-      .marr-skin-hero__subtitle {
-        font-size: 1rem;
-      }
-
-      .marr-skin-hero__breadcrumb {
-        font-size: 0.75rem;
-        margin-bottom: 24px;
-      }
-    }
-
-    /* ── Responsive: 478px ── */
-    @media (max-width: 478px) {
-      .marr-skin-hero {
-        padding: 48px 16px;
-        min-height: 35vh;
-      }
-
-      .marr-skin-hero__heading {
-        font-size: 1.625rem;
-        letter-spacing: 0.08em;
-      }
-
-      .marr-skin-hero__subtitle {
-        font-size: 0.9375rem;
-        line-height: 1.6;
-      }
-    }
-  </style>
-
-  <div class="marr-skin-hero__inner">
-    <nav class="marr-skin-hero__breadcrumb" aria-label="Breadcrumb">
-      <a href="/" class="marr-skin-hero__breadcrumb-link">Home</a>
-      <span class="marr-skin-hero__breadcrumb-separator" aria-hidden="true">/</span>
-      <a href="/treatments.html" class="marr-skin-hero__breadcrumb-link">Treatments</a>
-      <span class="marr-skin-hero__breadcrumb-separator" aria-hidden="true">/</span>
-      <span class="marr-skin-hero__breadcrumb-current" aria-current="page">Skin Treatments</span>
-    </nav>
-
-    <h1 class="marr-skin-hero__heading">Skin Treatments</h1>
-
-    <p class="marr-skin-hero__subtitle">
-      Clinical facials, chemical peels, and advanced skin rejuvenation for radiant, healthy skin
-    </p>
-  </div>
-</section>
-
-<!-- 02-facials.html — Clinical Facials Section -->
-<section class="marr-facials" aria-labelledby="marr-facials__heading">
-  <style>
-    /* ── Design Tokens ── */
-    .marr-facials {
-      --marr-primary: #1a3a2a;
-      --marr-primary-light: #2a5a3a;
-      --marr-accent: #c9a84c;
-      --marr-accent-hover: #b8933f;
-      --marr-sage: #d5ddd7;
-      --marr-light: #ffffff;
-      --marr-offwhite: #f7f5f0;
-      --marr-text: #2d2d2d;
-      --marr-text-light: rgba(255, 255, 255, 0.75);
-      --marr-text-muted: #6b6b6b;
-      --marr-font-heading: 'Georgia', serif;
-      --marr-font-body: 'Arial', sans-serif;
-    }
-
-    /* ── Block ── */
-    .marr-facials {
-      background-color: var(--marr-light);
-      padding: 100px 24px;
-      box-sizing: border-box;
-    }
-
-    /* ── Layout ── */
-    .marr-facials__inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    /* ── Text Content ── */
-    .marr-facials__content {
-      order: 1;
-    }
-
-    .marr-facials__label {
-      display: block;
-      font-family: var(--marr-font-body);
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--marr-accent);
-      margin: 0 0 20px;
-    }
-
-    .marr-facials__heading {
-      font-family: var(--marr-font-heading);
-      font-size: 2.25rem;
-      font-weight: 400;
-      line-height: 1.25;
-      letter-spacing: 0.03em;
-      color: var(--marr-primary);
-      margin: 0 0 24px;
-    }
-
-    .marr-facials__text {
-      font-family: var(--marr-font-body);
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--marr-text);
-      margin: 0 0 24px;
-    }
-
-    .marr-facials__price {
-      font-family: var(--marr-font-body);
-      font-size: 1.0625rem;
-      font-weight: 600;
-      color: var(--marr-primary);
-      margin: 0 0 28px;
-      letter-spacing: 0.02em;
-    }
-
-    /* ── Bullet List ── */
-    .marr-facials__list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 36px;
-    }
-
-    .marr-facials__list-item {
-      font-family: var(--marr-font-body);
-      font-size: 0.9375rem;
-      line-height: 1.6;
-      color: var(--marr-text);
-      padding: 8px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .marr-facials__list-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 16px;
-      width: 6px;
-      height: 6px;
-      background-color: var(--marr-accent);
-      border-radius: 50%;
-    }
-
-    /* ── CTA ── */
-    .marr-facials__cta {
-      display: inline-block;
-      font-family: var(--marr-font-body);
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--marr-light);
-      background-color: var(--marr-primary);
-      padding: 16px 36px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .marr-facials__cta:hover {
-      background-color: var(--marr-primary-light);
-    }
-
-    .marr-facials__cta:focus-visible {
-      outline: 2px solid var(--marr-accent);
-      outline-offset: 3px;
-    }
-
-    /* ── Image ── */
-    .marr-facials__media {
-      order: 2;
-    }
-
-    .marr-facials__image-block {
-      background-color: var(--marr-sage);
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 2px;
-    }
-
-    .marr-facials__image-label {
-      font-family: var(--marr-font-body);
-      font-size: 0.8125rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--marr-primary);
-      font-weight: 600;
-    }
-
-    /* ── Responsive: 1200px ── */
-    @media (max-width: 1200px) {
-      .marr-facials {
-        padding: 90px 24px;
-      }
-
-      .marr-facials__inner {
-        gap: 48px;
-      }
-
-      .marr-facials__heading {
-        font-size: 2rem;
-      }
-    }
-
-    /* ── Responsive: 991px ── */
-    @media (max-width: 991px) {
-      .marr-facials {
-        padding: 80px 24px;
-      }
-
-      .marr-facials__inner {
-        gap: 40px;
-      }
-
-      .marr-facials__heading {
-        font-size: 1.75rem;
-      }
-
-      .marr-facials__text {
-        font-size: 0.9375rem;
-      }
-
-      .marr-facials__image-block {
-        aspect-ratio: 3 / 4;
-      }
-    }
-
-    /* ── Responsive: 767px ── */
-    @media (max-width: 767px) {
-      .marr-facials {
-        padding: 64px 20px;
-      }
-
-      .marr-facials__inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .marr-facials__content {
-        order: 2;
-      }
-
-      .marr-facials__media {
-        order: 1;
-      }
-
-      .marr-facials__heading {
-        font-size: 1.625rem;
-        line-height: 1.3;
-      }
-
-      .marr-facials__label {
-        font-size: 0.6875rem;
-        margin-bottom: 16px;
-      }
-
-      .marr-facials__image-block {
-        aspect-ratio: 16 / 10;
-      }
-    }
-
-    /* ── Responsive: 478px ── */
-    @media (max-width: 478px) {
-      .marr-facials {
-        padding: 48px 16px;
-      }
-
-      .marr-facials__inner {
-        gap: 32px;
-      }
-
-      .marr-facials__heading {
-        font-size: 1.4rem;
-        margin-bottom: 20px;
-      }
-
-      .marr-facials__text {
-        font-size: 0.875rem;
-        line-height: 1.75;
-      }
-
-      .marr-facials__price {
-        font-size: 1rem;
-        margin-bottom: 24px;
-      }
-
-      .marr-facials__list-item {
-        font-size: 0.875rem;
-        padding: 6px 0 6px 18px;
-      }
-
-      .marr-facials__list-item::before {
-        width: 5px;
-        height: 5px;
-        top: 14px;
-      }
-
-      .marr-facials__cta {
-        font-size: 0.75rem;
-        padding: 14px 28px;
-        width: 100%;
-        text-align: center;
-      }
-
-      .marr-facials__image-block {
-        aspect-ratio: 4 / 3;
-      }
-    }
-  </style>
-
-  <div class="marr-facials__inner">
-    <div class="marr-facials__content">
-      <span class="marr-facials__label">Clinical Facials</span>
-      <h2 class="marr-facials__heading" id="marr-facials__heading">Deep Cleansing &amp; Hydration</h2>
-      <p class="marr-facials__text">
-        Our clinical facials go far beyond the traditional spa experience. Using medical-grade products and advanced techniques, each session includes deep pore cleansing, professional extraction, targeted hydration, and LED light therapy to stimulate cellular renewal. Delivered by trained practitioners, every facial is tailored to your skin type and concerns, with measurable results you can see after a single session.
-      </p>
-      <p class="marr-facials__price">From &pound;65 per session</p>
-      <ul class="marr-facials__list">
-        <li class="marr-facials__list-item">Deep pore cleansing</li>
-        <li class="marr-facials__list-item">Professional-grade serums</li>
-        <li class="marr-facials__list-item">LED light therapy</li>
-        <li class="marr-facials__list-item">No downtime</li>
-      </ul>
-      <a href="/contact.html" class="marr-facials__cta">Book a Facial &rarr;</a>
-    </div>
-
-    <div class="marr-facials__media">
-      <div class="marr-facials__image-block" role="img" aria-label="Clinical facial treatment at Marr Laser and Skin Clinic">
-        <span class="marr-facials__image-label">Facial Treatment</span>
+  </section>
+
+  <!-- 5. FAQ -->
+  <section class="section section--blush">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Common Questions</span>
+        <h2 class="h2">Skin Treatment FAQs</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">Which skin treatment is right for me?</summary>
+          <p class="faq-answer">Every skin is unique, which is why we begin with a thorough consultation. We assess your skin type, concerns, and goals to recommend the most effective treatment plan tailored specifically to you.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How many sessions will I need?</summary>
+          <p class="faq-answer">This depends on the treatment type and your skin concerns. IPL typically requires 3-6 sessions, CO2 resurfacing may need 1-3 sessions, and thread vein treatments usually take 2-4 sessions. Your practitioner will advise during your consultation.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Is there any downtime?</summary>
+          <p class="faq-answer">Downtime varies by treatment. IPL and thread vein removal have minimal downtime with possible mild redness for 24-48 hours. CO2 resurfacing involves 5-7 days of healing. Skin tag removal requires no downtime at all. We provide detailed aftercare for each treatment.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Can I combine treatments?</summary>
+          <p class="faq-answer">Yes, many clients benefit from a combination approach. For example, IPL for pigmentation alongside CO2 for texture. Your practitioner will design a treatment plan that safely combines the most effective options for your concerns.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Are the treatments safe for all skin types?</summary>
+          <p class="faq-answer">Most of our treatments are suitable for a wide range of skin types, though specific settings and approaches are adjusted for your individual needs. During your consultation, we assess your Fitzpatrick skin type and any contraindications to ensure safe, effective treatment.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What results can I expect?</summary>
+          <p class="faq-answer">Results depend on the treatment and your starting point. Many clients notice improvement after a single session, with optimal results developing over a course of treatments. We take clinical photographs at each visit so you can clearly track your progress.</p>
+        </details>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 03-peels.html — Chemical Peels Section -->
-<section class="marr-peels" aria-labelledby="marr-peels__heading">
-  <style>
-    /* ── Design Tokens ── */
-    .marr-peels {
-      --marr-primary: #1a3a2a;
-      --marr-primary-light: #2a5a3a;
-      --marr-accent: #c9a84c;
-      --marr-accent-hover: #b8933f;
-      --marr-sage: #d5ddd7;
-      --marr-light: #ffffff;
-      --marr-offwhite: #f7f5f0;
-      --marr-text: #2d2d2d;
-      --marr-text-light: rgba(255, 255, 255, 0.75);
-      --marr-text-muted: #6b6b6b;
-      --marr-font-heading: 'Georgia', serif;
-      --marr-font-body: 'Arial', sans-serif;
-    }
-
-    /* ── Block ── */
-    .marr-peels {
-      background-color: var(--marr-offwhite);
-      padding: 100px 24px;
-      box-sizing: border-box;
-    }
-
-    /* ── Layout ── */
-    .marr-peels__inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    /* ── Image (left) ── */
-    .marr-peels__media {
-      order: 1;
-    }
-
-    .marr-peels__image-block {
-      background-color: var(--marr-primary);
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 2px;
-    }
-
-    .marr-peels__image-label {
-      font-family: var(--marr-font-body);
-      font-size: 0.8125rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--marr-text-light);
-      font-weight: 600;
-    }
-
-    /* ── Text Content (right) ── */
-    .marr-peels__content {
-      order: 2;
-    }
-
-    .marr-peels__label {
-      display: block;
-      font-family: var(--marr-font-body);
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--marr-accent);
-      margin: 0 0 20px;
-    }
-
-    .marr-peels__heading {
-      font-family: var(--marr-font-heading);
-      font-size: 2.25rem;
-      font-weight: 400;
-      line-height: 1.25;
-      letter-spacing: 0.03em;
-      color: var(--marr-primary);
-      margin: 0 0 24px;
-    }
-
-    .marr-peels__text {
-      font-family: var(--marr-font-body);
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--marr-text);
-      margin: 0 0 24px;
-    }
-
-    .marr-peels__price {
-      font-family: var(--marr-font-body);
-      font-size: 1.0625rem;
-      font-weight: 600;
-      color: var(--marr-primary);
-      margin: 0 0 28px;
-      letter-spacing: 0.02em;
-    }
-
-    /* ── Bullet List ── */
-    .marr-peels__list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 36px;
-    }
-
-    .marr-peels__list-item {
-      font-family: var(--marr-font-body);
-      font-size: 0.9375rem;
-      line-height: 1.6;
-      color: var(--marr-text);
-      padding: 8px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .marr-peels__list-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 16px;
-      width: 6px;
-      height: 6px;
-      background-color: var(--marr-accent);
-      border-radius: 50%;
-    }
-
-    /* ── CTA ── */
-    .marr-peels__cta {
-      display: inline-block;
-      font-family: var(--marr-font-body);
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--marr-light);
-      background-color: var(--marr-primary);
-      padding: 16px 36px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .marr-peels__cta:hover {
-      background-color: var(--marr-primary-light);
-    }
-
-    .marr-peels__cta:focus-visible {
-      outline: 2px solid var(--marr-accent);
-      outline-offset: 3px;
-    }
-
-    /* ── Responsive: 1200px ── */
-    @media (max-width: 1200px) {
-      .marr-peels {
-        padding: 90px 24px;
-      }
-
-      .marr-peels__inner {
-        gap: 48px;
-      }
-
-      .marr-peels__heading {
-        font-size: 2rem;
-      }
-    }
-
-    /* ── Responsive: 991px ── */
-    @media (max-width: 991px) {
-      .marr-peels {
-        padding: 80px 24px;
-      }
-
-      .marr-peels__inner {
-        gap: 40px;
-      }
-
-      .marr-peels__heading {
-        font-size: 1.75rem;
-      }
-
-      .marr-peels__text {
-        font-size: 0.9375rem;
-      }
-
-      .marr-peels__image-block {
-        aspect-ratio: 3 / 4;
-      }
-    }
-
-    /* ── Responsive: 767px ── */
-    @media (max-width: 767px) {
-      .marr-peels {
-        padding: 64px 20px;
-      }
-
-      .marr-peels__inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .marr-peels__media {
-        order: 1;
-      }
-
-      .marr-peels__content {
-        order: 2;
-      }
-
-      .marr-peels__heading {
-        font-size: 1.625rem;
-        line-height: 1.3;
-      }
-
-      .marr-peels__label {
-        font-size: 0.6875rem;
-        margin-bottom: 16px;
-      }
-
-      .marr-peels__image-block {
-        aspect-ratio: 16 / 10;
-      }
-    }
-
-    /* ── Responsive: 478px ── */
-    @media (max-width: 478px) {
-      .marr-peels {
-        padding: 48px 16px;
-      }
-
-      .marr-peels__inner {
-        gap: 32px;
-      }
-
-      .marr-peels__heading {
-        font-size: 1.4rem;
-        margin-bottom: 20px;
-      }
-
-      .marr-peels__text {
-        font-size: 0.875rem;
-        line-height: 1.75;
-      }
-
-      .marr-peels__price {
-        font-size: 1rem;
-        margin-bottom: 24px;
-      }
-
-      .marr-peels__list-item {
-        font-size: 0.875rem;
-        padding: 6px 0 6px 18px;
-      }
-
-      .marr-peels__list-item::before {
-        width: 5px;
-        height: 5px;
-        top: 14px;
-      }
-
-      .marr-peels__cta {
-        font-size: 0.75rem;
-        padding: 14px 28px;
-        width: 100%;
-        text-align: center;
-      }
-
-      .marr-peels__image-block {
-        aspect-ratio: 4 / 3;
-      }
-    }
-  </style>
-
-  <div class="marr-peels__inner">
-    <div class="marr-peels__media">
-      <div class="marr-peels__image-block" role="img" aria-label="Chemical peel treatment at Marr Laser and Skin Clinic">
-        <span class="marr-peels__image-label">Chemical Peel</span>
+  <!-- 6. CTA -->
+  <section class="section section--charcoal u-text-center">
+    <div class="container">
+      <span class="eyebrow" style="color: rgba(249,249,248,0.5);">Get Started</span>
+      <h2 class="h2 u-mb-md">Restore Your Skin's Natural Radiance</h2>
+      <p class="text-lg u-mb-lg" style="color: rgba(249,249,248,0.7);">Book a free consultation to discuss your skin concerns and discover the treatment plan that is right for you.</p>
+      <div class="btn-group" style="justify-content: center;">
+        <a href="contact.html" class="btn btn--light">Book Consultation</a>
+        <a href="tel:+44000000000" class="btn btn--outline" style="color: var(--marr-offwhite); border-color: var(--marr-offwhite);">Call Us</a>
       </div>
     </div>
+  </section>
 
-    <div class="marr-peels__content">
-      <span class="marr-peels__label">Chemical Peels</span>
-      <h2 class="marr-peels__heading" id="marr-peels__heading">Resurface &amp; Renew</h2>
-      <p class="marr-peels__text">
-        Chemical peels use controlled exfoliation to remove damaged outer layers of skin, revealing the fresher, smoother complexion beneath. We offer a range of peels from gentle superficial treatments to medium-depth formulations, each carefully selected to address your specific concerns. Whether you are targeting pigmentation, fine lines, acne scarring, or a dull and uneven complexion, a professionally administered peel can deliver transformative results.
-      </p>
-      <p class="marr-peels__price">From &pound;75 per session</p>
-      <ul class="marr-peels__list">
-        <li class="marr-peels__list-item">Reduces pigmentation</li>
-        <li class="marr-peels__list-item">Smooths fine lines</li>
-        <li class="marr-peels__list-item">Improves skin texture</li>
-        <li class="marr-peels__list-item">Stimulates collagen</li>
-      </ul>
-      <a href="/contact.html" class="marr-peels__cta">Book a Peel &rarr;</a>
-    </div>
-  </div>
-</section>
+</main>
 
-<!-- 04-rejuvenation.html — Skin Rejuvenation Section -->
-<section class="marr-rejuv" aria-labelledby="marr-rejuv__heading">
-  <style>
-    /* ── Design Tokens ── */
-    .marr-rejuv {
-      --marr-primary: #1a3a2a;
-      --marr-primary-light: #2a5a3a;
-      --marr-accent: #c9a84c;
-      --marr-accent-hover: #b8933f;
-      --marr-sage: #d5ddd7;
-      --marr-light: #ffffff;
-      --marr-offwhite: #f7f5f0;
-      --marr-text: #2d2d2d;
-      --marr-text-light: rgba(255, 255, 255, 0.75);
-      --marr-text-muted: #6b6b6b;
-      --marr-font-heading: 'Georgia', serif;
-      --marr-font-body: 'Arial', sans-serif;
-    }
-
-    /* ── Block ── */
-    .marr-rejuv {
-      background-color: var(--marr-sage);
-      padding: 100px 24px;
-      box-sizing: border-box;
-    }
-
-    /* ── Layout ── */
-    .marr-rejuv__inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    /* ── Text Content (left) ── */
-    .marr-rejuv__content {
-      order: 1;
-    }
-
-    .marr-rejuv__label {
-      display: block;
-      font-family: var(--marr-font-body);
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--marr-accent);
-      margin: 0 0 20px;
-    }
-
-    .marr-rejuv__heading {
-      font-family: var(--marr-font-heading);
-      font-size: 2.25rem;
-      font-weight: 400;
-      line-height: 1.25;
-      letter-spacing: 0.03em;
-      color: var(--marr-primary);
-      margin: 0 0 24px;
-    }
-
-    .marr-rejuv__text {
-      font-family: var(--marr-font-body);
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--marr-text);
-      margin: 0 0 24px;
-    }
-
-    .marr-rejuv__price {
-      font-family: var(--marr-font-body);
-      font-size: 1.0625rem;
-      font-weight: 600;
-      color: var(--marr-primary);
-      margin: 0 0 28px;
-      letter-spacing: 0.02em;
-    }
-
-    /* ── Bullet List ── */
-    .marr-rejuv__list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 36px;
-    }
-
-    .marr-rejuv__list-item {
-      font-family: var(--marr-font-body);
-      font-size: 0.9375rem;
-      line-height: 1.6;
-      color: var(--marr-text);
-      padding: 8px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .marr-rejuv__list-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 16px;
-      width: 6px;
-      height: 6px;
-      background-color: var(--marr-accent);
-      border-radius: 50%;
-    }
-
-    /* ── CTA ── */
-    .marr-rejuv__cta {
-      display: inline-block;
-      font-family: var(--marr-font-body);
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--marr-light);
-      background-color: var(--marr-primary);
-      padding: 16px 36px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .marr-rejuv__cta:hover {
-      background-color: var(--marr-primary-light);
-    }
-
-    .marr-rejuv__cta:focus-visible {
-      outline: 2px solid var(--marr-accent);
-      outline-offset: 3px;
-    }
-
-    /* ── Image (right) ── */
-    .marr-rejuv__media {
-      order: 2;
-    }
-
-    .marr-rejuv__image-block {
-      background-color: var(--marr-primary);
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 2px;
-    }
-
-    .marr-rejuv__image-label {
-      font-family: var(--marr-font-body);
-      font-size: 0.8125rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--marr-text-light);
-      font-weight: 600;
-    }
-
-    /* ── Responsive: 1200px ── */
-    @media (max-width: 1200px) {
-      .marr-rejuv {
-        padding: 90px 24px;
-      }
-
-      .marr-rejuv__inner {
-        gap: 48px;
-      }
-
-      .marr-rejuv__heading {
-        font-size: 2rem;
-      }
-    }
-
-    /* ── Responsive: 991px ── */
-    @media (max-width: 991px) {
-      .marr-rejuv {
-        padding: 80px 24px;
-      }
-
-      .marr-rejuv__inner {
-        gap: 40px;
-      }
-
-      .marr-rejuv__heading {
-        font-size: 1.75rem;
-      }
-
-      .marr-rejuv__text {
-        font-size: 0.9375rem;
-      }
-
-      .marr-rejuv__image-block {
-        aspect-ratio: 3 / 4;
-      }
-    }
-
-    /* ── Responsive: 767px ── */
-    @media (max-width: 767px) {
-      .marr-rejuv {
-        padding: 64px 20px;
-      }
-
-      .marr-rejuv__inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .marr-rejuv__content {
-        order: 2;
-      }
-
-      .marr-rejuv__media {
-        order: 1;
-      }
-
-      .marr-rejuv__heading {
-        font-size: 1.625rem;
-        line-height: 1.3;
-      }
-
-      .marr-rejuv__label {
-        font-size: 0.6875rem;
-        margin-bottom: 16px;
-      }
-
-      .marr-rejuv__image-block {
-        aspect-ratio: 16 / 10;
-      }
-    }
-
-    /* ── Responsive: 478px ── */
-    @media (max-width: 478px) {
-      .marr-rejuv {
-        padding: 48px 16px;
-      }
-
-      .marr-rejuv__inner {
-        gap: 32px;
-      }
-
-      .marr-rejuv__heading {
-        font-size: 1.4rem;
-        margin-bottom: 20px;
-      }
-
-      .marr-rejuv__text {
-        font-size: 0.875rem;
-        line-height: 1.75;
-      }
-
-      .marr-rejuv__price {
-        font-size: 1rem;
-        margin-bottom: 24px;
-      }
-
-      .marr-rejuv__list-item {
-        font-size: 0.875rem;
-        padding: 6px 0 6px 18px;
-      }
-
-      .marr-rejuv__list-item::before {
-        width: 5px;
-        height: 5px;
-        top: 14px;
-      }
-
-      .marr-rejuv__cta {
-        font-size: 0.75rem;
-        padding: 14px 28px;
-        width: 100%;
-        text-align: center;
-      }
-
-      .marr-rejuv__image-block {
-        aspect-ratio: 4 / 3;
-      }
-    }
-  </style>
-
-  <div class="marr-rejuv__inner">
-    <div class="marr-rejuv__content">
-      <span class="marr-rejuv__label">Skin Rejuvenation</span>
-      <h2 class="marr-rejuv__heading" id="marr-rejuv__heading">Turn Back the Clock</h2>
-      <p class="marr-rejuv__text">
-        Our advanced skin rejuvenation treatments harness the power of microneedling, radiofrequency energy, and collagen induction therapy to stimulate your skin's own renewal processes. These clinically proven techniques target the visible signs of ageing, skin laxity, scarring, and overall skin quality, working beneath the surface to rebuild structure and restore a firmer, more youthful appearance. Results develop progressively over a course of treatments as your skin produces fresh collagen and elastin.
-      </p>
-      <p class="marr-rejuv__price">From &pound;95 per session</p>
-      <ul class="marr-rejuv__list">
-        <li class="marr-rejuv__list-item">Stimulates natural collagen</li>
-        <li class="marr-rejuv__list-item">Reduces scarring</li>
-        <li class="marr-rejuv__list-item">Firms and tightens</li>
-        <li class="marr-rejuv__list-item">Progressive improvement</li>
-      </ul>
-      <a href="/contact.html" class="marr-rejuv__cta">Book Rejuvenation &rarr;</a>
-    </div>
-
-    <div class="marr-rejuv__media">
-      <div class="marr-rejuv__image-block" role="img" aria-label="Skin rejuvenation treatment at Marr Laser and Skin Clinic">
-        <span class="marr-rejuv__image-label">Skin Rejuvenation</span>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><span class="footer__brand-main">MARR</span><span class="footer__brand-sub">Laser &amp; Skin</span></div>
+        <p class="footer__muted text-sm">Advanced laser technology and expert skin treatments, tailored to you.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading">Treatments</h4>
+        <ul class="footer__links">
+          <li><a href="laser-hair-removal.html" class="footer__link">Laser Hair Removal</a></li>
+          <li><a href="why-alexandrite.html" class="footer__link">Why Alexandrite</a></li>
+          <li><a href="skin-treatments.html" class="footer__link">Skin Treatments</a></li>
+          <li><a href="anti-ageing.html" class="footer__link">Anti-Ageing</a></li>
+          <li><a href="aesthetics.html" class="footer__link">Aesthetics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Clinic</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About Us</a></li>
+          <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+          <li><a href="blog.html" class="footer__link">Blog</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Contact</h4>
+        <ul class="footer__links">
+          <li class="footer__contact-text">Newry, Co. Down</li>
+          <li class="footer__contact-text">Northern Ireland</li>
+          <li><a href="tel:+44000000000" class="footer__link">028 000 0000</a></li>
+          <li><a href="mailto:hello@marrlaser.com" class="footer__link">hello@marrlaser.com</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- 05-faq.html — Skin Treatment FAQs Section -->
-<section class="marr-skin-faq" aria-labelledby="marr-skin-faq__heading">
-  <style>
-    /* ── Design Tokens ── */
-    .marr-skin-faq {
-      --marr-primary: #1a3a2a;
-      --marr-primary-light: #2a5a3a;
-      --marr-accent: #c9a84c;
-      --marr-accent-hover: #b8933f;
-      --marr-sage: #d5ddd7;
-      --marr-light: #ffffff;
-      --marr-offwhite: #f7f5f0;
-      --marr-text: #2d2d2d;
-      --marr-text-light: rgba(255, 255, 255, 0.75);
-      --marr-text-muted: #6b6b6b;
-      --marr-font-heading: 'Georgia', serif;
-      --marr-font-body: 'Arial', sans-serif;
-    }
-
-    /* ── Block ── */
-    .marr-skin-faq {
-      background-color: var(--marr-light);
-      padding: 100px 24px;
-      box-sizing: border-box;
-    }
-
-    /* ── Layout ── */
-    .marr-skin-faq__inner {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    /* ── Header ── */
-    .marr-skin-faq__header {
-      text-align: center;
-      margin-bottom: 64px;
-    }
-
-    .marr-skin-faq__label {
-      display: block;
-      font-family: var(--marr-font-body);
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--marr-accent);
-      margin: 0 0 20px;
-    }
-
-    .marr-skin-faq__heading {
-      font-family: var(--marr-font-heading);
-      font-size: 2.25rem;
-      font-weight: 400;
-      line-height: 1.25;
-      letter-spacing: 0.03em;
-      color: var(--marr-primary);
-      margin: 0;
-    }
-
-    /* ── Accordion ── */
-    .marr-skin-faq__list {
-      border-top: 1px solid #e0e0e0;
-    }
-
-    .marr-skin-faq__item {
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    .marr-skin-faq__item summary {
-      font-family: var(--marr-font-body);
-      font-size: 0.875rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--marr-primary);
-      padding: 24px 48px 24px 0;
-      cursor: pointer;
-      list-style: none;
-      position: relative;
-      line-height: 1.5;
-      transition: color 0.3s ease;
-    }
-
-    .marr-skin-faq__item summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .marr-skin-faq__item summary::marker {
-      display: none;
-      content: '';
-    }
-
-    /* ── +/- Indicator ── */
-    .marr-skin-faq__item summary::after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      font-family: var(--marr-font-body);
-      font-size: 1.25rem;
-      font-weight: 300;
-      color: var(--marr-accent);
-      line-height: 1;
-      transition: transform 0.3s ease;
-    }
-
-    .marr-skin-faq__item[open] summary::after {
-      content: '\2212';
-    }
-
-    .marr-skin-faq__item summary:hover {
-      color: var(--marr-primary-light);
-    }
-
-    .marr-skin-faq__item summary:focus-visible {
-      outline: 2px solid var(--marr-accent);
-      outline-offset: 2px;
-    }
-
-    .marr-skin-faq__answer {
-      font-family: var(--marr-font-body);
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--marr-text);
-      padding: 0 48px 28px 0;
-      margin: 0;
-    }
-
-    /* ── CTA ── */
-    .marr-skin-faq__cta-wrap {
-      text-align: center;
-      margin-top: 64px;
-    }
-
-    .marr-skin-faq__cta-text {
-      font-family: var(--marr-font-body);
-      font-size: 1.0625rem;
-      color: var(--marr-text);
-      margin: 0 0 28px;
-      line-height: 1.6;
-    }
-
-    .marr-skin-faq__cta {
-      display: inline-block;
-      font-family: var(--marr-font-body);
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--marr-light);
-      background-color: var(--marr-primary);
-      padding: 16px 36px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .marr-skin-faq__cta:hover {
-      background-color: var(--marr-primary-light);
-    }
-
-    .marr-skin-faq__cta:focus-visible {
-      outline: 2px solid var(--marr-accent);
-      outline-offset: 3px;
-    }
-
-    /* ── Responsive: 1200px ── */
-    @media (max-width: 1200px) {
-      .marr-skin-faq {
-        padding: 90px 24px;
-      }
-
-      .marr-skin-faq__heading {
-        font-size: 2rem;
-      }
-    }
-
-    /* ── Responsive: 991px ── */
-    @media (max-width: 991px) {
-      .marr-skin-faq {
-        padding: 80px 24px;
-      }
-
-      .marr-skin-faq__heading {
-        font-size: 1.75rem;
-      }
-
-      .marr-skin-faq__header {
-        margin-bottom: 48px;
-      }
-
-      .marr-skin-faq__item summary {
-        font-size: 0.8125rem;
-        padding: 20px 40px 20px 0;
-      }
-
-      .marr-skin-faq__answer {
-        font-size: 0.9375rem;
-        padding-right: 40px;
-      }
-    }
-
-    /* ── Responsive: 767px ── */
-    @media (max-width: 767px) {
-      .marr-skin-faq {
-        padding: 64px 20px;
-      }
-
-      .marr-skin-faq__heading {
-        font-size: 1.625rem;
-        line-height: 1.3;
-      }
-
-      .marr-skin-faq__label {
-        font-size: 0.6875rem;
-        margin-bottom: 16px;
-      }
-
-      .marr-skin-faq__header {
-        margin-bottom: 40px;
-      }
-
-      .marr-skin-faq__item summary {
-        font-size: 0.75rem;
-        letter-spacing: 0.08em;
-        padding: 20px 36px 20px 0;
-      }
-
-      .marr-skin-faq__answer {
-        font-size: 0.9375rem;
-        padding-right: 36px;
-        padding-bottom: 24px;
-      }
-
-      .marr-skin-faq__cta-wrap {
-        margin-top: 48px;
-      }
-
-      .marr-skin-faq__cta-text {
-        font-size: 1rem;
-      }
-    }
-
-    /* ── Responsive: 478px ── */
-    @media (max-width: 478px) {
-      .marr-skin-faq {
-        padding: 48px 16px;
-      }
-
-      .marr-skin-faq__heading {
-        font-size: 1.4rem;
-      }
-
-      .marr-skin-faq__label {
-        font-size: 0.625rem;
-        letter-spacing: 0.22em;
-      }
-
-      .marr-skin-faq__header {
-        margin-bottom: 32px;
-      }
-
-      .marr-skin-faq__item summary {
-        font-size: 0.6875rem;
-        letter-spacing: 0.06em;
-        padding: 18px 32px 18px 0;
-      }
-
-      .marr-skin-faq__item summary::after {
-        font-size: 1.125rem;
-      }
-
-      .marr-skin-faq__answer {
-        font-size: 0.875rem;
-        line-height: 1.75;
-        padding-right: 0;
-        padding-bottom: 20px;
-      }
-
-      .marr-skin-faq__cta {
-        font-size: 0.75rem;
-        padding: 14px 28px;
-        width: 100%;
-        text-align: center;
-      }
-
-      .marr-skin-faq__cta-text {
-        font-size: 0.9375rem;
-      }
-
-      .marr-skin-faq__cta-wrap {
-        margin-top: 40px;
-      }
-    }
-  </style>
-
-  <div class="marr-skin-faq__inner">
-    <div class="marr-skin-faq__header">
-      <span class="marr-skin-faq__label">Frequently Asked Questions</span>
-      <h2 class="marr-skin-faq__heading" id="marr-skin-faq__heading">Skin Treatment FAQs</h2>
-    </div>
-
-    <div class="marr-skin-faq__list">
-      <details class="marr-skin-faq__item">
-        <summary>Which skin treatment is right for me?</summary>
-        <p class="marr-skin-faq__answer">
-          Every skin is unique, which is why we begin with a thorough consultation. We assess your skin type, concerns, and goals to recommend the most effective treatment plan.
-        </p>
-      </details>
-
-      <details class="marr-skin-faq__item">
-        <summary>How often should I have treatments?</summary>
-        <p class="marr-skin-faq__answer">
-          This depends on the treatment type. Clinical facials can be monthly, chemical peels every 4&ndash;6 weeks, and rejuvenation treatments are typically spaced 4&ndash;6 weeks apart for a course of 3&ndash;6 sessions.
-        </p>
-      </details>
-
-      <details class="marr-skin-faq__item">
-        <summary>Is there any downtime?</summary>
-        <p class="marr-skin-faq__answer">
-          Clinical facials have no downtime. Chemical peels may involve 2&ndash;5 days of light peeling. Rejuvenation treatments may cause redness for 24&ndash;48 hours. We provide detailed aftercare for each treatment.
-        </p>
-      </details>
-
-      <details class="marr-skin-faq__item">
-        <summary>Can I combine treatments?</summary>
-        <p class="marr-skin-faq__answer">
-          Yes, many of our clients benefit from a combination approach. We often pair clinical facials with peels or rejuvenation treatments for enhanced results. Your practitioner will advise on the best combination.
-        </p>
-      </details>
-
-      <details class="marr-skin-faq__item">
-        <summary>Are the products medical-grade?</summary>
-        <p class="marr-skin-faq__answer">
-          Yes, we exclusively use professional-grade, clinically-proven products. These are significantly more effective than over-the-counter alternatives and are only available through trained practitioners.
-        </p>
-      </details>
-    </div>
-
-    <div class="marr-skin-faq__cta-wrap">
-      <p class="marr-skin-faq__cta-text">Ready to transform your skin?</p>
-      <a href="/contact.html" class="marr-skin-faq__cta">Book a Consultation &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<!-- Marr Laser — Shared Footer -->
-<style>
-  /* ---- Footer Tokens ---- */
-  .marr-footer-cta,
-  .marr-footer {
-    --marr-primary: #1a3a2a;
-    --marr-primary-light: #2a5a3a;
-    --marr-accent: #c9a84c;
-    --marr-accent-hover: #b8933f;
-    --marr-sage: #d5ddd7;
-    --marr-light: #ffffff;
-    --marr-offwhite: #f7f5f0;
-    --marr-text-light: rgba(255, 255, 255, 0.75);
-    --marr-font-heading: 'Georgia', serif;
-    --marr-font-body: 'Arial', sans-serif;
-  }
-
-  /* ---- Pre-Footer CTA Band ---- */
-  .marr-footer-cta {
-    background: var(--marr-sage);
-    padding: 80px 24px;
-    text-align: center;
-  }
-
-  .marr-footer-cta__inner {
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .marr-footer-cta__heading {
-    font-family: var(--marr-font-heading);
-    font-size: 36px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--marr-primary);
-    margin-bottom: 16px;
-    line-height: 1.3;
-  }
-
-  .marr-footer-cta__text {
-    font-family: var(--marr-font-body);
-    font-size: 16px;
-    line-height: 1.7;
-    color: #4a4a4a;
-    margin-bottom: 32px;
-  }
-
-  .marr-footer-cta__buttons {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .marr-footer-cta__btn {
-    display: inline-block;
-    padding: 14px 32px;
-    font-family: var(--marr-font-body);
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .marr-footer-cta__btn--primary {
-    background: var(--marr-primary);
-    color: var(--marr-light);
-  }
-
-  .marr-footer-cta__btn--primary:hover {
-    background: var(--marr-primary-light);
-  }
-
-  .marr-footer-cta__btn--outline {
-    background: transparent;
-    color: var(--marr-primary);
-    border: 1px solid var(--marr-primary);
-  }
-
-  .marr-footer-cta__btn--outline:hover {
-    background: var(--marr-primary);
-    color: var(--marr-light);
-  }
-
-  /* ---- Main Footer ---- */
-  .marr-footer {
-    background: var(--marr-primary);
-    padding: 64px 24px 0;
-  }
-
-  .marr-footer__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 48px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .marr-footer__brand-name {
-    font-family: var(--marr-font-heading);
-    font-size: 20px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--marr-light);
-    margin-bottom: 16px;
-  }
-
-  .marr-footer__brand-name span {
-    color: var(--marr-accent);
-  }
-
-  .marr-footer__address {
-    font-family: var(--marr-font-body);
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--marr-text-light);
-    font-style: normal;
-  }
-
-  .marr-footer__col-title {
-    font-family: var(--marr-font-body);
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--marr-light);
-    margin-bottom: 20px;
-  }
-
-  .marr-footer__links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .marr-footer__links li {
-    margin-bottom: 12px;
-  }
-
-  .marr-footer__links a {
-    font-family: var(--marr-font-body);
-    font-size: 14px;
-    color: var(--marr-text-light);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .marr-footer__links a:hover {
-    color: var(--marr-light);
-  }
-
-  .marr-footer__hours {
-    font-family: var(--marr-font-body);
-    font-size: 14px;
-    line-height: 2;
-    color: var(--marr-text-light);
-  }
-
-  .marr-footer__social {
-    display: flex;
-    gap: 16px;
-    margin-top: 24px;
-  }
-
-  .marr-footer__social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: var(--marr-text-light);
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.3s ease;
-  }
-
-  .marr-footer__social-link:hover {
-    border-color: var(--marr-accent);
-    color: var(--marr-accent);
-  }
-
-  /* ---- Copyright Bar ---- */
-  .marr-footer__copyright {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 24px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .marr-footer__copyright-text {
-    font-family: var(--marr-font-body);
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.4);
-  }
-
-  .marr-footer__copyright-links {
-    display: flex;
-    gap: 24px;
-  }
-
-  .marr-footer__copyright-links a {
-    font-family: var(--marr-font-body);
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.4);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .marr-footer__copyright-links a:hover {
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  /* ---- Responsive ---- */
-  @media (max-width: 991px) {
-    .marr-footer__inner {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .marr-footer-cta {
-      padding: 60px 24px;
-    }
-
-    .marr-footer-cta__heading {
-      font-size: 28px;
-    }
-
-    .marr-footer__inner {
-      grid-template-columns: 1fr;
-      gap: 36px;
-    }
-
-    .marr-footer__copyright {
-      flex-direction: column;
-      gap: 12px;
-      text-align: center;
-    }
-  }
-
-  @media (max-width: 478px) {
-    .marr-footer-cta__heading {
-      font-size: 24px;
-      letter-spacing: 2px;
-    }
-
-    .marr-footer-cta__buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .marr-footer-cta__btn {
-      width: 100%;
-      max-width: 280px;
-      text-align: center;
-    }
-  }
-</style>
-
-<!-- Pre-Footer CTA -->
-<section class="marr-footer-cta">
-  <div class="marr-footer-cta__inner">
-    <h2 class="marr-footer-cta__heading">Ready to Begin?</h2>
-    <p class="marr-footer-cta__text">Book a free consultation with our team to discuss your treatment plan and discover how we can help you feel your best.</p>
-    <div class="marr-footer-cta__buttons">
-      <a href="contact.html" class="marr-footer-cta__btn marr-footer-cta__btn--primary">Book Consultation</a>
-      <a href="treatments.html" class="marr-footer-cta__btn marr-footer-cta__btn--outline">View Treatments</a>
-    </div>
-  </div>
-</section>
-
-<!-- Main Footer -->
-<footer class="marr-footer">
-  <div class="marr-footer__inner">
-    <!-- Brand Column -->
-    <div class="marr-footer__col">
-      <div class="marr-footer__brand-name">Marr <span>Laser</span></div>
-      <address class="marr-footer__address">
-        Marr Laser &amp; Skin Clinic<br>
-        Newry, Co. Down<br>
-        Northern Ireland<br><br>
-        028 XXX XXXX<br>
-        hello@marrlaser.com
-      </address>
-    </div>
-
-    <!-- Quick Links -->
-    <div class="marr-footer__col">
-      <h3 class="marr-footer__col-title">Quick Links</h3>
-      <ul class="marr-footer__links">
-        <li><a href="treatments.html">Treatments</a></li>
-        <li><a href="laser-hair-removal.html">Laser Hair Removal</a></li>
-        <li><a href="skin-treatments.html">Skin Treatments</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Opening Hours -->
-    <div class="marr-footer__col">
-      <h3 class="marr-footer__col-title">Opening Hours</h3>
-      <div class="marr-footer__hours">
-        Mon &ndash; Fri: 9am &ndash; 7pm<br>
-        Saturday: 9am &ndash; 5pm<br>
-        Sunday: Closed
+    <div class="footer__bottom">
+      <p class="footer__fine">&copy; 2026 MARR Laser &amp; Skin Clinic. All rights reserved.</p>
+      <div class="footer__social">
+        <a href="#" class="footer__social-link">Instagram</a>
+        <a href="#" class="footer__social-link">Facebook</a>
       </div>
-    </div>
-
-    <!-- Social & Connect -->
-    <div class="marr-footer__col">
-      <h3 class="marr-footer__col-title">Connect</h3>
-      <div class="marr-footer__social">
-        <a href="#" class="marr-footer__social-link" aria-label="Facebook">Fb</a>
-        <a href="#" class="marr-footer__social-link" aria-label="Instagram">Ig</a>
-        <a href="#" class="marr-footer__social-link" aria-label="TikTok">Tk</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Copyright -->
-  <div class="marr-footer__copyright">
-    <p class="marr-footer__copyright-text">&copy; 2025 Marr Laser &amp; Skin Clinic. All rights reserved.</p>
-    <div class="marr-footer__copyright-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
     </div>
   </div>
 </footer>

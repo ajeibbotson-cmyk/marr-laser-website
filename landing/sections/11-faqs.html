@@ -1,15 +1,17 @@
 <!-- Marr Laser — 11 FAQs (CSS-only accordion) -->
 <style>
   .marr-faq {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-bg: #F9F9F8;
-    --marr-text: #3C3C3B;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --transition-base: 0.25s ease;
 
-    background: var(--marr-light);
+    background: var(--marr-offwhite);
     padding: 80px 0;
   }
 
@@ -25,19 +27,22 @@
   }
 
   .marr-faq__eyebrow {
-    font-family: var(--marr-font-body);
-    font-size: 13px;
-    font-weight: 600;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--marr-accent);
+    letter-spacing: 0.15em;
+    color: var(--marr-taupe);
     margin-bottom: 12px;
   }
 
   .marr-faq__title {
     font-family: var(--marr-font-heading);
     font-size: clamp(28px, 3.5vw, 40px);
-    color: var(--marr-primary);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--marr-charcoal);
     line-height: 1.2;
   }
 
@@ -49,29 +54,31 @@
 
   /* CSS-only accordion using details/summary */
   .marr-faq__item {
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 12px;
+    border: 1px solid rgba(60, 60, 59, 0.1);
+    border-radius: 8px;
     overflow: hidden;
-    transition: border-color 0.3s ease;
+    transition: border-color var(--transition-base);
+    background: #ffffff;
   }
 
   .marr-faq__item[open] {
-    border-color: var(--marr-accent);
+    border-color: var(--marr-taupe);
   }
 
   .marr-faq__question {
     padding: 20px 24px;
     font-family: var(--marr-font-body);
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--marr-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--marr-charcoal);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
     list-style: none;
-    transition: background 0.2s ease;
+    transition: background var(--transition-base);
   }
 
   .marr-faq__question::-webkit-details-marker {
@@ -84,7 +91,7 @@
   }
 
   .marr-faq__question:hover {
-    background: rgba(198, 188, 179, 0.04);
+    background: var(--marr-blush);
   }
 
   .marr-faq__question::after {
@@ -95,29 +102,44 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(198, 188, 179, 0.1);
+    background: var(--marr-blush);
     border-radius: 50%;
     font-size: 20px;
-    color: var(--marr-accent);
-    font-weight: 400;
-    transition: transform 0.3s ease;
+    color: var(--marr-taupe);
+    font-weight: 300;
+    transition: transform var(--transition-base),
+                background var(--transition-base);
   }
 
   .marr-faq__item[open] .marr-faq__question::after {
-    content: '−';
+    content: '\2212';
     transform: rotate(180deg);
   }
 
   .marr-faq__answer {
     padding: 0 24px 20px;
+    font-family: var(--marr-font-body);
     font-size: 15px;
-    color: var(--marr-text);
+    font-weight: 300;
+    color: var(--marr-text-muted);
     line-height: 1.7;
+  }
+
+  @media (max-width: 991px) {
+    .marr-faq {
+      padding: 64px 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .marr-faq {
+      padding: 48px 0;
+    }
   }
 
   @media (max-width: 478px) {
     .marr-faq {
-      padding: 50px 0;
+      padding: 32px 0;
     }
 
     .marr-faq__question {

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Alexandrite Laser | Layout B — MARR Laser &amp; Skin Clinic</title>
+  <meta name="description" content="Discover why MARR Laser &amp; Skin Clinic uses the Alexandrite 755nm laser for superior hair removal results. Compare Alexandrite vs IPL and other methods.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* === LAYOUT B: NARRATIVE FULL-WIDTH === */
+    .narrative {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .narrative p {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--marr-text-muted);
+      margin-bottom: var(--sp-24);
+    }
+
+    .narrative p:last-child {
+      margin-bottom: 0;
+    }
+
+    .narrative__image {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      margin-top: var(--sp-32);
+    }
+
+    .narrative__image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--r-lg);
+    }
+
+    /* === INFOGRAPHIC STAT CALLOUTS === */
+    .stat-callouts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-20);
+      margin-top: var(--sp-32);
+      margin-bottom: var(--sp-8);
+    }
+
+    .stat-callout {
+      background: var(--marr-blush);
+      border-radius: var(--r-lg);
+      padding: var(--sp-24) var(--sp-16);
+      text-align: center;
+    }
+
+    .stat-callout__number {
+      display: block;
+      font-family: var(--marr-font-heading);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 300;
+      letter-spacing: var(--marr-tracking-heading);
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      line-height: 1.2;
+      margin-bottom: var(--sp-4);
+    }
+
+    .stat-callout__label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 300;
+      color: var(--marr-text-muted);
+    }
+
+    /* === LAYOUT B: COMPARISON NARRATIVE === */
+    .compare-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-24);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .compare-card {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: var(--sp-24);
+      align-items: start;
+      background: #ffffff;
+      border-radius: var(--r-lg);
+      padding: var(--sp-32);
+      box-shadow: var(--shadow-card);
+      border: 2px solid transparent;
+      transition: box-shadow var(--transition-base);
+    }
+
+    .compare-card:hover {
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .compare-card--highlight {
+      border-color: var(--marr-taupe);
+    }
+
+    .compare-card__icon {
+      width: 80px;
+      height: 80px;
+      background: var(--marr-blush);
+      border-radius: var(--r-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .compare-card__icon span {
+      font-family: var(--marr-font-heading);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .compare-card--highlight .compare-card__icon {
+      background: var(--marr-taupe);
+    }
+
+    .compare-card--highlight .compare-card__icon span {
+      color: #ffffff;
+    }
+
+    .compare-card__content h3 {
+      font-family: var(--marr-font-heading);
+      font-size: 1.375rem;
+      font-weight: 300;
+      letter-spacing: var(--marr-tracking-heading);
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      margin-bottom: var(--sp-12);
+    }
+
+    .compare-card__content p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--marr-text-muted);
+      margin-bottom: var(--sp-16);
+    }
+
+    .compare-card__content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .compare-card__metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-12);
+      margin-top: var(--sp-16);
+      padding-top: var(--sp-16);
+      border-top: 1px solid var(--marr-border);
+    }
+
+    .compare-metric {
+      text-align: center;
+    }
+
+    .compare-metric__value {
+      display: block;
+      font-family: var(--marr-font-heading);
+      font-size: 1.125rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: var(--marr-charcoal);
+      margin-bottom: 2px;
+    }
+
+    .compare-metric__label {
+      font-size: 0.6875rem;
+      color: var(--marr-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* === STATS BAR === */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-20);
+    }
+
+    .stats-bar .stat-block {
+      background: var(--marr-taupe);
+    }
+
+    @media (max-width: 991px) {
+      .stat-callouts {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .compare-card {
+        grid-template-columns: 64px 1fr;
+        gap: var(--sp-16);
+        padding: var(--sp-24);
+      }
+      .compare-card__icon {
+        width: 64px;
+        height: 64px;
+      }
+      .compare-card__metrics {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .stat-callouts {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .compare-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .compare-card__icon {
+        margin: 0 auto;
+      }
+      .compare-card__metrics {
+        grid-template-columns: 1fr;
+      }
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 477px) {
+      .stats-bar {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Layout Indicator -->
+  <div style="position:fixed;top:12px;right:12px;z-index:9999;background:#C6BCB3;color:#fff;padding:6px 16px;border-radius:8px;font-family:'Cormorant Garamond',serif;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;"><a href="index.html" style="color:#fff;text-decoration:none;">&larr; Variants</a> &middot; Layout B</div>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <div class="nav__links nav__links--desktop">
+        <a href="../laser-hair-removal.html" class="nav__link">Laser</a>
+        <a href="../why-alexandrite.html" class="nav__link">Alexandrite</a>
+        <a href="../skin-treatments.html" class="nav__link">Skin</a>
+      </div>
+      <a href="../index.html" class="nav__logo" aria-label="MARR &mdash; Home">
+        <span class="nav__logo-main">MARR</span>
+        <span class="nav__logo-sub">Laser &amp; Skin</span>
+      </a>
+      <div class="nav__links nav__links--desktop">
+        <a href="../anti-ageing.html" class="nav__link">Anti-Ageing</a>
+        <a href="../aesthetics.html" class="nav__link">Aesthetics</a>
+        <a href="../about.html" class="nav__link">About</a>
+        <a href="../contact.html" class="nav__link">Contact</a>
+      </div>
+      <input type="checkbox" id="nav-toggle" class="nav__toggle">
+      <label for="nav-toggle" class="nav__toggle-label" aria-label="Menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </label>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- ═══ 1. PAGE HERO ═══ -->
+    <section class="page-hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <span class="eyebrow">Our Technology</span>
+        <h1 id="hero-heading" class="h1">Why We Choose Alexandrite</h1>
+        <p class="text-lg">The 755nm wavelength delivers unmatched precision for permanent hair reduction, offering faster treatment times and superior results across a wide range of skin types.</p>
+      </div>
+    </section>
+
+
+    <!-- ═══ 2. WHAT IS ALEXANDRITE — Narrative scroll ═══ -->
+    <section class="section section--offwhite" aria-labelledby="what-heading">
+      <div class="container">
+        <div class="narrative">
+          <span class="eyebrow">The Science</span>
+          <h2 id="what-heading" class="h2 u-mb-md">What Is Alexandrite Laser?</h2>
+          <p>The Alexandrite laser operates at a wavelength of 755 nanometres, which sits in the optimal absorption range for melanin in the hair follicle. This means the laser energy is absorbed more efficiently by the hair, resulting in more effective follicle destruction with less energy wasted on surrounding tissue.</p>
+          <p>Originally developed for medical and dermatological applications, the Alexandrite laser has become the gold standard in aesthetic hair removal. Its shorter wavelength compared to diode or Nd:YAG lasers allows for faster repetition rates and larger spot sizes, making treatments quicker and more comfortable.</p>
+          <p>At MARR Laser &amp; Skin Clinic, we chose Alexandrite technology specifically for its proven clinical track record, patient comfort, and ability to deliver visible results from the very first session.</p>
+
+          <!-- Infographic stat callouts -->
+          <div class="stat-callouts">
+            <div class="stat-callout">
+              <span class="stat-callout__number">755nm</span>
+              <span class="stat-callout__label">Wavelength</span>
+            </div>
+            <div class="stat-callout">
+              <span class="stat-callout__number">18mm</span>
+              <span class="stat-callout__label">Spot Size</span>
+            </div>
+            <div class="stat-callout">
+              <span class="stat-callout__number">2 Hz</span>
+              <span class="stat-callout__label">Pulse Rate</span>
+            </div>
+          </div>
+
+          <!-- Stacked image below text -->
+          <div class="narrative__image">
+            <img src="https://placehold.co/760x420/C6BCB3/FFFFFF?text=Alexandrite+Laser" alt="Alexandrite laser equipment used at MARR Laser and Skin Clinic" width="760" height="420" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══ 3. HOW IT COMPARES — Narrative card format ═══ -->
+    <section class="section section--blush" aria-labelledby="compare-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Technology Comparison</span>
+          <h2 id="compare-heading" class="h2">How It Compares</h2>
+          <p class="text-lg">Not all hair removal methods are equal. See how the Alexandrite laser measures up against common alternatives.</p>
+        </div>
+        <div class="compare-list">
+
+          <!-- Alexandrite (highlighted) -->
+          <div class="compare-card compare-card--highlight">
+            <div class="compare-card__icon">
+              <span>755<br>nm</span>
+            </div>
+            <div class="compare-card__content">
+              <h3>Alexandrite Laser</h3>
+              <p>The gold standard for hair removal. Large spot size and rapid pulse rate treat areas quickly &mdash; full legs in under 30 minutes. Built-in cooling system and shorter pulse duration minimise discomfort significantly. Up to 90% permanent hair reduction with optimal melanin absorption.</p>
+              <div class="compare-card__metrics">
+                <div class="compare-metric">
+                  <span class="compare-metric__value">90%</span>
+                  <span class="compare-metric__label">Reduction</span>
+                </div>
+                <div class="compare-metric">
+                  <span class="compare-metric__value">6&ndash;8</span>
+                  <span class="compare-metric__label">Sessions</span>
+                </div>
+                <div class="compare-metric">
+                  <span class="compare-metric__value">I&ndash;IV</span>
+                  <span class="compare-metric__label">Skin Types</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- IPL -->
+          <div class="compare-card">
+            <div class="compare-card__icon">
+              <span>IPL</span>
+            </div>
+            <div class="compare-card__content">
+              <h3>IPL (Intense Pulsed Light)</h3>
+              <p>A broad-spectrum light source rather than a true laser. Scattered wavelengths reduce follicle targeting precision, meaning results are less consistent and often temporary. Sessions take significantly longer and higher energy output is required, which can feel more uncomfortable. Generally limited to lighter skin tones with higher risk of burns on darker skin.</p>
+              <div class="compare-card__metrics">
+                <div class="compare-metric">
+                  <span class="compare-metric__value">50&ndash;70%</span>
+                  <span class="compare-metric__label">Reduction</span>
+                </div>
+                <div class="compare-metric">
+                  <span class="compare-metric__value">10&ndash;12</span>
+                  <span class="compare-metric__label">Sessions</span>
+                </div>
+                <div class="compare-metric">
+                  <span class="compare-metric__value">I&ndash;III</span>
+                  <span class="compare-metric__label">Skin Types</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Diode -->
+          <div class="compare-card">
+            <div class="compare-card__icon">
+              <span>808<br>nm</span>
+            </div>
+            <div class="compare-card__content">
+              <h3>Diode Laser</h3>
+              <p>A versatile mid-range wavelength that penetrates deeper into the follicle. Effective across a wider range of skin tones than IPL, with reasonable comfort levels. However, its longer wavelength means slightly less efficient melanin absorption compared to Alexandrite, often requiring more sessions to achieve comparable results.</p>
+              <div class="compare-card__metrics">
+                <div class="compare-metric">
+                  <span class="compare-metric__value">70&ndash;85%</span>
+                  <span class="compare-metric__label">Reduction</span>
+                </div>
+                <div class="compare-metric">
+                  <span class="compare-metric__value">8&ndash;10</span>
+                  <span class="compare-metric__label">Sessions</span>
+                </div>
+                <div class="compare-metric">
+                  <span class="compare-metric__value">I&ndash;V</span>
+                  <span class="compare-metric__label">Skin Types</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══ 4. STATS BAR ═══ -->
+    <section class="section section--blush" aria-label="Key statistics" style="padding-top: 0;">
+      <div class="container">
+        <div class="stats-bar">
+          <div class="stat-block">
+            <span class="stat-block__number">755nm</span>
+            <span class="stat-block__label">Wavelength</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-block__number">90%</span>
+            <span class="stat-block__label">Hair Reduction</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-block__number">6&ndash;8</span>
+            <span class="stat-block__label">Sessions</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-block__number">I&ndash;IV</span>
+            <span class="stat-block__label">Skin Types</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══ 5. EVIDENCE / SCIENCE ═══ -->
+    <section class="section section--offwhite" aria-labelledby="evidence-heading">
+      <div class="container">
+        <div class="grid grid--sidebar">
+          <div class="about-image">
+            <img src="https://placehold.co/560x480/C6BCB3/FFFFFF?text=Clinical+Research" alt="Clinical research supporting Alexandrite laser effectiveness" width="560" height="480" loading="lazy">
+          </div>
+          <div>
+            <span class="eyebrow">Proven Results</span>
+            <h2 id="evidence-heading" class="h2 u-mb-md">Clinical Evidence</h2>
+            <p class="u-mb-md">Our choice of Alexandrite technology is backed by decades of clinical research and regulatory approval. Multiple peer-reviewed studies published in the Journal of Cosmetic and Laser Therapy and Dermatologic Surgery confirm the Alexandrite 755nm laser as one of the most effective wavelengths for permanent hair reduction.</p>
+            <p class="u-mb-md">Consistent results have been demonstrated across diverse patient populations, with the wavelength showing superior melanin absorption compared to longer-wavelength alternatives.</p>
+            <p>Our Alexandrite laser system holds CE medical device certification and meets all UK regulatory standards. It is FDA-cleared for permanent hair reduction, and our practitioners are fully trained and insured to operate the equipment to the highest clinical standards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══ 6. CTA ═══ -->
+    <section class="section section--blush u-text-center" aria-labelledby="cta-heading">
+      <div class="container">
+        <span class="eyebrow">Take the Next Step</span>
+        <h2 id="cta-heading" class="h2 u-mb-md">Experience the Alexandrite Difference</h2>
+        <p class="text-lg u-mb-lg">Book a free consultation to learn how our Alexandrite laser technology can deliver the smooth, lasting results you deserve.</p>
+        <div class="btn-group" style="justify-content: center;">
+          <a href="../contact.html" class="btn btn--primary">Book Consultation</a>
+          <a href="../laser-hair-removal.html" class="btn btn--outline">View Laser Treatments</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <span class="footer__brand-main">MARR</span>
+            <span class="footer__brand-sub">Laser &amp; Skin</span>
+          </div>
+          <p class="footer__muted text-sm">Advanced laser technology and expert skin treatments, tailored to you.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Treatments</h4>
+          <ul class="footer__links">
+            <li><a href="../laser-hair-removal.html" class="footer__link">Laser Hair Removal</a></li>
+            <li><a href="../skin-treatments.html" class="footer__link">Skin Treatments</a></li>
+            <li><a href="../anti-ageing.html" class="footer__link">Anti-Ageing</a></li>
+            <li><a href="../aesthetics.html" class="footer__link">Aesthetics</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Clinic</h4>
+          <ul class="footer__links">
+            <li><a href="../about.html" class="footer__link">About Us</a></li>
+            <li><a href="../gallery.html" class="footer__link">Gallery</a></li>
+            <li><a href="../blog.html" class="footer__link">Blog</a></li>
+            <li><a href="../contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contact</h4>
+          <ul class="footer__links">
+            <li class="footer__contact-text">Newry, Co. Down</li>
+            <li><a href="tel:+44000000000" class="footer__link">028 000 0000</a></li>
+            <li><a href="mailto:hello@marrlaser.com" class="footer__link">hello@marrlaser.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__fine">&copy; 2026 MARR Laser &amp; Skin Clinic.</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link">Instagram</a>
+          <a href="#" class="footer__social-link">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

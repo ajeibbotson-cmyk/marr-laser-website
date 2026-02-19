@@ -1,16 +1,20 @@
 <!-- Marr Laser — 10 Practitioner Profiles -->
 <style>
   .marr-practitioners {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-bg: #F9F9F8;
-    --marr-text: #3C3C3B;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --shadow-card-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
+    --transition-base: 0.25s ease;
 
-    background: var(--marr-primary);
-    color: var(--marr-light);
+    background: var(--marr-blush);
+    color: var(--marr-charcoal);
     padding: 80px 0;
   }
 
@@ -27,25 +31,31 @@
   }
 
   .marr-practitioners__eyebrow {
-    font-family: var(--marr-font-body);
-    font-size: 13px;
-    font-weight: 600;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--marr-accent);
+    letter-spacing: 0.15em;
+    color: var(--marr-taupe);
     margin-bottom: 12px;
   }
 
   .marr-practitioners__title {
     font-family: var(--marr-font-heading);
     font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--marr-charcoal);
     line-height: 1.2;
     margin-bottom: 16px;
   }
 
   .marr-practitioners__subtitle {
+    font-family: var(--marr-font-body);
     font-size: 17px;
-    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    color: var(--marr-text-muted);
     line-height: 1.6;
   }
 
@@ -58,22 +68,38 @@
   .marr-practitioners__card {
     display: flex;
     gap: 28px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(198, 188, 179, 0.15);
-    border-radius: 16px;
+    background: #ffffff;
+    border-radius: 8px;
     padding: 32px;
-    transition: border-color 0.3s ease;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow var(--transition-base),
+                transform var(--transition-base);
+  }
+
+  /* Taupe stripe at top of card */
+  .marr-practitioners__card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--marr-taupe);
+    border-radius: 8px 8px 0 0;
   }
 
   .marr-practitioners__card:hover {
-    border-color: var(--marr-accent);
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
   }
 
   .marr-practitioners__photo {
     flex-shrink: 0;
     width: 140px;
     height: 170px;
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
   }
 
@@ -90,19 +116,28 @@
   .marr-practitioners__name {
     font-family: var(--marr-font-heading);
     font-size: 22px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--marr-charcoal);
     margin-bottom: 4px;
   }
 
   .marr-practitioners__role {
-    font-size: 14px;
-    color: var(--marr-accent);
-    font-weight: 600;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--marr-taupe);
     margin-bottom: 14px;
   }
 
   .marr-practitioners__bio {
+    font-family: var(--marr-font-body);
     font-size: 15px;
-    color: rgba(255, 255, 255, 0.65);
+    font-weight: 300;
+    color: var(--marr-text-muted);
     line-height: 1.6;
     margin-bottom: 14px;
   }
@@ -115,15 +150,27 @@
 
   .marr-practitioners__credential {
     padding: 4px 12px;
-    background: rgba(198, 188, 179, 0.1);
-    border: 1px solid rgba(198, 188, 179, 0.2);
-    border-radius: 20px;
-    font-size: 12px;
-    color: var(--marr-accent);
-    font-weight: 600;
+    background: var(--marr-blush);
+    border-radius: 8px;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    color: var(--marr-taupe);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 1200px) {
+    .marr-practitioners__card {
+      padding: 28px;
+    }
   }
 
   @media (max-width: 991px) {
+    .marr-practitioners {
+      padding: 64px 0;
+    }
+
     .marr-practitioners__grid {
       grid-template-columns: 1fr;
       max-width: 600px;
@@ -132,6 +179,10 @@
   }
 
   @media (max-width: 767px) {
+    .marr-practitioners {
+      padding: 48px 0;
+    }
+
     .marr-practitioners__card {
       flex-direction: column;
       align-items: center;
@@ -146,7 +197,7 @@
 
   @media (max-width: 478px) {
     .marr-practitioners {
-      padding: 50px 0;
+      padding: 32px 0;
     }
 
     .marr-practitioners__card {

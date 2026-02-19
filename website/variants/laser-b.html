@@ -3,32 +3,240 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laser Hair Removal | MARR Laser &amp; Skin Clinic, Newry</title>
+  <title>Laser Hair Removal | Layout B — MARR Laser &amp; Skin Clinic</title>
   <meta name="description" content="Permanent laser hair removal in Newry using Alexandrite, Diode and Nd:YAG technology. Safe for all skin types. Book a consultation at MARR Laser &amp; Skin Clinic.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* === LAYOUT B: FULL-WIDTH HERO === */
+    .hero-b {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-image: url('https://placehold.co/1600x900/C6BCB3/FFFFFF?text=Laser+Treatment');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    .hero-b::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(60, 60, 59, 0.3) 0%,
+        rgba(60, 60, 59, 0.65) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-b__content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      padding: var(--sp-48) var(--sp-24);
+    }
+
+    .hero-b .eyebrow {
+      color: var(--marr-blush);
+    }
+
+    .hero-b .h1 {
+      color: #ffffff;
+      margin-bottom: var(--sp-20);
+    }
+
+    .hero-b__subtitle {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: var(--sp-32);
+    }
+
+    .hero-b .btn-group {
+      justify-content: center;
+    }
+
+    /* === LAYOUT B: ICON LIST (technology) === */
+    .tech-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-32);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .tech-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: var(--sp-24);
+      align-items: start;
+    }
+
+    .tech-item__icon {
+      width: 72px;
+      height: 72px;
+      background: var(--marr-taupe);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--marr-font-heading);
+      font-size: 1.25rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .tech-item__content h3 {
+      font-family: var(--marr-font-heading);
+      font-size: 1.25rem;
+      font-weight: 300;
+      letter-spacing: var(--marr-tracking-heading);
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      margin-bottom: var(--sp-8);
+    }
+
+    .tech-item__content p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--marr-text-muted);
+    }
+
+    /* === LAYOUT B: PRICING CARDS === */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-24);
+    }
+
+    .pricing-card {
+      background: #ffffff;
+      border-radius: var(--r-lg);
+      padding: var(--sp-32);
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow var(--transition-base),
+                  transform var(--transition-base);
+    }
+
+    .pricing-card:hover {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .pricing-card__area {
+      font-family: var(--marr-font-heading);
+      font-size: 1.25rem;
+      font-weight: 300;
+      letter-spacing: var(--marr-tracking-heading);
+      text-transform: uppercase;
+      color: var(--marr-charcoal);
+      margin-bottom: var(--sp-20);
+      padding-bottom: var(--sp-20);
+      border-bottom: 1px solid var(--marr-border);
+    }
+
+    .pricing-card__price {
+      font-family: var(--marr-font-heading);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 300;
+      color: var(--marr-charcoal);
+      line-height: 1.2;
+      margin-bottom: var(--sp-4);
+    }
+
+    .pricing-card__label {
+      font-size: 0.75rem;
+      color: var(--marr-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--sp-16);
+    }
+
+    .pricing-card__course {
+      font-size: 0.875rem;
+      color: var(--marr-taupe);
+      font-weight: 400;
+      margin-bottom: var(--sp-24);
+      padding-top: var(--sp-16);
+      border-top: 1px solid var(--marr-border);
+    }
+
+    .pricing-card__cta {
+      margin-top: auto;
+    }
+
+    @media (max-width: 991px) {
+      .hero-b {
+        min-height: 55vh;
+      }
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .tech-item {
+        grid-template-columns: 60px 1fr;
+        gap: var(--sp-16);
+      }
+      .tech-item__icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.125rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero-b {
+        min-height: 50vh;
+      }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .tech-item {
+        grid-template-columns: 56px 1fr;
+      }
+      .tech-item__icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Layout Indicator -->
+  <div style="position:fixed;top:12px;right:12px;z-index:9999;background:#C6BCB3;color:#fff;padding:6px 16px;border-radius:8px;font-family:'Cormorant Garamond',serif;font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;"><a href="index.html" style="color:#fff;text-decoration:none;">&larr; Variants</a> &middot; Layout B</div>
 
   <!-- ═══ NAVIGATION ═══ -->
   <nav class="nav" aria-label="Main navigation">
     <div class="nav__inner">
       <div class="nav__links nav__links--desktop">
-        <a href="laser-hair-removal.html" class="nav__link nav__link--active">Laser</a>
-        <a href="why-alexandrite.html" class="nav__link">Alexandrite</a>
-        <a href="skin-treatments.html" class="nav__link">Skin</a>
+        <a href="../laser-hair-removal.html" class="nav__link">Laser</a>
+        <a href="../why-alexandrite.html" class="nav__link">Alexandrite</a>
+        <a href="../skin-treatments.html" class="nav__link">Skin</a>
       </div>
-      <a href="index.html" class="nav__logo" aria-label="MARR Laser &amp; Skin — Home">
+      <a href="../index.html" class="nav__logo" aria-label="MARR &mdash; Home">
         <span class="nav__logo-main">MARR</span>
         <span class="nav__logo-sub">Laser &amp; Skin</span>
       </a>
       <div class="nav__links nav__links--desktop">
-        <a href="anti-ageing.html" class="nav__link">Anti-Ageing</a>
-        <a href="aesthetics.html" class="nav__link">Aesthetics</a>
-        <a href="about.html" class="nav__link">About</a>
-        <a href="contact.html" class="nav__link">Contact</a>
+        <a href="../anti-ageing.html" class="nav__link">Anti-Ageing</a>
+        <a href="../aesthetics.html" class="nav__link">Aesthetics</a>
+        <a href="../about.html" class="nav__link">About</a>
+        <a href="../contact.html" class="nav__link">Contact</a>
       </div>
       <input type="checkbox" id="nav-toggle" class="nav__toggle">
       <label for="nav-toggle" class="nav__toggle-label" aria-label="Menu">
@@ -42,22 +250,15 @@
 
   <main>
 
-    <!-- ═══ 1. HERO ═══ -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="container">
-        <div class="grid grid--sidebar">
-          <div class="hero__panel">
-            <span class="eyebrow">Flagship Treatment</span>
-            <h1 id="hero-heading" class="h1">Laser Hair Removal</h1>
-            <p class="text-lg">Permanent hair reduction using the gold-standard Alexandrite laser. Fewer sessions, faster results and smooth skin that lasts &mdash; at MARR Laser &amp; Skin Clinic, Newry.</p>
-            <div class="btn-group">
-              <a href="contact.html" class="btn btn--primary">Book Consultation</a>
-              <a href="#pricing" class="btn btn--outline">View Prices</a>
-            </div>
-          </div>
-          <div class="hero__image">
-            <img src="https://placehold.co/640x520/C6BCB3/FFFFFF?text=Laser+Treatment" alt="Client receiving laser hair removal treatment at MARR Clinic" width="640" height="520" loading="eager">
-          </div>
+    <!-- ═══ 1. HERO — Full-width stacked image with overlay ═══ -->
+    <section class="hero-b" aria-labelledby="hero-heading">
+      <div class="hero-b__content">
+        <span class="eyebrow">Flagship Treatment</span>
+        <h1 id="hero-heading" class="h1">Laser Hair Removal</h1>
+        <p class="hero-b__subtitle">Permanent hair reduction using the gold-standard Alexandrite laser. Fewer sessions, faster results and smooth skin that lasts &mdash; at MARR Laser &amp; Skin Clinic, Newry.</p>
+        <div class="btn-group">
+          <a href="../contact.html" class="btn btn--primary">Book Consultation</a>
+          <a href="#pricing" class="btn btn--light">View Prices</a>
         </div>
       </div>
     </section>
@@ -82,7 +283,7 @@
     </section>
 
 
-    <!-- ═══ 3. TECHNOLOGY CARDS ═══ -->
+    <!-- ═══ 3. TECHNOLOGY — Icon list ═══ -->
     <section class="section section--blush" aria-labelledby="tech-heading">
       <div class="container">
         <div class="section-header">
@@ -90,54 +291,38 @@
           <h2 id="tech-heading" class="h2">Our Technology</h2>
           <p class="text-lg">Three specialist laser wavelengths, each chosen for a specific purpose. Together, they allow us to treat every client safely and effectively.</p>
         </div>
-        <div class="grid grid--3">
+        <div class="tech-list" role="list">
 
-          <!-- Card: Alexandrite -->
-          <article class="card card--service">
-            <div class="card__stripe"></div>
-            <div class="card__image">
-              <img src="https://placehold.co/400x220/C6BCB3/FFFFFF?text=Alexandrite+755nm" alt="Alexandrite 755nm laser handpiece" width="400" height="220" loading="lazy">
+          <div class="tech-item" role="listitem">
+            <div class="tech-item__icon" aria-hidden="true">755</div>
+            <div class="tech-item__content">
+              <h3>Alexandrite 755nm</h3>
+              <p>The gold standard for laser hair removal. Fastest pulse rate, largest spot size and deepest melanin absorption. Ideal for fair to olive skin tones with dark hair &mdash; our most popular and effective laser.</p>
             </div>
-            <div class="card__body">
-              <span class="eyebrow">Our Specialist</span>
-              <h3 class="h3">Alexandrite 755nm</h3>
-              <p class="text-sm">The gold standard for laser hair removal. Fastest pulse rate, largest spot size and deepest melanin absorption. Ideal for fair to olive skin tones with dark hair &mdash; our most popular and effective laser.</p>
-              <a href="why-alexandrite.html" class="btn btn--ghost u-mt-md">Why Alexandrite &rarr;</a>
-            </div>
-          </article>
+          </div>
 
-          <!-- Card: Diode -->
-          <article class="card card--service">
-            <div class="card__stripe"></div>
-            <div class="card__image">
-              <img src="https://placehold.co/400x220/ECE5E0/3C3C3B?text=Diode+808nm" alt="Diode 808nm laser equipment" width="400" height="220" loading="lazy">
+          <div class="tech-item" role="listitem">
+            <div class="tech-item__icon" aria-hidden="true">808</div>
+            <div class="tech-item__content">
+              <h3>Diode 808nm</h3>
+              <p>A versatile mid-range wavelength that penetrates deeper into the follicle. Well suited for medium to darker skin tones and offers a comfortable treatment experience with effective results.</p>
             </div>
-            <div class="card__body">
-              <span class="eyebrow">Versatile</span>
-              <h3 class="h3">Diode 808nm</h3>
-              <p class="text-sm">A versatile mid-range wavelength that penetrates deeper into the follicle. Well suited for medium to darker skin tones and offers a comfortable treatment experience with effective results.</p>
-            </div>
-          </article>
+          </div>
 
-          <!-- Card: Nd:YAG -->
-          <article class="card card--service">
-            <div class="card__stripe"></div>
-            <div class="card__image">
-              <img src="https://placehold.co/400x220/ECE5E0/3C3C3B?text=Nd:YAG+1064nm" alt="Nd:YAG 1064nm laser equipment" width="400" height="220" loading="lazy">
+          <div class="tech-item" role="listitem">
+            <div class="tech-item__icon" aria-hidden="true">1064</div>
+            <div class="tech-item__content">
+              <h3>Nd:YAG 1064nm</h3>
+              <p>The safest wavelength for darker and deeply pigmented skin types. Its longer wavelength bypasses surface melanin to target the follicle directly, reducing the risk of hyperpigmentation.</p>
             </div>
-            <div class="card__body">
-              <span class="eyebrow">All Skin Types</span>
-              <h3 class="h3">Nd:YAG 1064nm</h3>
-              <p class="text-sm">The safest wavelength for darker and deeply pigmented skin types. Its longer wavelength bypasses surface melanin to target the follicle directly, reducing the risk of hyperpigmentation.</p>
-            </div>
-          </article>
+          </div>
 
         </div>
       </div>
     </section>
 
 
-    <!-- ═══ 4. TREATMENT AREAS & PRICING ═══ -->
+    <!-- ═══ 4. TREATMENT AREAS & PRICING — Individual cards ═══ -->
     <section id="pricing" class="section section--offwhite" aria-labelledby="pricing-heading">
       <div class="container">
         <div class="section-header">
@@ -145,47 +330,69 @@
           <h2 id="pricing-heading" class="h2">Treatment Areas</h2>
           <p class="text-lg">Clear, upfront pricing with no hidden costs. Save when you book a course of sessions.</p>
         </div>
-        <table class="pricing-table" role="table">
-          <thead>
-            <tr>
-              <th scope="col">Treatment Area</th>
-              <th scope="col">Single Session</th>
-              <th scope="col">Course of 6</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Upper Lip</td>
-              <td>&pound;40</td>
-              <td>&pound;200</td>
-            </tr>
-            <tr>
-              <td>Underarms</td>
-              <td>&pound;55</td>
-              <td>&pound;275</td>
-            </tr>
-            <tr>
-              <td>Bikini Line</td>
-              <td>&pound;65</td>
-              <td>&pound;325</td>
-            </tr>
-            <tr>
-              <td>Half Legs</td>
-              <td>&pound;120</td>
-              <td>&pound;600</td>
-            </tr>
-            <tr>
-              <td>Full Legs</td>
-              <td>&pound;200</td>
-              <td>&pound;1,000</td>
-            </tr>
-            <tr>
-              <td>Full Body</td>
-              <td>&pound;350</td>
-              <td>&pound;1,750</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="pricing-grid">
+
+          <div class="pricing-card">
+            <h3 class="pricing-card__area">Upper Lip</h3>
+            <div class="pricing-card__price">&pound;40</div>
+            <div class="pricing-card__label">Single Session</div>
+            <div class="pricing-card__course">Course of 6: &pound;200</div>
+            <div class="pricing-card__cta">
+              <a href="../contact.html" class="btn btn--primary" style="width:100%;">Book Now</a>
+            </div>
+          </div>
+
+          <div class="pricing-card">
+            <h3 class="pricing-card__area">Underarms</h3>
+            <div class="pricing-card__price">&pound;55</div>
+            <div class="pricing-card__label">Single Session</div>
+            <div class="pricing-card__course">Course of 6: &pound;275</div>
+            <div class="pricing-card__cta">
+              <a href="../contact.html" class="btn btn--primary" style="width:100%;">Book Now</a>
+            </div>
+          </div>
+
+          <div class="pricing-card">
+            <h3 class="pricing-card__area">Bikini Line</h3>
+            <div class="pricing-card__price">&pound;65</div>
+            <div class="pricing-card__label">Single Session</div>
+            <div class="pricing-card__course">Course of 6: &pound;325</div>
+            <div class="pricing-card__cta">
+              <a href="../contact.html" class="btn btn--primary" style="width:100%;">Book Now</a>
+            </div>
+          </div>
+
+          <div class="pricing-card">
+            <h3 class="pricing-card__area">Half Legs</h3>
+            <div class="pricing-card__price">&pound;120</div>
+            <div class="pricing-card__label">Single Session</div>
+            <div class="pricing-card__course">Course of 6: &pound;600</div>
+            <div class="pricing-card__cta">
+              <a href="../contact.html" class="btn btn--primary" style="width:100%;">Book Now</a>
+            </div>
+          </div>
+
+          <div class="pricing-card">
+            <h3 class="pricing-card__area">Full Legs</h3>
+            <div class="pricing-card__price">&pound;200</div>
+            <div class="pricing-card__label">Single Session</div>
+            <div class="pricing-card__course">Course of 6: &pound;1,000</div>
+            <div class="pricing-card__cta">
+              <a href="../contact.html" class="btn btn--primary" style="width:100%;">Book Now</a>
+            </div>
+          </div>
+
+          <div class="pricing-card">
+            <h3 class="pricing-card__area">Full Body</h3>
+            <div class="pricing-card__price">&pound;350</div>
+            <div class="pricing-card__label">Single Session</div>
+            <div class="pricing-card__course">Course of 6: &pound;1,750</div>
+            <div class="pricing-card__cta">
+              <a href="../contact.html" class="btn btn--primary" style="width:100%;">Book Now</a>
+            </div>
+          </div>
+
+        </div>
         <p class="text-sm u-text-center u-mt-md">All prices include a patch test and aftercare advice. Courses are payable in instalments &mdash; ask us for details.</p>
       </div>
     </section>
@@ -227,7 +434,7 @@
                 <span>You value expert care and proven technology over bargain deals</span>
               </li>
             </ul>
-            <a href="contact.html" class="btn btn--primary">Book a Free Consultation</a>
+            <a href="../contact.html" class="btn btn--primary">Book a Free Consultation</a>
           </div>
         </div>
       </div>
@@ -323,7 +530,7 @@
         <h2 id="cta-heading" class="h2 u-mb-sm" style="color: #ffffff;">Ready for Smooth Skin?</h2>
         <p class="text-lg u-mb-lg" style="color: rgba(255, 255, 255, 0.85);">Book a free consultation and find out how laser hair removal at MARR can work for you.</p>
         <div class="btn-group" style="justify-content: center;">
-          <a href="contact.html" class="btn btn--light">Book Consultation</a>
+          <a href="../contact.html" class="btn btn--light">Book Consultation</a>
           <a href="tel:+44000000000" class="btn btn--outline" style="border-color: #ffffff; color: #ffffff;">Call Us</a>
         </div>
       </div>
@@ -346,37 +553,35 @@
         <div>
           <h4 class="footer__heading">Treatments</h4>
           <ul class="footer__links">
-            <li><a href="laser-hair-removal.html" class="footer__link">Laser Hair Removal</a></li>
-            <li><a href="why-alexandrite.html" class="footer__link">Why Alexandrite</a></li>
-            <li><a href="skin-treatments.html" class="footer__link">Skin Treatments</a></li>
-            <li><a href="anti-ageing.html" class="footer__link">Anti-Ageing</a></li>
-            <li><a href="aesthetics.html" class="footer__link">Aesthetics</a></li>
+            <li><a href="../laser-hair-removal.html" class="footer__link">Laser Hair Removal</a></li>
+            <li><a href="../skin-treatments.html" class="footer__link">Skin Treatments</a></li>
+            <li><a href="../anti-ageing.html" class="footer__link">Anti-Ageing</a></li>
+            <li><a href="../aesthetics.html" class="footer__link">Aesthetics</a></li>
           </ul>
         </div>
         <div>
           <h4 class="footer__heading">Clinic</h4>
           <ul class="footer__links">
-            <li><a href="about.html" class="footer__link">About Us</a></li>
-            <li><a href="gallery.html" class="footer__link">Gallery</a></li>
-            <li><a href="blog.html" class="footer__link">Blog</a></li>
-            <li><a href="contact.html" class="footer__link">Contact</a></li>
+            <li><a href="../about.html" class="footer__link">About Us</a></li>
+            <li><a href="../gallery.html" class="footer__link">Gallery</a></li>
+            <li><a href="../blog.html" class="footer__link">Blog</a></li>
+            <li><a href="../contact.html" class="footer__link">Contact</a></li>
           </ul>
         </div>
         <div>
           <h4 class="footer__heading">Contact</h4>
           <ul class="footer__links">
             <li class="footer__contact-text">Newry, Co. Down</li>
-            <li class="footer__contact-text">Northern Ireland</li>
             <li><a href="tel:+44000000000" class="footer__link">028 000 0000</a></li>
             <li><a href="mailto:hello@marrlaser.com" class="footer__link">hello@marrlaser.com</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__fine">&copy; 2026 MARR Laser &amp; Skin Clinic. All rights reserved.</p>
+        <p class="footer__fine">&copy; 2026 MARR Laser &amp; Skin Clinic.</p>
         <div class="footer__social">
-          <a href="#" class="footer__social-link" aria-label="Instagram">Instagram</a>
-          <a href="#" class="footer__social-link" aria-label="Facebook">Facebook</a>
+          <a href="#" class="footer__social-link">Instagram</a>
+          <a href="#" class="footer__social-link">Facebook</a>
         </div>
       </div>
     </div>

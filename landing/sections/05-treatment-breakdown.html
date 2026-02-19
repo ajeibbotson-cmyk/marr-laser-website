@@ -1,70 +1,93 @@
 <!-- Marr Laser — 05 Treatment Breakdown -->
 <style>
   .marr-treatment {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-bg: #F9F9F8;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
     --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --shadow-card-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
+    --transition-base: 0.25s ease;
 
-    background: var(--marr-bg);
+    background: var(--marr-offwhite);
     padding: 80px 0;
+    font-family: var(--marr-font-body);
+    font-weight: 300;
+    color: var(--marr-text);
   }
 
   .marr-treatment__inner {
-    max-width: 1180px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
   }
 
   .marr-treatment__header {
     text-align: center;
     max-width: 680px;
-    margin: 0 auto 56px;
+    margin: 0 auto 48px;
   }
 
   .marr-treatment__eyebrow {
-    font-family: var(--marr-font-body);
-    font-size: 13px;
-    font-weight: 600;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--marr-accent);
+    letter-spacing: 0.15em;
+    color: var(--marr-taupe);
     margin-bottom: 12px;
   }
 
   .marr-treatment__title {
     font-family: var(--marr-font-heading);
-    font-size: clamp(28px, 3.5vw, 40px);
-    color: var(--marr-primary);
+    font-size: clamp(1.5rem, 3.5vw, 2.375rem);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--marr-charcoal);
     line-height: 1.2;
     margin-bottom: 16px;
   }
 
   .marr-treatment__subtitle {
-    font-size: 17px;
-    color: var(--marr-text);
-    line-height: 1.6;
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--marr-text-muted);
+    line-height: 1.7;
   }
 
   .marr-treatment__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 32px;
   }
 
   .marr-treatment__card {
-    background: var(--marr-light);
-    border-radius: 16px;
+    background: #ffffff;
+    border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .marr-treatment__card::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: var(--marr-taupe);
+    border-radius: 8px 8px 0 0;
   }
 
   .marr-treatment__card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
   }
 
   .marr-treatment__card-image {
@@ -77,6 +100,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
   }
 
   .marr-treatment__card-badge {
@@ -84,32 +108,39 @@
     top: 16px;
     left: 16px;
     padding: 4px 12px;
-    background: var(--marr-accent);
-    color: var(--marr-primary);
-    font-family: var(--marr-font-body);
-    font-size: 12px;
-    font-weight: 700;
-    border-radius: 20px;
+    background: var(--marr-taupe);
+    color: var(--marr-charcoal);
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    border-radius: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.1em;
   }
 
   .marr-treatment__card-body {
-    padding: 28px;
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   .marr-treatment__card-title {
     font-family: var(--marr-font-heading);
-    font-size: 22px;
-    color: var(--marr-primary);
+    font-size: 1.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--marr-charcoal);
     margin-bottom: 12px;
     line-height: 1.3;
   }
 
   .marr-treatment__card-text {
-    font-size: 15px;
-    color: var(--marr-text);
-    line-height: 1.6;
+    font-size: 0.9375rem;
+    font-weight: 300;
+    color: var(--marr-text-muted);
+    line-height: 1.7;
     margin-bottom: 20px;
   }
 
@@ -117,38 +148,59 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    margin-top: auto;
   }
 
   .marr-treatment__card-feature {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 300;
     color: var(--marr-text);
+    line-height: 1.5;
   }
 
   .marr-treatment__card-feature::before {
-    content: '✓';
+    content: '\2713';
     flex-shrink: 0;
     width: 22px;
     height: 22px;
-    background: rgba(198, 188, 179, 0.12);
+    background: rgba(198, 188, 179, 0.15);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
-    color: var(--marr-accent);
+    font-size: 11px;
+    color: var(--marr-taupe);
     font-weight: 700;
   }
 
+  @media (max-width: 1200px) {
+    .marr-treatment__grid {
+      gap: 24px;
+    }
+  }
+
   @media (max-width: 991px) {
+    .marr-treatment {
+      padding: 64px 0;
+    }
+
     .marr-treatment__grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media (max-width: 767px) {
+    .marr-treatment {
+      padding: 48px 0;
+    }
+
+    .marr-treatment__inner {
+      padding: 0 20px;
+    }
+
     .marr-treatment__grid {
       grid-template-columns: 1fr;
       max-width: 480px;
@@ -158,7 +210,15 @@
 
   @media (max-width: 478px) {
     .marr-treatment {
-      padding: 50px 0;
+      padding: 32px 0;
+    }
+
+    .marr-treatment__inner {
+      padding: 0 16px;
+    }
+
+    .marr-treatment__header {
+      margin-bottom: 32px;
     }
   }
 </style>

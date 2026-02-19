@@ -1,22 +1,30 @@
 <!-- Marr Laser — 03 Offer Banner -->
 <style>
+  /* === SECTION 03 — OFFER BANNER === Design C: Warm Boutique */
   .marr-offer {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
-    --marr-bg: #F9F9F8;
+    --marr-charcoal: #3C3C3B;
+    --marr-charcoal-hover: #2a2a29;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
     --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --marr-transition: 0.25s ease;
+    --marr-radius: 8px;
+    --marr-shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --marr-shadow-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
 
-    background: var(--marr-accent);
+    background: var(--marr-taupe);
     padding: 40px 0;
   }
 
   .marr-offer__inner {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,32 +40,36 @@
   }
 
   .marr-offer__price-old {
-    font-family: var(--marr-font-body);
-    font-size: 24px;
-    color: var(--marr-primary);
+    font-family: var(--marr-font-heading);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--marr-charcoal);
     text-decoration: line-through;
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
   .marr-offer__price-new {
     font-family: var(--marr-font-heading);
-    font-size: clamp(36px, 4vw, 52px);
-    font-weight: 700;
-    color: var(--marr-primary);
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--marr-charcoal);
     line-height: 1;
   }
 
   .marr-offer__price-label {
     font-family: var(--marr-font-body);
-    font-size: 14px;
-    color: var(--marr-primary);
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--marr-charcoal);
     opacity: 0.7;
   }
 
   .marr-offer__divider {
     width: 2px;
     height: 50px;
-    background: rgba(26, 26, 46, 0.2);
+    background: rgba(60, 60, 59, 0.2);
   }
 
   .marr-offer__urgency {
@@ -66,44 +78,80 @@
 
   .marr-offer__urgency-title {
     font-family: var(--marr-font-heading);
-    font-size: 20px;
-    color: var(--marr-primary);
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--marr-charcoal);
     margin-bottom: 6px;
   }
 
   .marr-offer__urgency-text {
     font-family: var(--marr-font-body);
-    font-size: 15px;
-    color: var(--marr-primary);
+    font-size: 0.9375rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--marr-charcoal);
     opacity: 0.8;
+    line-height: 1.6;
   }
 
   .marr-offer__cta {
-    display: inline-block;
-    padding: 14px 32px;
-    background: var(--marr-primary);
-    color: var(--marr-accent);
-    font-family: var(--marr-font-body);
-    font-size: 15px;
-    font-weight: 600;
-    border-radius: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    background: var(--marr-charcoal);
+    color: var(--marr-offwhite);
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: var(--marr-radius);
     text-decoration: none;
-    transition: all 0.3s ease;
+    border: 1px solid var(--marr-charcoal);
+    transition: background-color var(--marr-transition),
+                border-color var(--marr-transition);
+    cursor: pointer;
   }
 
   .marr-offer__cta:hover {
-    background: #252525;
+    background: var(--marr-charcoal-hover);
+    border-color: var(--marr-charcoal-hover);
   }
 
+  .marr-offer__cta:focus-visible {
+    outline: 2px solid var(--marr-charcoal);
+    outline-offset: 2px;
+  }
+
+  /* ---- Mobile: 767px ---- */
   @media (max-width: 767px) {
+    .marr-offer {
+      padding: 32px 0;
+    }
+
     .marr-offer__inner {
       flex-direction: column;
       gap: 20px;
+      padding: 0 20px;
     }
 
     .marr-offer__divider {
       width: 60px;
       height: 2px;
+    }
+  }
+
+  /* ---- Small mobile: 478px ---- */
+  @media (max-width: 478px) {
+    .marr-offer {
+      padding: 24px 0;
+    }
+
+    .marr-offer__inner {
+      padding: 0 16px;
     }
   }
 </style>

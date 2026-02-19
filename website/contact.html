@@ -3,1292 +3,246 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Marr Laser & Skin Clinic</title>
-  <meta name="description" content="Get in touch with Marr Laser & Skin Clinic. Book a consultation or ask us anything.">
+  <title>Contact — MARR Laser &amp; Skin Clinic</title>
+  <meta name="description" content="Get in touch with MARR Laser & Skin Clinic in Newry, Co. Down. Book a consultation, ask a question, or find our opening hours and location.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Marr Laser — Shared Header / Sticky Navigation -->
-<style>
-  /* ---- Header Tokens ---- */
-  .marr-header {
-    --marr-primary: #1a3a2a;
-    --marr-primary-light: #2a5a3a;
-    --marr-accent: #c9a84c;
-    --marr-accent-hover: #b8933f;
-    --marr-light: #ffffff;
-    --marr-font-heading: 'Georgia', serif;
-    --marr-font-body: 'Arial', sans-serif;
-  }
+<!-- ═══════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════ -->
 
-  /* ---- Sticky Header ---- */
-  .marr-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: var(--marr-primary);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .marr-header__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 72px;
-  }
-
-  /* ---- Logo ---- */
-  .marr-header__logo {
-    font-family: var(--marr-font-heading);
-    font-size: 20px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--marr-light);
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .marr-header__logo span {
-    color: var(--marr-accent);
-  }
-
-  /* ---- Desktop Nav ---- */
-  .marr-header__nav {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-  }
-
-  .marr-header__link {
-    font-family: var(--marr-font-body);
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.75);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    position: relative;
-    padding: 8px 0;
-  }
-
-  .marr-header__link:hover,
-  .marr-header__link--active {
-    color: var(--marr-light);
-  }
-
-  .marr-header__link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--marr-accent);
-    transition: width 0.3s ease;
-  }
-
-  .marr-header__link:hover::after,
-  .marr-header__link--active::after {
-    width: 100%;
-  }
-
-  /* ---- Dropdown ---- */
-  .marr-header__dropdown {
-    position: relative;
-  }
-
-  .marr-header__dropdown-toggle {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    cursor: pointer;
-  }
-
-  .marr-header__dropdown-arrow {
-    font-size: 8px;
-    transition: transform 0.3s ease;
-  }
-
-  .marr-header__dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: -16px;
-    background: var(--marr-primary);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    min-width: 220px;
-    padding: 12px 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(8px);
-    transition: all 0.3s ease;
-  }
-
-  .marr-header__dropdown:hover .marr-header__dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  .marr-header__dropdown:hover .marr-header__dropdown-arrow {
-    transform: rotate(180deg);
-  }
-
-  .marr-header__dropdown-link {
-    display: block;
-    padding: 10px 24px;
-    font-family: var(--marr-font-body);
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.65);
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-
-  .marr-header__dropdown-link:hover {
-    color: var(--marr-light);
-    background: rgba(255, 255, 255, 0.04);
-    padding-left: 28px;
-  }
-
-  /* ---- Right Actions ---- */
-  .marr-header__actions {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .marr-header__whatsapp {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 18px;
-    transition: color 0.3s ease;
-    text-decoration: none;
-  }
-
-  .marr-header__whatsapp:hover {
-    color: #25d366;
-  }
-
-  .marr-header__cta {
-    display: inline-block;
-    padding: 10px 24px;
-    font-family: var(--marr-font-body);
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--marr-primary);
-    background: var(--marr-accent);
-    border: none;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
-
-  .marr-header__cta:hover {
-    background: var(--marr-accent-hover);
-  }
-
-  /* ---- Mobile Toggle (CSS-only) ---- */
-  .marr-header__toggle {
-    display: none;
-  }
-
-  .marr-header__toggle-label {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-  }
-
-  .marr-header__toggle-bar {
-    width: 100%;
-    height: 2px;
-    background: var(--marr-light);
-    transition: all 0.3s ease;
-  }
-
-  /* ---- Mobile Styles ---- */
-  @media (max-width: 991px) {
-    .marr-header__toggle-label {
-      display: flex;
-    }
-
-    .marr-header__nav {
-      position: fixed;
-      top: 72px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--marr-primary);
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 32px 24px;
-      gap: 0;
-      transform: translateX(100%);
-      transition: transform 0.4s ease;
-      overflow-y: auto;
-    }
-
-    .marr-header__toggle:checked ~ .marr-header__nav {
-      transform: translateX(0);
-    }
-
-    .marr-header__toggle:checked ~ .marr-header__toggle-label .marr-header__toggle-bar:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .marr-header__toggle:checked ~ .marr-header__toggle-label .marr-header__toggle-bar:nth-child(2) {
-      opacity: 0;
-    }
-
-    .marr-header__toggle:checked ~ .marr-header__toggle-label .marr-header__toggle-bar:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .marr-header__link {
-      font-size: 15px;
-      padding: 16px 0;
-      width: 100%;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .marr-header__dropdown-menu {
-      position: static;
-      opacity: 1;
-      visibility: visible;
-      transform: none;
-      border: none;
-      padding: 0 0 0 16px;
-      min-width: auto;
-      display: none;
-    }
-
-    .marr-header__dropdown:hover .marr-header__dropdown-menu,
-    .marr-header__dropdown:focus-within .marr-header__dropdown-menu {
-      display: block;
-    }
-
-    .marr-header__actions {
-      display: none;
-    }
-  }
-
-  @media (max-width: 478px) {
-    .marr-header__inner {
-      padding: 0 16px;
-      height: 64px;
-    }
-
-    .marr-header__logo {
-      font-size: 16px;
-      letter-spacing: 2px;
-    }
-
-    .marr-header__nav {
-      top: 64px;
-    }
-  }
-</style>
-
-<header class="marr-header">
-  <div class="marr-header__inner">
-    <a href="index.html" class="marr-header__logo">Marr <span>Laser</span></a>
-
-    <input type="checkbox" id="marr-nav-toggle" class="marr-header__toggle" aria-label="Toggle navigation">
-    <label for="marr-nav-toggle" class="marr-header__toggle-label" aria-label="Menu">
-      <span class="marr-header__toggle-bar"></span>
-      <span class="marr-header__toggle-bar"></span>
-      <span class="marr-header__toggle-bar"></span>
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav__inner">
+    <div class="nav__links nav__links--desktop">
+      <a href="laser-hair-removal.html" class="nav__link">Laser</a>
+      <a href="why-alexandrite.html" class="nav__link">Alexandrite</a>
+      <a href="skin-treatments.html" class="nav__link">Skin</a>
+    </div>
+    <a href="index.html" class="nav__logo" aria-label="MARR Laser &amp; Skin — Home">
+      <span class="nav__logo-main">MARR</span>
+      <span class="nav__logo-sub">Laser &amp; Skin</span>
+    </a>
+    <div class="nav__links nav__links--desktop">
+      <a href="anti-ageing.html" class="nav__link">Anti-Ageing</a>
+      <a href="aesthetics.html" class="nav__link">Aesthetics</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="contact.html" class="nav__link nav__link--active">Contact</a>
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav__toggle">
+    <label for="nav-toggle" class="nav__toggle-label" aria-label="Menu">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
     </label>
-
-    <nav class="marr-header__nav" aria-label="Main navigation">
-      <a href="index.html" class="marr-header__link">Home</a>
-
-      <div class="marr-header__dropdown">
-        <a href="treatments.html" class="marr-header__link marr-header__dropdown-toggle">
-          Treatments <span class="marr-header__dropdown-arrow">&#9660;</span>
-        </a>
-        <div class="marr-header__dropdown-menu">
-          <a href="laser-hair-removal.html" class="marr-header__dropdown-link">Laser Hair Removal</a>
-          <a href="skin-treatments.html" class="marr-header__dropdown-link">Skin Treatments</a>
-        </div>
-      </div>
-
-      <a href="about.html" class="marr-header__link">About</a>
-      <a href="team.html" class="marr-header__link">Team</a>
-      <a href="pricing.html" class="marr-header__link">Pricing</a>
-      <a href="contact.html" class="marr-header__link">Contact</a>
-    </nav>
-
-    <div class="marr-header__actions">
-      <a href="#" class="marr-header__whatsapp" aria-label="WhatsApp">&#9742;</a>
-      <a href="contact.html" class="marr-header__cta">Book Now</a>
-    </div>
   </div>
-</header>
-
-<!-- 01-hero.html — Marr Laser & Skin Clinic: Contact Hero Section -->
-<style>
-  /* ========================================
-     Design Tokens
-     ======================================== */
-  :root {
-    --marr-primary: #1a3a2a;
-    --marr-primary-light: #2a5a3a;
-    --marr-accent: #c9a84c;
-    --marr-accent-hover: #b8933f;
-    --marr-sage: #d5ddd7;
-    --marr-light: #ffffff;
-    --marr-offwhite: #f7f5f0;
-    --marr-text: #2d2d2d;
-    --marr-text-light: rgba(255, 255, 255, 0.75);
-    --marr-text-muted: #6b6b6b;
-    --marr-font-heading: 'Georgia', serif;
-    --marr-font-body: 'Arial', sans-serif;
-  }
-
-  /* ========================================
-     Contact Hero Section
-     ======================================== */
-  .marr-contact-hero {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50vh;
-    background: linear-gradient(
-      160deg,
-      var(--marr-primary) 0%,
-      var(--marr-primary-light) 50%,
-      var(--marr-primary) 100%
-    );
-    overflow: hidden;
-  }
-
-  .marr-contact-hero__content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 2rem;
-    max-width: 800px;
-  }
-
-  .marr-contact-hero__heading {
-    font-family: var(--marr-font-heading);
-    font-size: 3.5rem;
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--marr-light);
-    margin: 0 0 1.5rem;
-  }
-
-  .marr-contact-hero__divider {
-    width: 48px;
-    height: 1px;
-    background-color: var(--marr-accent);
-    margin: 0 auto 1.5rem;
-    border: none;
-  }
-
-  .marr-contact-hero__subtitle {
-    font-family: var(--marr-font-body);
-    font-size: 1.125rem;
-    font-weight: 400;
-    line-height: 1.7;
-    letter-spacing: 0.04em;
-    color: var(--marr-text-light);
-    margin: 0;
-  }
-
-  /* ========================================
-     Responsive — 1200px
-     ======================================== */
-  @media (max-width: 1200px) {
-    .marr-contact-hero__heading {
-      font-size: 3rem;
-      letter-spacing: 0.18em;
-    }
-  }
-
-  /* ========================================
-     Responsive — 991px
-     ======================================== */
-  @media (max-width: 991px) {
-    .marr-contact-hero__heading {
-      font-size: 2.5rem;
-      letter-spacing: 0.14em;
-    }
-
-    .marr-contact-hero__subtitle {
-      font-size: 1rem;
-    }
-
-    .marr-contact-hero__content {
-      max-width: 600px;
-    }
-  }
-
-  /* ========================================
-     Responsive — 767px
-     ======================================== */
-  @media (max-width: 767px) {
-    .marr-contact-hero {
-      min-height: 45vh;
-    }
-
-    .marr-contact-hero__heading {
-      font-size: 2rem;
-      letter-spacing: 0.12em;
-    }
-
-    .marr-contact-hero__subtitle {
-      font-size: 0.9375rem;
-    }
-
-    .marr-contact-hero__content {
-      padding: 1.5rem;
-    }
-  }
-
-  /* ========================================
-     Responsive — 478px
-     ======================================== */
-  @media (max-width: 478px) {
-    .marr-contact-hero {
-      min-height: 40vh;
-    }
-
-    .marr-contact-hero__heading {
-      font-size: 1.5rem;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-    }
-
-    .marr-contact-hero__divider {
-      width: 36px;
-      margin-bottom: 1rem;
-    }
-
-    .marr-contact-hero__subtitle {
-      font-size: 0.875rem;
-      line-height: 1.6;
-    }
-
-    .marr-contact-hero__content {
-      padding: 1rem;
-    }
-  }
-</style>
-
-<section class="marr-contact-hero" aria-label="Contact hero">
-  <div class="marr-contact-hero__content">
-    <h1 class="marr-contact-hero__heading">Get in Touch</h1>
-    <hr class="marr-contact-hero__divider" aria-hidden="true" />
-    <p class="marr-contact-hero__subtitle">We'd love to hear from you — book a consultation or ask us anything</p>
-  </div>
-</section>
-
-<!-- 02-contact-details.html — Marr Laser & Skin Clinic: Contact Form & Details Section -->
-<style>
-  /* ========================================
-     Design Tokens
-     ======================================== */
-  :root {
-    --marr-primary: #1a3a2a;
-    --marr-primary-light: #2a5a3a;
-    --marr-accent: #c9a84c;
-    --marr-accent-hover: #b8933f;
-    --marr-sage: #d5ddd7;
-    --marr-light: #ffffff;
-    --marr-offwhite: #f7f5f0;
-    --marr-text: #2d2d2d;
-    --marr-text-light: rgba(255, 255, 255, 0.75);
-    --marr-text-muted: #6b6b6b;
-    --marr-font-heading: 'Georgia', serif;
-    --marr-font-body: 'Arial', sans-serif;
-  }
-
-  /* ========================================
-     Contact Details Section
-     ======================================== */
-  .marr-contact {
-    background-color: var(--marr-light);
-    padding: 100px 0;
-  }
-
-  .marr-contact__container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    gap: 4rem;
-  }
-
-  /* ----------------------------------------
-     Left Column — Form (60%)
-     ---------------------------------------- */
-  .marr-contact__form-col {
-    flex: 0 0 58%;
-    max-width: 58%;
-  }
-
-  .marr-contact__label {
-    font-family: var(--marr-font-heading);
-    font-size: 1.25rem;
-    font-weight: 400;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--marr-primary);
-    margin: 0 0 0.75rem;
-  }
-
-  .marr-contact__label-divider {
-    width: 48px;
-    height: 1px;
-    background-color: var(--marr-accent);
-    margin: 0 0 2.5rem;
-    border: none;
-  }
-
-  /* ----------------------------------------
-     Form Elements
-     ---------------------------------------- */
-  .marr-contact__form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .marr-contact__field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .marr-contact__field-label {
-    font-family: var(--marr-font-body);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--marr-text-muted);
-  }
-
-  .marr-contact__input,
-  .marr-contact__select,
-  .marr-contact__textarea {
-    font-family: var(--marr-font-body);
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    color: var(--marr-text);
-    background-color: var(--marr-light);
-    border: 1px solid #d4d4d4;
-    padding: 0.875rem 1rem;
-    width: 100%;
-    box-sizing: border-box;
-    transition: border-color 0.25s ease;
-    -webkit-appearance: none;
-    appearance: none;
-    border-radius: 0;
-  }
-
-  .marr-contact__input:focus,
-  .marr-contact__select:focus,
-  .marr-contact__textarea:focus {
-    outline: none;
-    border-color: var(--marr-primary);
-    box-shadow: 0 0 0 2px rgba(26, 58, 42, 0.1);
-  }
-
-  .marr-contact__input::placeholder,
-  .marr-contact__textarea::placeholder {
-    color: #b0b0b0;
-  }
-
-  .marr-contact__select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%236b6b6b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    padding-right: 2.5rem;
-    cursor: pointer;
-  }
-
-  .marr-contact__textarea {
-    min-height: 140px;
-    resize: vertical;
-  }
-
-  .marr-contact__submit {
-    font-family: var(--marr-font-body);
-    font-size: 0.8125rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--marr-light);
-    background-color: var(--marr-primary);
-    border: none;
-    padding: 1.125rem 2rem;
-    width: 100%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .marr-contact__submit:hover {
-    background-color: var(--marr-primary-light);
-  }
-
-  .marr-contact__submit:focus-visible {
-    outline: 2px solid var(--marr-accent);
-    outline-offset: 3px;
-  }
-
-  .marr-contact__form-note {
-    font-family: var(--marr-font-body);
-    font-size: 0.8125rem;
-    color: var(--marr-text-muted);
-    margin: 0.5rem 0 0;
-    font-style: italic;
-  }
-
-  /* ----------------------------------------
-     Right Column — Details (40%)
-     ---------------------------------------- */
-  .marr-contact__details-col {
-    flex: 0 0 38%;
-    max-width: 38%;
-  }
-
-  /* ----------------------------------------
-     Contact Info Blocks
-     ---------------------------------------- */
-  .marr-contact__info {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .marr-contact__info-block {
-    border-bottom: 1px solid #ececec;
-    padding-bottom: 1.5rem;
-  }
-
-  .marr-contact__info-block:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  .marr-contact__info-heading {
-    font-family: var(--marr-font-body);
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--marr-accent);
-    margin: 0 0 0.625rem;
-  }
-
-  .marr-contact__info-text {
-    font-family: var(--marr-font-body);
-    font-size: 0.9375rem;
-    line-height: 1.7;
-    color: var(--marr-text);
-    margin: 0;
-  }
-
-  .marr-contact__info-text a {
-    color: var(--marr-primary);
-    text-decoration: none;
-    transition: color 0.25s ease;
-  }
-
-  .marr-contact__info-text a:hover {
-    color: var(--marr-accent);
-  }
-
-  .marr-contact__info-text a:focus-visible {
-    outline: 2px solid var(--marr-accent);
-    outline-offset: 2px;
-  }
-
-  /* ----------------------------------------
-     Map Placeholder
-     ---------------------------------------- */
-  .marr-contact__map {
-    width: 100%;
-    height: 250px;
-    background-color: var(--marr-sage);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .marr-contact__map-label {
-    font-family: var(--marr-font-body);
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(26, 58, 42, 0.35);
-    border: 1px solid rgba(26, 58, 42, 0.12);
-    padding: 0.75rem 1.5rem;
-    pointer-events: none;
-    user-select: none;
-  }
-
-  /* ========================================
-     Responsive — 1200px
-     ======================================== */
-  @media (max-width: 1200px) {
-    .marr-contact {
-      padding: 80px 0;
-    }
-
-    .marr-contact__container {
-      gap: 3rem;
-    }
-  }
-
-  /* ========================================
-     Responsive — 991px
-     ======================================== */
-  @media (max-width: 991px) {
-    .marr-contact {
-      padding: 64px 0;
-    }
-
-    .marr-contact__container {
-      gap: 2.5rem;
-    }
-
-    .marr-contact__form-col {
-      flex: 0 0 55%;
-      max-width: 55%;
-    }
-
-    .marr-contact__details-col {
-      flex: 0 0 42%;
-      max-width: 42%;
-    }
-
-    .marr-contact__label {
-      font-size: 1.125rem;
-      letter-spacing: 0.14em;
-    }
-  }
-
-  /* ========================================
-     Responsive — 767px (stack columns)
-     ======================================== */
-  @media (max-width: 767px) {
-    .marr-contact {
-      padding: 48px 0;
-    }
-
-    .marr-contact__container {
-      flex-direction: column;
-      gap: 3rem;
-      padding: 0 1.25rem;
-    }
-
-    .marr-contact__form-col,
-    .marr-contact__details-col {
-      flex: 0 0 100%;
-      max-width: 100%;
-    }
-
-    .marr-contact__label {
-      font-size: 1.125rem;
-      letter-spacing: 0.1em;
-    }
-
-    .marr-contact__label-divider {
-      margin-bottom: 2rem;
-    }
-
-    .marr-contact__map {
-      height: 220px;
-    }
-  }
-
-  /* ========================================
-     Responsive — 478px
-     ======================================== */
-  @media (max-width: 478px) {
-    .marr-contact {
-      padding: 36px 0;
-    }
-
-    .marr-contact__container {
-      gap: 2.5rem;
-      padding: 0 1rem;
-    }
-
-    .marr-contact__label {
-      font-size: 1rem;
-      letter-spacing: 0.08em;
-    }
-
-    .marr-contact__label-divider {
-      width: 36px;
-      margin-bottom: 1.5rem;
-    }
-
-    .marr-contact__input,
-    .marr-contact__select,
-    .marr-contact__textarea {
-      font-size: 0.875rem;
-      padding: 0.75rem 0.875rem;
-    }
-
-    .marr-contact__submit {
-      font-size: 0.75rem;
-      padding: 1rem 1.5rem;
-      letter-spacing: 0.12em;
-    }
-
-    .marr-contact__info-text {
-      font-size: 0.875rem;
-    }
-
-    .marr-contact__map {
-      height: 200px;
-    }
-  }
-</style>
-
-<section class="marr-contact" aria-label="Contact form and details">
-  <div class="marr-contact__container">
-
-    <!-- Left Column — Form -->
-    <div class="marr-contact__form-col">
-      <h2 class="marr-contact__label">Send Us a Message</h2>
-      <hr class="marr-contact__label-divider" aria-hidden="true" />
-
-      <form class="marr-contact__form" aria-label="Contact form">
-        <div class="marr-contact__field">
-          <label class="marr-contact__field-label" for="marr-name">Full Name</label>
-          <input class="marr-contact__input" type="text" id="marr-name" name="name" placeholder="Your full name" autocomplete="name" />
-        </div>
-
-        <div class="marr-contact__field">
-          <label class="marr-contact__field-label" for="marr-email">Email Address</label>
-          <input class="marr-contact__input" type="email" id="marr-email" name="email" placeholder="your@email.com" autocomplete="email" />
-        </div>
-
-        <div class="marr-contact__field">
-          <label class="marr-contact__field-label" for="marr-phone">Phone Number</label>
-          <input class="marr-contact__input" type="tel" id="marr-phone" name="phone" placeholder="028 XXX XXXX" autocomplete="tel" />
-        </div>
-
-        <div class="marr-contact__field">
-          <label class="marr-contact__field-label" for="marr-treatment">Treatment Interest</label>
-          <select class="marr-contact__select" id="marr-treatment" name="treatment">
-            <option value="" disabled selected>Select a treatment...</option>
-            <option value="laser-hair-removal">Laser Hair Removal</option>
-            <option value="clinical-facial">Clinical Facial</option>
-            <option value="chemical-peel">Chemical Peel</option>
-            <option value="skin-rejuvenation">Skin Rejuvenation</option>
-            <option value="general-enquiry">General Enquiry</option>
-          </select>
-        </div>
-
-        <div class="marr-contact__field">
-          <label class="marr-contact__field-label" for="marr-message">Your Message</label>
-          <textarea class="marr-contact__textarea" id="marr-message" name="message" placeholder="How can we help you?"></textarea>
-        </div>
-
-        <button class="marr-contact__submit" type="submit">Send Message</button>
-      </form>
-
-      <p class="marr-contact__form-note">We aim to respond within 24 hours</p>
+</nav>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 1: PAGE HERO
+       Blush bg, centered eyebrow + h1 + subtitle
+       ═══════════════════════════════════════════════ -->
+
+  <section class="page-hero" aria-label="Contact hero">
+    <div class="container">
+      <span class="eyebrow">Get in Touch</span>
+      <h1 class="h1">Contact Us</h1>
+      <p class="text-lg">We would love to hear from you. Book a consultation, ask a question, or simply say hello.</p>
     </div>
+  </section>
 
-    <!-- Right Column — Contact Details -->
-    <div class="marr-contact__details-col">
-      <h2 class="marr-contact__label">Contact Details</h2>
-      <hr class="marr-contact__label-divider" aria-hidden="true" />
+  <!-- ═══════════════════════════════════════════════
+       SECTION 2: CONTACT FORM + MAP
+       Off-white bg, sidebar grid: form left, map right
+       ═══════════════════════════════════════════════ -->
 
-      <div class="marr-contact__info">
-        <div class="marr-contact__info-block">
-          <p class="marr-contact__info-heading">Visit Us</p>
-          <p class="marr-contact__info-text">
-            Marr Laser &amp; Skin Clinic<br />
-            Newry, Co. Down<br />
-            Northern Ireland
-          </p>
+  <section class="section section--offwhite" aria-label="Contact form and map">
+    <div class="container">
+      <div class="grid grid--sidebar">
+
+        <!-- Left: Contact Form -->
+        <div>
+          <form class="contact-form" aria-label="Contact form">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="Your full name" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" placeholder="your@email.com" autocomplete="email" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone</label>
+              <input type="tel" id="contact-phone" name="phone" placeholder="028 000 0000" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="contact-treatment">Treatment Interest</label>
+              <select id="contact-treatment" name="treatment">
+                <option value="" disabled selected>Select a treatment...</option>
+                <option value="laser-hair-removal">Laser Hair Removal</option>
+                <option value="alexandrite">Alexandrite Laser</option>
+                <option value="skin-treatments">Skin Treatments</option>
+                <option value="anti-ageing">Anti-Ageing</option>
+                <option value="aesthetics">Aesthetics</option>
+                <option value="general">General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="How can we help you?" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn--secondary">Send Message</button>
+          </form>
         </div>
 
-        <div class="marr-contact__info-block">
-          <p class="marr-contact__info-heading">Call Us</p>
-          <p class="marr-contact__info-text">
-            <a href="tel:028XXXXXXXX">028 XXX XXXX</a>
-          </p>
+        <!-- Right: Map Placeholder -->
+        <div>
+          <div class="map-placeholder" role="img" aria-label="Map showing MARR Laser and Skin Clinic location in Newry, Co. Down">
+            <span class="map-placeholder__label">Map &mdash; Newry, Co. Down</span>
+          </div>
         </div>
 
-        <div class="marr-contact__info-block">
-          <p class="marr-contact__info-heading">Email Us</p>
-          <p class="marr-contact__info-text">
-            <a href="mailto:hello@marrlaser.com">hello@marrlaser.com</a>
-          </p>
-        </div>
-
-        <div class="marr-contact__info-block">
-          <p class="marr-contact__info-heading">Opening Hours</p>
-          <p class="marr-contact__info-text">
-            Mon&ndash;Fri: 9am&ndash;7pm<br />
-            Sat: 9am&ndash;5pm<br />
-            Sun: Closed
-          </p>
-        </div>
-      </div>
-
-      <!-- Map Placeholder -->
-      <div class="marr-contact__map" aria-label="Map placeholder showing clinic location in Newry, Co. Down">
-        <span class="marr-contact__map-label">Map — Newry, Co. Down</span>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- ═══════════════════════════════════════════════
+       SECTION 3: INFO CARDS
+       Blush bg, 3-col info cards (Phone, Email, Address)
+       ═══════════════════════════════════════════════ -->
 
-<!-- Marr Laser — Shared Footer -->
-<style>
-  /* ---- Footer Tokens ---- */
-  .marr-footer-cta,
-  .marr-footer {
-    --marr-primary: #1a3a2a;
-    --marr-primary-light: #2a5a3a;
-    --marr-accent: #c9a84c;
-    --marr-accent-hover: #b8933f;
-    --marr-sage: #d5ddd7;
-    --marr-light: #ffffff;
-    --marr-offwhite: #f7f5f0;
-    --marr-text-light: rgba(255, 255, 255, 0.75);
-    --marr-font-heading: 'Georgia', serif;
-    --marr-font-body: 'Arial', sans-serif;
-  }
+  <section class="section section--blush" aria-label="Contact information">
+    <div class="container">
+      <div class="grid grid--3">
 
-  /* ---- Pre-Footer CTA Band ---- */
-  .marr-footer-cta {
-    background: var(--marr-sage);
-    padding: 80px 24px;
-    text-align: center;
-  }
+        <!-- Phone -->
+        <div class="info-card">
+          <div class="info-card__icon" aria-hidden="true">&#9742;</div>
+          <h3 class="info-card__title">Phone</h3>
+          <p class="text-sm"><a href="tel:+44000000000">028 000 0000</a></p>
+        </div>
 
-  .marr-footer-cta__inner {
-    max-width: 700px;
-    margin: 0 auto;
-  }
+        <!-- Email -->
+        <div class="info-card">
+          <div class="info-card__icon" aria-hidden="true">&#9993;</div>
+          <h3 class="info-card__title">Email</h3>
+          <p class="text-sm"><a href="mailto:hello@marrlaser.com">hello@marrlaser.com</a></p>
+        </div>
 
-  .marr-footer-cta__heading {
-    font-family: var(--marr-font-heading);
-    font-size: 36px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--marr-primary);
-    margin-bottom: 16px;
-    line-height: 1.3;
-  }
+        <!-- Address -->
+        <div class="info-card">
+          <div class="info-card__icon" aria-hidden="true">&#9873;</div>
+          <h3 class="info-card__title">Address</h3>
+          <p class="text-sm">Newry, Co. Down<br>Northern Ireland</p>
+        </div>
 
-  .marr-footer-cta__text {
-    font-family: var(--marr-font-body);
-    font-size: 16px;
-    line-height: 1.7;
-    color: #4a4a4a;
-    margin-bottom: 32px;
-  }
-
-  .marr-footer-cta__buttons {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .marr-footer-cta__btn {
-    display: inline-block;
-    padding: 14px 32px;
-    font-family: var(--marr-font-body);
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .marr-footer-cta__btn--primary {
-    background: var(--marr-primary);
-    color: var(--marr-light);
-  }
-
-  .marr-footer-cta__btn--primary:hover {
-    background: var(--marr-primary-light);
-  }
-
-  .marr-footer-cta__btn--outline {
-    background: transparent;
-    color: var(--marr-primary);
-    border: 1px solid var(--marr-primary);
-  }
-
-  .marr-footer-cta__btn--outline:hover {
-    background: var(--marr-primary);
-    color: var(--marr-light);
-  }
-
-  /* ---- Main Footer ---- */
-  .marr-footer {
-    background: var(--marr-primary);
-    padding: 64px 24px 0;
-  }
-
-  .marr-footer__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 48px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .marr-footer__brand-name {
-    font-family: var(--marr-font-heading);
-    font-size: 20px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--marr-light);
-    margin-bottom: 16px;
-  }
-
-  .marr-footer__brand-name span {
-    color: var(--marr-accent);
-  }
-
-  .marr-footer__address {
-    font-family: var(--marr-font-body);
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--marr-text-light);
-    font-style: normal;
-  }
-
-  .marr-footer__col-title {
-    font-family: var(--marr-font-body);
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--marr-light);
-    margin-bottom: 20px;
-  }
-
-  .marr-footer__links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .marr-footer__links li {
-    margin-bottom: 12px;
-  }
-
-  .marr-footer__links a {
-    font-family: var(--marr-font-body);
-    font-size: 14px;
-    color: var(--marr-text-light);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .marr-footer__links a:hover {
-    color: var(--marr-light);
-  }
-
-  .marr-footer__hours {
-    font-family: var(--marr-font-body);
-    font-size: 14px;
-    line-height: 2;
-    color: var(--marr-text-light);
-  }
-
-  .marr-footer__social {
-    display: flex;
-    gap: 16px;
-    margin-top: 24px;
-  }
-
-  .marr-footer__social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: var(--marr-text-light);
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.3s ease;
-  }
-
-  .marr-footer__social-link:hover {
-    border-color: var(--marr-accent);
-    color: var(--marr-accent);
-  }
-
-  /* ---- Copyright Bar ---- */
-  .marr-footer__copyright {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 24px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .marr-footer__copyright-text {
-    font-family: var(--marr-font-body);
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.4);
-  }
-
-  .marr-footer__copyright-links {
-    display: flex;
-    gap: 24px;
-  }
-
-  .marr-footer__copyright-links a {
-    font-family: var(--marr-font-body);
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.4);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .marr-footer__copyright-links a:hover {
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  /* ---- Responsive ---- */
-  @media (max-width: 991px) {
-    .marr-footer__inner {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .marr-footer-cta {
-      padding: 60px 24px;
-    }
-
-    .marr-footer-cta__heading {
-      font-size: 28px;
-    }
-
-    .marr-footer__inner {
-      grid-template-columns: 1fr;
-      gap: 36px;
-    }
-
-    .marr-footer__copyright {
-      flex-direction: column;
-      gap: 12px;
-      text-align: center;
-    }
-  }
-
-  @media (max-width: 478px) {
-    .marr-footer-cta__heading {
-      font-size: 24px;
-      letter-spacing: 2px;
-    }
-
-    .marr-footer-cta__buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .marr-footer-cta__btn {
-      width: 100%;
-      max-width: 280px;
-      text-align: center;
-    }
-  }
-</style>
-
-<!-- Pre-Footer CTA -->
-<section class="marr-footer-cta">
-  <div class="marr-footer-cta__inner">
-    <h2 class="marr-footer-cta__heading">Ready to Begin?</h2>
-    <p class="marr-footer-cta__text">Book a free consultation with our team to discuss your treatment plan and discover how we can help you feel your best.</p>
-    <div class="marr-footer-cta__buttons">
-      <a href="contact.html" class="marr-footer-cta__btn marr-footer-cta__btn--primary">Book Consultation</a>
-      <a href="treatments.html" class="marr-footer-cta__btn marr-footer-cta__btn--outline">View Treatments</a>
-    </div>
-  </div>
-</section>
-
-<!-- Main Footer -->
-<footer class="marr-footer">
-  <div class="marr-footer__inner">
-    <!-- Brand Column -->
-    <div class="marr-footer__col">
-      <div class="marr-footer__brand-name">Marr <span>Laser</span></div>
-      <address class="marr-footer__address">
-        Marr Laser &amp; Skin Clinic<br>
-        Newry, Co. Down<br>
-        Northern Ireland<br><br>
-        028 XXX XXXX<br>
-        hello@marrlaser.com
-      </address>
-    </div>
-
-    <!-- Quick Links -->
-    <div class="marr-footer__col">
-      <h3 class="marr-footer__col-title">Quick Links</h3>
-      <ul class="marr-footer__links">
-        <li><a href="treatments.html">Treatments</a></li>
-        <li><a href="laser-hair-removal.html">Laser Hair Removal</a></li>
-        <li><a href="skin-treatments.html">Skin Treatments</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Opening Hours -->
-    <div class="marr-footer__col">
-      <h3 class="marr-footer__col-title">Opening Hours</h3>
-      <div class="marr-footer__hours">
-        Mon &ndash; Fri: 9am &ndash; 7pm<br>
-        Saturday: 9am &ndash; 5pm<br>
-        Sunday: Closed
       </div>
     </div>
+  </section>
 
-    <!-- Social & Connect -->
-    <div class="marr-footer__col">
-      <h3 class="marr-footer__col-title">Connect</h3>
-      <div class="marr-footer__social">
-        <a href="#" class="marr-footer__social-link" aria-label="Facebook">Fb</a>
-        <a href="#" class="marr-footer__social-link" aria-label="Instagram">Ig</a>
-        <a href="#" class="marr-footer__social-link" aria-label="TikTok">Tk</a>
+  <!-- ═══════════════════════════════════════════════
+       SECTION 4: OPENING HOURS
+       Off-white bg, centered section header + hours list
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--offwhite" aria-label="Opening hours">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Visit Us</span>
+        <h2 class="h2">Opening Hours</h2>
+      </div>
+
+      <table class="hours-table" aria-label="Weekly opening hours">
+        <tbody>
+          <tr>
+            <td class="hours-table__day">Monday &ndash; Friday</td>
+            <td class="hours-table__time">9:00am &ndash; 7:00pm</td>
+          </tr>
+          <tr>
+            <td class="hours-table__day">Saturday</td>
+            <td class="hours-table__time">9:00am &ndash; 5:00pm</td>
+          </tr>
+          <tr>
+            <td class="hours-table__day">Sunday</td>
+            <td class="hours-table__time">Closed</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 5: CTA
+       Charcoal bg, centered heading + Phorest booking button
+       ═══════════════════════════════════════════════ -->
+
+  <section class="section section--charcoal" aria-label="Online booking call to action">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Quick &amp; Easy</span>
+        <h2 class="h2">Prefer to Book Online?</h2>
+        <p class="text-lg">Use our online booking system to choose your treatment and find a time that suits you.</p>
+      </div>
+      <div class="u-text-center">
+        <a href="#" class="btn btn--light">Book via Phorest</a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Copyright -->
-  <div class="marr-footer__copyright">
-    <p class="marr-footer__copyright-text">&copy; 2025 Marr Laser &amp; Skin Clinic. All rights reserved.</p>
-    <div class="marr-footer__copyright-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
+</main>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════ -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><span class="footer__brand-main">MARR</span><span class="footer__brand-sub">Laser &amp; Skin</span></div>
+        <p class="footer__muted text-sm">Advanced laser technology and expert skin treatments, tailored to you.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading">Treatments</h4>
+        <ul class="footer__links">
+          <li><a href="laser-hair-removal.html" class="footer__link">Laser Hair Removal</a></li>
+          <li><a href="why-alexandrite.html" class="footer__link">Why Alexandrite</a></li>
+          <li><a href="skin-treatments.html" class="footer__link">Skin Treatments</a></li>
+          <li><a href="anti-ageing.html" class="footer__link">Anti-Ageing</a></li>
+          <li><a href="aesthetics.html" class="footer__link">Aesthetics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Clinic</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About Us</a></li>
+          <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+          <li><a href="blog.html" class="footer__link">Blog</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Contact</h4>
+        <ul class="footer__links">
+          <li class="footer__contact-text">Newry, Co. Down</li>
+          <li class="footer__contact-text">Northern Ireland</li>
+          <li><a href="tel:+44000000000" class="footer__link">028 000 0000</a></li>
+          <li><a href="mailto:hello@marrlaser.com" class="footer__link">hello@marrlaser.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__fine">&copy; 2026 MARR Laser &amp; Skin Clinic. All rights reserved.</p>
+      <div class="footer__social">
+        <a href="#" class="footer__social-link">Instagram</a>
+        <a href="#" class="footer__social-link">Facebook</a>
+      </div>
     </div>
   </div>
 </footer>

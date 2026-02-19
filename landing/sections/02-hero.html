@@ -1,183 +1,245 @@
 <!-- Marr Laser — 02 Hero -->
 <style>
+  /* === SECTION 02 — HERO === Design C: Warm Boutique */
   .marr-hero {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
     --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
     --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --marr-transition: 0.25s ease;
+    --marr-radius: 8px;
+    --marr-shadow-card: 0 2px 12px rgba(60, 60, 59, 0.06);
+    --marr-shadow-hover: 0 4px 20px rgba(60, 60, 59, 0.1);
 
-    position: relative;
-    background: var(--marr-primary);
-    color: var(--marr-light);
-    padding: 100px 0 80px;
-    overflow: hidden;
-  }
-
-  .marr-hero__bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .marr-hero__bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.2;
+    background: var(--marr-offwhite);
+    padding: 80px 0;
   }
 
   .marr-hero__inner {
-    position: relative;
-    z-index: 1;
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 32px;
     align-items: center;
   }
 
+  /* Blush panel — Design C signature split colour block */
   .marr-hero__content {
-    max-width: 560px;
+    background-color: var(--marr-blush);
+    border-radius: var(--marr-radius);
+    padding: 48px;
   }
 
+  /* Eyebrow badge */
   .marr-hero__badge {
     display: inline-block;
-    padding: 6px 16px;
-    background: rgba(198, 188, 179, 0.15);
-    border: 1px solid var(--marr-accent);
-    border-radius: 32px;
-    font-family: var(--marr-font-body);
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--marr-accent);
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 24px;
+    color: var(--marr-taupe);
+    margin-bottom: 16px;
   }
 
   .marr-hero__title {
     font-family: var(--marr-font-heading);
-    font-size: clamp(36px, 5vw, 58px);
-    line-height: 1.1;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: var(--marr-charcoal);
     margin-bottom: 20px;
   }
 
   .marr-hero__title em {
     font-style: italic;
-    color: var(--marr-accent);
+    color: var(--marr-taupe);
   }
 
   .marr-hero__subtitle {
-    font-size: 18px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 36px;
+    font-family: var(--marr-font-body);
+    font-size: 1.125rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.7;
+    color: var(--marr-text-muted);
+    margin-bottom: 32px;
     max-width: 480px;
   }
 
   .marr-hero__ctas {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     flex-wrap: wrap;
   }
 
+  /* Button base — Design C: 8px radius, heading font */
   .marr-hero__cta {
-    display: inline-block;
-    padding: 16px 36px;
-    border-radius: 32px;
-    font-family: var(--marr-font-body);
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     text-decoration: none;
-    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    border-radius: var(--marr-radius);
     cursor: pointer;
+    transition: background-color var(--marr-transition),
+                color var(--marr-transition),
+                border-color var(--marr-transition);
   }
 
+  /* Secondary — taupe bg, white text */
   .marr-hero__cta--book {
-    background: var(--marr-accent);
-    color: var(--marr-primary);
+    background-color: var(--marr-taupe);
+    color: #ffffff;
+    border-color: var(--marr-taupe);
   }
 
   .marr-hero__cta--book:hover {
-    background: #B4A89D;
+    background-color: var(--marr-taupe-hover);
+    border-color: var(--marr-taupe-hover);
   }
 
+  /* Outline — charcoal border */
   .marr-hero__cta--whatsapp {
-    background: #25d366;
-    color: #ffffff;
+    background-color: transparent;
+    color: var(--marr-charcoal);
+    border-color: var(--marr-charcoal);
   }
 
   .marr-hero__cta--whatsapp:hover {
-    background: #1da851;
+    background-color: var(--marr-charcoal);
+    color: var(--marr-offwhite);
   }
 
+  .marr-hero__cta:focus-visible {
+    outline: 2px solid var(--marr-taupe);
+    outline-offset: 2px;
+  }
+
+  /* Trust badges — inline text */
   .marr-hero__trust {
-    margin-top: 36px;
+    margin-top: 32px;
     display: flex;
     gap: 24px;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .marr-hero__trust-item {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--marr-font-body);
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--marr-text-muted);
     display: flex;
     align-items: center;
     gap: 6px;
   }
 
   .marr-hero__trust-item strong {
-    color: var(--marr-accent);
+    color: var(--marr-taupe);
+    font-weight: 400;
   }
 
+  /* Hero image — rounded corners */
   .marr-hero__image {
-    border-radius: 16px;
+    border-radius: var(--marr-radius);
     overflow: hidden;
+    height: 100%;
   }
 
   .marr-hero__image img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
     display: block;
+    border-radius: var(--marr-radius);
   }
 
+  /* ---- Tablet: 991px ---- */
   @media (max-width: 991px) {
+    .marr-hero {
+      padding: 64px 0;
+    }
+
     .marr-hero__inner {
       grid-template-columns: 1fr;
-      gap: 40px;
-      text-align: center;
+      gap: 32px;
     }
 
     .marr-hero__content {
-      max-width: 100%;
+      padding: 32px;
     }
 
     .marr-hero__subtitle {
       max-width: 100%;
     }
 
-    .marr-hero__ctas {
-      justify-content: center;
-    }
-
-    .marr-hero__trust {
-      justify-content: center;
-    }
-
     .marr-hero__image {
-      max-width: 500px;
-      margin: 0 auto;
+      height: auto;
+    }
+
+    .marr-hero__image img {
+      min-height: 300px;
+      height: auto;
     }
   }
 
+  /* ---- Mobile: 767px ---- */
+  @media (max-width: 767px) {
+    .marr-hero {
+      padding: 48px 0;
+    }
+
+    .marr-hero__inner {
+      padding: 0 20px;
+    }
+
+    .marr-hero__content {
+      padding: 32px 24px;
+    }
+
+    .marr-hero__title {
+      font-size: clamp(1.75rem, 6vw, 2.5rem);
+    }
+
+    .marr-hero__subtitle {
+      font-size: 1rem;
+    }
+  }
+
+  /* ---- Small mobile: 478px ---- */
   @media (max-width: 478px) {
     .marr-hero {
-      padding: 60px 0 50px;
+      padding: 32px 0;
+    }
+
+    .marr-hero__inner {
+      padding: 0 16px;
+    }
+
+    .marr-hero__content {
+      padding: 24px 20px;
+    }
+
+    .marr-hero__title {
+      font-size: 1.625rem;
     }
 
     .marr-hero__ctas {
@@ -186,20 +248,22 @@
 
     .marr-hero__cta {
       width: 100%;
+      justify-content: center;
     }
 
     .marr-hero__trust {
       flex-direction: column;
       gap: 12px;
+      align-items: flex-start;
+    }
+
+    .marr-hero__image img {
+      min-height: 240px;
     }
   }
 </style>
 
 <section class="marr-hero">
-  <div class="marr-hero__bg">
-    <img src="https://placehold.co/1920x900/1a1a2e/2a2a4e?text=+" alt="">
-  </div>
-
   <div class="marr-hero__inner">
     <div class="marr-hero__content">
       <span class="marr-hero__badge">Limited Time Offer</span>
@@ -222,7 +286,7 @@
     </div>
 
     <div class="marr-hero__image">
-      <img src="https://placehold.co/580x650/2a2a4e/c9a84c?text=Hero+Image" alt="Laser hair removal treatment">
+      <img src="https://placehold.co/580x650/C6BCB3/FFFFFF?text=Hero+Image" alt="Laser hair removal treatment">
     </div>
   </div>
 </section>

@@ -1,169 +1,232 @@
 <!-- Marr Laser — 01 Sticky Header -->
 <style>
+  /* === SECTION 01 — HEADER === Design C: Warm Boutique */
   .marr-header {
-    --marr-primary: #3C3C3B;
-    --marr-accent: #C6BCB3;
-    --marr-light: #ffffff;
+    --marr-charcoal: #3C3C3B;
+    --marr-taupe: #C6BCB3;
+    --marr-taupe-hover: #b5aa9f;
+    --marr-blush: #ECE5E0;
+    --marr-offwhite: #F9F9F8;
+    --marr-text: #3C3C3B;
+    --marr-text-muted: #7a7574;
+    --marr-font-heading: 'Cangste', 'Cormorant Garamond', serif;
     --marr-font-body: 'Noto Sans', sans-serif;
+    --marr-transition: 0.25s ease;
+    --marr-radius: 8px;
+    --marr-border: rgba(60, 60, 59, 0.1);
 
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: var(--marr-primary);
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(198, 188, 179, 0.2);
+    background: var(--marr-offwhite);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--marr-border);
   }
 
   .marr-header__inner {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
-  .marr-header__logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .marr-header__logo img {
-    height: 40px;
-    width: auto;
-  }
-
-  .marr-header__logo-text {
-    font-family: var(--marr-font-body);
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--marr-accent);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .marr-header__nav {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .marr-header__contact {
+  /* Left nav links */
+  .marr-header__nav--left {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: var(--marr-light);
-    font-family: var(--marr-font-body);
-    font-size: 14px;
   }
 
-  .marr-header__contact-icon {
-    width: 20px;
-    height: 20px;
+  /* Right nav links */
+  .marr-header__nav--right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Nav link — Design C pill hover */
+  .marr-header__link {
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--marr-text);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 100px;
+    transition: background-color var(--marr-transition),
+                color var(--marr-transition);
+  }
+
+  .marr-header__link:hover,
+  .marr-header__link:focus-visible {
+    background-color: var(--marr-taupe);
+    color: #ffffff;
+  }
+
+  /* CTA button in nav — Design C 8px radius */
+  .marr-header__cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .marr-header__contact-icon svg {
-    width: 18px;
-    height: 18px;
-    fill: var(--marr-accent);
-  }
-
-  .marr-header__cta {
-    display: inline-block;
-    padding: 10px 24px;
-    background: var(--marr-accent);
-    color: var(--marr-primary);
-    font-family: var(--marr-font-body);
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 32px;
+    padding: 8px 20px;
+    font-family: var(--marr-font-heading);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     text-decoration: none;
-    transition: background 0.3s ease;
+    background-color: var(--marr-taupe);
+    color: #ffffff;
+    border: 1px solid var(--marr-taupe);
+    border-radius: var(--marr-radius);
+    cursor: pointer;
+    transition: background-color var(--marr-transition),
+                border-color var(--marr-transition);
   }
 
   .marr-header__cta:hover {
-    background: #B4A89D;
+    background-color: var(--marr-taupe-hover);
+    border-color: var(--marr-taupe-hover);
   }
 
-  .marr-header__whatsapp {
-    display: inline-flex;
+  .marr-header__cta:focus-visible {
+    outline: 2px solid var(--marr-taupe);
+    outline-offset: 2px;
+  }
+
+  /* Centered stacked wordmark */
+  .marr-header__logo {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-decoration: none;
+    line-height: 1;
+    padding: 0 32px;
+  }
+
+  .marr-header__logo-main {
+    font-family: var(--marr-font-heading);
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--marr-charcoal);
+    text-align: center;
+  }
+
+  .marr-header__logo-sub {
+    font-family: var(--marr-font-heading);
+    font-size: 0.5625rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--marr-taupe);
+    text-align: center;
+  }
+
+  /* Mobile hamburger toggle — hidden on desktop */
+  .marr-header__toggle {
+    display: none;
+    flex-direction: column;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: #25d366;
-    border-radius: 50%;
-    transition: background 0.3s ease;
+    gap: 5px;
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
   }
 
-  .marr-header__whatsapp:hover {
-    background: #1da851;
+  .marr-header__toggle-bar {
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--marr-charcoal);
+    transition: transform var(--marr-transition),
+                opacity var(--marr-transition);
   }
 
-  .marr-header__whatsapp svg {
-    width: 22px;
-    height: 22px;
-    fill: #ffffff;
+  /* Focus visible for accessibility */
+  .marr-header__link:focus-visible,
+  .marr-header__toggle:focus-visible {
+    outline: 2px solid var(--marr-taupe);
+    outline-offset: 2px;
   }
 
+  /* ---- Tablet: 991px ---- */
+  @media (max-width: 991px) {
+    .marr-header__logo {
+      padding: 0 24px;
+    }
+  }
+
+  /* ---- Mobile: 767px ---- */
   @media (max-width: 767px) {
-    .marr-header__contact--address {
+    .marr-header__nav--left,
+    .marr-header__nav--right {
       display: none;
     }
 
-    .marr-header__nav {
-      gap: 14px;
+    .marr-header__inner {
+      justify-content: space-between;
     }
 
-    .marr-header__cta {
-      padding: 8px 16px;
-      font-size: 13px;
+    .marr-header__logo {
+      padding: 0;
+      align-items: flex-start;
+    }
+
+    .marr-header__toggle {
+      display: flex;
     }
   }
 
+  /* ---- Small mobile: 478px ---- */
   @media (max-width: 478px) {
-    .marr-header__logo-text {
-      font-size: 14px;
-      letter-spacing: 1px;
+    .marr-header {
+      padding: 12px 0;
     }
 
-    .marr-header__cta {
-      display: none;
+    .marr-header__inner {
+      padding: 0 16px;
+    }
+
+    .marr-header__logo-main {
+      font-size: 1.25rem;
+    }
+
+    .marr-header__logo-sub {
+      font-size: 0.5rem;
     }
   }
 </style>
 
 <header class="marr-header">
   <div class="marr-header__inner">
-    <a href="#" class="marr-header__logo">
-      <img src="https://placehold.co/120x40/1a1a2e/c9a84c?text=MARR" alt="Marr Laser & Skin Clinic">
-      <span class="marr-header__logo-text">Marr Laser</span>
+    <nav class="marr-header__nav--left" aria-label="Primary navigation left">
+      <a href="tel:+441234567890" class="marr-header__link">Call Us</a>
+      <a href="#treatments" class="marr-header__link">Treatments</a>
+    </nav>
+
+    <a href="#" class="marr-header__logo" aria-label="MARR Laser &amp; Skin — Home">
+      <span class="marr-header__logo-main">MARR</span>
+      <span class="marr-header__logo-sub">Laser &amp; Skin</span>
     </a>
 
-    <nav class="marr-header__nav">
-      <a href="tel:+441234567890" class="marr-header__contact">
-        <span class="marr-header__contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
-        </span>
-        +44 123 456 7890
-      </a>
-
-      <span class="marr-header__contact marr-header__contact--address">
-        <span class="marr-header__contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 7a2.5 2.5 0 010 4.5z"/></svg>
-        </span>
-        123 High Street, London
-      </span>
-
-      <a href="#booking" class="marr-header__cta">Book Free Consultation</a>
-
-      <a href="https://wa.me/441234567890" class="marr-header__whatsapp" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.585l-.386-.238-2.646.887.887-2.646-.238-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-      </a>
+    <nav class="marr-header__nav--right" aria-label="Primary navigation right">
+      <a href="#results" class="marr-header__link">Results</a>
+      <a href="#booking" class="marr-header__link">Book Now</a>
     </nav>
+
+    <button class="marr-header__toggle" aria-label="Open menu" aria-expanded="false">
+      <span class="marr-header__toggle-bar"></span>
+      <span class="marr-header__toggle-bar"></span>
+      <span class="marr-header__toggle-bar"></span>
+    </button>
   </div>
 </header>
